@@ -8,3 +8,12 @@ Tomas Espil 21 años, muy interesado en el mundo IT, películas de todo lo refer
 Marcos Zulian, 31 años, trabaja como webmaster para una empresa Argentina. Interesado en los autos, la música, el detailing y el análisis de divisas.
 
 Belén Legresti, 26 años, trabaja como Project Manager para una startup de Estados Unidos. Está interesada en el ecosistema crypto y tecnologías NFT. De hecho, es jugadora del Axie Infinity.
+
+Sitios web tomados de referencia:
+Tomamos de referencia el modelo de negocio de Amazon y MercadoLibre, la idea de comercializar en cryptos de CryptoAvisos.com, y el diseño de todas estas, incluyendo el Marketplace de Facebook  y de Ebay.
+
+https://www.ebay.com/
+https://www.facebook.com/marketplace/
+https://cryptoavisos.com/
+https://www.mercadolibre.com.ar/
+https://www.amazon.com/
