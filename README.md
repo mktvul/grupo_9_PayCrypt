@@ -5,7 +5,7 @@ Sebastian Sanchis, 29 años, a cargo del área de Marketing de una empresa Argen
 
 Tomas Espil 21 años, muy interesado en el mundo IT, películas de todo lo referido a superhéroes y videojuegos.
 
-Marcos Zulian, 31 años, trabaja como webmaster para una empresa Argentina. Interesado en los autos, la música, el detailing y el análisis de divisas.
+Marcos Zulian, 31 años, trabaja como webmaster para una empresa Argentina. Interesado en los autos, tutor de cursos automotricez, le gusta la música y  las inverciones con análisis técnico.
 
 Belén Legresti, 26 años, trabaja como Project Manager para una startup de Estados Unidos. Está interesada en el ecosistema crypto y tecnologías NFT. De hecho, es jugadora del Axie Infinity.
 
