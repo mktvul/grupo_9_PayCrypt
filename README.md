@@ -18,4 +18,6 @@ https://cryptoavisos.com/
 https://www.mercadolibre.com.ar/
 https://www.amazon.com/
 
-Proyecto en XD: https://xd.adobe.com/view/c12974ff-f58e-4d51-a1dc-d0362cbeefb9-947a/
+Bocetos:
+Mobile: https://xd.adobe.com/view/78c66669-1aff-4573-9557-63749847b1a8-2d95/
+Desktop: https://xd.adobe.com/view/b8ebb349-7b8e-4c5e-a602-ad338c188a40-edb8/
