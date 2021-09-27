@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f6f11fdb12.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">             <!--VINCULANDO FUENTE OPEN SANS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles_registro.css">
+    <title>Registro</title>
+</head>
+<body>
+    
+    <header>
+        <nav class="contenedor">
+            <div class="logo-header">
+                <img src="/images/paycrypt-logo.svg">
+            </div>
+            
+            <!--HEADER ELEMENTOS IZQUIERDA-->
+            <div class="enlaces-izquierda">
+                <li><a href="#">Productos <i class="fas fa-sort-down"></i></a></li>
+            </div>
+            <div class="enlaces-izquierda">
+                <li><a href="#">Cotizaciones <i class="fas fa-sort-down"></i></a></li>
+            </div>
+            <div class="barra-busqueda-header"><input  type="search" placeholder=""><i class="fas fa-search"></i></div>
+            <!--HEADER ELEMENTOS DERECHA-->
+            <div class="enlaces-derecha">
+                <li><a href="#">Ingresá</a></li>
+            </div>
+            <div class="enlaces-derecha">
+                <li><a href="#">Mis compras</i></a></li>
+            </div>
+            <div class="enlaces-derecha">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
+        <div class="registro-logo">
+            <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
+        </div>
+    
+        <div>
+            <p class="p-datos-registro">Completa tus datos</p>
+        </div>
+        </br> 
+
+              <!-- CAJA FLEX DEL  FORMULARIO-->
+            <form action="" method="POST">
+                <div class="formulario-flex">
+                
+                <div>
+                    <label for="nombre"></label>
+                    <input class="formulario-control" type="text" name="nombre" id="nombre" placeholder="Nombre">   <!--NOMBRE USUARIO-->
+                </div>
+
+                <div>
+                    <label for="apellido"></label>
+                    <input class="formulario-control" type="text" name="apellido" id="apellido" placeholder="Apellido">  <!-- APELLIDO-->
+                </div>
+                
+                <div>
+                    <label for="dni"></label>
+                    <input class="formulario-control" type="number" name="dni" id="dni" placeholder="DNI">                 <!-- NUMERO DE DOCUMENTO (DNI)-->
+                </div>
+                
+                <div>
+                    <label for="email"></label>
+                    <input class="formulario-control" type="email" name="email" id="email" placeholder="E-mail">   <!-- CORREO ELECTRONICO-->
+                </div>
+
+                <div>
+                    <label for="password"></label>
+                    <input class="formulario-control" type="password" name="password" id="password" placeholder="Contraseña">  <!-- CONTRASEÑA-->
+                </div>
+                <div>
+                    <label for="password"></label>
+                    <input class="formulario-control" type="password" name="password" id="password" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
+                </div>
+                <div class="check-box-condiciones">
+                    <label for="terminos">
+                       <input type="checkbox" name="terminos" id="terminos"> He leido y acepto los términos y condiciones.</label> <!-- CAJA  TERMINOS Y CONDICIONES-->
+                </div>
+
+                <div class="boton-formulario-continuar" >
+                    
+                    <button type="submit">Continuar</button>
+                </div>
+            
+            </div>  
+                <span class="boton-formulario-iniciar-sesion">
+                    
+                    <button type="button">Iniciar sesión</button>
+                </span>
+            </form>
+        </div>
+    
+    
+    
+</body>
+</html>

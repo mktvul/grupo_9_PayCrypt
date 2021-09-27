@@ -1,0 +1,197 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+    /* CONTENEDOR DEL HEADER*/
+.contenedor{
+    display: flex;
+    width: 100%;
+    background-color: #ffff;
+    box-shadow: 2px 5px 13px -3px rgba(0,0,0,0.75);
+    justify-content: space-between;
+    height: 80px;
+
+}
+
+/* CONTENEDOR DEL HEADER*/
+/*.menu-navegacion{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    
+}
+*/
+
+.logo-header{
+    display: flex;
+    margin-left: 45px;
+
+}
+
+/* LOGO IMAGEN*/
+.logo img{
+    display: flex;
+}
+
+
+/*AMBOS ENLACES IZQUIERDA (HEADER)*/
+.enlaces-izquierda{
+    display: flex;
+    margin: auto;
+       
+}
+
+/* RELLENO A LOS DIFERENTES ELEMENTOS DEL HEADER*/
+li{
+    margin-left: 50px;
+}
+
+/* BARRA BUSQUEDA HEADER*/
+.barra-busqueda-header{
+    display: flex;
+    margin: auto;
+    height: 25px;
+    border: solid 1px #ebebeb;
+    border-radius: 8px;
+}
+
+
+/*AMBOS ENLACES DERECHA (HEADER)*/
+.enlaces-derecha {
+    display: flex;
+    margin: auto;
+}
+
+
+
+  body{
+      background-color: #2790c3;
+  }
+
+  .img-formulario-login{
+      width: 200px;
+  }
+
+  .titulo-formulario-login{
+    text-align: left;
+    margin-left: 23px;
+  }
+
+.control-formulario-login{
+    width: 35%;
+      margin: auto;
+      padding: 10px;
+      background-color: #ffff;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      text-align: center;
+}
+
+/* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
+.formulario-control{
+    margin: 10px;
+    padding: 10px;
+    border: grey solid 1px;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 8px;
+    width: 332px;
+    height: 50px;
+    
+}
+
+/* CONTROL DEL LABEL (Ingresa tus datos) */
+.p-datos-login{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+/* boton formulario CONTINUAR*/
+.boton-formulario-continuar{
+    background-color: #27346a;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 71%;
+    height: 90%;
+    margin: auto;
+    text-align: center;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+.boton-formulario-continuar:hover{
+    text-decoration: underline;
+}
+
+
+/* boton formulario CREAR CUENTA*/
+
+.boton-formulario-crear-cuenta{
+  background-color: #ffff;
+  color: #27346a;
+  text-align: center;
+  margin: 10px;
+
+}
+
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+
+.boton-formulario-crear-cuenta:hover{
+text-decoration: underline;
+}
+
+
+.olvidaste-tu-contraseña{
+    margin: right;
+    align-self: end;
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #27346A;
+}
+
+.soy-un-footer{
+    background-color: grey;
+}
+
+/*
+/*MOBILE*/
+@media (min-width:480px) {
+    .menu-navegacion{
+        display: none;
+    }
+}
+
+
+/*tablets*/
+@media (min-width: 481px){
+    .menu-navegacion{
+        display: none;
+    }
+} 
+
+
+
+
+/*desktop*/
+@media (min-width: 769px){
+    .menu-navegacion{
+        display: flex;  
+    }
+ 
+}
+

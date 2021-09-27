@@ -1,0 +1,235 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  i{
+      padding: 2px;
+    
+  }
+
+    /* CONTENEDOR DEL HEADER*/
+.contenedor{
+    display: flex;
+    width: 100%;
+    background-color: #ffff;
+    box-shadow: 2px 5px 13px -3px rgba(0,0,0,0.75);
+    justify-content: space-between;
+    height: 80px;
+
+}
+
+/* CONTENEDOR DEL HEADER*/
+.menu-navegacion{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    
+}
+
+.logo-header{
+    display: flex;
+    margin-left: 45px;
+
+}
+
+/* LOGO IMAGEN*/
+.logo img{
+    display: flex;
+}
+
+/*AMBOS ENLACES IZQUIERDA (HEADER)*/
+.enlaces-izquierda{
+    display: flex;
+    margin: auto;
+       
+}
+
+/* RELLENO A LOS DIFERENTES ELEMENTOS DEL HEADER*/
+li{
+    margin-left: 15px;
+}
+
+/* BARRA BUSQUEDA HEADER*/
+.barra-busqueda-header{
+    display: flex;
+    margin: auto;
+    height: 25px;
+    border: solid 1px #ebebeb;
+    border-radius: 8px;
+}
+
+/*AMBOS ENLACES DERECHA (HEADER)*/
+.enlaces-derecha {
+    display: flex;
+    margin: auto;
+}
+
+
+
+  body{
+      background-color: #2790c3;
+  }
+
+  /* CONTENEDOR DEL FORMULARIO*/
+  .contenedor-formulario{
+      width: 35%;
+      margin: auto;
+      padding: 10px;
+      background-color: #ffff;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      border: solid salmon dashed;
+  }
+
+ .imagen-paycript-formulario{
+    width: 141px;
+ }
+
+  /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
+  .registro-logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+  
+/* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
+  .formulario-control{
+      margin: 10px;
+      padding: 10px;
+      border: grey solid 1px;
+      display: flex;
+      flex-direction: column; 
+      border-radius: 8px;
+      
+  }
+  
+  
+  /* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
+  .p-datos-registro{
+      font-size: 20px;
+      margin-left: 21px;
+  }
+
+  /* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
+  .check-box-condiciones{
+      display: flex;
+      justify-content: center;
+      color: #27346a;
+
+  }
+
+  /* boton formulario CONTINUAR*/
+  .boton-formulario-continuar{
+        background-color: #27346a;
+        color: #ffff;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 14px;
+        margin-bottom: 14px;
+}
+
+.terminos-y-continuar{
+    display: flex;
+    align-items: center;
+}
+
+
+   /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+    .boton-formulario-continuar:hover{
+        text-decoration: underline;
+    }
+
+
+/* boton formulario INICIAR SESION*/
+
+  .boton-formulario-iniciar-sesion{
+      color: #27346a;
+      margin: 10px;
+    }
+
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+
+.boton-formulario-iniciar-sesion:hover{
+    text-decoration: underline;
+}
+
+
+/*MOBILE*/
+@media (min-width:0px) {
+    .enlaces-izquierda{
+        display: none;
+    }
+    
+    .enlaces-derecha{
+        display: none;
+    }
+
+    .barra-busqueda-header{
+        display: none;
+    }
+} 
+
+
+
+/*tablets*/
+@media (min-width: 768px){
+    
+    .enlaces-izquierda{
+        display: none;
+    }
+    
+    .enlaces-derecha{
+        display: none;
+    }
+
+    .barra-busqueda-header{
+        display: none;
+    }
+} 
+
+
+
+
+/*desktop*/
+@media (min-width: 1024px){
+    
+    
+   
+    .contenedor-formulario{
+        width: 844px;
+        height: 470px;
+    }
+
+    .formulario-control{
+        width: 332px;
+        height: 50px;
+    }
+
+    .formulario-flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .boton-formulario-iniciar-sesion{
+        position: relative;
+        left: 556px;
+    }
+
+    .boton-formulario-continuar{
+        width: 332px;
+    }
+
+}
