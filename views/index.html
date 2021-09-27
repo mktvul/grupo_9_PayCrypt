@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-----------------HEAD - ACÁ LINKEO ENLACES EXTERNOS------------------------->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayCrypt</title>
+    <link rel="stylesheet" href="/css/styles_index.css"/>
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/57b4c81031.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <!-----------------ACÁ VA EL HEADER CON LA NAVBAR-------------------------------->
+    <header class="header-index">
+      <!------HAMBURGUESA------->
+      <div class="hamburguesa">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!------LOGO--------------->
+      <div class="logo-index">
+        <img src="/images/paycrypt-logo.svg" alt="Logo">
+      </div>
+
+      <div class="navbar-left">
+        <p><a href="">Productos</a><i class="fas fa-sort-down"></i></p>
+        <p><a href="">Cotizaciones</a><i class="fas fa-sort-down"></i></p>
+      </div>
+
+      <!------BARRA DE BÚSQUEDA--->
+      <div class="search-bar">
+        <input type="text"/>
+        <i class="fas fa-search"></i>
+      </div>
+
+      <div class="navbar-right">
+        <p><a href="">Ingresá</a><i class="fas fa-sort-down"></i></p>
+        <p><a href="">Mis compras</a><i class="fas fa-sort-down"></i></p>
+      </div>
+
+      <!------CARRITO------------->
+      <div>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+
+    </header>
+
+    <!-----------------ACÁ VA A PARTIR DEL BANNER E-COMMERCE------------------------->
+    <main>
+      <!------BANNER------------->
+      <div class="banner">
+        <img src="/images/banner.png" alt="Banner">
+      </div>
+
+      <!------CÍRCULOS DENTRO DE UN SECTION, CADA CIRCULO ES UN ARTICLE----------->
+      <section class="navbar-circles">
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Vehículos</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Inmuebles</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Tecnología</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-futbol"></i>
+          </div>
+          <h3>Deportes</h3>
+        </article>
+
+        <div class="ver-mas">
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="fas fa-plus"></i>
+            </div>
+            <h3>Ver más</h3>
+          </article>
+        </div>
+
+        <div class="nft-mineria">
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="far fa-gem"></i>
+            </div>
+            <h3>NFT</h3>
+          </article>
+
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="fab fa-hubspot"></i>
+            </div>
+            <h3>Minería</h3>
+          </article>
+        </div>
+
+      </section>
+
+      <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE PRODUCTOS, C/U ES UN ARTICLE----------->
+      <h2 class="buscados">Los más buscados</h2>
+
+      <section class="list-of-products">
+
+        <!------PRIMER PRODUCTO----------->
+        <article class="each-product">
+          <div class="img-product">
+            <img src="/images/auto.jpg" alt="">
+          </div>
+            
+          <div class="product-description">
+            <p class="price">25.000
+              <span>
+                <img src="images/usdt-logo.svg" alt="" class="usdt">
+              </span>
+            </p>
+            <p class="category">
+              <i class="far fa-folder-open"></i>
+              Vehículos
+            </p>
+            <h3 class="name-of-product">Volkswagen Golf</h3>
+            <p class="description">0km, DSG 1.4t año 2021</p>
+            <p class="date">
+              <i class="fas fa-clock"></i>
+              3 días atrás
+            </p>
+          </div>
+
+          <div class="place">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>La Plata, GBA Sur.</p>
+          </div>
+        </article>
+        
+        <!------SEGUNDO PRODUCTO----------->
+        <article class="each-product">
+          <div class="img-product">
+            <img src="/images/zapatilla.jpg" alt="">
+          </div>
+            
+          <div class="product-description">
+            <p class="price">50
+              <span>
+                <img src="images/usdt-logo.svg" alt="" class="usdt">
+              </span>
+            </p>
+            <p class="category">
+              <i class="far fa-folder-open"></i>
+              Deportes
+            </p>
+            <h3 class="name-of-product">Zapatillas Nike</h3>
+            <p class="description">Nuevo</p>
+            <p class="date">
+              <i class="fas fa-clock"></i>
+              11 días atrás
+            </p>
+          </div>
+
+          <div class="place">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Paraná, Entre Ríos.</p>
+          </div>
+        </article>
+
+        <!------TERCER PRODUCTO----------->
+        <article class="each-product">
+          <div class="img-product">
+            <img src="/images/notebook.jpg" alt="">
+          </div>
+            
+          <div class="product-description">
+            <p class="price">1.000
+              <span>
+                <img src="images/usdt-logo.svg" alt="" class="usdt">
+              </span>
+            </p>
+            <p class="category">
+              <i class="far fa-folder-open"></i>
+              Tecnología
+            </p>
+            <h3 class="name-of-product">Notebook Dell</h3>
+            <p class="description">Intel Core i7, 8gb de RAM...</p>
+            <p class="date">
+              <i class="fas fa-clock"></i>
+              7 días atrás
+            </p>
+          </div>
+
+          <div class="place">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Palermo, Capital Federal.</p>
+          </div>
+        </article>
+
+        <!------CUARTO PRODUCTO----------->
+        <article class="each-product">
+          <div class="img-product">
+            <img src="/images/departamento.jpg" alt="">
+          </div>
+            
+          <div class="product-description">
+            <p class="price">150.000
+              <span>
+                <img src="images/usdt-logo.svg" alt="" class="usdt">
+              </span>
+            </p>
+            <p class="category">
+              <i class="far fa-folder-open"></i>
+              Inmuebles
+            </p>
+            <h3 class="name-of-product">Dpto. en Martínez</h3>
+            <p class="description">3 amb - 60m2 cubiertos</p>
+            <p class="date">
+              <i class="fas fa-clock"></i>
+              15 días atrás
+            </p>
+          </div>
+
+          <div class="place">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Martínez, GBA Norte.</p>
+          </div>
+        </article>
+      </section>
+
+
+    </main>
+    <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
+
+    <!-------ACÁ VA A EL FOOTER: DIVIDO EN 2 SECTIONS: UNA C/ 3 ARTICLES Y LA OTRA CON UN P----------------->
+    <footer>
+      <!---PRIMERA SECCIÓN--------------------->
+      <!---PAGÁ CON CRYPTOS-->
+      <section class="first-footer">
+          <article class="each-text">
+              <i class="fab fa-bitcoin"></i>
+              <h3 class="titulo-footer">Pagá con criptomonedas</h3>
+              <p class="descripcion">Pagando con PayCrypt, podés utilizar tu billetera virtual de confianza y cualquier criptomoneda. ¡Y siempre es seguro!</p>
+          </article>
+          
+          <!---SIN COMISIONES-->
+          <article class="each-text">
+              <i class="fas fa-gift"></i>
+              <h3 class="titulo-footer">Olvidate de las comisiones</h3>
+              <p class="descripcion">Usando nuestro sistema P2P, olvidate para siempre de las comisiones. Es un beneficio de PayCrypt.</p>
+          </article>
+
+          <!---SEGURIDAD------->
+          <article class="each-text">
+              <i class="fas fa-user-shield"></i>
+              <h3 class="titulo-footer">Seguridad, de principio a fin</h3>
+              <p class="descripcion">¿No te gusta? ¡Devolvelo! Con PayCrypt, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+          </article>
+        </section>
+
+      <!---SEGUNDA SECCIÓN----------->
+      <section class="second-footer">
+          <p class="copyright"> Copyright © 2021 PayCrypt S.A.</p>
+      </section>
+  </footer>
+
+  </body>
+</html>
