@@ -1,6 +1,10 @@
 * {
     font-family: 'Open Sans', sans-serif;
-}
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    list-style-type: none;
+  }
 
 /*----------EL ESTILO DEL INDEX----------------------------------------------*/
 
