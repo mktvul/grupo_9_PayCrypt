@@ -16,6 +16,6 @@ No encontramos puntos "negativos" propiamente dicho, sino que encontramos puntos
 
 Entre ellos:
 
--A veces en el afán de aprender y comenzar a trabajar, nos adelantamos a las consignas pedidas en el sprint, y notamos en el siguiente.
+-A veces en el afán de aprender y comenzar a trabajar, nos adelantamos a las consignas pedidas en el sprint, y notamos en el siguiente sprint que no hicimos correctamente esa tarea.
 
 -Alinear conceptos entre nosotros (como por ejemplo las medidas de las media queries, forma de visualización en las distintas pantallas, UX (tamaños de botones)).
