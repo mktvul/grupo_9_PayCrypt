@@ -81,20 +81,36 @@ li{
   }
 
   .titulo-formulario-login{
-    text-align: left;
-    margin-left: 23px;
-  }
+        /* text-align: left; */
+    /* margin-left: 23px; */
+    position: relative;
+    right: 50px;
+    margin-bottom: 5px;
+}
 
-.control-formulario-login{
-    width: 35%;
-      margin: auto;
-      padding: 10px;
-      background-color: #ffff;
-      margin-top: 100px;
+  .formulario-flex-login{
       display: flex;
       flex-direction: column;
-      border-radius: 10px;
-      text-align: center;
+    
+  }
+
+  
+.control-formulario-login{
+    width: 844px;
+    margin: auto;
+    padding: 10px;
+    background-color: #ffff;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    text-align: center;
+    height: 470px;
+}
+
+/*INPUTS EN LOGIN*/
+.inputs-en-login{
+    align-self: center;
 }
 
 /* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
@@ -123,11 +139,10 @@ li{
     background-color: #27346a;
     color: #ffff;
     border-radius: 5px;
-    padding: 10px;
-    width: 71%;
-    height: 90%;
+    padding: 7px;
+    width: 332px;
+    height: 30px;
     margin: auto;
-    text-align: center;
     margin-top: 14px;
     margin-bottom: 14px;
 }
@@ -154,14 +169,17 @@ text-decoration: underline;
 }
 
 
+/* HIPERVINCULO OLVIDASTE TU CLAVE*/
 .olvidaste-tu-contraseña{
-    margin: right;
-    align-self: end;
-    padding: 5px;
+    /*margin: right; */
+    /* align-self: end; */
+    /* padding: 5px; */
     font-size: 14px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 11px;
+    margin-top: 11px;
     color: #27346A;
+    position: relative;
+    left: 80px;
 }
 
 .soy-un-footer{
@@ -170,16 +188,32 @@ text-decoration: underline;
 
 /*
 /*MOBILE*/
-@media (min-width:480px) {
-    .menu-navegacion{
+@media (min-width:0px) {
+    .enlaces-izquierda{
         display: none;
     }
-}
+    
+    .enlaces-derecha{
+        display: none;
+    }
 
+    .barra-busqueda-header{
+        display: none;
+    }
+} 
 
 /*tablets*/
-@media (min-width: 481px){
-    .menu-navegacion{
+@media (min-width: 768px){
+    
+    .enlaces-izquierda{
+        display: none;
+    }
+    
+    .enlaces-derecha{
+        display: none;
+    }
+
+    .barra-busqueda-header{
         display: none;
     }
 } 
