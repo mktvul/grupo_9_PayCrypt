@@ -9,40 +9,58 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/57b4c81031.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <!-- Header: menu, logo, search, nav  -->
+    <!-- Header: menu, logo, search, nav -->
     <header class="header">
-      <!-- Menu  -->
+      <!-- Menu -->
       <div class="header-menu">
         <span class="material-icons"> menu </span>
       </div>
-      <!-- Logo  -->
+      <!-- Logo -->
       <div class="header-logo">
         <img class="header-logo-img" src="/images/paycrypt-logo.svg" />
       </div>
-      <!-- Search  -->
-      <div class="header-search">
-        <span class="material-icons"> search </span>
-      </div>
-      <!-- Nav  -->
+      <ul class="header-nav-menu">
+        <li> Productos <span class="material-icons"> arrow_drop_down </span></li>
+        <li> Cotizaciones <span class="material-icons"> arrow_drop_down </span></li>
+      </ul>
+      <!-- Search -->
+      <form class="header-search">
+        <input type="text" class="header-search-bar" placeholder="Buscá productos, marcas y más..." maxlength="120">
+        <button type="submit" class="header-search-button"><span class="material-icons"> search </span></button>
+      </form>
       <nav class="header-nav">
-        <span class="material-icons"> shopping_cart </span>
+        <!-- Log In -->
+        <a class="header-nav-login">Ingresá</a>
+        <!-- Shopping -->
+        <a class="header-nav-shopping">Mis compras</a>
+        <!-- Cart -->
+        <a href="/carrito_de_compras" class="header-nav-cart">
+          <span class="material-icons"> shopping_cart </span>
+        </a>
       </nav>
     </header>
-    <!-- Main: 2 sections, 3 articles  -->
-    <main>
-      <!-- Section 1: image  -->
-      <section>
+    <!-- Main: 2 sections, 3 articles -->
+    <main class="main">
+      <!-- Section 1: image -->
+      <section class="main-section">
         <img class="main-section-img" src="/images/auto.jpg" />
       </section>
-      <!-- Section 2: 3 articles - name, description, pay details - button add to cart  -->
-      <section class="main-section">
+      <!-- Section 2: 3 articles - name, description, pay details - button add to cart -->
+      <section class="main-section-2">
         <!-- Article 1: name  -->
         <article class="main-section-article">
           <h1 class="main-section-article-h1">Volkswagen Golf</h1>
@@ -52,7 +70,7 @@
             <img class="main-section-article-img" src="/images/usdt-logo.svg" />
           </div>
         </article>
-        <!-- Article 2: description  -->
+        <!-- Article 2: description -->
         <article class="main-section-article-2">
           <div class="main-section-article-div">
             <h3 class="main-section-article-h3">Descripción</h3>
@@ -65,41 +83,81 @@
             </ul>
           </div>
         </article>
-        <!-- Article 3: pay details, button add to cart  -->
+        <!-- Article 3: pay details, button add to cart -->
         <article class="main-section-article-2">
-          <div class="main-section-article-div">
+          <div class="main-section-article-div-2">
             <h3>Detalle de pago</h3>
-            <span class="main-section-article-ul"> P2P </span>
-            <span>
+            <div>
               <ul>
-                <li>
-                  25.000
-                  <img
-                    class="main-section-article-img"
+                <li class="main-section-article-ul-li">
+                  25.000<img
+                    class="main-section-article-ul-img-1"
                     src="/images/usdt-logo.svg"
                   />
                 </li>
-                <li>
-                  0.53175
-                  <img
-                    class="main-section-article-img"
+                <li class="main-section-article-ul-li-2">
+                  0.53175<img
+                    class="main-section-article-ul-img-2"
                     src="/images/btc-logo.svg"
                   />
                 </li>
-                <li>
-                  7.23225
-                  <img
-                    class="main-section-article-img"
+                <li class="main-section-article-ul-li-2">
+                  7.23225<img
+                    class="main-section-article-ul-img-2"
                     src="/images/eth-logo.svg"
                   />
                 </li>
               </ul>
-            </span>
-            <button>Agregar al carrito</button>
+            </div>
+            <div class="main-section-article-button">
+              <button class="main-section-article-button-2" type="submit">
+                Agregar al carrito
+              </button>
+            </div>
           </div>
         </article>
       </section>
     </main>
-    <footer></footer>
+    <!-- Footer: 2 sections -->
+    <footer class="footer">
+      <!-- Section 1-->
+      <section class="footer-section">
+        <!-- Section 1: article 1-->
+        <article class="footer-article">
+          <i class="fas fa-credit-card"></i>
+          <h3 class="footer-section-article-h3">Pagá con criptomonedas</h3>
+          <p class="footer-section-p">
+            Pagando con PayCrypt, podés utilizar tu billetera virtual de
+            confianza y cualquier criptomoneda. ¡Y siempre es seguro!
+          </p>
+        </article>
+        <!-- Section 1: article 2-->
+        <article class="footer-article">
+          <i class="fas fa-gift"></i>
+          <h3 class="footer-section-article-h3">Olvidate de las comisiones</h3>
+          <p class="footer-section-p">
+            Usando nuestro sistema P2P, olvidate para siempre de las comisiones.
+            Es un beneficio de PayCrypt.
+          </p>
+        </article>
+        <!-- Section 1: Article 3-->
+        <article class="footer-article">
+          <i class="fas fa-user-shield"></i>
+          <h3 class="footer-section-article-h3">
+            Seguridad, de principio a fin
+          </h3>
+          <p class="footer-section-p">
+            ¿No te gusta? ¡Devolvelo! Con PayCrypt, no hay nada que no puedas
+            hacer, porque estás siempre protegido.
+          </p>
+        </article>
+      </section>
+      <!-- Section 2-->
+      <section class="footer-copyright">
+        <p class="footer-section-p">
+          Copyright © 1999-2020 MercadoLiebre S.R.L.
+        </p>
+      </section>
+    </footer>
   </body>
 </html>

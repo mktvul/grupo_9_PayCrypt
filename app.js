@@ -14,16 +14,16 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-app.get("/formulario_de_registro", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/formulario_de_registro.html"));
+app.get("/detalle_de_producto", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/detalle_de_producto.html"));
 });
 
 app.get("/formulario_de_login", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/formulario_de_login.html"));
 });
 
-app.get("/detalle_de_producto", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/detalle_de_producto.html"));
+app.get("/formulario_de_registro", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/formulario_de_registro.html"));
 });
 
 app.get("/carrito_de_compras", (req, res) => {
