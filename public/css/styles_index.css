@@ -82,6 +82,16 @@
     margin-left: 25px;
 }
 
+body {
+    min-height: 100vh;
+    height: auto;
+  }
+
+main {
+    flex-grow: 1;
+    height: auto;
+}
+
 /*-------BANNER------*/
 
 .banner img {
