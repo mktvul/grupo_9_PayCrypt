@@ -14,6 +14,7 @@
 
 .header {
   height: 50px;
+  box-shadow: 0px 0px 3px rgb(100, 100, 100);
 }
 
 .header-menu {
@@ -268,25 +269,45 @@
     display: inline-block;
     background-color: #ebebeb;
     position: relative;
-    left: 120px;
+    left: 110px;
     bottom: 1px;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 600px;
     height: 35px;
     border-radius: 3px 0px 0px 3px;
     font-size: 14px;
     padding-left: 20px;
+    z-index: 2;
   }
 
   .header-search-button {
     display: inline-block;
     position: relative;
-    left: 100px;
+    left: 105px;
     top: 4px;
     background-color: #ebebeb;
     width: 45px;
     height: 35px;
     border-radius: 0px 3px 3px 0px;
+    z-index: 1;
+  }
+
+  /* Tablet: Footer */
+
+  .footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-article {
+    width: 25%;
+    padding: 20px;
+  }
+
+  .footer-copyright {
+    text-align: start;
+    width: 100%;
   }
 }
 
@@ -314,6 +335,7 @@
 
   .main {
     display: flex;
+    justify-content: center;
   }
 
   .main-section {
