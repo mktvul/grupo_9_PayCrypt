@@ -89,14 +89,15 @@ li{
 }
 
   .formulario-flex-login{
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
   }
 
   
 .control-formulario-login{
-    width: 844px;
+    width: 100%;
     margin: auto;
     padding: 10px;
     background-color: #ffff;
@@ -174,12 +175,15 @@ text-decoration: underline;
     /*margin: right; */
     /* align-self: end; */
     /* padding: 5px; */
+    padding: 5px;
     font-size: 14px;
     margin-bottom: 11px;
     margin-top: 11px;
     color: #27346A;
-    position: relative;
     left: 80px;
+    width: 332px;
+    display: flex;
+    justify-content: end;
 }
 
 .soy-un-footer{
@@ -200,6 +204,7 @@ text-decoration: underline;
     .barra-busqueda-header{
         display: none;
     }
+    
 } 
 
 /*tablets*/
@@ -216,6 +221,7 @@ text-decoration: underline;
     .barra-busqueda-header{
         display: none;
     }
+    
 } 
 
 
@@ -225,6 +231,10 @@ text-decoration: underline;
 @media (min-width: 769px){
     .menu-navegacion{
         display: flex;  
+    }
+
+    .control-formulario-login{
+        width: 35%;  /* ADAPTACION DEL FORMULARIO A DESKTOP*/
     }
  
 }
