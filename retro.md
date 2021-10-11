@@ -19,3 +19,22 @@ Entre ellos:
 -A veces en el afán de aprender y comenzar a trabajar, nos adelantamos a las consignas pedidas en el sprint, y notamos en el siguiente sprint que no hicimos correctamente esa tarea.
 
 -Alinear conceptos entre nosotros (como por ejemplo las medidas de las media queries, forma de visualización en las distintas pantallas, UX (tamaños de botones)).
+
+
+Sobre sprint 2:
+
+PUNTOS POSITIVOS:
+-División de tareas. Pudimos dividir correctamente las tareas.
+
+-Organización con respecto a las hojas de estilo, etiquetas y clases que usamos, etc.
+
+-Buena coordinación de horarios para juntarnos a trabajar. Eficiencia de tiempo en cada reunión.
+
+PUNTOS A MEJORAR:
+-Trabajar en los detalles de las buenas prácticas, como escribir todo en un idioma (inglés o español).
+
+-Falta de definición de cantidad y medidas de media queries.
+
+
+
+
