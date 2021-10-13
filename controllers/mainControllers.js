@@ -19,6 +19,14 @@ const mainControllers = {
   cart: (req, res) => {
     res.sendFile(path.join(__dirname, "../views/carrito_de_compras.html"));
   },
+
+  create: (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/create_products.html"));
+  },
+
+  edit:  (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/edit_products.html"));
+  },
 };
 
 module.exports = mainControllers;

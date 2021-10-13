@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f6f11fdb12.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">             <!--VINCULANDO FUENTE OPEN SANS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles_create_products.css">
+    <title>Registro</title>
+</head>
+<body>
+    
+    <header>
+        <nav class="contenedor">
+            <div class="logo-header">
+                <img src="/images/paycrypt-logo.svg">
+            </div>
+            
+            <!--HEADER ELEMENTOS IZQUIERDA-->
+            <div class="enlaces-izquierda">
+                <li><a href="#">Productos <i class="fas fa-sort-down"></i></a></li>
+            </div>
+            <div class="enlaces-izquierda">
+                <li><a href="#">Cotizaciones <i class="fas fa-sort-down"></i></a></li>
+            </div>
+            <div class="barra-busqueda-header"><input  type="search" placeholder=""><i class="fas fa-search"></i></div>
+            <!--HEADER ELEMENTOS DERECHA-->
+            <div class="enlaces-derecha">
+                <li><a href="#">Ingresá</a></li>
+            </div>
+            <div class="enlaces-derecha">
+                <li><a href="#">Mis compras</i></a></li>
+            </div>
+            <div class="enlaces-derecha">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
+        <div class="registro-logo">
+            <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
+        </div>
+    
+        <div>
+            <p class="p-datos-registro">Crea tu producto</p>
+        </div>
+        </br> 
+
+              <!-- CAJA FLEX DEL  FORMULARIO-->
+            <form class="prueba-formulario" action="" method="POST">
+                <div class="formulario-flex">
+                
+                <div>
+                    <label for="name"></label>
+                    <input class="formulario-control" type="text" name="name" id="nombre" placeholder="Nombre Producto">   <!--NOMBRE DEL PRODUCTO-->
+                </div>
+
+                <div>
+                    <label for="descripcion"></label>
+                    <input class="formulario-control" type="text" name="descripcion" id="descripcion" placeholder="Descripcion">  <!-- DESCRIPCION DEL PRODUCTO-->
+                </div>
+
+                <div class="photo-product">
+                    <label for="photo-product">                 <!-- IMAGEN DEL PRODUCTO-->
+                        <h2>Foto de producto</h2>
+                    </label>
+                    <input type="file" name="photo-product" id="photo-product" required=""  accept=".jpg"> 
+                </div>
+                
+                <div class="category-product">
+                    <label for="category">Seleccione una categoria:</label>
+                    <p><input type="radio" name="category" value="Vehiculos"/>Vehiculos</p>        <!-- CATEGORIA PRODUCTOS -->
+                    <p><input type="radio" name="category" value="Inmuebles"/>Inmuebles</p>
+                    <p><input type="radio" name="category" value="Tecnologia"/>Tecnologia</p>
+                    <p><input type="radio" name="category" value="Deportes"/>Deportes</p>
+                    <p><input type="radio" name="category" value="NFT"/>NFT</p>
+                    <p><input type="radio" name="category" value="Mineria"/>Mineria</p>
+                </div>                 
+
+                <div class="checkboxes">
+                    <div>
+                        <input type="checkbox" name="coin" value="Bitcoin" id="Bitcoin">
+                        <label for="Bitcoin">Bitcoin</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coin" value="Ethereum" id="Ethereum">
+                        <label for="Ethereum">Ethereum</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coin" value="USDT" id="USDT">
+                        <label for="USDT">USDT</label>
+                    </div>
+                </div>
+
+                <div>
+                    <input class="formulario-control" type="text" name="price-product" id="price-product" placeholder="Precio" >  <!--PRECIO PRODUCTO-->
+                </div>
+                
+                <div class="boton-formulario-continuar" >
+                    
+                    <button type="submit">Crear producto</button>
+                </div>
+            </div>  
+            </form>
+        </div>
+    
+    
+    
+</body>
+</html>
