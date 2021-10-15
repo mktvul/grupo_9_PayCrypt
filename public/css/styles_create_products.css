@@ -15,7 +15,7 @@
     
   }
 
-    /* CONTENEDOR DEL HEADER*/
+/* CONTENEDOR DEL HEADER*/
 .contenedor{
     display: flex;
     width: 100%;
@@ -44,6 +44,7 @@
 .logo img{
     display: flex;
 }
+
 
 /*AMBOS ENLACES IZQUIERDA (HEADER)*/
 .enlaces-izquierda{
@@ -75,7 +76,7 @@ li{
 
 
   body{
-      background-color: #2790c3;
+      background-color: #FFC439;
   }
 
   /* CONTENEDOR DEL FORMULARIO*/
@@ -117,7 +118,7 @@ li{
   /* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
   .p-datos-registro{
       font-size: 20px;
-      margin-left: 21px;
+      margin-left: 50px;
   }
 
   /* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
@@ -136,7 +137,7 @@ li{
         padding: 10px;
         text-align: center;
         margin-top: 14px;
-        margin-bottom: 14px;
+       
 }
 
 .terminos-y-continuar{
@@ -244,6 +245,50 @@ li{
     .boton-formulario-continuar{
         width: 332px;
     }
+ 
+    /*agrego marcos*/
+    .photo-product{
+        font-size: 14px
+    }
 
+     /*agrego marcos*/
+     .formulario-control {
+        margin-bottom: 20px;
+     }
+
+
+     /* AGREGO MARCOS*/
+     #photo-product{
+         display: none;                          /*Apago el diseño original*/
+     }
+
+     input[type=”file”]#photo-product {           /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files*/     
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        }
+
+     label[for="photo-product"] {                 /*Decoro el nuevo frente*/
+        font-size: 14px;
+        color: #fff;
+        background-color: #106BA0;
+        display: block;
+        transition: all .5s;
+        cursor: pointer;
+        padding: 8px;
+        text-align: center;
+        border-radius: 5px;
+        
+        }
+
+        /*checbox*/
+        .category-product{
+            margin-bottom: 5px;
+        }
+       
+        
     
 }
