@@ -1,31 +1,31 @@
 const path = require("path");
 const mainControllers = {
   index: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.render('index');
   },
 
   details: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/detalle_de_producto.html"));
+    res.render('./products/details');
   },
 
   login: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/formulario_de_login.html"));
+    res.render('./users/login');
   },
 
   register: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/formulario_de_registro.html"));
+    res.render('./users/register');
   },
 
   cart: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/carrito_de_compras.html"));
+    res.render('./products/cart');
   },
 
   create: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/create_products.html"));
+    res.render('./products/create');
   },
 
   edit:  (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/edit_products.html"));
+    res.render('./products/edit');
   },
 };
 
