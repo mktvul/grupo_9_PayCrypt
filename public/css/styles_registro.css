@@ -16,63 +16,99 @@
   }
 
     /* CONTENEDOR DEL HEADER*/
-.contenedor{
+
+    /* header */
+
+.header {
+    height: 50px;
+    box-shadow: 0px 0px 3px rgb(100, 100, 100);
+    background-color: #ffffff;
+  }
+  
+  .header-menu {
+    width: 45px;
+    height: 50px;
+    position: absolute;
+    left: 0;
     display: flex;
-    width: 100%;
-    background-color: #ffff;
-    box-shadow: 2px 5px 13px -3px rgba(0,0,0,0.75);
-    justify-content: space-between;
-    height: 80px;
-
-}
-
-/* CONTENEDOR DEL HEADER*/
-.menu-navegacion{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-logo {
+    width: 45px;
+    height: 50px;
+    position: absolute;
+    left: 45px;
     display: flex;
-    justify-content: space-between;
-    height: 80px;
-    
-}
-
-.logo-header{
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .header-nav-menu {
     display: flex;
-    margin-left: 45px;
-
-}
-
-/* LOGO IMAGEN*/
-.logo img{
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 150px;
+    width: 45px;
+    height: 50px;
+  }
+  
+  .header-nav-menu li {
+    display: none;
+  }
+  
+  .header-logo-img {
+    height: 100%;
+  }
+  
+  .header-search {
+    display: none;
+    position: absolute;
+    right: 45px;
+  }
+  
+  .header-search-bar {
+    display: none;
+  }
+  
+  .header-search-button {
+    width: 45px;
+    height: 50px;
+  }
+  
+  .header-nav {
     display: flex;
-}
-
-/*AMBOS ENLACES IZQUIERDA (HEADER)*/
-.enlaces-izquierda{
-    display: flex;
-    margin: auto;
-       
-}
-
-/* RELLENO A LOS DIFERENTES ELEMENTOS DEL HEADER*/
-li{
-    margin-left: 15px;
-}
-
-/* BARRA BUSQUEDA HEADER*/
-.barra-busqueda-header{
-    display: flex;
-    margin: auto;
-    height: 25px;
-    border: solid 1px #ebebeb;
-    border-radius: 8px;
-}
-
-/*AMBOS ENLACES DERECHA (HEADER)*/
-.enlaces-derecha {
-    display: flex;
-    margin: auto;
-}
-
-
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    height: 50px;
+  }
+  
+  .header-nav-login {
+    display: none;
+  }
+  
+  .header-nav-shopping {
+    display: none;
+  }
+  
+  .header-nav a {
+    margin-left: 30px;
+  }
+  
+  .header-nav-cart {
+    display: none;
+    width: 45px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
   body{
       background-color: #2790c3;

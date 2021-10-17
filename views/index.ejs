@@ -5,40 +5,8 @@
   <%- include ('./partials/head.ejs', {titulo: 'PayCrypt'}) %> 
 
   <body>
-    <!-----------------ACÁ VA EL HEADER CON LA NAVBAR-------------------------------->
-    <header class="header-index">
-      <!------HAMBURGUESA------->
-      <div class="hamburguesa">
-        <i class="fas fa-bars"></i>
-      </div>
 
-      <!------LOGO--------------->
-      <div class="logo-index">
-        <img src="/images/paycrypt-logo.svg" alt="Logo">
-      </div>
-
-      <div class="navbar-left">
-        <p><a href="">Productos</a><i class="fas fa-sort-down"></i></p>
-        <p><a href="">Cotizaciones</a><i class="fas fa-sort-down"></i></p>
-      </div>
-
-      <!------BARRA DE BÚSQUEDA--->
-      <form action="" method="POST" class="search-bar">
-        <input type="text"/>
-        <i class="fas fa-search"></i>
-      </form>
-
-      <div class="navbar-right">
-        <p><a href="/login">Ingresá</a><i class="fas fa-sort-down"></i></p>
-        <p><a href="">Mis compras</a><i class="fas fa-sort-down"></i></p>
-      </div>
-
-      <!------CARRITO------------->
-      <div>
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-
-    </header>
+    <%- include ('./partials/header.ejs') %> 
 
     <!-----------------ACÁ VA A PARTIR DEL BANNER E-COMMERCE------------------------->
     <main>
@@ -235,38 +203,6 @@
 
     </main>
     <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
-
-    <!-------ACÁ VA A EL FOOTER: DIVIDO EN 2 SECTIONS: UNA C/ 3 ARTICLES Y LA OTRA CON UN P----------------->
-    <footer>
-      <!---PRIMERA SECCIÓN--------------------->
-      <!---PAGÁ CON CRYPTOS-->
-      <section class="first-footer">
-          <article class="each-text">
-              <i class="fab fa-bitcoin"></i>
-              <h3 class="titulo-footer">Pagá con criptomonedas</h3>
-              <p class="descripcion">Pagando con PayCrypt, podés utilizar tu billetera virtual de confianza y cualquier criptomoneda. ¡Y siempre es seguro!</p>
-          </article>
-          
-          <!---SIN COMISIONES-->
-          <article class="each-text">
-              <i class="fas fa-gift"></i>
-              <h3 class="titulo-footer">Olvidate de las comisiones</h3>
-              <p class="descripcion">Usando nuestro sistema P2P, olvidate para siempre de las comisiones. Es un beneficio de PayCrypt.</p>
-          </article>
-
-          <!---SEGURIDAD------->
-          <article class="each-text">
-              <i class="fas fa-user-shield"></i>
-              <h3 class="titulo-footer">Seguridad, de principio a fin</h3>
-              <p class="descripcion">¿No te gusta? ¡Devolvelo! Con PayCrypt, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
-          </article>
-        </section>
-
-      <!---SEGUNDA SECCIÓN----------->
-      <section class="second-footer">
-          <p class="copyright"> Copyright © 2021 PayCrypt S.A.</p>
-      </section>
-  </footer>
-
+    <%- include ('./partials/footer.ejs') %> 
   </body>
 </html>

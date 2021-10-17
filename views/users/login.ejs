@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f6f11fdb12.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">             <!--VINCULANDO FUENTE OPEN SANS-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles_inicio-sesion.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f6f11fdb12.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!--VINCULANDO FUENTE OPEN SANS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/styles_inicio-sesion.css" />
     <title>Inicio de Sesion</title>
-</head>
-<body>
-    <header>
-        <nav class="contenedor">
-            <div class="logo-header">
-                <img src="/images/paycrypt-logo.svg">
-            </div>
-            
-            <!--HEADER ELEMENTOS IZQUIERDA-->
-            <div class="enlaces-izquierda">
-                <li><a href="#">Productos <i class="fas fa-sort-down"></i></a></li>
-            </div>
-            <div class="enlaces-izquierda">
-                <li><a href="#">Cotizaciones <i class="fas fa-sort-down"></i></a></li>
-            </div>
-                
-            
+  </head>
+  <body>
+    <%- include ('../partials/header.ejs') %>
+    <main>
+      <form class="control-formulario-login" action="" method="post">
+        <div class="formulario-flex-login">
+          <div>
+            <img class="img-formulario-login" src="/images/paycrypt-logo.svg" />
+          </div>
 
-            <div class="barra-busqueda-header"><input  type="search" placeholder=""><i class="fas fa-search"></i></div>
-            
-            <!--HEADER ELEMENTOS DERECHA-->
-            <div class="enlaces-derecha">
-                <li><a href="#">Ingresá</a></li>
-            </div>
-            <div class="enlaces-derecha">
-                <li><a href="#">Mis Compras</a></li>
-            </div>
-            <div class="enlaces-derecha"><i class="fas fa-shopping-cart"></i></div>
-        </nav>
-        </div>
-    
-    </header>
-        <main>
-
-        <form class="control-formulario-login" action="" method="post">
-        
-            <div class="formulario-flex-login">
-            <div>
-                <img class="img-formulario-login" src="/images/paycrypt-logo.svg">
-            </div>
-        
-        <div class="p-datos-login">
+          <div class="p-datos-login">
             <p class="titulo-formulario-login">¡Hola! Ingresa tus datos</p>
-        </div>  
-        
-        <div class="inputs-en-login">
+          </div>
+
+          <div class="inputs-en-login">
             <label for="email"></label>
-            <input class="formulario-control" type="email" name="email" id="email" placeholder="E-mail">
-        </div>
+            <input
+              class="formulario-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+            />
+          </div>
 
-        <div class="inputs-en-login">
+          <div class="inputs-en-login">
             <label for="password"></label>
-            <input class="formulario-control" type="password" name="password" id="password" placeholder="Contraseña">
-        </div>
+            <input
+              class="formulario-control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Contraseña"
+            />
+          </div>
 
-        <div class="olvidaste-tu-contraseña">
+          <div class="olvidaste-tu-contraseña">
             <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-        </div>
+          </div>
 
-        <div class="boton-formulario-continuar">
+          <div class="boton-formulario-continuar">
             <button type="submit">Continuar</button>
+          </div>
+          <div class="boton-formulario-crear-cuenta">
+            <a role="button" href="/register"
+              ><button type="button">Crear Cuenta</button></a
+            >
+          </div>
         </div>
-        <div class="boton-formulario-crear-cuenta">
-            
-            <a role="button" href="/register"><button type="button">Crear Cuenta</button></a>
-        </div>
-    </div>
-    </form>
-    </main>    
-</body>
-</html> 
-
+      </form>
+    </main>
+  </body>
+</html>
