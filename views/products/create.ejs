@@ -58,7 +58,7 @@
 
                     <div class="photo-product">
                         <label for="photo-product">
-                            <h2><i class="fas fa-upload"></i> Subir Imagen</h2>
+                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                         </label> <!-- IMAGEN DEL PRODUCTO-->
                         <input type="file" name="photo-product" id="photo-product" required="" accept=".jpg">
                     </div>
@@ -68,18 +68,22 @@
                 </div>
 
                 <div class="form-rigth">
-
-                    <div class="category-product">
-                        <label for="category">Seleccione una categoria:</label>
-                        <p><input type="radio" name="category" value="Vehiculos" />Vehiculos</p>
-                        <!-- CATEGORIA PRODUCTOS -->
-                        <p><input type="radio" name="category" value="Inmuebles" />Inmuebles</p>
-                        <p><input type="radio" name="category" value="Tecnologia" />Tecnologia</p>
-                        <p><input type="radio" name="category" value="Deportes" />Deportes</p>
-                        <p><input type="radio" name="category" value="NFT" />NFT</p>
-                        <p><input type="radio" name="category" value="Mineria" />Mineria</p>
+                    <label for="category">Seleccione una categoria:</label>
+                    <div class="category-product"> <!-- CATEGORIA PRODUCTOS -->
+                        
+                     <div class="radio-left">
+                        <p><input type="radio" name="category" value="Vehiculos" />   Vehiculos</p>
+                        <p><input type="radio" name="category" value="Inmuebles" />   Inmuebles</p>
+                        <p><input type="radio" name="category" value="Tecnologia" />   Tecnologia</p>
+                     </div>  
+                     <div class="radio-rigth">
+                        <p><input type="radio" name="category" value="Deportes" />   Deportes</p>
+                        <p><input type="radio" name="category" value="NFT" />   NFT</p>
+                        <p><input type="radio" name="category" value="Mineria" />   Mineria</p>
+                     </div>
                     </div>
 
+                    <p>Elija su moneda de pago:</p></br>
                     <div class="checkboxes">
                         <div>
                             <input type="checkbox" name="coin" value="Bitcoin" id="Bitcoin">
@@ -94,6 +98,7 @@
                             <label for="USDT">USDT</label>
                         </div>
                     </div>
+                  
 
                     <div class="boton-formulario-continuar">
                         <button type="submit">Crear producto</button>
