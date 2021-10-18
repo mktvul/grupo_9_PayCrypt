@@ -13,6 +13,6 @@ app.set('views', path.join(__dirname, 'views')); // Utiliza las vistas de la car
 
 app.use('/', router); // Al ingresar al home deriva a routers
 
-app.listen(3030, () => {
+app.listen(3000, () => {
   console.log('Servidor corriendo en http://localhost:3000');
 });
