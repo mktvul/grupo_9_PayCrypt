@@ -246,7 +246,7 @@ body {
 }
 
 /*desktop*/
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .menu-navegacion {
     display: flex;
   }
