@@ -1,18 +1,27 @@
-const express = require('express');
+//Require's
+const express = require("express");
+const path = require("path"); //Unifica rutas dentro de los sistemas operativos
+const methodOverride = require("method-override");
+
+//Express
 const app = express();
-const path = require('path'); //unifica rutas dentro de los sistemas operativos;
-const router = require('./routers/mainRouters');
 
-app.use(
-  express.static(path.join(__dirname, './public'))
-); /*le digo a express que quiero tener la carpeta "public" como un recurso de archivos estáticos; */
+//Middlewares
+app.use(express.static(path.join(__dirname, "./public"))); // Le digo a express que quiero tener la carpeta "public" como un recurso de archivos estáticos
+app.use(express.urlencoded({ extended: false })); //Convierte a json la info que viene por HTML desde el formulario
+app.use(express.json()); //Convierte a json la info que viene desde js cliente
+app.use(methodOverride("_method")); //Nos permite usar los métodos PUT y DELETE
 
-app.set('view engine', 'ejs'); // Utiliza el motor de plantillas ejs
+//Template engine
+app.set("view engine", "ejs"); // Utiliza el motor de plantillas ejs
+app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la carpeta views
 
-app.set('views', path.join(__dirname, 'views')); // Utiliza las vistas de la carpeta views
+//Route system
+const router = require("./routers/mainRouters");
 
-app.use('/', router); // Al ingresar al home deriva a routers
+app.use("/", router); // Al ingresar al home deriva a routers
 
+//Set the server to listen
 app.listen(3000, () => {
-  console.log('Servidor corriendo en http://localhost:3000');
+  console.log("Server running on http://localhost:3000");
 });
