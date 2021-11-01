@@ -361,7 +361,7 @@ margin: 10px 0px;
 
 
 
-/*tablets*/
+/*tablets
 @media (min-width: 768px){
   
   .enlaces-izquierda{
@@ -376,12 +376,12 @@ margin: 10px 0px;
       display: none;
   }
 } 
+*/
 
 
 
-
-/*desktop*/
-@media (min-width: 1024px){
+/*desktop - se usa 768 para evitar saltos en el formulario*/  
+@media (min-width: 828px){
   
   
  

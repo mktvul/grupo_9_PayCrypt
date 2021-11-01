@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "name": "Cafetera Moulinex Dolce Gusto Edited",
+        "price-product": 0.000001,
+        "descripcion": "Cafetera, unica en su modelo, no te la pierdas.",
+        "photo-product":"img-cafetera-moulinex.jpg",  
+        "category": "Tecnologia",
+        "coin": "Ethereum"
+       },
+       {
+        "id": 2,
+        "name": "Peugeot 208",
+        "price-product": 1,
+        "descripcion": "Tu peugeot 208 0KM a solo un paso. RESPUESTA INMEDIATA A SUS CONSULTAS: Respondemos al instante consultas y llamados. Podemos programar una videollamada para que usted pueda ver los autos sin moverse de su casa u oficina", 
+        "photo-product":"peugeot208.jpg",  
+        "category": "Vehiculos",
+        "coin": "Bitcoin"
+       },
+       {
+        "id": 3,
+        "name": "Set De Herramientas Stanley Racing 150 Pcs Maletin R99-150la",
+        "price-product": 1000,
+        "descripcion": "Tienda Oficial STANLEY® Argentina, Set Herramientas RACING 150 Piezas Maletin STANLEY R99-150LA Set de Herramientas",
+        "photo-product":"Herramientas-Stanley.jpg",  
+        "category": "Tecnologia",
+        "coin": "USDT"
+       },
+       {
+        "id": 4,
+        "name": "Cabaña Mar De Ostende, 5 Cuadras Mar, Esquina, Pdo. Pimanar",
+        "price-product": 5,
+        "descripcion": "Cabaña de troncos ubicada en Mar del Ostende con dos entradas independientes, cercada con alambre tejido y cubierta con cerco natural, amplia cocina y comedor. Baño nuevo y 2 (dos) dormitorios con 1 (una) cama matrimonial y el otro con 1 (una) cucheta doble, también cuenta con 1 (un) sofá cama de (2) dos plazas. Cochera amplia descubierta, amplio parque y deck con parrilla. Está ubicada a 5 cuadras del mar, a 50 metros del centro comercial y a 5 minutos (en auto) del centro de Pinamar. Cuenta con todos los servicios: luz, agua corriente, gas natural, TV por cable, WIFI, microondas, pava eléctrica y tostadora. Cocina a gas con ladrillos refractarios semi industrial. Alarma monitoreada y mantenimiento de parque",
+        "photo-product":"cabaña.jpg",  
+        "category": "Inmuebles",
+        "coin": "Bitcoin"
+       },
+       {
+        "id": 5,
+        "name": "Paleta de pádel Davor Patrol negra",
+        "price-product": 0.000001,
+        "descripcion": "Potenciá tu juego: Esta paleta de pádel compuesta por soft eva te permitirá conseguir una mayor estabilidad, duplicando la capacidad de respuesta en todo tipo de golpes.",
+        "photo-product":"Paleta-pádel.jpg",  
+        "category": "Deportes",
+        "coin": "Bitcoin"
+       },
+       {
+        "id": 6,
+        "name": "Short Deportivo Tenis Padel Running Microfibra Con Bolsillos",
+        "price-product": 1000,
+        "descripcion": "Short ligero que aporta confort y libertad de movimientos durante el juego. Con un ajuste perfecto y una composición que brinda comodidad en cada movimiento. El tejido de secado rápido proporciona una gestión óptima de la sudoración",
+        "photo-product":"Short-Deportivo.jpg",  
+        "category": "Deportes",
+        "coin": "USDT"
+       },
+       {
+        "id": 7,
+        "name": "La Casa De Piedra Blanca En El Bosque Peralta Ramos",
+        "price-product": 10,
+        "descripcion": "La Casa de piedra blanca en el Bosque Peralta Ramos, 2 dormitorios, baño completo, cocina equipada, Cabaña de piedra de 70 m².",
+        "photo-product":"Casa-Piedra.jpg",  
+        "category": "Inmuebles",
+        "coin": "Ethereum"
+       },
+       {
+        "id": 8,
+        "name": "Rig Mineria Etherium 6 Gpu Rx 580 En Stock Listo",
+        "price-product": 0.001,
+        "descripcion": "RIGS PARA MINAR ETHEREUM - 180 mh (ganancia diaria aprox 15 a 20 dolares x dia) y subiendo.",
+        "photo-product":"Rig-Mineria.jpg",  
+        "category": "Mineria",
+        "coin": "Bitcoin"
+       },
+       {
+        "id": 9,
+        "name": "ParaElisee",
+        "price-product": 10,
+        "descripcion": "NFT con animación, posee cuadro de regalo",
+        "photo-product":"paraelisse.jpg",  
+        "category": "NFT",
+        "coin": "Bitcoin"
+       },
+       {
+        "id": 10,
+        "name": "Paint Black",
+        "price-product": 100,
+        "descripcion": "Pistola de pintura.",
+        "photo-product":"paint-black.jpg",  
+        "category": "Tecnologia",
+        "coin": "USDT"
+       }
+
+   ]
