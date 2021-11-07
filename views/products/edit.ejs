@@ -19,7 +19,7 @@
         </br>
 
         <!-- CAJA FLEX DEL  FORMULARIO-->
-        <form class="prueba-formulario" action="" method="POST">
+        <form class="prueba-formulario" action="/edit/<%= productSent.id %>?_method=PUT" method="POST">
             <div class="formulario-flex">
 
                 <div class="form-left">
@@ -27,20 +27,20 @@
                     <div>
                         <label for="name"></label>
                         <input class="formulario-control" type="text" name="name" id="nombre"
-                            placeholder="Nombre Producto">
+                            placeholder="<%= productSent.name %> " value="<%= productSent.name %>">
                         <!--NOMBRE DEL PRODUCTO-->
                     </div>
 
                     <div>
                         <input class="formulario-control" type="text" name="price-product" id="price-product"
-                            placeholder="Precio">
+                            placeholder="<%= productSent.product-price %>" value="<%= productSent.product-price %>">
                         <!--PRECIO PRODUCTO-->
                     </div>
                     
                     <div>
                         <label for="descripcion"></label>
                         <input class="formulario-control" type="text" name="descripcion" id="descripcion"
-                            placeholder="Descripcion"> <!-- DESCRIPCION DEL PRODUCTO-->
+                            placeholder="Descripcion" value="<%= productSent.descripcion %>"> <!-- DESCRIPCION DEL PRODUCTO-->
                     </div>
 
 

@@ -1,7 +1,7 @@
 {
   "name": "grupo_9_paycrypt",
   "version": "1.0.0",
-  "description": "",
+  "description": "PayCrypt.com es un sitio web donde se comercializan distintos productos únicamente en criptomonedas. Apunta a un público de entre 20 y 40 años de edad interesado en las nuevas tecnologías.",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -25,5 +25,6 @@
     "node": "^16.9.1",
     "nodemon": "^2.0.12",
     "normalize.css": "^8.0.1"
-  }
+  },
+  "devDependencies": {}
 }
