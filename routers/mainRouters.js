@@ -9,6 +9,7 @@ const productsControllers = require("../controllers/productsControllers");
 //Index
 router.get("/", mainControllers.index);
 
+<<<<<<< HEAD
 //Products GET
 router.get("/products", productsControllers.listOfProducts);
 router.get("/products/:id/", productsControllers.details);
@@ -40,3 +41,10 @@ router.put("/edit/:id", mainControllers.updateUser);
 router.delete("/delete/:id", mainControllers.removeUser);
 
 module.exports = router;
+=======
+//Products
+router.get("/details", mainControllers.details);
+router.get("/cart", mainControllers.cart);
+router.get("/create", mainControllers.create);
+router.get("/edit", mainControllers.edit);
+>>>>>>> 627300f146c3308e405514ded16d14356f8ecf30
