@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 //Data base
-const usersFilePath = path.join(__dirname, "..data/users.json"); //Identificamos la ruta de nuestra base de datos de usuarios
+const usersFilePath = path.join(__dirname, "../data/users.json"); //Identificamos la ruta de nuestra base de datos de usuarios
 const users = JSON.parse(fs.readFileSync(usersFilePath), "utf-8"); //Convertimos la base de datos de usuarios JSON en un array de objetos literales
 
 //Controller

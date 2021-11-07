@@ -17,17 +17,17 @@
         </br> 
 
               <!-- CAJA FLEX DEL  FORMULARIO-->
-            <form class="prueba-formulario" action="" method="POST">
+            <form class="prueba-formulario" action="/users" method="POST">
                 <div class="formulario-flex">
                 
                 <div>
-                    <label for="nombre"></label>
-                    <input class="formulario-control" type="text" name="name" id="nombre" placeholder="Nombre">   <!--NOMBRE USUARIO-->
+                    <label for="name"></label>
+                    <input class="formulario-control" type="text" name="name" id="name" placeholder="Nombre">   <!--NOMBRE USUARIO-->
                 </div>
 
                 <div>
-                    <label for="apellido"></label>
-                    <input class="formulario-control" type="text" name="lastName" id="apellido" placeholder="Apellido">  <!-- APELLIDO-->
+                    <label for="lastname"></label>
+                    <input class="formulario-control" type="text" name="lastname" id="lastname" placeholder="Apellido">  <!-- APELLIDO-->
                 </div>
                 
                 <div>
@@ -45,13 +45,24 @@
                     <input class="formulario-control" type="password" name="password" id="password" placeholder="Contraseña">  <!-- CONTRASEÑA-->
                 </div>
                 <div>
-                    <label for="password"></label>
-                    <input class="formulario-control" type="password" name="password" id="password" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
+                    <label for="password1"></label>
+                    <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
+                </div>
+                <div>
+                <div>
+                    <label for="image">Selecciona una foto de perfil:</label>
+                    <input class="formulario-control" type="file" name="image" id="image">  <!-- NUEVO- IMAGEN PERFIL -->
+                </div>
+                <div>
+                    <label for="category">Categoria</label>
+                    <input type="radio" name="category" id="category" value="Comprador"> 
+                    <input type="radio" name="category" id="category" value="Vendedor">
                 </div>
                 <div class="check-box-condiciones">
                     <label for="terminos">
                        <input type="checkbox" name="terminos" id="terminos"> He leido y acepto los términos y condiciones.</label> <!-- CAJA  TERMINOS Y CONDICIONES-->
                 </div>
+            </div>
 
                 <div class="boton-formulario-continuar" >
                     
