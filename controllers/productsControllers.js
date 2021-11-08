@@ -98,6 +98,7 @@ const productsControllers = {
 		res.redirect("/products");
   },
 
+  
   //Acción de borrado (DELETE)
   destroy: (req, res) => {
     //Acción de borrado

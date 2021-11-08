@@ -19,7 +19,7 @@
         </br>
 
         <!-- CAJA FLEX DEL  FORMULARIO-->
-        <form class="prueba-formulario" action="/products/" method="POST">
+        <form class="prueba-formulario" action="/products" method="POST">
             <div class="formulario-flex">
 
                 <div class="form-left">
@@ -32,23 +32,31 @@
                     </div>
                     
                     <div>
-                        <input class="formulario-control" type="text" name="price-product" id="price-product"
+                        <label for="shortDescription"></label>
+                        <input class="formulario-control" type="text" name="shortDescription" id="shortDescription"
+                            placeholder="Descripcion Corta"> <!-- DESCRIPCION DEL PRODUCTO-->
+                    </div>
+                    
+                    
+                    <div>
+                        <label for="priceProduct"></label>
+                        <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
                             placeholder="Precio">
                         <!--PRECIO PRODUCTO-->
                     </div>
                     
                     <div>
-                        <label for="descripcion"></label>
-                        <input class="formulario-control" type="text" name="descripcion" id="descripcion"
-                            placeholder="Descripcion"> <!-- DESCRIPCION DEL PRODUCTO-->
+                        <label for="description"></label>
+                        <textarea name="textarea" rows="10" cols="50">Ingrese la descripcion del producto</textarea>
+                        <!-- DESCRIPCION DEL PRODUCTO-->
                     </div>
 
 
-                    <div class="photo-product">
-                        <label for="photo-product">
+                    <div class="photoProduct">
+                        <label for="photoProduct">
                             <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                         </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="photo-product" id="photo-product" required="" accept=".jpg">
+                        <input type="file" name="photoProduct" id="photoProduct" required="" accept=".jpg">
                     </div>
 
                     
@@ -87,6 +95,14 @@
                         </div>
                     </div>
                   
+
+                    <div>
+                        <label for="location"></label>
+                        <input class="formulario-control" type="text" name="location" id="location"
+                            placeholder="Ubicación del producto">
+                        <!--NOMBRE DEL PRODUCTO-->
+                    </div>
+
 
                     <div class="boton-formulario-continuar">
                         <button type="submit">Crear producto</button>
