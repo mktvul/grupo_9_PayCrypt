@@ -9,7 +9,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath), "utf-8"); //Conve
 const productsControllers = {
     //Listado de productos (GET)
   listOfProducts: (req, res) => {
-    res.render("products", {
+    res.render("./products/products", {
         productsSent: products //Acá falta automatizar el EJS
     });
   },

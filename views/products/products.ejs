@@ -2,11 +2,11 @@
 <html lang="en">
   <!-----------------HEAD - ACÁ LINKEO ENLACES EXTERNOS------------------------->
   
-  <%- include ('./partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
+  <%- include ('../partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
 
   <body>
 
-    <%- include ('./partials/header.ejs') %> 
+    <%- include ('../partials/header.ejs') %> 
 
     <!-----------------ACÁ SE MUESTRAN TODOS LOS PRODUCTOS------------------------->
     <main>
@@ -21,41 +21,67 @@
       <section class="list-of-products">
 
         <!------PRODUCTOS AUTOMATIZADOS CON EJS----------->
-        <% productSent.forEach(element => { %> 
-        <article class="each-product">
-          <a href="/products/<% element.id %> ">
-            <div class="img-product">
-              <img src="/images/auto.jpg" alt="">
-            </div>
+          <% productsSent.forEach(producto => { %>
+          <article class="each-product">
+            <a href="/details">  
+             <div class="img-product">
+              <img src="/images/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
+             </div>
               
             <div class="product-description">
-              <p class="price"><%= element.price-product %> 
-                <span>
-                  <img src="images/usdt-logo.svg" alt="" class="usdt">
-                </span>
+              <p class="price"><%= producto.priceProduct %>  <!--PRECIO-->
+
+               <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
+                <% if (producto.coin == "Bitcoin") { %> 
+                  <span>
+                    <img src="images/btc-logo.svg" alt="" class="usdt">
+                  </span>
+              
+                <% }else if(producto.coin == "Ethereum") { %> 
+                  <span>
+                    <img src="images/eth-logo.svg" alt="" class="usdt">
+                  </span> 
+          
+                <% }else { %>
+                  <span>
+                    <img src="images/usdt-logo.svg" alt="" class="usdt">
+                  </span>
+
+                <% } %>
+
               </p>
+
               <p class="category">
-                <i class="far fa-folder-open"></i>
-                <% element.category %> 
+                <i class="far fa-folder-open"></i><%= producto.category %> <!--CATEGORIA-->
               </p>
-              <h3 class="name-of-product"><% element.name %> </h3>
-              <p class="description">0km, DSG 1.4t año 2021</p>
+
+
+              <h3 class="name-of-product"><%= producto.name %></h3>
+              <p class="description"><%= producto.shortDescription %></p>
+
               <p class="date">
-                <i class="fas fa-clock"></i>
-                3 días atrás
+                <!----------->
+                <% function Dias(){ %>
+                  <% let fecha1=producto.date; %><!--fecha del producto--> 
+                  <%let fecha2=new Date();%>    <!--fecha actual--> 
+                  <% let milisegundos = 24*60*60*1000;%> <!--guardamos los milisegundos-->
+                  <% let milisegundostranscurridos= Math.abs(fecha1.getTime() - fecha2.getTime());%> <!--restamos las fechas-->
+                  <%  let diastranscurridos = Math.round(milisegundostranscurridos/milisegundos);%> <!--dividimos apara sacar el numero entero-->
+
+                  <i class="fas fa-clock"></i><%= diastranscurridos %> <p> Dias atrás</p> <!--ponemos el dato dinamico-->
+                  <% } %>     
               </p>
             </a>
           </div>
 
           <div class="place">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>La Plata, GBA Sur.</p>
+            <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
           </div>
         </article>
         <% }) %> 
-
+    
     </main>
-    <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
-    <%- include ('./partials/footer.ejs') %> 
+    
+    <%- include ('../partials/footer.ejs') %> 
   </body>
 </html>

@@ -25,6 +25,5 @@
     "node": "^16.9.1",
     "nodemon": "^2.0.12",
     "normalize.css": "^8.0.1"
-  },
-  "devDependencies": {}
+  }
 }

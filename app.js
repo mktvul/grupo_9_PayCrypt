@@ -19,9 +19,11 @@ app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la car
 //Route system
 const router = require("./routers/mainRouters");
 const usersRouter = require("./routers/usersRouters");
+const productsRouters = require("./routers/productsRouters");
 
 app.use("/", router); // Al ingresar al home deriva a routers
 app.use("/users", usersRouter); //Router de usuarios
+app.use("/products", productsRouters); //Router de productos
 
 //Set the server to listen
 app.listen(3000, () => {
