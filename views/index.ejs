@@ -78,7 +78,7 @@
       <!------PRODUCTOS AUTOMATIZADOS CON EJS----------->
       <% productsSent.forEach(producto => { %>
         <article class="each-product">
-          <a href="/details">  
+          <a href="/products/<%= producto.id %> ">  
            <div class="img-product">
             <img src="/images/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
            </div>

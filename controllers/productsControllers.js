@@ -21,13 +21,13 @@ const productsControllers = {
 
   //Detalle de un producto particular (GET)
   details: (req, res) => {
-    const id = req.params.id;
-    const product = products.find(product => {
+    let id = req.params.id;
+    let product = products.find(product => {
         return product.id == id
     })
 
     res.render("./products/details", {
-        productSent: product
+        products: product
     });
   },
 
@@ -36,15 +36,17 @@ const productsControllers = {
     //Acción de creación (a donde se envía el formulario) -- ENVIAR A INDEX --
     // Guardamos el producto
 		let newProduct = {
-			id: products[products.length - 1].id + 1,
-			name: req.body.name,
-			price: req.body.price,
-			descripcion: req.body.descripcion,
-			category: req.body.category,
-			coin: req.body.coin,
-			/* ...req.body, */
-			image: req.file.filename
-		}
+      id: products[products.length - 1].id + 1,
+      name: req.body.name,
+      shortDescription: req.body.shortDescription,
+      priceProduct: req.body.priceProduct,
+      Description: req.body.Description,
+      photoProduct: req.body.photoProduct,
+      category: req.body.category,
+      coin: req.body.coin,
+      date: " ",
+      location: req.body.location
+    };
 
 		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
@@ -77,13 +79,15 @@ const productsControllers = {
     //Edito
 		let editedProduct = {
 			id: id,
-			name: req.body.name,
-			price: req.body.price,
-			descripcion: req.body.descripcion,
-			category: req.body.category,
-			coin: req.body.coin,
-			/* ...req.body, */
-			image: req.file ? req.file.filename : productToEdit.image
+      name: req.body.name,
+      shortDescription: req.body.shortDescription,
+      priceProduct: req.body.priceProduct,
+      Description: req.body.Description,
+      photoProduct: req.body.photoProduct,
+      category: req.body.category,
+      coin: req.body.coin,
+      date: " ",
+      location: req.body.location
 		}
 		
 		//Modifico el array

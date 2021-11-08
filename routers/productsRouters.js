@@ -8,12 +8,12 @@ const productsControllers = require("../controllers/productsControllers");
 
 //Products GET
 router.get("/", productsControllers.listOfProducts);
-router.get("/products/:id/", productsControllers.details);
+router.get("/details/:id/", productsControllers.details);
 router.get("/cart", productsControllers.cart);
 
 //Crear un producto (muestra form por GET y acción de crear por POST)
 router.get("/create", productsControllers.create);
-router.post("/products", productsControllers.store);
+router.post("/", productsControllers.store);
 
 // Editar un producto (muestra form por GET y acción de editar por PUT)
 router.get('/edit/:id/', productsControllers.edit); 
