@@ -117,13 +117,13 @@
   "location": "Capital Federal"
  },
  {
-  "id": 11,
-  "name": "Bicimoto",
-  "shortDescription": "Bicicleta a motor",
-  "priceProduct": "1",
+  "id": "11",
+  "name": "Bicimoto Voladora",
+  "shortDescription": "Bicicleta a motor que vuela",
+  "priceProduct": "2",
   "photoProduct": "FDXJQ_VWYAIinDc.jpg",
   "category": "Vehiculos",
-  "coin": "USDT",
+  "coin": "Bitcoin",
   "date": " ",
   "location": "Lanús"
  },

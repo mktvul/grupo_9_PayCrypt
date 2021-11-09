@@ -16,16 +16,22 @@
         <article class="main-section-article">
           <h1 class="main-section-article-h1"><%=products.name%></h1>
           <h2 class="main-section-article-h2"><%=products.shortDescription%></h2>
-          <div class="main-section-article-price"><%=products.price%>
+          <div class="main-section-article-price"><%=products.priceProduct%>
 
-            <% if (products.coin == "Bitcoin") { %> 
-              <img class="main-section-article-img" src="images/btc-logo.svg" alt="" class="usdt">
-            
+            <% if (products.coin == "Bitcoin") { %>
+              <span>
+                <img src="images/btc-logo.svg" alt="" class="usdt">
+              </span> 
+              
             <% }else if(products.coin == "Ethereum") { %> 
-              <img class="main-section-article-img" src="images/eth-logo.svg" alt="" class="usdt">
+              <span>
+                <img src="images/eth-logo.svg" alt="" class="usdt">
+              </span>
             
             <% }else { %>
-              <img class="main-section-article-img" src="images/usdt-logo.svg" alt="" class="usdt">
+              <span>
+                <img src="images/usdt-logo.svg" alt="" class="usdt">
+              </span>
             <% } %>
 
           </div>
