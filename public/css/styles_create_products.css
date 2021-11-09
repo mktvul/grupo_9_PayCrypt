@@ -225,7 +225,17 @@ body{
     display: flex;
     flex-direction: column; 
     border-radius: 8px;
-    
+}
+
+.large-description {
+  margin: 10px;
+  padding: 10px;
+  border: grey solid 1px;
+  display: flex;
+  flex-direction: column; 
+  border-radius: 8px;
+  width: 332px;
+  height: 100px;
 }
 
 
@@ -358,9 +368,6 @@ margin: 10px 0px;
   }
 }
 
-
-
-
 /*tablets
 @media (min-width: 768px){
   
@@ -378,15 +385,12 @@ margin: 10px 0px;
 } 
 */
 
-
 /*desktop - se usa 768 para evitar saltos en el formulario*/  
 @media (min-width: 828px){
   
-  
- 
   .contenedor-formulario{
       width: 844px;
-      height: 470px;
+      height: 550px;
   }
 
   .formulario-control{
@@ -410,21 +414,15 @@ margin: 10px 0px;
       width: 332px;
   }
 
- 
-
    /*agrego marcos*/
    .formulario-control {
       margin-bottom: 20px;
    }
-
-
-   
-
               
-      /*espacio al logo*/
-      .fa-upload{
-      margin: 0 5px;
-      }
+  /*espacio al logo*/
+  .fa-upload{
+    margin: 0 5px;
+  }   
 
       /*checbox*/
       .category-product{

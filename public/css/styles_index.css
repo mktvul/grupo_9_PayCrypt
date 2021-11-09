@@ -204,10 +204,15 @@ main {
 }
 
 .img-product img {
-  width: 100%;
+  align-content: center;
   border-radius: 5px 5px 0px 0px;
   max-height: 160px;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.img-product {
+  display: flex;
+  flex-direction: column;
 }
 
 .usdt {

@@ -2,14 +2,14 @@
  {
   "id": 1,
   "name": "Cafetera Moulinex Dolce Gusto Edited",
-  "shortDescription": "la mas mejor cafetera",
+  "shortDescription": "Máquina manual de diseño minimalista y tecnología avanzada.",
   "priceProduct": 0.000001,
   "description": "Cafetera, unica en su modelo, no te la pierdas.",
   "photoProduct": "img-cafetera-moulinex.jpg",
   "category": "Tecnologia",
   "coin": "Ethereum",
   "date": "2021-11-07T17:23:57.703Z",
-  "location": "Cordoba capital"
+  "location": "Córdoba Capital"
  },
  {
   "id": 2,
@@ -21,7 +21,7 @@
   "category": "Vehiculos",
   "coin": "Bitcoin",
   "date": "2021-11-07T17:23:57.703Z",
-  "location": "Cordoba capital"
+  "location": "Córdoba Capital"
  },
  {
   "id": 3,
@@ -33,7 +33,7 @@
   "category": "Tecnologia",
   "coin": "USDT",
   "date": "2021-11-07T17:23:57.703Z",
-  "location": "Cordoba capital"
+  "location": "Córdoba Capital"
  },
  {
   "id": 4,
@@ -52,7 +52,7 @@
   "name": "Paleta de pádel Davor Patrol negra",
   "shortDescription": "Paleta de pádel",
   "priceProduct": "0.000001",
-  "photoProduct": "FDXJQ_VWYAIinDc.jpg",
+  "photoProduct": "paleta-padel.jpg",
   "date": " ",
   "location": "Santa Fé"
  },
@@ -66,7 +66,7 @@
   "category": "Deportes",
   "coin": "USDT",
   "date": "2021-11-07T17:23:57.703Z",
-  "location": "Cordoba Capital"
+  "location": "Córdoba Capital"
  },
  {
   "id": 7,
@@ -118,10 +118,11 @@
  },
  {
   "id": "11",
-  "name": "Bicimoto Voladora",
-  "shortDescription": "Bicicleta a motor que vuela",
+  "name": "Bicicleta Moto Cross Lamborghini Rodado 16",
+  "shortDescription": "Bicicleta cross.",
   "priceProduct": "2",
-  "photoProduct": "FDXJQ_VWYAIinDc.jpg",
+  "description": "Bicicleta cross. Rodado 16. Sonido de motor en manubrio. CONSULTE DISPONIBILIDAD ANTES DE OFERTAR.",
+  "photoProduct": "bicimoto.jpg",
   "category": "Vehiculos",
   "coin": "Bitcoin",
   "date": " ",
@@ -130,12 +131,13 @@
  {
   "id": 12,
   "name": "Pelota de tenis",
-  "shortDescription": "Pelota de tenis para jugar",
-  "priceProduct": "1000",
-  "photoProduct": "FDXJQ_VWYAIinDc.jpg",
+  "shortDescription": "Set de pelotas de tenis.",
+  "priceProduct": "10",
+  "description": "Set de 3 pelotas de tenis marca Penn.",
+  "photoProduct": "pelota-tenis.jpg",
   "category": "Deportes",
   "coin": "USDT",
   "date": " ",
-  "location": "Lanús"
+  "location": "Belgrano"
  }
 ]
