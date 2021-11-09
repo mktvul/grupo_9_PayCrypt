@@ -20,6 +20,6 @@ router.get('/edit/:id/', productsControllers.edit);
 router.put('/edit/:id/', productsControllers.update);
 
 // Eliminar un producto
-router.delete('/products/delete:id/', productsControllers.destroy);
+router.delete('/delete/:id/', productsControllers.destroy);
 
 module.exports = router;

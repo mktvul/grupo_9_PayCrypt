@@ -254,6 +254,15 @@ body{
      
 }
 
+.boton-formulario-eliminar{
+  background-color: red;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 14px;
+}
+
 
 /* AGREGO MARCOS*/
 #photo-product{

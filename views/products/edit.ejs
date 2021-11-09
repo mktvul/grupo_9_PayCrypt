@@ -36,8 +36,7 @@
                         <input class="formulario-control" type="text" name="shortDescription" id="shortDescription"
                             placeholder="Descripcion Corta" value="<%= productSent.shortDescription %>"> <!-- DESCRIPCION DEL PRODUCTO-->
                     </div>
-                    
-                    
+                                       
                     <div>
                         <label for="priceProduct"></label>
                         <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
@@ -51,7 +50,6 @@
                         <!-- DESCRIPCION DEL PRODUCTO-->
                     </div>
 
-
                     <div class="photoProduct">
                         <label for="photoProduct">
                             <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
@@ -60,7 +58,6 @@
                     </div>
 
                     
-
                 </div>
 
                 <div class="form-rigth">
@@ -95,7 +92,6 @@
                         </div>
                     </div>
                   
-
                     <div>
                         <label for="location"></label>
                         <input class="formulario-control" type="text" name="location" id="location"
@@ -103,13 +99,15 @@
                         <!--NOMBRE DEL PRODUCTO-->
                     </div>
                   
-
                     <div class="boton-formulario-continuar">
                         <button type="submit">Editar producto</button>
                     </div>
 
-                </div>
+                    <form action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+						<button type="submit" class="boton-formulario-eliminar">ELIMINAR</button>
+                    </form>
 
+                </div>
 
             </div>
         </form>
