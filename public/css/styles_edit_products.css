@@ -180,35 +180,31 @@ li{
   margin: auto;
 }
 
-
-
 body{
-    background-color: #FFC439;
-    margin-bottom: 100px;
+  background-color: #FFC439;
+  margin-bottom: 100px;
 }
 
 /* CONTENEDOR DEL FORMULARIO*/
 .contenedor-formulario{
-    width: 35%;
-    margin: auto;
-    padding: 10px;
-    background-color: #ffff;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    border: solid salmon dashed;
+  width: 35%;
+  margin: auto;
+  padding: 10px;
+  background-color: #ffff;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid salmon dashed;
 }
 
 .imagen-paycript-formulario{
   width: 141px;
 }
 
-
 .form-rigth{
   margin: 12px;
 }
-
 
 /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
 .registro-logo{
@@ -219,50 +215,48 @@ body{
 
 /* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
 .formulario-control{
-    margin: 10px;
-    padding: 10px;
-    border: grey solid 1px;
-    display: flex;
-    flex-direction: column; 
-    border-radius: 8px;
-    
+  margin: 10px;
+  padding: 10px;
+  border: grey solid 1px;
+  display: flex;
+  flex-direction: column; 
+  border-radius: 8px;  
 }
-
 
 /* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
 .p-datos-registro{
-    font-size: 20px;
-    margin-left: 56px;
+  font-size: 20px;
+  margin-left: 56px;
 }
 
 /* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
 .check-box-condiciones{
-    display: flex;
-    justify-content: center;
-    color: #27346a;
-
+  display: flex;
+  justify-content: center;
+  color: #27346a;
 }
 
 /* boton formulario CONTINUAR*/
 .boton-formulario-continuar{
-      background-color: #27346a;
-      color: #ffff;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: center;
-      margin-top: 14px;
-     
+  background-color: #27346a;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 14px;   
 }
 
 .boton-formulario-eliminar{
-  background-color: red;
+  background-color: #d03b40;
   color: #ffff;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
   margin-top: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
 }
-
 
 /* AGREGO MARCOS*/
 #photo-product{
@@ -276,7 +270,7 @@ input[type=”file”]#photo-product {           /*CREO UN FRENTE SOBRE EL BOTON
  overflow: hidden;
  position: absolute;
  z-index: -1;
- }
+}
 
 label[for="photo-product"] {                 /*Decoro el nuevo frente*/
  font-size: 14px;
@@ -288,21 +282,19 @@ label[for="photo-product"] {                 /*Decoro el nuevo frente*/
  cursor: pointer;
  padding: 8px;
  text-align: center;
- border-radius: 5px;
- 
- }
+ border-radius: 5px; 
+}
 
-  /*agrego marcos*/
-  .photo-product{
-      margin-left: 10px;
-      max-width: 220px;
-  }
+/*agrego marcos*/
+.photo-product{
+  margin-left: 10px;
+  max-width: 220px;
+}
 
 .terminos-y-continuar{
   display: flex;
   align-items: center;
 }
-
 
 .radio-left p{
   margin-bottom: 10px;
@@ -310,26 +302,23 @@ label[for="photo-product"] {                 /*Decoro el nuevo frente*/
 
 .radio-rigth p{
   margin-bottom: 10px;
-
 }
-
 
 .checkboxes div{
   margin-bottom: 10px;
 }
 
- /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
-  .boton-formulario-continuar:hover{
-      text-decoration: underline;
-  }
-
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+.boton-formulario-continuar:hover{
+  text-decoration: underline;
+}
 
 /* boton formulario INICIAR SESION*/
 
 .boton-formulario-iniciar-sesion{
-    color: #27346a;
-    margin: 10px;
-  }
+  color: #27346a;
+  margin: 10px;
+}
 
 /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
 
@@ -341,127 +330,119 @@ margin: 10px 0px;
 }
 
 /*MOBILE*/
-@media (min-width:0px) {
+@media (min-width:320px) {
   .enlaces-izquierda{
-      display: none;
+    display: none;
   }
   
   .enlaces-derecha{
-      display: none;
+    display: none;
   }
 
   .barra-busqueda-header{
-      display: none;
+    display: none;
   }
 
   .contenedor-formulario{
-      margin: auto;
-      padding: 10px;
-      background-color: #ffff;
-      margin-top: 100px;
-      display: flex;
-      flex-direction: column;
-      border-radius: 10px;
-      border: solid salmon dashed;
-      width: 263px;
+    margin: auto;
+    padding: 10px;
+    background-color: #ffff;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: solid salmon dashed;
+    width: 263px;
+    height: 1000px;
+  }
+
+  .large-description {
+    width: 225px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: grey solid 1px;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 8px; 
   }
 }
 
-
-
-
-/*tablets
-@media (min-width: 768px){
-  
-  .enlaces-izquierda{
-      display: none;
-  }
-  
-  .enlaces-derecha{
-      display: none;
-  }
-
-  .barra-busqueda-header{
-      display: none;
-  }
-} 
-*/
-
-
-
-/*desktop - se usa 768 para evitar saltos en el formulario*/  
+/*desktop - se usa 828 para evitar saltos en el formulario*/  
 @media (min-width: 828px){
-  
-  
- 
+
+  .large-description {
+    width: 332px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: grey solid 1px;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 8px; 
+  }
+
   .contenedor-formulario{
-      width: 844px;
-      height: 470px;
+    width: 844px;
+    height: 600px;
   }
 
   .formulario-control{
-      width: 332px;
-      height: 47px;
+    width: 332px;
+    height: 47px;
   }
 
   .formulario-flex{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .boton-formulario-iniciar-sesion{
-      position: relative;
-      left: 556px;
+    position: relative;
+    left: 556px;
   }
 
   .boton-formulario-continuar{
-      width: 332px;
+    width: 332px;
   }
 
- 
+  /*agrego marcos*/
+  .formulario-control {
+    margin-bottom: 20px;
+  }
+         
+  /*espacio al logo*/
+  .fa-upload{
+    margin: 0 5px;
+  }
 
-   /*agrego marcos*/
-   .formulario-control {
-      margin-bottom: 20px;
-   }
+  /*checbox*/
+  .category-product{
+    margin: 20px 0;
+    display: flex;
+  }
 
-
-   
-
-              
-      /*espacio al logo*/
-      .fa-upload{
-      margin: 0 5px;
-      }
-
-      /*checbox*/
-      .category-product{
-          margin: 20px 0;
-          display: flex;
-      }
-
-      .radio-left p{
-          margin-bottom: 10px;
-          margin-right: 20px;
-      }
+  .radio-left p{
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
      
-      .radio-rigth p{
-          margin-bottom: 10px;
+  .radio-rigth p{
+    margin-bottom: 10px;
+  }
 
-      }
-      .checkboxes{
-        display: flex;
-      }
+  .checkboxes{
+    display: flex;
+  }
 
-      .checkboxes div{
-          margin-right: 10px;
-      }
+  .checkboxes div{
+    margin-right: 10px;
+  }
 
-      .photo-product{
-          margin-left: 10px;
-          max-width: 332px;
-      }
-  
+  .photo-product{
+    margin-left: 10px;
+    max-width: 332px;
+  } 
 }

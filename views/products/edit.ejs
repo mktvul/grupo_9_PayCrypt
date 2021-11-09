@@ -47,8 +47,7 @@
 
                             <div>
                                 <label for="description"></label>
-                                <textarea name="textarea" rows="10" cols="50"
-                                    value="<%= productSent.description %>">Ingrese la descripcion del producto</textarea>
+                                <textarea class="large-description" name="textarea" value="<%= productSent.description %>"></textarea>
                                 <!-- DESCRIPCION DEL PRODUCTO-->
                             </div>
 
@@ -110,7 +109,7 @@
 
                     </div>
                 </form>
-                <form action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
+                <form class="boton-delete" action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
                     style="display: inline-flex">
                     <button type="submit" class="boton-formulario-eliminar">ELIMINAR</button>
                 </form>
