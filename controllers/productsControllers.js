@@ -105,19 +105,16 @@ const productsControllers = {
   
   //Acción de borrado (DELETE)
   destroy: (req, res) => {
-    //Acción de borrado
-    // Elimino el producto que llegó por ID
-		let id = req.params.id
-		
-    //Modifico el array
-		let finalProducts = products.filter(product => {
-			return product.id != id
-		});
+    
+    let id = req.params.id;
+        /* MODIFICAMOS EL ARRAY  */
+        // el metodo filter guarda en un nuevo array todos los metodos que cumplan la condicion
+        let finalProducts = products.filter( product => {
+            return product.id != id; // guarda todos los productos que sean diferente al id que viene por parametro. por ende se elimina el que queremos eliminar
+        });
 
-    //Actualizo la base de datos JSON
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
-		res.redirect("/products");
-    // res.send("Producto con id " + req.params.id + " eliminado!")
+        fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
+        res.redirect('/products');
   },
 
   cart: (req, res) => {

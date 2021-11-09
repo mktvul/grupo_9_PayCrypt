@@ -75,6 +75,8 @@
       <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE PRODUCTOS, C/U ES UN ARTICLE----------->
       <h2 class="buscados">Los más buscados</h2>
 
+      
+      <section class="list-of-products">
       <!------PRODUCTOS AUTOMATIZADOS CON EJS----------->
       <% productsSent.forEach(producto => { %>
         <article class="each-product">
@@ -133,7 +135,9 @@
           <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
         </div>
       </article>
-      <% }) %> 
+      <% }) %>
+
+    </section>
 
     </main>
     <!------ACÁ TERMINA EL MAIN------------------------------------------------------>

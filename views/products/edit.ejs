@@ -1,114 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include ('../partials/head.ejs', {titulo: 'Edición de Productos', cssSheets: 'styles_edit_products'}) %>
+<%- include ('../partials/head.ejs', {titulo: 'Edición de Productos' , cssSheets: 'styles_edit_products' }) %>
 
-<body>
-    
-    <%- include ('../partials/header.ejs') %> 
+    <body>
+
+        <%- include ('../partials/header.ejs') %>
 
 
-    <div class="contenedor-formulario">
-        <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
-        <div class="registro-logo">
-            <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
-        </div>
-
-        <div class="p-datos-registro">
-            <p>Editar producto</p>
-        </div>
-        </br>
-
-        <!-- CAJA FLEX DEL  FORMULARIO-->
-        <form class="prueba-formulario" action="/products/edit/<%= productSent.id %>?_method=PUT" method="POST">
-            <div class="formulario-flex">
-
-                <div class="form-left">
-
-                    <div>
-                        <label for="name"></label>
-                        <input class="formulario-control" type="text" name="name" id="nombre"
-                            placeholder="Nombre Producto" value="<%= productSent.name %>">
-                        <!--NOMBRE DEL PRODUCTO-->
-                    </div>
-                    
-                    <div>
-                        <label for="shortDescription"></label>
-                        <input class="formulario-control" type="text" name="shortDescription" id="shortDescription"
-                            placeholder="Descripcion Corta" value="<%= productSent.shortDescription %>"> <!-- DESCRIPCION DEL PRODUCTO-->
-                    </div>
-                                       
-                    <div>
-                        <label for="priceProduct"></label>
-                        <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
-                            placeholder="Precio" value="<%= productSent.priceProduct %>">
-                        <!--PRECIO PRODUCTO-->
-                    </div>
-                    
-                    <div>
-                        <label for="description"></label>
-                        <textarea name="textarea" rows="10" cols="50" value="<%= productSent.description %>">Ingrese la descripcion del producto</textarea>
-                        <!-- DESCRIPCION DEL PRODUCTO-->
-                    </div>
-
-                    <div class="photoProduct">
-                        <label for="photoProduct">
-                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                        </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="photoProduct" id="photoProduct" required="" accept=".jpg">
-                    </div>
-
-                    
+            <div class="contenedor-formulario">
+                <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
+                <div class="registro-logo">
+                    <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
                 </div>
 
-                <div class="form-rigth">
-                    <label for="category">Seleccione una categoria:</label>
-                    <div class="category-product"> <!-- CATEGORIA PRODUCTOS -->
-                        
-                     <div class="radio-left">
-                        <p><input type="radio" name="category" value="Vehiculos" />   Vehiculos</p>
-                        <p><input type="radio" name="category" value="Inmuebles" />   Inmuebles</p>
-                        <p><input type="radio" name="category" value="Tecnologia" />   Tecnologia</p>
-                     </div>  
-                     <div class="radio-rigth">
-                        <p><input type="radio" name="category" value="Deportes" />   Deportes</p>
-                        <p><input type="radio" name="category" value="NFT" />   NFT</p>
-                        <p><input type="radio" name="category" value="Mineria" />   Mineria</p>
-                     </div>
-                    </div>
-
-                    <p>Elija su moneda de pago:</p></br>
-                    <div class="checkboxes">
-                        <div>
-                            <input type="checkbox" name="coin" value="Bitcoin" id="Bitcoin">
-                            <label for="Bitcoin">Bitcoin</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="coin" value="Ethereum" id="Ethereum">
-                            <label for="Ethereum">Ethereum</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="coin" value="USDT" id="USDT">
-                            <label for="USDT">USDT</label>
-                        </div>
-                    </div>
-                  
-                    <div>
-                        <label for="location"></label>
-                        <input class="formulario-control" type="text" name="location" id="location"
-                            placeholder="Ubicación del producto" value="<%= productSent.location %>">
-                        <!--NOMBRE DEL PRODUCTO-->
-                    </div>
-                  
-                    <div class="boton-formulario-continuar">
-                        <button type="submit">Editar producto</button>
-                    </div>
-
-                    <form action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-						<button type="submit" class="boton-formulario-eliminar">ELIMINAR</button>
-                    </form>
-
+                <div class="p-datos-registro">
+                    <p>Editar producto</p>
                 </div>
+                </br>
+
+                <!-- CAJA FLEX DEL  FORMULARIO-->
+                <form class="prueba-formulario" action="/products/edit/<%= productSent.id %>?_method=PUT" method="POST">
+                    <div class="formulario-flex">
+
+                        <div class="form-left">
+
+                            <div>
+                                <label for="name"></label>
+                                <input class="formulario-control" type="text" name="name" id="nombre"
+                                    placeholder="Nombre Producto" value="<%= productSent.name %>">
+                                <!--NOMBRE DEL PRODUCTO-->
+                            </div>
+
+                            <div>
+                                <label for="shortDescription"></label>
+                                <input class="formulario-control" type="text" name="shortDescription"
+                                    id="shortDescription" placeholder="Descripcion Corta"
+                                    value="<%= productSent.shortDescription %>"> <!-- DESCRIPCION DEL PRODUCTO-->
+                            </div>
+
+                            <div>
+                                <label for="priceProduct"></label>
+                                <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
+                                    placeholder="Precio" value="<%= productSent.priceProduct %>">
+                                <!--PRECIO PRODUCTO-->
+                            </div>
+
+                            <div>
+                                <label for="description"></label>
+                                <textarea name="textarea" rows="10" cols="50"
+                                    value="<%= productSent.description %>">Ingrese la descripcion del producto</textarea>
+                                <!-- DESCRIPCION DEL PRODUCTO-->
+                            </div>
+
+                            <div class="photoProduct">
+                                <label for="photoProduct">
+                                    <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                                </label> <!-- IMAGEN DEL PRODUCTO-->
+                                <input type="file" name="photoProduct" id="photoProduct" required="" accept=".jpg">
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-rigth">
+                            <label for="category">Seleccione una categoria:</label>
+                            <div class="category-product">
+                                <!-- CATEGORIA PRODUCTOS -->
+
+                                <div class="radio-left">
+                                    <p><input type="radio" name="category" value="Vehiculos" /> Vehiculos</p>
+                                    <p><input type="radio" name="category" value="Inmuebles" /> Inmuebles</p>
+                                    <p><input type="radio" name="category" value="Tecnologia" /> Tecnologia</p>
+                                </div>
+                                <div class="radio-rigth">
+                                    <p><input type="radio" name="category" value="Deportes" /> Deportes</p>
+                                    <p><input type="radio" name="category" value="NFT" /> NFT</p>
+                                    <p><input type="radio" name="category" value="Mineria" /> Mineria</p>
+                                </div>
+                            </div>
+
+                            <p>Elija su moneda de pago:</p></br>
+                            <div class="checkboxes">
+                                <div>
+                                    <input type="checkbox" name="coin" value="Bitcoin" id="Bitcoin">
+                                    <label for="Bitcoin">Bitcoin</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="coin" value="Ethereum" id="Ethereum">
+                                    <label for="Ethereum">Ethereum</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="coin" value="USDT" id="USDT">
+                                    <label for="USDT">USDT</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="location"></label>
+                                <input class="formulario-control" type="text" name="location" id="location"
+                                    placeholder="Ubicación del producto" value="<%= productSent.location %>">
+                                <!--NOMBRE DEL PRODUCTO-->
+                            </div>
+
+                            <div class="boton-formulario-continuar">
+                                <button type="submit">Editar producto</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+                <form action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
+                    style="display: inline-flex">
+                    <button type="submit" class="boton-formulario-eliminar">ELIMINAR</button>
+                </form>
 
             </div>
-        </form>
-    </div>
+    </body>
+
+</html>

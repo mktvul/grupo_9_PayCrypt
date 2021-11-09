@@ -48,15 +48,12 @@
   "location": "Pinamar"
  },
  {
-  "id": 5,
+  "id": "5",
   "name": "Paleta de pádel Davor Patrol negra",
   "shortDescription": "Paleta de pádel",
-  "priceProduct": 0.000001,
-  "description": "Potenciá tu juego: Esta paleta de pádel compuesta por soft eva te permitirá conseguir una mayor estabilidad, duplicando la capacidad de respuesta en todo tipo de golpes.",
-  "photoProduct": "Paleta-pádel.jpg",
-  "category": "Deportes",
-  "coin": "Bitcoin",
-  "date": "2021-11-07T17:23:57.703Z",
+  "priceProduct": "0.000001",
+  "photoProduct": "FDXJQ_VWYAIinDc.jpg",
+  "date": " ",
   "location": "Santa Fé"
  },
  {
@@ -120,9 +117,9 @@
   "location": "Capital Federal"
  },
  {
-  "id": "11",
-  "name": "Caja de cartón",
-  "shortDescription": "Bella caja de cartón",
+  "id": 11,
+  "name": "Bicimoto",
+  "shortDescription": "Bicicleta a motor",
   "priceProduct": "1",
   "photoProduct": "FDXJQ_VWYAIinDc.jpg",
   "category": "Vehiculos",
@@ -131,12 +128,12 @@
   "location": "Lanús"
  },
  {
-  "id": "111",
-  "name": "Casa rodante",
-  "shortDescription": "Hermosa casa rodante hippie",
-  "priceProduct": "1",
-  "photoProduct": "photo4909477387373226507.jpg",
-  "category": "Inmuebles",
+  "id": 12,
+  "name": "Pelota de tenis",
+  "shortDescription": "Pelota de tenis para jugar",
+  "priceProduct": "1000",
+  "photoProduct": "FDXJQ_VWYAIinDc.jpg",
+  "category": "Deportes",
   "coin": "USDT",
   "date": " ",
   "location": "Lanús"
