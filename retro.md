@@ -35,6 +35,14 @@ PUNTOS A MEJORAR:
 
 -Falta de definición de cantidad y medidas de media queries.
 
+Sobre sprint 3:
+
+PUNTOS A MEJORAR: 
+Este sprint estuvimos muy desorganizados porque faltó comunicación, orden y definición de roles. 
+
+PUNTOS POSITIVOS:
+Pudimos resolver entre todos los problemas que surgieron.
+Aprendimos un montón gracias a los problemas del sprint.
 
 
 
