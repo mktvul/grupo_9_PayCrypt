@@ -261,39 +261,39 @@ main {
 /* footer */
 
 .footer {
-    background-color: #ebebeb;
-    box-shadow: 0px 0px 3px rgb(100, 100, 100);
-    margin-top: 10px;
-  }
-  
-  .footer-section {
-    text-align: center;
-    padding: 15px 30px;
-  }
-  
-  .footer-section i {
-    font-size: 2em;
-    color: #ffc439;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .footer-section-p {
-    font-size: 12px;
-  }
-  
-  .footer-section-article-h3 {
-    font-size: 16px;
-    font-weight: 400;
-    color: #666;
-    text-align: center;
-    padding-bottom: 5px;
-  }
-  
-  .footer-copyright {
-    text-align: start;
-    width: 100%;
-  }
+  background-color: #ebebeb;
+  box-shadow: 0px 0px 3px rgb(100, 100, 100);
+  margin-top: 10px;
+}
+
+.footer-section {
+  text-align: center;
+  padding: 15px 30px;
+}
+
+.footer-section i {
+  font-size: 2em;
+  color: #ffc439;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-section-p {
+  font-size: 12px;
+}
+
+.footer-section-article-h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.footer-copyright {
+  text-align: start;
+  width: 100%;
+}
 
 /*----------MEDIA QUERIES PARA INDEX.HTML-------------------------------------*/
 /*----------MOBILE - HASTA 481PX-------------*/
@@ -365,7 +365,6 @@ main {
   margin: 15px;
   transition: 0.5s;
 }
-
 
 /*----------MEDIA QUERY DE NFT Y MINERIA, PONER DISPLAY:NONE AL VER MÁS-------------*/
 /* Media queries: Tablet */

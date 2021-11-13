@@ -9,11 +9,11 @@ const users = JSON.parse(fs.readFileSync(usersFilePath), "utf-8"); //Convertimos
 //Controller
 const usersControllers = {
   login: (req, res) => {
-
     //implementación de cookies en login
-     if(req.body.remeberUser){       //si tilda el check de recordar
-        res.cookie("emailUser", req.body.email, {maxAge: (100 *60)*10}); //guardamos 10 minutos el email
-     }
+    if (req.body.remeberUser) {
+      //si tilda el check de recordar
+      res.cookie("emailUser", req.body.email, { maxAge: 100 * 60 * 10 }); //guardamos 10 minutos el email
+    }
 
     res.render("./users/login");
   },
@@ -96,7 +96,6 @@ const usersControllers = {
 
     res.redirect("/");
   },
-
 };
 
 module.exports = usersControllers;

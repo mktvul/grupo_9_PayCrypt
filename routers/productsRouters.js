@@ -16,10 +16,10 @@ router.get("/create", productsControllers.create);
 router.post("/", productsControllers.store);
 
 // Editar un producto (muestra form por GET y acción de editar por PUT)
-router.get('/edit/:id/', productsControllers.edit); 
-router.put('/edit/:id/', productsControllers.update);
+router.get("/edit/:id/", productsControllers.edit);
+router.put("/edit/:id/", productsControllers.update);
 
 // Eliminar un producto
-router.delete('/delete/:id/', productsControllers.destroy);
+router.delete("/delete/:id/", productsControllers.destroy);
 
 module.exports = router;

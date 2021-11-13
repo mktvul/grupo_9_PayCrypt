@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-  <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets: 'styles_product_detail'}) %>
-  
+  <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets:
+  'styles_product_detail'}) %>
+
   <body>
-    <%- include ('../partials/header.ejs') %> 
+    <%- include ('../partials/header.ejs') %>
     <!-- Main: 2 sections, 3 articles -->
     <main class="main">
       <!-- Section 1: image -->
       <section class="main-section">
-        <img class="main-section-img" src="/images/<%=products.photoProduct%>"/>
+        <img
+          class="main-section-img"
+          src="/images/<%=products.photoProduct%>"
+        />
       </section>
       <!-- Section 2: 3 articles - name, description, pay details - button add to cart -->
       <section class="main-section-2">
         <!-- Article 1: name  -->
         <article class="main-section-article">
           <h1 class="main-section-article-h1"><%=products.name%></h1>
-          <h2 class="main-section-article-h2"><%=products.shortDescription%></h2>
-          <div class="main-section-article-price"><%=products.priceProduct%>
+          <h2 class="main-section-article-h2">
+            <%=products.shortDescription%>
+          </h2>
+          <div class="main-section-article-price">
+            <%=products.priceProduct%> <% if (products.coin == "Bitcoin") { %>
+            <span>
+              <img src="images/btc-logo.svg" alt="" class="usdt" />
+            </span>
 
-            <% if (products.coin == "Bitcoin") { %>
-              <span>
-                <img src="images/btc-logo.svg" alt="" class="usdt">
-              </span> 
-              
-            <% }else if(products.coin == "Ethereum") { %> 
-              <span>
-                <img src="images/eth-logo.svg" alt="" class="usdt">
-              </span>
-            
+            <% }else if(products.coin == "Ethereum") { %>
+            <span>
+              <img src="images/eth-logo.svg" alt="" class="usdt" />
+            </span>
+
             <% }else { %>
-              <span>
-                <img src="images/usdt-logo.svg" alt="" class="usdt">
-              </span>
+            <span>
+              <img src="images/usdt-logo.svg" alt="" class="usdt" />
+            </span>
             <% } %>
-
           </div>
         </article>
         <!-- Article 2: description -->
         <article class="main-section-article-2">
           <div class="main-section-article-div">
             <h3 class="main-section-article-h3">Descripción</h3>
-            
-            <p class="main-section-article-ul">
-              <%=products.description%>
-            </p>
 
+            <p class="main-section-article-ul"><%=products.description%></p>
           </div>
         </article>
 
-                <!-- Article 3: pay details, button add to cart -->
+        <!-- Article 3: pay details, button add to cart -->
         <article class="main-section-article-2">
           <div class="main-section-article-div-2">
             <h3>Detalle de pago</h3>
             <div>
               <ul>
-                <li class="main-section-article-ul-li"> <!--CODIGO PENSADO COLOCAR ACA //MARCOS-->
+                <li class="main-section-article-ul-li">
+                  <!--CODIGO PENSADO COLOCAR ACA //MARCOS-->
                   25.000<img
                     class="main-section-article-ul-img-1"
                     src="/images/usdt-logo.svg"
@@ -83,6 +85,6 @@
         </article>
       </section>
     </main>
-    <%- include ('../partials/footer.ejs') %> 
+    <%- include ('../partials/footer.ejs') %>
   </body>
 </html>

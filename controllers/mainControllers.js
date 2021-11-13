@@ -8,14 +8,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath), "utf-8"); //Conve
 
 //Controller
 const mainControllers = {
-
   //Página principal (GET)
   index: (req, res) => {
     res.render("./index", {
-      productsSent: products //Acá falta automatizar el EJS
+      productsSent: products, //Acá falta automatizar el EJS
     });
   },
-
 };
 
 module.exports = mainControllers;
