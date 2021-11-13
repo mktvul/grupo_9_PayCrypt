@@ -12,13 +12,14 @@ const usersControllers = {
 
     //implementación de cookies en login
      if(req.body.remeberUser){       //si tilda el check de recordar
-        res.cookie('emailUser', req.body.email, (maxAge: (100 *60)*10)); //guardamos 10 minutos el email
+        res.cookie("emailUser", req.body.email, {maxAge: (100 *60)*10}); //guardamos 10 minutos el email
      }
 
     res.render("./users/login");
   },
 
   logout: (req, res) => {
+    res.ClearCookie("emailUser");
     req.session.destroy();
     return res.redirect("/");
   },
@@ -95,15 +96,6 @@ const usersControllers = {
 
     res.redirect("/");
   },
-
-//creo para destruis la cookie cuando apriete logaut, despues poner codigo de logaut 
-   logaut: (req, res) => {
-    res.ClearCookie('emailUser');
-    
-   }
-
-
-
 
 };
 

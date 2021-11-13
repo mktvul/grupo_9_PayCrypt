@@ -3,21 +3,18 @@ const user = require("../data/users.json");
 
 function userLogged(req, res, next) {
   res.locals.isLogged = false;
-   //cookie
-   var emailCookie = req.cookie.emailUser;   //leo el email de la cookie
-   var userCookie = user.findByField('email',emailCookie); //busco en el archivo requerido el imail y lo devuelvo
+  //cookie
+  var emailCookie = req.cookie.emailUser; //leo el email de la cookie
+  var userCookie = user.findByField("email", emailCookie); //busco en el archivo requerido el imail y lo devuelvo
 
-   if(userCookie){     
-    res.locals.userLogged =userCookie;  //si encontro un usuario que lo logee
-
-   }
+  if (userCookie) {
+    res.locals.userLogged = userCookie; //si encontro un usuario que lo logee
+  }
 
   if (req.session.userLogged) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;
   }
-
- 
 
   next();
 }
