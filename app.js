@@ -3,9 +3,13 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path"); //Unifica rutas dentro de los sistemas operativos
 const methodOverride = require("method-override");
+const cookie = require("cookie-parser"); //cookies
 
 //Express
 const app = express();
+
+//usamos cookies
+app.use(cookie());
 
 //Middlewares
 const userLogged = require("./middlewares/userLogged");
@@ -33,6 +37,7 @@ app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la car
 const router = require("./routers/mainRouters");
 const usersRouter = require("./routers/usersRouters");
 const productsRouters = require("./routers/productsRouters");
+const { Cookie } = require("express-session");
 
 app.use("/", router); // Al ingresar al home deriva a routers
 app.use("/users", usersRouter); //Router de usuarios
