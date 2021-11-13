@@ -12,6 +12,11 @@ const usersControllers = {
     res.render("./users/login");
   },
 
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
+  },
+
   register: (req, res) => {
     //Método GET
     res.render("./users/register");
