@@ -2,14 +2,14 @@
 const express = require("express");
 const session = require("express-session");
 const path = require("path"); //Unifica rutas dentro de los sistemas operativos
-const methodOverride = require("method-override");
+const methodOverride = require("method-override"); // para que se puedan usar los metodos put, patch y delete 
 const cookie = require("cookie-parser"); //cookies
 
 //Express
 const app = express();
 
 //usamos cookies
-app.use(cookie());
+//app.use(cookie());
 
 //Middlewares
 const userLogged = require("./middlewares/userLogged");
@@ -27,7 +27,7 @@ app.use(
   })
 );
 
-app.use(userLogged); //Verifica que el usuario esté logueado
+//app.use(userLogged); //Verifica que el usuario esté logueado
 
 //Template engine
 app.set("view engine", "ejs"); // Utiliza el motor de plantillas ejs

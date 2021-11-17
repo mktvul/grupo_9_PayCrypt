@@ -1,6 +1,7 @@
 //Require's
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require('bcryptjs'); // requiriendo bcrypt
 
 //Data base
 const usersFilePath = path.join(__dirname, "../data/users.json"); //Identificamos la ruta de nuestra base de datos de usuarios
@@ -30,14 +31,15 @@ const usersControllers = {
   },
 
   storeUser: (req, res) => {
+    //Guardamos el usuario
     let newUser = {
       id: users[users.length - 1].id + 1,
       name: req.body.name,
-      lastName: req.body.lastName,
+      lastname: req.body.lastname,
       dni: req.body.dni,
       email: req.body.email,
-      password: req.body.password,
-      image: "default-user.png",
+      password: bcrypt.hashSync(req.body.password, 10),
+      image: req.file.filename
     };
 
     users.push(newUser);
@@ -51,7 +53,7 @@ const usersControllers = {
     const user = users.find((user) => {
       return user.id == id;
     });
-    res.render("users/edit", {
+    res.render("users/edit.ejs", {
       editedUser: user,
     });
   },
@@ -66,7 +68,7 @@ const usersControllers = {
     let editedUser = {
       id: id,
       name: req.body.name,
-      lastName: req.body.lastName,
+      lastname: req.body.lastname,
       dni: req.body.dni,
       email: req.body.email,
       password: req.body.password,
@@ -95,6 +97,9 @@ const usersControllers = {
     fs.writeFileSync(usersFilePath, JSON.stringify(usersList, null, " "));
 
     res.redirect("/");
+  },
+  profile: (req, res) => {
+    res.render('users/edit.ejs')
   },
 };
 

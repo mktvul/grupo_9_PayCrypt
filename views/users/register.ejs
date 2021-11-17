@@ -3,7 +3,7 @@
     <%- include ('../partials/head.ejs', {titulo: 'Registro', cssSheets: 'styles_register'}) %>
 
     <body>
-
+<main>
     <%- include ('../partials/header.ejs') %> 
 
     <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
@@ -17,7 +17,7 @@
         </br> 
 
               <!-- CAJA FLEX DEL  FORMULARIO-->
-            <form class="prueba-formulario" action="/users" method="POST">
+            <form class="prueba-formulario" action="/users" method="POST" enctype="multipart/form-data">
                 <div class="formulario-flex">
                 
                 <div>
@@ -54,9 +54,13 @@
                     <input class="formulario-control" type="file" name="image" id="image">  <!-- NUEVO- IMAGEN PERFIL -->
                 </div>
                 <div>
-                    <label for="category">Categoria</label>
-                    <input type="radio" name="category" id="category" value="Comprador"> 
-                    <input type="radio" name="category" id="category" value="Vendedor">
+                    <label for="">Categoria</label>
+                    
+                    <input type="radio" name="category" id="category" value="comprador">    <!--Categorias-->
+                    <label for="comprador">Comprador</label>
+                    
+                    <input type="radio" name="category" id="category" value="vendedor">
+                    <label for="vendedor">Vendedor</label> 
                 </div>
                 <div class="check-box-condiciones">
                     <label for="terminos">
@@ -77,7 +81,7 @@
             </form>
         </div>
     
-    
+    </main>
     
 </body>
 </html>

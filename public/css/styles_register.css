@@ -149,7 +149,8 @@ body {
 /* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
 .p-datos-registro {
   font-size: 20px;
-  margin-left: 21px;
+  /*margin-left: 21px;*/
+  text-align: center;
 }
 
 /* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
@@ -239,7 +240,7 @@ body {
 @media (min-width: 1024px) {
   .contenedor-formulario {
     width: 844px;
-    height: 470px;
+   /* height: 470px; */
   }
 
   .formulario-control {
