@@ -95,13 +95,6 @@
  },
  {
   "id": 18,
-<<<<<<< HEAD
-  "name": "Seba",
-  "dni": "38999333",
-  "email": "seba@test.com",
-  "password": "123",
-  "image": "default-user.png"
-=======
   "name": "Prueba",
   "dni": "42850900",
   "email": "tomasynaza@gmail.com",
@@ -188,6 +181,5 @@
   "email": "tomasynaza@gmail.com",
   "password": "$2a$10$2atr5o1m5FbXWrI78TJLe.AS2cYqVDs9jRgx1HYEWG9LBpAtKm15O",
   "image": "1637366568508img-samsung-galaxy-s10.jpg"
->>>>>>> 4af1e9786a63d9b600da991b3ab5f13b886e6127
  }
 ]

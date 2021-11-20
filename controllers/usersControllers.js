@@ -44,13 +44,8 @@ const usersControllers = {
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
-<<<<<<< HEAD
-      password: req.body.password,
-      image: req.file.filename,
-=======
       password: bcrypt.hashSync(req.body.password, 10),
       image: req.file.filename
->>>>>>> 4af1e9786a63d9b600da991b3ab5f13b886e6127
     };
 
     users.push(newUser);
