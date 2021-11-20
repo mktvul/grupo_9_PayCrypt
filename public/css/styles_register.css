@@ -149,7 +149,8 @@ body {
 /* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
 .p-datos-registro {
   font-size: 20px;
-  margin-left: 21px;
+  /*margin-left: 21px;*/
+  text-align: center;
 }
 
 /* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
@@ -193,6 +194,37 @@ body {
   text-decoration: underline;
 }
 
+/* BOTON SUBIR IMAGEN  */
+#photoUser {
+  display: none; /* Apago el diseño original */
+}
+
+input[type="”file”"]#photoUser {
+  /* CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files */
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label[for="photoUser"] {
+  /*Decoro el nuevo frente */
+  font-size: 14px;
+  color: #27346a;
+  background-color: #ffffff;
+  border: 1px solid #27346a;
+  display: block;
+  /* transition: all 0.5s; transicion apagada */ 
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+  width: 210px;
+  margin-left: 10px;
+}
+
 /*MOBILE*/
 @media (min-width: 0px) {
   .enlaces-izquierda {
@@ -218,6 +250,13 @@ body {
     border: solid salmon dashed;
     width: 263px;
   }
+
+  .formulario-control{
+    max-width: 210px
+  }
+  .boton-formulario-iniciar-sesion{
+    margin-left: 73px
+  }
 }
 
 /*tablets*/
@@ -233,13 +272,19 @@ body {
   .barra-busqueda-header {
     display: none;
   }
+  .boton-formulario-iniciar-sesion{
+    margin-left: 73px
+  }
+  .formulario-control{
+    max-width: 210px
+  }
 }
 
 /*desktop*/
 @media (min-width: 1024px) {
   .contenedor-formulario {
     width: 844px;
-    height: 470px;
+   /* height: 470px; */
   }
 
   .formulario-control {
@@ -254,12 +299,34 @@ body {
     align-items: center;
   }
 
-  .boton-formulario-iniciar-sesion {
-    position: relative;
+  /*.boton-formulario-iniciar-sesion {
+    /*position: relative;
     left: 556px;
-  }
-
+    margin-left: 10px; 
+  } 
+  */
   .boton-formulario-continuar {
     width: 332px;
+    margin-bottom: 35px;
   }
+  .formulario-control{
+    max-width: 1000px;
+  }
+  .seleccion-categoria{
+    margin-left: 80px;
+    margin-bottom: 5px;
+  }
+  .check-box-condiciones{
+    margin-top: 10px;
+  }
+  label[for="photoUser"] {
+    width: 332px;
+    margin-left: 0px;
+  }
+
+  .boton-formulario-iniciar-sesion{
+    text-align: center;
+    margin: auto;
+  }
+
 }

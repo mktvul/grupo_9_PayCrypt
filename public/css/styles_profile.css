@@ -1,0 +1,286 @@
+* {
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  i {
+    padding: 2px;
+  }
+  
+  /* CONTENEDOR DEL HEADER*/
+  
+  /* header */
+  
+  .header {
+    height: 50px;
+    box-shadow: 0px 0px 3px rgb(100, 100, 100);
+    background-color: #ffffff;
+  }
+  
+  .header-menu {
+    width: 45px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-logo {
+    width: 45px;
+    height: 50px;
+    position: absolute;
+    left: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .header-nav-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 150px;
+    width: 45px;
+    height: 50px;
+  }
+  
+  .header-nav-menu li {
+    display: none;
+  }
+  
+  .header-logo-img {
+    height: 100%;
+  }
+  
+  .header-search {
+    display: none;
+    position: absolute;
+    right: 45px;
+  }
+  
+  .header-search-bar {
+    display: none;
+  }
+  
+  .header-search-button {
+    width: 45px;
+    height: 50px;
+  }
+  
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    height: 50px;
+  }
+  
+  .header-nav-login {
+    display: none;
+  }
+  
+  .header-nav-shopping {
+    display: none;
+  }
+  
+  .header-nav a {
+    margin: 0px 15px 0px 15px;
+  }
+  
+  .header-nav-cart {
+    display: none;
+    width: 45px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    background-color: #2790c3;
+  }
+  
+  /* CONTENEDOR DEL FORMULARIO*/
+  .contenedor-formulario {
+    width: 35%;
+    margin: auto;
+    padding: 10px;
+    background-color: #ffff;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: solid salmon dashed;
+  }
+  
+  .imagen-paycript-formulario {
+    width: 141px;
+  }
+  
+  /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
+  .registro-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
+  .formulario-control {
+    margin: 10px;
+    padding: 10px;
+    border: grey solid 1px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  
+  /* CONTROL DEL LABEL (Editar Perfil) */
+  .p-editar-perfil {
+    font-size: 20px;
+    /*margin-left: 21px; */
+    text-align: center;
+  }
+
+  /* LABEL CAMBIAR DE CATEGORIA  */
+  .cambiar-categoria{
+    text-align: center;
+  }
+  
+  /* CONTROL DE LA CHECK-BOX DEL FORMULARIO EDICION DE PERFIL*/
+  .check-box-condiciones {
+    display: flex;
+    justify-content: center;
+    color: #27346a;
+  }
+  
+  /* boton formulario CONTINUAR*/
+  .boton-formulario-continuar {
+    background-color: #27346a;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .terminos-y-continuar {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+  .boton-formulario-continuar:hover {
+    text-decoration: underline;
+  }
+  
+  /* boton formulario INICIAR SESION*/
+  
+  .boton-formulario-iniciar-sesion {
+    color: #27346a;
+    margin: 10px;
+  }
+  
+  /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+  
+  .boton-formulario-iniciar-sesion:hover {
+    text-decoration: underline;
+  }
+  /* SELECCIONA ARCHIVO CSS */
+  #photo-profile {
+    display: none; /* Apago el diseño original */
+  }
+  
+  input[type="”file”"]#photo-profile {
+    /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files */
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  /*MOBILE*/
+  @media (min-width: 0px) {
+    .enlaces-izquierda {
+      display: none;
+    }
+  
+    .enlaces-derecha {
+      display: none;
+    }
+  
+    .barra-busqueda-header {
+      display: none;
+    }
+  
+    .contenedor-formulario {
+      margin: auto;
+      padding: 10px;
+      background-color: #ffff;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      border: solid salmon dashed;
+      width: 263px;
+    }
+  }
+  
+  /*tablets*/
+  @media (min-width: 768px) {
+    .enlaces-izquierda {
+      display: none;
+    }
+  
+    .enlaces-derecha {
+      display: none;
+    }
+  
+    .barra-busqueda-header {
+      display: none;
+    }
+  }
+  
+  /*desktop*/
+  @media (min-width: 1024px) {
+    .contenedor-formulario {
+      width: 844px;
+     /* height: 470px; */
+    }
+  
+    .formulario-control {
+      width: 332px;
+      height: 50px;
+    }
+  
+    .formulario-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  
+    .boton-formulario-iniciar-sesion {
+      position: relative;
+      left: 556px;
+    }
+  
+    .boton-formulario-continuar {
+      width: 332px;
+    }
+  }
+  

@@ -1,6 +1,7 @@
 //Require's
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require('bcryptjs'); // requiriendo bcrypt
 
 //Data base
 const usersFilePath = path.join(__dirname, "../data/users.json"); //Identificamos la ruta de nuestra base de datos de usuarios
@@ -10,34 +11,46 @@ const users = JSON.parse(fs.readFileSync(usersFilePath), "utf-8"); //Convertimos
 const usersControllers = {
   login: (req, res) => {
     //implementación de cookies en login
-    if (req.body.remeberUser) {
-      //si tilda el check de recordar
-      res.cookie("emailUser", req.body.email, { maxAge: 100 * 60 * 10 }); //guardamos 10 minutos el email
-    }
-
-    res.render("./users/login");
+        res.render("./users/login");
   },
 
+  //falta login proceess -marcos
+   loginProcess:(req,res)=>{
+    //falta texto
+    if (req.body.remenberuser) {  //si tilda el check de recordar
+        res.cookie("userEmail", req.body.email, { maxAge: 100 * 60 * 10 }); //guardamos 10 minutos el email
+    }
+    //falta texto
+    res.redirect("/");//solo para que haga algo
+
+   },
+
   logout: (req, res) => {
-    res.ClearCookie("emailUser");
+    res.ClearCookie("userEmail");
     req.session.destroy();
-    return res.redirect("/");
+    return res.redirect("/index");
   },
 
   register: (req, res) => {
     //Método GET
-    res.render("./users/register");
+     res.render("./users/register");
   },
 
   storeUser: (req, res) => {
+    //Guardamos el usuario
     let newUser = {
       id: users[users.length - 1].id + 1,
       name: req.body.name,
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
+<<<<<<< HEAD
       password: req.body.password,
       image: req.file.filename,
+=======
+      password: bcrypt.hashSync(req.body.password, 10),
+      image: req.file.filename
+>>>>>>> 4af1e9786a63d9b600da991b3ab5f13b886e6127
     };
 
     users.push(newUser);
@@ -51,8 +64,8 @@ const usersControllers = {
     const user = users.find((user) => {
       return user.id == id;
     });
-    res.render("users/edit", {
-      editedUser: user,
+    res.render("users/edit.ejs", {
+      editedUser: user, 
     });
   },
 
@@ -95,6 +108,9 @@ const usersControllers = {
     fs.writeFileSync(usersFilePath, JSON.stringify(usersList, null, " "));
 
     res.redirect("/");
+  },
+  profile: (req, res) => {
+    res.render('users/edit.ejs')
   },
 };
 
