@@ -19,7 +19,7 @@
                 </br>
 
                 <!-- CAJA FLEX DEL  FORMULARIO-->
-                <form class="prueba-formulario" action="/products/edit/<%= productSent.id %>?_method=PUT" method="POST">
+                <form class="prueba-formulario" action="/products/edit/<%= productSent.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="formulario-flex">
 
                         <div class="form-left">
@@ -55,7 +55,7 @@
                                 <label for="photoProduct">
                                     <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                                 </label> <!-- IMAGEN DEL PRODUCTO-->
-                                <input type="file" name="photoProduct" id="photoProduct" required="" accept=".jpg">
+                                <input type="file" name="photoProduct" id="photoProduct" accept=".jpg" value="<%= productSent.photoProduct %>">
                             </div>
 
 

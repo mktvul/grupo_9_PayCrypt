@@ -1,11 +1,13 @@
 //Require's
 const path = require("path");
 const fs = require("fs");
+const multer = require("multer");
 
 //Data base
 const productsFilePath = path.join(__dirname, "../data/products.json"); //Identificamos la ruta de nuestra base de datos de usuarios
 const products = JSON.parse(fs.readFileSync(productsFilePath), "utf-8"); //Convertimos la base de datos de usuarios JSON en un array de objetos literales
 
+//Controller
 const productsControllers = {
   //Listado de productos (GET)
   listOfProducts: (req, res) => {
@@ -41,7 +43,7 @@ const productsControllers = {
       shortDescription: req.body.shortDescription,
       priceProduct: req.body.priceProduct,
       Description: req.body.Description,
-      photoProduct: req.body.photoProduct,
+      photoProduct: req.file.filename,
       category: req.body.category,
       coin: req.body.coin,
       date: " ",
@@ -83,7 +85,7 @@ const productsControllers = {
       shortDescription: req.body.shortDescription,
       priceProduct: req.body.priceProduct,
       Description: req.body.Description,
-      photoProduct: req.body.photoProduct,
+      photoProduct: req.file ? req.file.filename : productToEdit.photoProduct,
       category: req.body.category,
       coin: req.body.coin,
       date: " ",

@@ -37,7 +37,7 @@ const usersControllers = {
       dni: req.body.dni,
       email: req.body.email,
       password: req.body.password,
-      image: "default-user.png",
+      image: req.file.filename,
     };
 
     users.push(newUser);
@@ -70,7 +70,7 @@ const usersControllers = {
       dni: req.body.dni,
       email: req.body.email,
       password: req.body.password,
-      image: userToEdit.image,
+      image: req.file ? req.file.filename : userToEdit.image,
     };
 
     users.forEach((user, index) => {

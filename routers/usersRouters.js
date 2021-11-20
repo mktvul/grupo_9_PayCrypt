@@ -6,8 +6,8 @@ const router = express.Router();
 const usersControllers = require("../controllers/usersControllers");
 
 //Middlewares
-const userGuest = require("../middlewares/userGuest");
-const userAuthentication = require("../middlewares/userAuthentication");
+const userGuest = require("../middlewares/userGuest"); //Usuario sin loguear
+const userAuthentication = require("../middlewares/userAuthentication"); //Usuario logueado
 
 //User - register
 router.get("/register", userGuest, usersControllers.register);
