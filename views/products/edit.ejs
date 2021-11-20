@@ -51,11 +51,11 @@
                                 <!-- DESCRIPCION DEL PRODUCTO-->
                             </div>
 
-                            <div class="photoProduct">
-                                <label for="photoProduct">
+                            <div class="photoProducts">
+                                <label for="photoProducts">
                                     <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                                 </label> <!-- IMAGEN DEL PRODUCTO-->
-                                <input type="file" name="photoProduct" id="photoProduct" required="" accept=".jpg">
+                                <input type="file" name="photoProduct" id="photoProducts" required="" accept=".jpg">
                             </div>
 
 
@@ -104,15 +104,17 @@
                             <div class="boton-formulario-continuar">
                                 <button type="submit">Editar producto</button>
                             </div>
+                            
+                            <form class="boton-delete" action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
+                                style="display: inline-flex">
+                                <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
+                            </form>
 
                         </div>
 
                     </div>
                 </form>
-                <form class="boton-delete" action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
-                    style="display: inline-flex">
-                    <button type="submit" class="boton-formulario-eliminar">ELIMINAR</button>
-                </form>
+                
 
             </div>
     </body>

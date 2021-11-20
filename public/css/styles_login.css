@@ -205,7 +205,7 @@ body {
   margin-top: 11px;
   color: #27346a;
   left: 80px;
-  width: 332px;
+  width: 200px;
   display: flex;
   justify-content: end;
 }
@@ -254,4 +254,12 @@ body {
   .control-formulario-login {
     width: 35%; /* ADAPTACION DEL FORMULARIO A DESKTOP*/
   }
+
+  .remenber{
+    display: flex;
+  }
+  .checkremenber{
+    margin-top: 15px;
+  }
+
 }

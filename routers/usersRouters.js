@@ -27,6 +27,8 @@ router.post("/", upload.single('image') , usersControllers.storeUser); // ya con
 
 //Users - login
 router.get("/login", userGuest, usersControllers.login);
+// falta el post del login..
+router.post("/login", usersControllers.loginProcess);
 
 //Users - logout
 router.get("/logout", usersControllers.logout);
