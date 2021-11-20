@@ -27,7 +27,7 @@
 
                 <div>
                     <label for="lastname"></label>
-                    <input class="formulario-control" type="text" name="lastname" id="lastname" placeholder="Apellido">  <!-- APELLIDO-->
+                    <input class="formulario-control" type="text" name="lastName" id="lastName" placeholder="Apellido">  <!-- APELLIDO-->
                 </div>
                 
                 <div>
@@ -49,35 +49,41 @@
                     <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
                 </div>
                 <div>
-                <div>
-                    <label for="image">Selecciona una foto de perfil:</label>
-                    <input class="formulario-control" type="file" name="image" id="image">  <!-- NUEVO- IMAGEN PERFIL -->
+                <div class="photoUser">
+                    <label for="photoUser">
+                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                    </label> <!-- IMAGEN DEL PRODUCTO-->
+                    <input type="file" name="photoUser" id="photoUser" required="" accept=".jpg">
                 </div>
-                <div>
-                    <label for="">Categoria</label>
-                    
-                    <input type="radio" name="category" id="category" value="comprador">    <!--Categorias-->
+                <div class="seleccion-categoria">
+                    <label for="">Categoria:</label>
+                    <select name="category" id="category">
+                        <option value="comprador">Comprador</option>        <!--Categorias-->
+                        <option value="vendedor">Vendedor</option>
+                    </select>
+                    <!--<input type="radio" name="category" id="category" value="comprador">    
                     <label for="comprador">Comprador</label>
                     
                     <input type="radio" name="category" id="category" value="vendedor">
-                    <label for="vendedor">Vendedor</label> 
+                    <label for="vendedor">Vendedor</label>  -->
                 </div>
                 <div class="check-box-condiciones">
                     <label for="terminos">
                        <input type="checkbox" name="terminos" id="terminos"> He leido y acepto los términos y condiciones.</label> <!-- CAJA  TERMINOS Y CONDICIONES-->
                 </div>
             </div>
-
+                <div>
                 <div class="boton-formulario-continuar" >
                     
                     <button type="submit">Continuar</button>
                 </div>
             
-            </div>  
-                <span class="boton-formulario-iniciar-sesion">
+                <div class="boton-formulario-iniciar-sesion">
                     
                     <a role="button" href="/users/login"><button type="button">Iniciar sesión</button></a>
-                </span>
+                </div>
+            </div>
+            </div>  
             </form>
         </div>
     
