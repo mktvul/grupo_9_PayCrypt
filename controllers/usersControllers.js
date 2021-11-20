@@ -41,7 +41,7 @@ const usersControllers = {
     let newUser = {
       id: users[users.length - 1].id + 1,
       name: req.body.name,
-      lastname: req.body.lastname,
+      lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
@@ -60,7 +60,7 @@ const usersControllers = {
       return user.id == id;
     });
     res.render("users/edit.ejs", {
-      editedUser: user,
+      editedUser: user, 
     });
   },
 
@@ -74,7 +74,7 @@ const usersControllers = {
     let editedUser = {
       id: id,
       name: req.body.name,
-      lastname: req.body.lastname,
+      lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: req.body.password,
