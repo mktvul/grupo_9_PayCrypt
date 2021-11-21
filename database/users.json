@@ -19,121 +19,12 @@
  },
  {
   "id": 3,
-  "name": "john",
-  "lastname": "sork",
-  "dni": 32546321,
-  "email": "xkomassdm@mobilr.site",
-  "password": "skere123",
-  "image": "default-user.png"
- },
- {
-  "id": 4,
-  "name": "maikol",
-  "lastname": "records",
-  "dni": 25375600,
-  "email": "uhmouda.hackersz@hotmail.red",
-  "password": "maiwasawski",
-  "image": "default-user.png"
- },
- {
-  "id": 5,
-  "name": "julian",
-  "lastname": "guten",
-  "dni": 42850900,
-  "email": "agideonnebrianned@oreple.com",
-  "password": "pablito123",
-  "image": "default-user.png"
- },
- {
-  "id": 6,
-  "name": "flavio",
-  "lastname": "mendoza",
-  "dni": 45217800,
-  "email": "pwilcrazi.lovli@greendike.com",
-  "password": "elpipi",
-  "image": "default-user.png"
- },
- {
-  "id": 13,
-  "name": "elrayo",
-  "dni": "1234567",
-  "email": "elrayo@gmail.com",
-  "password": "veloz",
-  "image": "default-user.png"
- },
- {
-  "id": 14,
-  "name": "nombre",
-  "dni": "123456123123",
-  "email": "emailnombre@gmail.com",
-  "password": "tomas",
-  "image": "default-user.png"
- },
- {
-  "id": 15,
-  "name": "nombre1",
-  "dni": "1234561231231",
-  "email": "emailno1mbre@gmail.com",
-  "password": "tomas1",
-  "image": "default-user.png"
- },
- {
-  "id": 16,
-  "name": "RandySveta",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "tomas",
-  "image": "default-user.png"
- },
- {
-  "id": 17,
-  "name": "elrayo",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "tomas",
-  "image": "default-user.png"
- },
- {
-  "id": 18,
-  "name": "Prueba",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "$2a$10$/g7NWWNSN81PW1Z3AQj0ZOQI8w/IKSzdQF11f1qiqKVuJTfWROHLC",
-  "image": "1637182432765patito.jpg"
- },
- {
-  "id": 19,
-  "name": "Tomas",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "$2a$10$oNJRRMnjrvEISf4SM7APAuNn.4Lb.P80.lUuX13SGli5TKwyFdrOq",
-  "image": "1637183896816gatito.jpg"
- },
- {
-  "id": 21,
-  "name": "Tomas",
-  "lastname": "Espil",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "asd",
-  "image": "1637184177500Rayo_McQueen.jpg"
- },
- {
-  "id": 22,
-  "name": "Prueba",
-  "lastname": "test",
-  "dni": "1234567",
-  "email": "prueba@gmail.com",
-  "password": "$2a$10$igmJ51hpp1RXF7TqJjKJquX/Z12qEUa4yg.CIrli/0h4zPM3IPQ2S",
-  "image": "163736470627208a62195583dd2ea67740a847642071d.jpg"
- },
- {
-  "id": 23,
-  "name": "asdasdasd",
-  "lastname": "asdasdasdasd",
-  "dni": "42850900",
-  "email": "tomasynaza@gmail.com",
-  "password": "$2a$10$lClZqbmuzK286vtXF6vEpu7RbGwr8qqOvYnFOQP.9DC21J46.CBh.",
-  "image": "1637365011980goku.jpg"
+  "name": "Sebastian",
+  "lastName": "Sanchis",
+  "dni": "36825552",
+  "email": "seba.sanchis@gmail.com",
+  "password": "$2a$10$yMdVEdS1Nd6hPwQM9a6IOO1vGZmvHsRr3.HN9tMO2PI5L2rsXW8CS",
+  "category": "vendedor",
+  "image": "1637513654141_img.png"
  }
 ]

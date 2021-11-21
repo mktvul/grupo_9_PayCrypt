@@ -5,9 +5,11 @@
     <span class="material-icons"> menu </span>
   </div>
   <!-- Logo -->
-  <div class="header-logo">
-    <img class="header-logo-img" src="/images/paycrypt-logo.svg" />
-  </div>
+
+  <a href="/" class="header-logo">
+    <img class="header-logo-img" src="/images/paycrypt-logo.svg"
+  /></a>
+
   <ul class="header-nav-menu">
     <li>Productos <span class="material-icons"> arrow_drop_down </span></li>
     <li>Cotizaciones <span class="material-icons"> arrow_drop_down </span></li>
@@ -26,9 +28,15 @@
   </form>
   <nav class="header-nav">
     <% if (locals.isLogged) { %>
-    <!-- Shopping -->
-    <a class="header-nav-shopping">Mis compras</a>
+    <!-- User -->
+    <a href="/user/profile" class="header-nav-user"
+      ><span class="material-icons"> account_circle </span></a
+    >
+    <a href="/user/profile" class="header-nav-username"
+      ><%= locals.userLogged.name %></a
+    >
     <!-- Cart -->
+    <a href="/product/cart" class="header-nav-shop">Mis compras</a>
     <a href="/product/cart" class="header-nav-cart">
       <span class="material-icons"> shopping_cart </span>
     </a>

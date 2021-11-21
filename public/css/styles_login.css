@@ -17,7 +17,6 @@
 .header {
   height: 50px;
   box-shadow: 0px 0px 3px rgb(100, 100, 100);
-  background-color: #ffffff;
 }
 
 .header-menu {
@@ -61,9 +60,9 @@
 }
 
 .header-search {
-  display: none;
+  display: block;
   position: absolute;
-  right: 45px;
+  right: 90px;
 }
 
 .header-search-bar {
@@ -88,21 +87,23 @@
   display: none;
 }
 
-.header-nav-shopping {
+.header-nav-user {
   display: none;
 }
 
-.header-nav a {
-  margin: 0px 15px 0px 15px;
+.header-nav-username {
+  display: none;
+}
+
+.header-nav-shop {
+  display: none;
 }
 
 .header-nav-cart {
-  width: 45px;
-  height: 50px;
   display: none;
-  align-items: center;
-  justify-content: center;
 }
+
+/* main */
 
 body {
   background-color: #2790c3;
@@ -255,11 +256,10 @@ body {
     width: 35%; /* ADAPTACION DEL FORMULARIO A DESKTOP*/
   }
 
-  .remenber{
+  .remenber {
     display: flex;
   }
-  .checkremenber{
+  .checkremenber {
     margin-top: 15px;
   }
-
 }
