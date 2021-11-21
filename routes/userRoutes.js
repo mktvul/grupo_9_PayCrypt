@@ -1,6 +1,16 @@
 //Require's
 const express = require("express");
 const router = express.Router();
+const { body } = require('express-validator')
+const validations = [
+  body('name').notEmpty().withMessage('Debes completar tu nombre'),
+  body('lastname').notEmpty().withMessage('Debes completar tu apellido'),
+  body('dni').notEmpty().withMessage('Debes completar tu número de DNI'),
+  body('email').notEmpty().withMessage('Debes completar tu email'),
+  body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
+  body('password1').notEmpty().withMessage('Debes ingresar tu contraseña'),
+  body('category').notEmpty().withMessage('Debes seleccionar una categoría')
+];
 
 // Controller
 const usersController = require("../controllers/userController");
