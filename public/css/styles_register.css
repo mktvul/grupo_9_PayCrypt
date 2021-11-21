@@ -195,11 +195,11 @@ body {
 }
 
 /* BOTON SUBIR IMAGEN  */
-#photoUser {
+#image {
   display: none; /* Apago el diseño original */
 }
 
-input[type="”file”"]#photoUser {
+input[type="”file”"]#image {
   /* CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files */
   width: 0.1px;
   height: 0.1px;
@@ -209,7 +209,7 @@ input[type="”file”"]#photoUser {
   z-index: -1;
 }
 
-label[for="photoUser"] {
+label[for="image"] {
   /*Decoro el nuevo frente */
   font-size: 14px;
   color: #27346a;
@@ -319,7 +319,7 @@ label[for="photoUser"] {
   .check-box-condiciones{
     margin-top: 10px;
   }
-  label[for="photoUser"] {
+  label[for="image"] {
     width: 332px;
     margin-left: 0px;
   }
