@@ -19,7 +19,7 @@
                 </br>
 
                 <!-- CAJA FLEX DEL  FORMULARIO-->
-                <form class="prueba-formulario" action="/products/edit/<%= productSent.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="prueba-formulario" action="/product/edit/<%= productSent.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="formulario-flex">
 
                         <div class="form-left">
@@ -105,7 +105,7 @@
                                 <button type="submit">Editar producto</button>
                             </div>
                             
-                            <form class="boton-delete" action="/products/delete/<%= productSent.id %>?_method=DELETE" method="POST"
+                            <form class="boton-delete" action="/product/delete/<%= productSent.id %>?_method=DELETE" method="POST"
                                 style="display: inline-flex">
                                 <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
                             </form>

@@ -80,9 +80,9 @@
       <!------PRODUCTOS AUTOMATIZADOS CON EJS----------->
       <% productsSent.forEach(producto => { %>
         <article class="each-product">
-          <a href="/products/details/<%= producto.id %> ">  
+          <a href="/product/detail/<%= producto.id %> ">  
            <div class="img-product">
-            <img src="/images/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
+            <img src="/images/products/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
            </div>
             
           <div class="product-description">

@@ -1,24 +1,23 @@
 //Require's
 const path = require("path");
 const fs = require("fs");
-const multer = require("multer");
 
 //Data base
-const productsFilePath = path.join(__dirname, "../data/products.json"); //Identificamos la ruta de nuestra base de datos de usuarios
+const productsFilePath = path.join(__dirname, "../database/products.json"); //Identificamos la ruta de nuestra base de datos de usuarios
 const products = JSON.parse(fs.readFileSync(productsFilePath), "utf-8"); //Convertimos la base de datos de usuarios JSON en un array de objetos literales
 
 //Controller
 const productsControllers = {
   //Listado de productos (GET)
   listOfProducts: (req, res) => {
-    res.render("./products/products", {
+    res.render("./product/products", {
       productsSent: products, //Acá falta automatizar el EJS
     });
   },
 
   //Formulario de creación de producto (GET) (sólo renderiza formulario)
   create: (req, res) => {
-    res.render("./products/create");
+    res.render("./product/create");
   },
 
   //Detalle de un producto particular (GET)
@@ -28,7 +27,7 @@ const productsControllers = {
       return product.id == id;
     });
 
-    res.render("./products/details", {
+    res.render("./product/detail", {
       products: product,
     });
   },
@@ -53,7 +52,7 @@ const productsControllers = {
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-    res.redirect("/products");
+    res.redirect("/product");
   },
 
   // Formulario de edición de productos (GET)
@@ -63,7 +62,7 @@ const productsControllers = {
       return product.id == id;
     });
 
-    res.render("./products/edit", {
+    res.render("./product/edit", {
       productSent: product,
     });
   },
@@ -101,7 +100,7 @@ const productsControllers = {
 
     //Guardo en la base de datos JSON
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-    res.redirect("/products");
+    res.redirect("/product");
   },
 
   //Acción de borrado (DELETE)
@@ -117,11 +116,11 @@ const productsControllers = {
       productsFilePath,
       JSON.stringify(finalProducts, null, " ")
     );
-    res.redirect("/products");
+    res.redirect("/product");
   },
 
   cart: (req, res) => {
-    res.render("./products/cart");
+    res.render("./product/cart");
   },
 };
 

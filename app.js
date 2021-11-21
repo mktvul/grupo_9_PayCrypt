@@ -1,24 +1,17 @@
 //Require's
 const express = require("express");
 const session = require("express-session");
-const path = require("path"); //Unifica rutas dentro de los sistemas operativos
-const methodOverride = require("method-override"); // para que se puedan usar los metodos put, patch y delete 
-const cookies = require("cookie-parser"); //cookies
+const cookies = require("cookie-parser");
+const methodOverride = require("method-override"); //Nos permite usar los métodos PUT y DELETE
+const path = require("path");
 
 //Express
 const app = express();
 
-//usamos cookies
-app.use(cookies());
-
 //Middlewares
 const userLogged = require("./middlewares/userLogged");
 
-app.use(express.static(path.join(__dirname, "./public"))); // Le digo a express que quiero tener la carpeta "public" como un recurso de archivos estáticos
-app.use(express.urlencoded({ extended: false })); //Convierte a json la info que viene por HTML desde el formulario
-app.use(express.json()); //Convierte a json la info que viene desde js cliente
-app.use(methodOverride("_method")); //Nos permite usar los métodos PUT y DELETE
-
+//Session
 app.use(
   session({
     secret: "Shhh, It's a secret",
@@ -27,23 +20,32 @@ app.use(
   })
 );
 
+//Cookies
+app.use(cookies());
+
 //app.use(userLogged); //Verifica que el usuario esté logueado
 
-//Template engine
-app.set("view engine", "ejs"); // Utiliza el motor de plantillas ejs
-app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la carpeta views
+app.use(express.urlencoded({ extended: false })); //Convierte a json la info que viene por HTML desde el formulario
+
+app.use(express.json()); //Convierte a json la info que viene desde js cliente
+
+app.use(express.static("./public")); //Carpeta "public" como un recurso de archivos estáticos
+
+app.use(methodOverride("_method")); //Nos permite usar los métodos PUT y DELETE
+
+//Server
+app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+
+// Template Engine
+app.set("view engine", "ejs");
+//app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la carpeta views
 
 //Route system
-const router = require("./routers/mainRouters");
-const usersRouter = require("./routers/usersRouters");
-const productsRouters = require("./routers/productsRouters");
-const { Cookie } = require("express-session");
+const mainRoutes = require("./routes/mainRoutes");
+const userRoutes = require("./routes/userRoutes");
+const productRoutes = require("./routes/productRoutes");
+//const { Cookie } = require("express-session");
 
-app.use("/", router); // Al ingresar al home deriva a routers
-app.use("/users", usersRouter); //Router de usuarios
-app.use("/products", productsRouters); //Router de productos
-
-//Set the server to listen
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
+app.use("/", mainRoutes);
+app.use("/user", userRoutes);
+app.use("/product", productRoutes);
