@@ -6,7 +6,7 @@
   <body>
     <%- include ('../partials/header.ejs') %>
     <main>
-      <form class="control-formulario-login" action="" method="post">
+      <form class="control-formulario-login" action="/users/login" method="post">
         <div class="formulario-flex-login">
           <div>
             <img class="img-formulario-login" src="/images/paycrypt-logo.svg" />
@@ -37,10 +37,17 @@
               placeholder="Contraseña"
             />
           </div>
+        <div class="remenber">
+          <div class=checkremenber>
+            <input type="checkbox" name="remenberuser" value="on" id="remenberuser">
+            <label for="Bitcoin">Recordarme</label>
+          </div>
 
           <div class="olvidaste-tu-contraseña">
             <p><a href="#">¿Olvidaste tu contraseña?</a></p>
           </div>
+
+        </div>
 
           <div class="boton-formulario-continuar">
             <button type="submit">Continuar</button>

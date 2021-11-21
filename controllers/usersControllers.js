@@ -11,23 +11,29 @@ const users = JSON.parse(fs.readFileSync(usersFilePath), "utf-8"); //Convertimos
 const usersControllers = {
   login: (req, res) => {
     //implementación de cookies en login
-    if (req.body.remeberUser) {
-      //si tilda el check de recordar
-      res.cookie("emailUser", req.body.email, { maxAge: 100 * 60 * 10 }); //guardamos 10 minutos el email
-    }
-
-    res.render("./users/login");
+        res.render("./users/login");
   },
 
+  //falta login proceess -marcos
+   loginProcess:(req,res)=>{
+    //falta texto
+    if (req.body.remenberuser) {  //si tilda el check de recordar
+        res.cookie("userEmail", req.body.email, { maxAge: 100 * 60 * 10 }); //guardamos 10 minutos el email
+    }
+    //falta texto
+    res.redirect("/");//solo para que haga algo
+
+   },
+
   logout: (req, res) => {
-    res.ClearCookie("emailUser");
+    res.ClearCookie("userEmail");
     req.session.destroy();
-    return res.redirect("/");
+    return res.redirect("/index");
   },
 
   register: (req, res) => {
     //Método GET
-    res.render("./users/register");
+     res.render("./users/register");
   },
 
   storeUser: (req, res) => {
@@ -72,7 +78,7 @@ const usersControllers = {
       dni: req.body.dni,
       email: req.body.email,
       password: req.body.password,
-      image: userToEdit.image,
+      image: req.file ? req.file.filename : userToEdit.image,
     };
 
     users.forEach((user, index) => {

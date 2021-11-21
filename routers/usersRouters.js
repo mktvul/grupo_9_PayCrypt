@@ -22,8 +22,8 @@ const upload = multer({storage}); //  upload - para poder enviar el archivo a la
 
 
 //Middlewares
-const userGuest = require("../middlewares/userGuest");
-const userAuthentication = require("../middlewares/userAuthentication");
+const userGuest = require("../middlewares/userGuest"); //Usuario sin loguear
+const userAuthentication = require("../middlewares/userAuthentication"); //Usuario logueado
 
 //User - register
 router.get("/register", userGuest, usersControllers.register);
@@ -31,6 +31,8 @@ router.post("/", upload.single('image'), usersControllers.storeUser); // ya con 
 
 //Users - login
 router.get("/login", userGuest, usersControllers.login);
+// falta el post del login..
+router.post("/login", usersControllers.loginProcess);
 
 //Users - logout
 router.get("/logout", usersControllers.logout);

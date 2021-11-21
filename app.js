@@ -3,13 +3,13 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path"); //Unifica rutas dentro de los sistemas operativos
 const methodOverride = require("method-override"); // para que se puedan usar los metodos put, patch y delete 
-const cookie = require("cookie-parser"); //cookies
+const cookies = require("cookie-parser"); //cookies
 
 //Express
 const app = express();
 
 //usamos cookies
-//app.use(cookie());
+app.use(cookies());
 
 //Middlewares
 const userLogged = require("./middlewares/userLogged");

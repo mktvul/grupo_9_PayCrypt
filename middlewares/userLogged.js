@@ -1,6 +1,7 @@
 //agrego para poder leer los usuarios // MARCOS
 const user = require("../data/users.json");
 
+
 function userLogged(req, res, next) {
   res.locals.isLogged = false;
   //cookie
@@ -8,7 +9,7 @@ function userLogged(req, res, next) {
   var userCookie = user.findByField("email", emailCookie); //busco en el archivo requerido el imail y lo devuelvo
 
   if (userCookie) {
-    res.locals.userLogged = userCookie; //si encontro un usuario que lo logee
+    eq.session.userLogged = userCookie; //si encontro un usuario que lo logee
   }
 
   if (req.session.userLogged) {
