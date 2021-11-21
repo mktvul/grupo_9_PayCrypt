@@ -6,7 +6,7 @@ const router = express.Router();
 const productsControllers = require("../controllers/productController");
 
 //Middlewares
-const upload = require("../middlewares/productStorage"); //Multer
+const productStorage = require("../middlewares/productStorage"); //Multer
 
 //Products GET
 router.get("/", productsControllers.listOfProducts);
@@ -15,13 +15,13 @@ router.get("/cart", productsControllers.cart);
 
 //Crear un producto (muestra form por GET y acción de crear por POST)
 router.get("/create", productsControllers.create);
-router.post("/", upload.single("photoProduct"), productsControllers.store);
+router.post("/", productStorage.single("photoProduct"), productsControllers.store);
 
 // Editar un producto (muestra form por GET y acción de editar por PUT)
 router.get("/edit/:id/", productsControllers.edit);
 router.put(
   "/edit/:id/",
-  upload.single("photoProduct"),
+  productStorage.single("photoProduct"),
   productsControllers.update
 );
 

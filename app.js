@@ -3,7 +3,6 @@ const express = require("express");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override"); //Nos permite usar los métodos PUT y DELETE
-const path = require("path");
 
 //Express
 const app = express();
@@ -23,7 +22,7 @@ app.use(
 //Cookies
 app.use(cookies());
 
-//app.use(userLogged); //Verifica que el usuario esté logueado
+app.use(userLogged); //Verifica que el usuario esté logueado
 
 app.use(express.urlencoded({ extended: false })); //Convierte a json la info que viene por HTML desde el formulario
 
@@ -38,7 +37,6 @@ app.listen(3000, () => console.log("Server running on http://localhost:3000"));
 
 // Template Engine
 app.set("view engine", "ejs");
-//app.set("views", path.join(__dirname, "views")); // Utiliza las vistas de la carpeta views
 
 //Route system
 const mainRoutes = require("./routes/mainRoutes");

@@ -33,9 +33,13 @@ const controller = {
     }
 
     let userToCreate = {
-      ...req.body,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      dni: req.body.dni,
+      email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      avatar: req.file.filename,
+      category: req.body.category,
+      image: req.file.filename,
     };
 
     let userCreated = User.create(userToCreate);
@@ -61,7 +65,7 @@ const controller = {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
 
-        return res.redirect("/");
+        return res.redirect("../");
       }
       return res.render("./user/login", {
         errors: {
@@ -81,7 +85,7 @@ const controller = {
     });
   },
   profile: (req, res) => {
-    return res.render("/", {
+    return res.render("./user/profile", {
       user: req.session.userLogged,
     });
   },

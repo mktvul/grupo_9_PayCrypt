@@ -6,8 +6,8 @@ const router = express.Router();
 const usersController = require("../controllers/userController");
 
 // Middlewares
-const uploadFile = require("../middlewares/userStorage");
-const validations = require("../middlewares/validateRegister");
+const userStorage = require("../middlewares/userStorage"); //Multer
+const userValidate = require("../middlewares/userValidate"); //Express-validation
 const userGuest = require("../middlewares/userGuest");
 const userAuthentication = require("../middlewares/userAuthentication");
 
@@ -17,8 +17,8 @@ router.get("/register", userGuest, usersController.register);
 // Procesar el registro
 router.post(
   "/register",
-  uploadFile.single("image"),
-  validations,
+  userStorage.single("image"),
+  userValidate,
   usersController.processRegister
 );
 
@@ -29,9 +29,9 @@ router.get("/login", userGuest, usersController.login);
 router.post("/login", usersController.loginProcess);
 
 // Perfil de Usuario
-router.get("/profile/", userAuthentication, usersController.profile);
+router.get("/profile", userAuthentication, usersController.profile);
 
 // Logout
-router.get("/logout/", usersController.logout);
+router.get("/logout", usersController.logout);
 
 module.exports = router;
