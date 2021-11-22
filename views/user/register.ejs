@@ -3,91 +3,115 @@
     <%- include ('../partials/head.ejs', {titulo: 'Registro', cssSheets: 'styles_register'}) %>
 
     <body>
-<main>
-    <%- include ('../partials/header.ejs') %> 
-
-    <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
-        <div class="registro-logo">
-            <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
-        </div>
-    
-        <div>
-            <p class="p-datos-registro">Completa tus datos</p>
-        </div>
-        </br> 
-
-              <!-- CAJA FLEX DEL  FORMULARIO-->
-            <form class="prueba-formulario" action="/user/register" method="POST" enctype="multipart/form-data">
-                <div class="formulario-flex">
-                
-                <div>
-                    <label for="name"></label>
-                    <input class="formulario-control" type="text" name="name" id="name" placeholder="Nombre">   <!--NOMBRE USUARIO-->
-                </div>
-
-                <div>
-                    <label for="lastName"></label>
-                    <input class="formulario-control" type="text" name="lastName" id="lastName" placeholder="Apellido">  <!-- APELLIDO-->
-                </div>
-                
-                <div>
-                    <label for="dni"></label>
-                    <input class="formulario-control" type="number" name="dni" id="dni" placeholder="DNI">                 <!-- NUMERO DE DOCUMENTO (DNI)-->
-                </div>
-                
-                <div>
-                    <label for="email"></label>
-                    <input class="formulario-control" type="email" name="email" id="email" placeholder="E-mail">   <!-- CORREO ELECTRONICO-->
-                </div>
-
-                <div>
-                    <label for="password"></label>
-                    <input class="formulario-control" type="password" name="password" id="password" placeholder="Contraseña">  <!-- CONTRASEÑA-->
-                </div>
-                <div>
-                    <label for="password1"></label>
-                    <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
-                </div>
-                <div>
-                <div class="photoUser">
-                    <label for="image">
-                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                    </label> <!-- IMAGEN DEL PRODUCTO-->
-                    <input type="file" name="image" id="image" required="" accept=".jpg">
-                </div>
-                <div class="seleccion-categoria">
-                    <label  for="">Categoria:</label>
-                    <select name="category" id="category">
-                        <option value="comprador">Comprador</option>        <!--Categorias-->
-                        <option value="vendedor">Vendedor</option>
-                    </select>
-                    <!--<input type="radio" name="category" id="category" value="comprador">    
-                    <label for="comprador">Comprador</label>
-                    
-                    <input type="radio" name="category" id="category" value="vendedor">
-                    <label for="vendedor">Vendedor</label>  -->
-                </div>
-                <div class="check-box-condiciones">
-                    <label for="terminos">
-                       <input type="checkbox" name="terminos" id="terminos"> He leido y acepto los términos y condiciones.</label> <!-- CAJA  TERMINOS Y CONDICIONES-->
-                </div>
-            </div>
-                <div>
-                <div class="boton-formulario-continuar" >
-                    
-                    <button type="submit">Continuar</button>
+        <main>
+            <%- include ('../partials/header.ejs') %> 
+            <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
+                <div class="registro-logo">
+                    <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
                 </div>
             
-                <div class="boton-formulario-iniciar-sesion">
-                    
-                    <a role="button" href="/user/login"><button type="button">Iniciar sesión</button></a>
+                <div>
+                    <p class="p-datos-registro">Completá tus datos</p>
                 </div>
+
+                <!-- CAJA FLEX DEL  FORMULARIO-->
+                <form class="prueba-formulario" action="/user/register" method="POST" enctype="multipart/form-data">
+                    <div class="formulario-flex">
+                        
+                        <div>
+                            <label for="name"></label>
+                            <input class="formulario-control" type="text" name="name" id="name" placeholder="Nombre">   <!--NOMBRE USUARIO-->
+                            <% if (locals.errors && errors.name) { %>
+                                <p class="text-danger"> <%= errors.name.msg %> </p>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <label for="lastName"></label>
+                            <input class="formulario-control" type="text" name="lastName" id="lastName" placeholder="Apellido">  <!-- APELLIDO-->
+                            <% if (locals.errors && errors.lastName) { %>
+                                <p class="text-danger"> <%= errors.lastName.msg %> </p>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <label for="dni"></label>
+                            <input class="formulario-control" type="number" name="dni" id="dni" placeholder="DNI"> <!-- NUMERO DE DOCUMENTO (DNI)-->
+                            <% if (locals.errors && errors.dni) { %>
+                                <p class="text-danger"> <%= errors.dni.msg %> </p>
+                            <% } %>
+                        </div>
+                        
+                        <div>
+                            <label for="email"></label>
+                            <input class="formulario-control" type="email" name="email" id="email" placeholder="E-mail">   <!-- CORREO ELECTRONICO-->
+                            <% if (locals.errors && errors.email) { %>
+                                <p class="text-danger"> <%= errors.email.msg %> </p>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <label for="password"></label>
+                            <input class="formulario-control" type="password" name="password" id="password" placeholder="Contraseña">  <!-- CONTRASEÑA-->
+                            <% if (locals.errors && errors.password) { %>
+                                <p class="text-danger"> <%= errors.password.msg %> </p>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <label for="password1"></label>
+                            <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar Contraseña">  <!-- CONTRASEÑA-->
+                            <% if (locals.errors && errors.password1) { %>
+                                <p class="text-danger"> <%= errors.password1.msg %> </p>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <div class="photoUser">
+                                <label for="image">
+                                    <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                                </label> <!-- IMAGEN DEL PRODUCTO-->
+                                <input type="file" name="image" id="image" required="" accept=".jpg">
+                                <% if (locals.errors && errors.image) { %>
+                                    <p class="text-danger"> <%= errors.image.msg %> </p>
+                                <% } %>
+                            </div>
+
+                            <div class="seleccion-categoria">
+                                <label  for="">Categoría:</label>
+                                <select name="category" id="category">
+                                    <!--Categorias-->
+                                    <option value="comprador">Comprador</option>
+                                    <option value="vendedor">Vendedor</option>
+                                </select>
+                                <% if (locals.errors && errors.category) { %>
+                                    <p class="text-danger"> <%= errors.category.msg %> </p>
+                                <% } %>
+                                <!--<input type="radio" name="category" id="category" value="comprador">    
+                                <label for="comprador">Comprador</label>
+                                
+                                <input type="radio" name="category" id="category" value="vendedor">
+                                <label for="vendedor">Vendedor</label>  -->
+                            </div>
+
+                            <div class="check-box-condiciones">
+                                <label for="terminos">
+                                <input type="checkbox" name="terminos" id="terminos"> He leído y acepto los Términos y Condiciones.</label> <!-- CAJA TERMINOS Y CONDICIONES-->
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="boton-formulario-continuar" >
+                                <button type="submit">Continuar</button>
+                            </div>
+                        
+                            <div class="boton-formulario-iniciar-sesion">
+                                <a role="button" href="/user/login"><button type="button">Iniciar sesión</button></a>
+                            </div>
+                        </div>
+                    </div>  
+                </form>
             </div>
-            </div>  
-            </form>
-        </div>
-    
-    </main>
-    
-</body>
+        </main>  
+    </body>
 </html>
