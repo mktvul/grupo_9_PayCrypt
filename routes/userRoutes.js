@@ -36,7 +36,7 @@ router.post(
 router.get("/login", userGuest, usersController.login);
 
 // Procesar el login
-router.post("/login", usersController.loginProcess);
+router.post("/login", validations, usersController.loginProcess);
 
 // Perfil de Usuario
 router.get("/profile", userAuthentication, usersController.profile);
