@@ -41,6 +41,9 @@ router.post("/login", validations, usersController.loginProcess);
 // Perfil de Usuario
 router.get("/profile", userAuthentication, usersController.profile);
 
+// Editar perfil
+router.get("/edit", userAuthentication, usersController.edit);
+
 // Logout
 router.get("/logout", usersController.logout);
 

@@ -194,11 +194,11 @@ body {
 
 /* AGREGO MARCOS*/
 
-#photoProducts {
+#photoProduct {
   display: none; /*Apago el diseño original*/
 }
 
-input[type="”file”"]#photoProducts {
+input[type="”file”"]#photoProduct {
   /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files*/
   width: 0.1px;
   height: 0.1px;
@@ -208,7 +208,7 @@ input[type="”file”"]#photoProducts {
   z-index: -1;
 }
 
-label[for="photoProducts"] {
+label[for="photoProduct"] {
   /*Decoro el nuevo frente*/
   font-size: 14px;
   color: #27346a;
@@ -410,7 +410,7 @@ label[for="photoProducts"] {
     margin-right: 10px;
   }
 
-  label[for="photoProducts"] {
+  label[for="photoProduct"] {
     width: 332px;
   }
 

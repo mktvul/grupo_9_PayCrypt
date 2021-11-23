@@ -86,9 +86,15 @@ const controller = {
       },
     });
   },
-  
+
   profile: (req, res) => {
     return res.render("./user/profile", {
+      user: req.session.userLogged,
+    });
+  },
+
+  edit: (req, res) => {
+    return res.render("./user/edit", {
       user: req.session.userLogged,
     });
   },
