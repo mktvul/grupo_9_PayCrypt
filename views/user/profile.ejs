@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets:
-  'styles_product_detail'}) %>
+  'styles_profile'}) %>
   <body>
     <!-- Header -->
     <%- include('../partials/header.ejs'); %>
 
     <!-- Main -->
-    <main>
-      <article>
-        <section>
-          <img src="/images/users/<%= user.image %>" />
-          <div><%= user.email %></div>
-        </section>
-        <section>
-          <ul>
-            <li><a href="/user/edit">Editar perfil</a></li>
-            <a role="button" href="/user/delete"><button type="button">Borrar usuario</button></a>
-            <li><a href="/user/logout">Logout</a></li>
+    <main class="main">
+      <section class="main-section">
+        <article class="main-section-article">
+          <div class="main-section-article-profile">
+            <img
+              class="main-section-article-profile-img"
+              src="/images/users/<%= user.image %>"
+            />
+          </div>
+          <div class="main-section-article-email"><%= user.email %></div>
+        </article>
+        <article class="main-section-article-2">
+          <ul class="main-section-article-2-ul">
+            <li class="main-section-article-2-ul-li">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> manage_accounts </span>
+              </div>
+              <a href="/user/edit">Editar perfil</a>
+            </li>
+            <li class="main-section-article-2-ul-li-delete">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> person_remove </span>
+              </div>
+              <a role="button" href="/user/delete"
+                ><button type="button">Borrar usuario</button></a
+              >
+            </li>
+            <li class="main-section-article-2-ul-li">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> logout </span>
+              </div>
+              <a href="/user/logout">Logout</a>
+            </li>
           </ul>
-        </section>
-      </article>
+        </article>
+      </section>
     </main>
-
-    <!-- Footer -->
-    <%- include('../partials/footer.ejs'); %>
   </body>
 </html>

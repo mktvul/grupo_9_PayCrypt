@@ -16,5 +16,15 @@
   "email": "makuinmk@gmail.com",
   "password": "midgard",
   "image": "default-user.png"
+ },
+ {
+  "id": 3,
+  "name": "Sebastian",
+  "lastName": "Sanchis",
+  "dni": "36825552",
+  "email": "seba.sanchis@gmail.com",
+  "password": "$2a$10$/jDlYORlh0kfreQ0p/sxQug42XIOGVxnK1unjmI/SNU57UtgIElnO",
+  "category": "comprador",
+  "image": "1637960191208_img.png"
  }
 ]

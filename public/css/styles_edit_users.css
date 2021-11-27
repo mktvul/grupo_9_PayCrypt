@@ -10,17 +10,18 @@
   border: 0;
 }
 
-/* header */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: auto;
+i {
+  padding: 2px;
 }
+
+/* CONTENEDOR DEL HEADER*/
+
+/* header */
 
 .header {
   height: 50px;
   box-shadow: 0px 0px 3px rgb(100, 100, 100);
+  background-color: #fff;
 }
 
 .header-menu {
@@ -115,82 +116,143 @@ body {
 }
 
 /* main */
-.main {
-  flex-grow: 1;
-  height: auto;
+
+body {
+  background-color: #2790c3;
 }
 
-.main-section {
-  background-color: #ffc439;
+/* CONTENEDOR DEL FORMULARIO*/
+.contenedor-formulario {
+  width: 35%;
+  margin: auto;
+  padding: 10px;
+  background-color: #ffff;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: solid salmon dashed;
+}
+
+.imagen-paycript-formulario {
+  width: 141px;
+}
+
+/* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
+.registro-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
+.formulario-control {
+  margin: 10px;
+  padding: 10px;
+  border: grey solid 1px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+/* CONTROL DEL LABEL (Editar Perfil) */
+.p-editar-perfil {
+  font-size: 20px;
+  /*margin-left: 21px; */
+  text-align: center;
+}
+
+/* LABEL CAMBIAR DE CATEGORIA  */
+.cambiar-categoria {
+  text-align: center;
+}
+
+/* CONTROL DE LA CHECK-BOX DEL FORMULARIO EDICION DE PERFIL*/
+.check-box-condiciones {
+  display: flex;
+  justify-content: center;
+  color: #27346a;
+}
+
+/* boton formulario CONTINUAR*/
+.boton-formulario-continuar {
+  background-color: #27346a;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.terminos-y-continuar {
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
 
-.main-section-article {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px #666;
-  border-radius: 3px;
-  width: 300px;
-  height: 300px;
-  margin-top: 50px;
-  margin-bottom: -175px;
-  z-index: 1;
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+.boton-formulario-continuar:hover {
+  text-decoration: underline;
 }
 
-.main-section-article-profile {
-  width: 150px;
-  height: 150px;
-  margin-top: 30px;
+/* boton formulario INICIAR SESION*/
+
+.boton-formulario-iniciar-sesion {
+  color: #27346a;
+  margin: 10px;
 }
 
-.main-section-article-profile-img {
-  border-radius: 100%;
-  width: 100%;
+/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
+
+.boton-formulario-iniciar-sesion:hover {
+  text-decoration: underline;
+}
+/* SELECCIONA ARCHIVO CSS */
+#photo-profile {
+  display: none; /* Apago el diseño original */
 }
 
-.main-section-article-email {
-  font-size: 20px;
-}
-
-.main-section-article-2 {
-  background-color: #fff;
-  height: fit-content;
-  width: 100vw;
-}
-
-.main-section-article-2-ul {
-  font-size: 20px;
-  margin-top: 200px;
+input[type="”file”"]#photo-profile {
+  /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files */
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
   z-index: -1;
 }
 
-.main-section-article-2-ul-li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
+/*MOBILE*/
+@media (min-width: 0px) {
+  .enlaces-izquierda {
+    display: none;
+  }
+
+  .enlaces-derecha {
+    display: none;
+  }
+
+  .barra-busqueda-header {
+    display: none;
+  }
+
+  .contenedor-formulario {
+    margin: auto;
+    padding: 10px;
+    background-color: #ffff;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: solid salmon dashed;
+    width: 263px;
+  }
 }
 
-.main-section-article-2-ul-li-delete {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  color: #db4437;
-}
-
-.main-section-article-2-ul-li-icon {
-  margin: 10px;
-  font-size: 30px;
-}
-
-/* Media queries: Tablet */
+/*tablets*/
 @media (min-width: 768px) {
   /* Tablet: Header */
+
   .header {
     display: flex;
     align-items: center;
@@ -227,9 +289,23 @@ body {
     border-radius: 0px 3px 3px 0px;
     z-index: 1;
   }
+
+  /* Tablet: Main */
+
+  .enlaces-izquierda {
+    display: none;
+  }
+
+  .enlaces-derecha {
+    display: none;
+  }
+
+  .barra-busqueda-header {
+    display: none;
+  }
 }
 
-/* Media queries: Laptop */
+/*desktop*/
 @media (min-width: 1024px) {
   /* Laptop: Header */
   .header-nav-menu li {
@@ -255,5 +331,33 @@ body {
     width: 100px;
     margin: 0px, 15px, 0px, 25px;
     justify-content: center;
+  }
+
+  /* Laptop: main */
+
+  .contenedor-formulario {
+    width: 844px;
+    /* height: 470px; */
+  }
+
+  .formulario-control {
+    width: 332px;
+    height: 50px;
+  }
+
+  .formulario-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .boton-formulario-iniciar-sesion {
+    position: relative;
+    left: 556px;
+  }
+
+  .boton-formulario-continuar {
+    width: 332px;
   }
 }
