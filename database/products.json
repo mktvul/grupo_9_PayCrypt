@@ -4,7 +4,10 @@
   "name": "Cafetera Moulinex dolce gusto",
   "shortDescription": "Máquina manual de diseño minimalista y tecnología avanzada.",
   "priceProduct": "0.000001",
+  "description": "Excelente cafetera de uso doméstico, para toda la familia.",
   "photoProduct": "img-cafetera-moulinex.jpg",
+  "category": "Tecnologia",
+  "coin": "Bitcoin",
   "date": " ",
   "location": "Córdoba Capital"
  },
