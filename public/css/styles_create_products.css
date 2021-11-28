@@ -205,6 +205,7 @@ body {
   transition: all 1s ease-out;
 }
 
+<<<<<<< HEAD
 /* BOTON SUBIR IMAGEN  */
 #photoProduct {
   display: none; /* Apago el diseño original */
@@ -212,6 +213,14 @@ body {
 
 input[type="”file”"]#image {
   /* CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files */
+=======
+#photoProduct {
+  display: none; /*Apago el diseño original*/
+}
+
+input[type="”file”"]#photoProduct {
+  /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files*/
+>>>>>>> fe89b24f853bd48fadf8fa267fbf7cc163acd95b
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -221,7 +230,11 @@ input[type="”file”"]#image {
 }
 
 label[for="photoProduct"] {
+<<<<<<< HEAD
   /*Decoro el nuevo frente */
+=======
+  /*Decoro el nuevo frente*/
+>>>>>>> fe89b24f853bd48fadf8fa267fbf7cc163acd95b
   font-size: 14px;
   color: #27346a;
   background-color: #ffffff;
@@ -445,7 +458,7 @@ label[for="photoProduct"] {
     margin-right: 10px;
   }
 
-  label[for="photoProducts"] {
+  label[for="photoProduct"] {
     width: 332px;
   }
 

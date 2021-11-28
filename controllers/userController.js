@@ -39,7 +39,7 @@ const controller = {
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
       category: req.body.category,
-      image: req.file.filename,
+      image: req.file ? req.file.filename : req.session.userLogged.image,
     };
 
     let userCreated = User.create(userToCreate);
@@ -86,11 +86,39 @@ const controller = {
       },
     });
   },
-  
+
   profile: (req, res) => {
     return res.render("./user/profile", {
       user: req.session.userLogged,
     });
+  },
+
+  edit: (req, res) => {
+    return res.render("./user/edit", {
+      user: req.session.userLogged,
+    });
+  },
+
+  editProcess: (req, res) => {
+		let userToEdit = {
+      id: req.session.userLogged.id,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      dni: req.body.dni,
+      email: req.body.email,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      category: req.body.category,
+      image: req.file ? req.file.filename : req.session.userLogged.image,
+		}
+
+		let userEdited = User.edit(userToEdit);
+		return res.redirect('/user/profile');
+  },
+
+  delete: (req, res) => {
+    console.log(req.session.userLogged.id);
+		let userDeleted = User.delete(req.session.userLogged.id);
+		return res.redirect('/');
   },
 
   logout: (req, res) => {

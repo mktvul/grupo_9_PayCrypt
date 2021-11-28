@@ -45,6 +45,21 @@ const User = {
     return newUser;
   },
 
+  edit: function (userData) {
+    let allUsers = this.findAll();
+    let editedUser = {
+      id: this.findByPk(userData.id),
+      ...userData,
+    };
+    allUsers.forEach((user, index) => {
+      if (user.id == userData.id) {
+        allUsers[index] = editedUser;
+      }
+      fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
+      return editedUser;
+    });
+  },
+
   delete: function (id) {
     let allUsers = this.findAll();
     let finalUsers = allUsers.filter((oneUser) => oneUser.id !== id);

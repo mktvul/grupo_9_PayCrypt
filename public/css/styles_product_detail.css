@@ -264,7 +264,6 @@
 /* Media queries: Tablet */
 
 @media (min-width: 768px) {
-  
   /* Tablet: Header */
   .header {
     display: flex;

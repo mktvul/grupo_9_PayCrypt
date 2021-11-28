@@ -1,79 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head.ejs', {titulo: 'Perfil', cssSheets: 'styles_profile'}) %>
-
+  <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets:
+  'styles_profile'}) %>
   <body>
-    <main>
-        
-        <%- include ('../partials/header.ejs') %>
+    <!-- Header -->
+    <%- include('../partials/header.ejs'); %>
 
-
-
-        <div class="contenedor-formulario">    <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO-->
-            <div class="registro-logo">
-                <img class="imagen-paycript-formulario" src="/images/paycrypt-logo.svg" alt="">
-            </div>
-        
-            <div>
-                <p class="p-editar-perfil "> Aqui puedes editar tu perfil</p><h5><%= user.name %></h5>
-            </div>
-            </br> 
-                <!-- AQUI PONER IMAGEN DE PERFIL  USUARIO ACTUAL  -->
-    
-                  <!-- CAJA FLEX DEL  FORMULARIO-->
-                <form class="prueba-formulario" action="/user/profile" method="POST" enctype="multipart/form-data">
-                    <div class="formulario-flex">
-                    
-                    <div>
-                        <label for="name"></label>
-                        <input class="formulario-control" type="text" name="name" id="name" placeholder="Editar nombre" value="<%= user.name %>">   <!--NOMBRE USUARIO-->
-                    </div>
-    
-                    <div>
-                        <label for="lastname"></label>
-                        <input class="formulario-control" type="text" name="lastname" id="lastname" placeholder="Editar apellido" value="<%= user.lastName %>">  <!-- APELLIDO-->
-                    </div>
-                    
-                    <div>
-                        <label for="dni"></label> 
-                        <input class="formulario-control" type="number" name="dni" id="dni" placeholder="Editar DNI" value="<%= user.dni %>">                 <!-- NUMERO DE DOCUMENTO (DNI)-->
-                    </div>
-                    
-                    <div>
-                        <label for="email"></label>
-                        <input class="formulario-control" type="email" name="email" id="email" placeholder="Editar e-mail" value="<%= user.email %>">   <!-- CORREO ELECTRONICO-->
-                    </div>
-    
-                    <div>
-                        <label for="password"></label>
-                        <input class="formulario-control" type="password" name="password" id="password" placeholder="Nueva contraseña">  <!-- Cambiar Contraseña-->
-                    </div>
-                    <div>
-                        <label for="password1"></label>
-                        <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar nueva contraseña">  <!-- CONTRASEÑA-->
-                    </div>
-                    <div>
-                    <div>
-                        <label class="#photo-profile" for="image">Selecciona una nueva foto de perfil:</label>
-                        <input class="formulario-control" type="file" name="image" id="image" value="<%= userLogged.image %>">  <!-- NUEVO- IMAGEN PERFIL -->
-                    </div>
-                    <div class="cambiar-categoria">
-                        <label for="category">¿ Quieres cambiar de categoria ?</label></br>
-                        <input type="radio" name="category" id="category" value="Comprador"> 
-                        <label for="comprador">Comprador</label>
-                        <input type="radio" name="category" id="category" value="Vendedor">
-                        <label for="vendedor">Vendedor</label>
-                    </div>
-                   
-                    <div class="boton-formulario-continuar" >
-                        
-                        <button type="submit">Continuar</button>
-                    </div>
-                </div>  
-                    
-                </form>
-            </div>
-        
-        </main>
-    </body>
-    </html>
+    <!-- Main -->
+    <main class="main">
+      <section class="main-section">
+        <article class="main-section-article">
+          <div class="main-section-article-profile">
+            <img
+              class="main-section-article-profile-img"
+              src="/images/users/<%= user.image %>"
+            />
+          </div>
+          <div class="main-section-article-email"><%= user.email %></div>
+        </article>
+        <article class="main-section-article-2">
+          <ul class="main-section-article-2-ul">
+            <li class="main-section-article-2-ul-li">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> manage_accounts </span>
+              </div>
+              <a href="/user/edit">Editar perfil</a>
+            </li>
+            <li class="main-section-article-2-ul-li-delete">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> person_remove </span>
+              </div>
+              <a role="button" href="/user/delete"
+                ><button type="button">Borrar usuario</button></a
+              >
+            </li>
+            <li class="main-section-article-2-ul-li">
+              <div class="main-section-article-2-ul-li-icon">
+                <span class="material-icons"> logout </span>
+              </div>
+              <a href="/user/logout">Logout</a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -23,8 +23,8 @@
   "lastName": "Sanchis",
   "dni": "36825552",
   "email": "seba.sanchis@gmail.com",
-  "password": "$2a$10$yMdVEdS1Nd6hPwQM9a6IOO1vGZmvHsRr3.HN9tMO2PI5L2rsXW8CS",
-  "category": "vendedor",
-  "image": "1637513654141_img.png"
+  "password": "$2a$10$/jDlYORlh0kfreQ0p/sxQug42XIOGVxnK1unjmI/SNU57UtgIElnO",
+  "category": "comprador",
+  "image": "1637960191208_img.png"
  }
 ]
