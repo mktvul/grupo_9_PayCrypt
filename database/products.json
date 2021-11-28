@@ -161,7 +161,6 @@
  },
  {
   "id": 15,
-<<<<<<< HEAD
   "name": "Carteles ",
   "shortDescription": "Carteles para manifestación",
   "priceProduct": "100",
@@ -170,15 +169,5 @@
   "coin": "USDT",
   "date": " ",
   "location": "Buenos Aires"
-=======
-  "name": "fad",
-  "shortDescription": "weads",
-  "priceProduct": "weasd",
-  "photoProduct": "1637625842579_img.jpg",
-  "category": "Vehiculos",
-  "coin": "Ethereum",
-  "date": " ",
-  "location": "fasd"
->>>>>>> fe89b24f853bd48fadf8fa267fbf7cc163acd95b
  }
 ]
