@@ -115,6 +115,7 @@ i {
 .text-danger {
   color: red;
   font-size: 12px;
+  margin-left: 10px;
 }
 
 body {
@@ -284,7 +285,11 @@ label[for="image"] {
 
   label[for="image"] {
     width: 250px;
-    margin-right: 55px;
+  }
+
+  .photoUser {
+    max-width: 250px;
+    margin-right: 65px;
   }
 
   .category-selection {
