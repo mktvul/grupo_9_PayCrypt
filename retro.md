@@ -44,5 +44,17 @@ PUNTOS POSITIVOS:
 Pudimos resolver entre todos los problemas que surgieron.
 Aprendimos un montón gracias a los problemas del sprint.
 
+Sobre sprint 4:
+
+PUNTOS A MEJORAR: 
+Con respecto al sitio, tenemos varios detalles de UX para mejorar, como los botones.
+Con respecto al trabajo en equipo, este sprint trabajamos mucho mejor que los anteriores aunque todavía podemos optimizar la administración del tiempo de cada uno y que todos podamos aportar de manera equitativa.
+
+
+PUNTOS POSITIVOS:
+Pudimos arreglar pequeños errores de css que veníamos arrastrando ya que tuvimos más tiempo para la entrega.
+Con respecto al trabajo en equipo, mejoramos un montón lo que veníamos trabajando sprints anteriores. Tuvimos un gran manejo del tiempo, ya que pudimos terminarlo mucho antes de la fecha de entrega y aprovechamos para arreglar detalles.
+Nos ordenamos mejor en Trello con las tarjetas.
+
 
 
