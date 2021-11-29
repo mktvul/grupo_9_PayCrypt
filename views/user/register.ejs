@@ -69,9 +69,9 @@
                         <label for="image">
                             <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                         </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="image" id="image" required="" accept=".jpg">
+                        <input type="file" name="image" id="image" accept=".jpg">
                         <% if (locals.errors && errors.image) { %>
-                            <p class="text-danger"> <%= errors.image.msg %> </p>
+                            <p class="text-danger1"> <%= errors.image.msg %> </p>
                         <% } %>
                     </div>
 
@@ -90,7 +90,7 @@
                     <div>
                         <div class="check-box-condiciones">
                             <label for="terminos">
-                            <input type="checkbox" name="terminos" id="terminos"> He leído y acepto los Términos y Condiciones.</label> <!-- CAJA TERMINOS Y CONDICIONES-->
+                            <input type="checkbox" name="terminos" required="" id="terminos"> He leído y acepto los Términos y Condiciones.</label> <!-- CAJA TERMINOS Y CONDICIONES-->
                         </div>
 
                         <div class="continue-button">
