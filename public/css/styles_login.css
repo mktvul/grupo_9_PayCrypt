@@ -15,6 +15,7 @@
 /* header */
 
 .header {
+  background-color: white;
   height: 50px;
   box-shadow: 0px 0px 3px rgb(100, 100, 100);
 }
@@ -60,7 +61,7 @@
 }
 
 .header-search {
-  display: block;
+  display: none;
   position: absolute;
   right: 90px;
 }

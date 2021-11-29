@@ -26,5 +26,15 @@
   "password": "$2a$10$2mpjYEDyq3B567jqPT5xyOfc3u5saV/81DM3RLWzpwsJ8vIueGSLq",
   "category": "comprador",
   "image": "1637971882446_img.png"
+ },
+ {
+  "id": 4,
+  "name": "Sebastian",
+  "lastName": "Sanchis",
+  "dni": "36825552",
+  "email": "seb@test.com",
+  "password": "$2a$10$uuAVkDiSTx/3g1V0SfP1d..0o17iEvVYqPJD375Qu04csJWMjPV8K",
+  "category": "Comprador",
+  "image": "1638227238814_img.png"
  }
 ]

@@ -65,7 +65,7 @@ i {
 }
 
 .header-search {
-  display: block;
+  display: none;
   position: absolute;
   right: 90px;
 }
