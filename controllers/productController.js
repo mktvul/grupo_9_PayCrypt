@@ -45,7 +45,7 @@ const productsControllers = {
       photoProduct: req.file.filename,
       category: req.body.category,
       coin: req.body.coin,
-      date: " ",
+      date: new Date().getTime(),
       location: req.body.location,
     };
 
