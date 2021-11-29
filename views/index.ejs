@@ -109,30 +109,33 @@
             </p>
 
             <p class="category">
-              <i class="far fa-folder-open"></i><%= producto.category %> <!--CATEGORIA-->
+              <i class="far fa-folder-open"></i> <%= producto.category %> <!--CATEGORIA-->
             </p>
 
 
             <h3 class="name-of-product"><%= producto.name %></h3>
             <p class="description"><%= producto.shortDescription %></p>
 
-            <p class="date">
-              <!----------->
-              <% function Dias(){ %>
-                <% let fecha1=producto.date; %><!--fecha del producto--> 
-                <%let fecha2=new Date();%>    <!--fecha actual--> 
-                <% let milisegundos = 24*60*60*1000;%> <!--guardamos los milisegundos-->
-                <% let milisegundostranscurridos= Math.abs(fecha1.getTime() - fecha2.getTime());%> <!--restamos las fechas-->
-                <%  let diastranscurridos = Math.round(milisegundostranscurridos/milisegundos);%> <!--dividimos apara sacar el numero entero-->
-
-                <i class="fas fa-clock"></i><%= diastranscurridos %> <p> Dias atrás</p> <!--ponemos el dato dinamico-->
-                <% } %>     
-            </p>
+            
+              <!--Calculo de fecha-->
+               <%var fecha1 = producto.date; //fecha del producto
+                var fecha2 = new Date().getTime();  // fecha actual 
+                var diff = Math.abs(fecha2 - fecha1); //restamos las fechas
+                var diastranscurridos= Math.round(diff/(1000*60*60*24)); //dividimos apara sacar el numero entero
+                if(diastranscurridos < 1){%> 
+                  <i class="fas fa-clock"></i><span class="date"> Hoy </span> 
+                <%} else if(diastranscurridos == 1) {%> 
+                  <i class="fas fa-clock"></i> <%= diastranscurridos %> <span class="date"> día</span>
+                <%} else {%> 
+                <i class="fas fa-clock"></i> <%= diastranscurridos %> <span class="date"> días atrás</span> 
+                <%}%> 
+                
+            
           </a>
         </div>
 
         <div class="place">
-          <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
+          <p> <i class="fas fa-map-marker-alt"></i> <%= producto.location %></p>
         </div>
       </article>
       <% }) %>
