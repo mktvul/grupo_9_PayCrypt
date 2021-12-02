@@ -65,5 +65,15 @@
   "password": "$2a$10$RLrYEAA0WKfzOaU6b6zZzOa/AGgUJqGIpxYXsbFij.qur300NXxtO",
   "category": "comprador",
   "image": "1638224129991_img.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Tomas",
+  "lastName": "Espil",
+  "dni": "42850900",
+  "email": "makuin@gmail.com",
+  "password": "$2a$10$NJOIUuXN/IYoNLbkdCMBeu3fqbXwmJWrOWC8R7aPq2ZnhyKYNqsHa",
+  "category": "comprador",
+  "image": "1638229676215_img.jpg"
  }
 ]
