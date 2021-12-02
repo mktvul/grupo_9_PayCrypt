@@ -19,61 +19,22 @@
  },
  {
   "id": 3,
-  "name": "Sebastian",
+  "name": "Sebastian ",
   "lastName": "Sanchis",
   "dni": "36825552",
   "email": "seba.sanchis@gmail.com",
-  "password": "$2a$10$/jDlYORlh0kfreQ0p/sxQug42XIOGVxnK1unjmI/SNU57UtgIElnO",
+  "password": "$2a$10$2mpjYEDyq3B567jqPT5xyOfc3u5saV/81DM3RLWzpwsJ8vIueGSLq",
   "category": "comprador",
-  "image": "1637960191208_img.png"
+  "image": "1637971882446_img.png"
  },
  {
   "id": 4,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108008",
-  "email": "imaquagarage@gmail.com",
-  "password": "$2a$10$.mzzz25jT0GyxACfY9JVNe8pNlavIILdS6gG5g7ZpT4kXHEifYTJq",
-  "category": "vendedor",
-  "image": "1638202679233_img.jpg"
- },
- {
-  "id": 5,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108013",
-  "email": "hola@gmail.com",
-  "password": "$2a$10$gkfIW6UV3Tx3xXL.4IDA9u.fQEkMZ5gQ.wP22RnOAH8OQsWbNCX1C",
-  "image": "1638223583570_img.jpg"
- },
- {
-  "id": 6,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "1651695",
-  "email": "555a@gmail.com",
-  "password": "$2a$10$5LdvfTXIJ14Uh6AdgCauGuhsJU0Orv2WGvtKRSFC2OCN3VgnJa9tK",
-  "category": "vendedor",
-  "image": "1638223784878_img.jpg"
- },
- {
-  "id": 7,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108008",
-  "email": "hola1@gmail.com",
-  "password": "$2a$10$RLrYEAA0WKfzOaU6b6zZzOa/AGgUJqGIpxYXsbFij.qur300NXxtO",
-  "category": "comprador",
-  "image": "1638224129991_img.jpg"
- },
- {
-  "id": 8,
-  "name": "Tomas",
-  "lastName": "Espil",
-  "dni": "42850900",
-  "email": "makuin@gmail.com",
-  "password": "$2a$10$NJOIUuXN/IYoNLbkdCMBeu3fqbXwmJWrOWC8R7aPq2ZnhyKYNqsHa",
-  "category": "comprador",
-  "image": "1638229676215_img.jpg"
+  "name": "Sebastian",
+  "lastName": "Sanchis",
+  "dni": "36825552",
+  "email": "seb@test.com",
+  "password": "$2a$10$uuAVkDiSTx/3g1V0SfP1d..0o17iEvVYqPJD375Qu04csJWMjPV8K",
+  "category": "Comprador",
+  "image": "1638227238814_img.png"
  }
 ]
