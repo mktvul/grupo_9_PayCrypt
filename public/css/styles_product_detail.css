@@ -10,7 +10,18 @@
   border: 0;
 }
 
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* main */
+
+.main {
+  flex-grow: 1;
+  height: auto;
+}
 
 .main-section-2 {
   background-color: #fff;
