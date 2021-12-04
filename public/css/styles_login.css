@@ -166,12 +166,15 @@ body {
 
 /* boton formulario CONTINUAR*/
 .boton-formulario-continuar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #27346a;
   color: #ffff;
   border-radius: 5px;
   padding: 7px;
-  width: 332px;
-  height: 30px;
+  width: 270px;
+  height: 40px;
   margin: auto;
   margin-top: 14px;
   margin-bottom: 14px;
