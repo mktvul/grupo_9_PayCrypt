@@ -14,107 +14,6 @@ i {
   padding: 2px;
 }
 
-/* CONTENEDOR DEL HEADER*/
-
-/* header */
-
-.header {
-  height: 50px;
-  box-shadow: 0px 0px 3px rgb(100, 100, 100);
-  background-color: #fff;
-}
-
-.header-menu {
-  width: 45px;
-  height: 50px;
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-logo {
-  width: 45px;
-  height: 50px;
-  position: absolute;
-  left: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-
-.header-nav-menu {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  left: 150px;
-  width: 45px;
-  height: 50px;
-}
-
-.header-nav-menu li {
-  display: none;
-}
-
-.header-logo-img {
-  height: 100%;
-}
-
-.header-search {
-  display: block;
-  position: absolute;
-  right: 90px;
-}
-
-.header-search-bar {
-  display: none;
-}
-
-.header-search-button {
-  width: 45px;
-  height: 50px;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  height: 50px;
-}
-
-.header-nav-login {
-  display: none;
-}
-
-.header-nav-user {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-}
-
-.header-nav-username {
-  display: none;
-}
-
-.header-nav-shop {
-  display: none;
-}
-
-.header-nav-cart {
-  width: 45px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* main */
 
 body {
@@ -251,45 +150,6 @@ input[type="”file”"]#photo-profile {
 
 /*tablets*/
 @media (min-width: 768px) {
-  /* Tablet: Header */
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-search {
-    position: relative;
-    left: 70px;
-  }
-
-  .header-search-bar {
-    display: inline-block;
-    background-color: #ebebeb;
-    position: relative;
-    bottom: 1px;
-    min-width: 280px;
-    max-width: 600px;
-    height: 35px;
-    border-radius: 3px 0px 0px 3px;
-    font-size: 14px;
-    padding-left: 20px;
-    z-index: 2;
-  }
-
-  .header-search-button {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    right: 5px;
-    background-color: #ebebeb;
-    width: 45px;
-    height: 35px;
-    border-radius: 0px 3px 3px 0px;
-    z-index: 1;
-  }
-
   /* Tablet: Main */
 
   .enlaces-izquierda {
@@ -307,32 +167,6 @@ input[type="”file”"]#photo-profile {
 
 /*desktop*/
 @media (min-width: 1024px) {
-  /* Laptop: Header */
-  .header-nav-menu li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    height: 50px;
-    margin: 0px 15px;
-  }
-
-  .header-nav-login {
-    display: flex;
-  }
-
-  .header-nav-username {
-    display: flex;
-    width: 90px;
-    align-items: center;
-  }
-
-  .header-nav-shop {
-    display: flex;
-    width: 100px;
-    margin: 0px, 15px, 0px, 25px;
-    justify-content: center;
-  }
-
   /* Laptop: main */
 
   .contenedor-formulario {

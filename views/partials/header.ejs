@@ -4,16 +4,18 @@
   <div class="header-menu">
     <span class="material-icons"> menu </span>
   </div>
-  <!-- Logo -->
 
+  <!-- Logo -->
   <a href="/" class="header-logo">
     <img class="header-logo-img" src="/images/paycrypt-logo.svg"
   /></a>
 
+  <!-- Categories -->
   <ul class="header-nav-menu">
     <li>Productos <span class="material-icons"> arrow_drop_down </span></li>
     <li>Cotizaciones <span class="material-icons"> arrow_drop_down </span></li>
   </ul>
+
   <!-- Search -->
   <form class="header-search">
     <input
@@ -30,8 +32,10 @@
     <% if (locals.isLogged) { %>
     <!-- User -->
     <a href="/user/profile" class="header-nav-user"
-      ><span class="material-icons"> account_circle </span></a
-    >
+      ><img
+        class="header-nav-user-img"
+        src="/images/users/<%= userLogged.image %>"
+    /></a>
     <a href="/user/profile" class="header-nav-username"
       ><%= locals.userLogged.name %></a
     >

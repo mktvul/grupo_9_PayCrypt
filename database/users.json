@@ -19,13 +19,12 @@
  },
  {
   "id": 3,
-  "name": "Sebastian ",
+  "name": "Sebastian",
   "lastName": "Sanchis",
   "dni": "36825552",
   "email": "seba.sanchis@gmail.com",
-  "password": "$2a$10$2mpjYEDyq3B567jqPT5xyOfc3u5saV/81DM3RLWzpwsJ8vIueGSLq",
-  "category": "comprador",
-  "image": "1637971882446_img.png"
+  "password": "$2a$10$j4XtsAJiK3xcXC38cmRI8uRHhS.c7yRNKrmlhIaeWVbO6pfZlyJ6e",
+  "image": "1638640995804_img.png"
  },
  {
   "id": 4,
