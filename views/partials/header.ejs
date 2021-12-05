@@ -4,16 +4,18 @@
   <div class="header-menu">
     <span class="material-icons"> menu </span>
   </div>
-  <!-- Logo -->
 
+  <!-- Logo -->
   <a href="/" class="header-logo">
     <img class="header-logo-img" src="/images/paycrypt-logo.svg"
   /></a>
 
+  <!-- Categories -->
   <ul class="header-nav-menu">
-    <li>Productos <span class="material-icons"> arrow_drop_down </span></li>
-    <li>Cotizaciones <span class="material-icons"> arrow_drop_down </span></li>
+    <li>Productos <span class="material-icons"> expand_more </span></li>
+    <li>Cotizaciones <span class="material-icons"> expand_more </span></li>
   </ul>
+
   <!-- Search -->
   <form class="header-search">
     <input
@@ -28,13 +30,28 @@
   </form>
   <nav class="header-nav">
     <% if (locals.isLogged) { %>
+
     <!-- User -->
-    <a href="/user/profile" class="header-nav-user"
-      ><span class="material-icons"> account_circle </span></a
-    >
-    <a href="/user/profile" class="header-nav-username"
-      ><%= locals.userLogged.name %></a
-    >
+    <div class="header-nav-user">
+      <button class="header-nav-user-button">
+        <span class="header-nav-user-img-conteiner"
+          ><img
+            class="header-nav-user-img"
+            src="/images/users/<%= userLogged.image %>"
+        /></span>
+        <span class="header-nav-user-name"><%= locals.userLogged.name %></span>
+        <span class="material-icons"> expand_more </span>
+      </button>
+      <div class="header-nav-user-content">
+        <a href="/user/profile">Mis datos</a>
+        <div class="header-nav-user-content-divider">
+          <a href="/product/create">Vender</a>
+          <a href="">Mis publicaciones</a>
+        </div>
+        <a href="/user/logout">Salir</a>
+      </div>
+    </div>
+
     <!-- Cart -->
     <a href="/product/cart" class="header-nav-shop">Mis compras</a>
     <a href="/product/cart" class="header-nav-cart">

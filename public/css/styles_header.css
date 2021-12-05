@@ -1,0 +1,242 @@
+header * {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  background: none;
+  color: inherit;
+  text-decoration: inherit;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* header */
+.header {
+  height: 50px;
+  box-shadow: 0px 0px 3px rgb(100, 100, 100);
+  background-color: #fff;
+}
+
+.header-menu {
+  height: 50px;
+  width: 45px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 50px;
+  position: absolute;
+  left: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.header-logo-img {
+  height: 100%;
+}
+
+.header-nav-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  left: 130px;
+  height: 50px;
+}
+
+.header-nav-menu {
+  display: none;
+}
+
+.header-search {
+  display: block;
+  position: absolute;
+  right: 0;
+  height: 50px;
+}
+
+.header-search-bar {
+  display: none;
+}
+
+.header-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 50px;
+}
+
+.header-nav {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  height: 50px;
+}
+
+.header-nav-shop {
+  display: none;
+}
+
+.header-nav-cart {
+  width: 45px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media queries: Tablet */
+
+@media (min-width: 768px) {
+  /* Tablet: Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-search {
+    position: relative;
+    left: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-search-bar {
+    display: inline-block;
+    background-color: #ebebeb;
+    min-width: 280px;
+    max-width: 600px;
+    height: 35px;
+    border-radius: 3px 0px 0px 3px;
+    font-size: 14px;
+    padding-left: 20px;
+    z-index: 2;
+  }
+
+  .header-search-button {
+    background-color: #ebebeb;
+    height: 35px;
+    border-radius: 0px 3px 3px 0px;
+    z-index: 1;
+  }
+}
+
+/* Media queries: Laptop */
+
+@media (min-width: 1024px) {
+  /* Laptop: Header */
+  .header-menu {
+    display: none;
+  }
+
+  .header-nav-menu {
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin: 0px 15px;
+  }
+
+  .header-nav-menu li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 50px;
+    margin: 0px 15px;
+  }
+
+  .header-nav {
+    display: flex;
+  }
+  
+  .header-nav-login {
+    display: flex;
+    margin: 0px 15px;
+  }
+  
+  .header-nav-user {
+    overflow: hidden;
+  }
+
+  .header-nav-user-button {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 130px;
+    height: 50px;
+    margin: 0px 10px;
+  }
+
+  .header-nav-user-img {
+    width: auto;
+    height: 100%;
+  }
+
+  .header-nav-user-img-conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0px 5px;
+    overflow: hidden;
+  }
+
+  .header-nav-user-name {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 70px;
+  }
+
+  .header-nav-user-content {
+    display: none;
+    position: absolute;
+    right: 30px;
+    background-color: #fff;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 5px 0px;
+  }
+
+  .header-nav-user-content-divider {
+    border-top: solid 1px #ebebeb;
+    border-bottom: solid 1px #ebebeb;
+    margin: 5px 0px;
+    padding: 5px 0px;
+  }
+
+  .header-nav-user-content a {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    padding: 15px;
+  }
+
+  .header-nav-user-content a:hover {
+    background-color: #ebebeb;
+  }
+
+  .header-nav-user:hover .header-nav-user-content {
+    display: block;
+  }
+
+  .header-nav-shop {
+    display: flex;
+    width: 100px;
+    justify-content: center;
+  }
+}

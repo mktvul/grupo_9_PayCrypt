@@ -118,24 +118,24 @@
 
             
               <!--Calculo de fecha-->
+              <div class="product-date">
                <%var fecha1 = producto.date; //fecha del producto
                 var fecha2 = new Date().getTime();  // fecha actual 
                 var diff = Math.abs(fecha2 - fecha1); //restamos las fechas
                 var diastranscurridos= Math.round(diff/(1000*60*60*24)); //dividimos apara sacar el numero entero
-                if(diastranscurridos < 1){%> 
-                  <i class="fas fa-clock"></i><span class="date"> Hoy </span> 
-                <%} else if(diastranscurridos == 1) {%> 
-                  <i class="fas fa-clock"></i> <%= diastranscurridos %> <span class="date"> día</span>
-                <%} else {%> 
-                <i class="fas fa-clock"></i> <%= diastranscurridos %> <span class="date"> días atrás</span> 
-                <%}%> 
-                
-            
+                if(diastranscurridos < 1){ %> 
+                  <i class="fas fa-clock"></i> <span class="date"> Hoy </span> 
+                <% } else if(diastranscurridos == 1) {%> 
+                  <i class="fas fa-clock"></i> <span class="date"> <%= diastranscurridos %> día </span>
+                <% } else { %> 
+                <i class="fas fa-clock"></i> <span class="date"> <%= diastranscurridos %>  días atrás </span> 
+                <% }%>
+              </div>
           </a>
         </div>
 
         <div class="place">
-          <p> <i class="fas fa-map-marker-alt"></i> <%= producto.location %></p>
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%= producto.location %></span>
         </div>
       </article>
       <% }) %>

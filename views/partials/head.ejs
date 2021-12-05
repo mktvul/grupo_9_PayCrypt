@@ -7,10 +7,6 @@
   <!---Título es dinámico, meter objeto literal dentro de cada include-->
   <title><%= titulo %></title>
 
-  <!---CSS comunes a todos: acá podríamos poner el normalize, header y footer-->
-  <!-- <link rel="stylesheet" href="/css/styles_index.css"/> -->
-  <link rel="stylesheet" href="/css/normalize.css" />
-
   <!---Fontawesome y Google-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +26,11 @@
     src="https://kit.fontawesome.com/57b4c81031.js"
     crossorigin="anonymous"
   ></script>
+
+  <!---CSS estáticos-->
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/styles_header.css" />
+  <link rel="stylesheet" href="/css/styles_footer.css" />
 
   <!---CSS dinámicos-->
   <link rel="stylesheet" href="/css/<%= cssSheets %>.css" />
