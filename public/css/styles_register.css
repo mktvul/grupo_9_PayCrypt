@@ -239,7 +239,7 @@ body {
 
 /* BOTON SUBIR IMAGEN  */
 #image {
-  display: none;
+  display: none
 }
 
 input[type="”file”"]#image {
@@ -251,18 +251,19 @@ input[type="”file”"]#image {
   z-index: -1;
 }
 
+
 label[for="image"] {
   font-size: 14px;
-  color: #27346a;
-  background-color: #ffffff;
-  border: 1px solid #27346a;
-  display: block;
-  cursor: pointer;
-  padding: 8px;
-  text-align: center;
-  border-radius: 5px;
-  width: 210px;
-  margin-left: 10px;
+    color: #27346a;
+    background-color: #ffffff;
+    border: 1px solid #27346a;
+    display: block;
+    cursor: pointer;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    width: 210px;
+    
 } 
 
 /*MOBILE*/
