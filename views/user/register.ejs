@@ -69,7 +69,7 @@
                         <label for="image">
                             <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                         </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="image" id="image" required="" accept=".jpg">
+                        <input type="file" name="image" id="image" accept=".jpg">
                         <% if (locals.errors && errors.image) { %>
                             <p class="text-danger"> <%= errors.image.msg %> </p>
                         <% } %>
