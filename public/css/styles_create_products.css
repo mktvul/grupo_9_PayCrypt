@@ -160,19 +160,6 @@ label[for="photoProduct"] {
 
 /*MOBILE*/
 @media (max-width: 767px) {
-  /* MOBILE HEADER */
-  .enlaces-izquierda {
-    display: none;
-  }
-
-  .enlaces-derecha {
-    display: none;
-  }
-
-  .barra-busqueda-header {
-    display: none;
-  }
-
   /* TABLET FORMULARIO */
 
   .white-form-box {
@@ -245,44 +232,6 @@ label[for="photoProduct"] {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Tablet: Header */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-search {
-    position: relative;
-    left: 70px;
-  }
-
-  .header-search-bar {
-    display: inline-block;
-    background-color: #ebebeb;
-    position: relative;
-    bottom: 1px;
-    min-width: 280px;
-    max-width: 600px;
-    height: 35px;
-    border-radius: 3px 0px 0px 3px;
-    font-size: 14px;
-    padding-left: 20px;
-    z-index: 2;
-  }
-
-  .header-search-button {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    right: 5px;
-    background-color: #ebebeb;
-    width: 45px;
-    height: 35px;
-    border-radius: 0px 3px 3px 0px;
-    z-index: 1;
-  }
-
   /* TABLET FORMULARIO */
 
   .white-form-box {
@@ -353,70 +302,6 @@ label[for="photoProduct"] {
 }
 
 @media (min-width: 1024px) {
-  /* Tablet: Header */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-search {
-    position: relative;
-    left: 70px;
-  }
-
-  .header-search-bar {
-    display: inline-block;
-    background-color: #ebebeb;
-    position: relative;
-    bottom: 1px;
-    min-width: 280px;
-    max-width: 600px;
-    height: 35px;
-    border-radius: 3px 0px 0px 3px;
-    font-size: 14px;
-    padding-left: 20px;
-    z-index: 2;
-  }
-
-  .header-search-button {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    right: 5px;
-    background-color: #ebebeb;
-    width: 45px;
-    height: 35px;
-    border-radius: 0px 3px 3px 0px;
-    z-index: 1;
-  }
-
-  /* Laptop: Header */
-  .header-nav-menu li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    height: 50px;
-    margin: 0px 15px;
-  }
-
-  .header-nav-login {
-    display: flex;
-  }
-
-  .header-nav-username {
-    display: flex;
-    width: 90px;
-    align-items: center;
-  }
-
-  .header-nav-shop {
-    display: flex;
-    width: 100px;
-    margin: 0px, 15px, 0px, 25px;
-    justify-content: center;
-  }
-
   .form {
     display: flex;
     flex-wrap: wrap;

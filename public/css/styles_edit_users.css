@@ -38,11 +38,11 @@ body {
 
 /*  NOMBRE USUARIO A EDITAR   */
 
-  .nombre-usuario-a-editar{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-  }
+.nombre-usuario-a-editar {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
 
 /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
 .registro-logo {
@@ -142,107 +142,34 @@ label[for="image"] {
   width: 210px;
   margin-left: 10px;
   margin: auto;
-} 
+}
 
 /*MOBILE*/
-@media (min-width: 0px) {
-  .enlaces-izquierda {
-    display: none;
-  }
 
-  .enlaces-derecha {
-    display: none;
-  }
+.contenedor-formulario {
+  margin: auto;
+  padding: 10px;
+  background-color: #ffff;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 465px;
+}
 
-  .barra-busqueda-header {
-    display: none;
-  }
-
-  .contenedor-formulario {
-    margin: auto;
-    padding: 10px;
-    background-color: #ffff;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    width: 465px;
-  }
-  .formulario-control{
-    margin: 10px;
-    padding: 10px;
-    border: grey solid 1px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    width: 380px;
-  }
+.formulario-control {
+  margin: 10px;
+  padding: 10px;
+  border: grey solid 1px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 380px;
 }
 
 /*tablets*/
 @media (min-width: 768px) {
-  /* Tablet: Header */
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-search {
-    position: relative;
-    left: 70px;
-  }
-
-  .header-search-bar {
-    display: inline-block;
-    background-color: #ebebeb;
-    position: relative;
-    bottom: 1px;
-    min-width: 280px;
-    max-width: 600px;
-    height: 35px;
-    border-radius: 3px 0px 0px 3px;
-    font-size: 14px;
-    padding-left: 20px;
-    z-index: 2;
-  }
-
-  .header-search-button {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    right: 5px;
-    background-color: #ebebeb;
-    width: 45px;
-    height: 35px;
-    border-radius: 0px 3px 3px 0px;
-    z-index: 1;
-  }
-  .formulario-control{
-    margin: 10px;
-    padding: 10px;
-    border: grey solid 1px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    width: 380px;
-  }
-
   /* Tablet: Main */
-
-  .enlaces-izquierda {
-    display: none;
-  }
-
-  .enlaces-derecha {
-    display: none;
-  }
-
-  .barra-busqueda-header {
-    display: none;
-  }
-
 }
 
 /*desktop*/
@@ -258,9 +185,13 @@ label[for="image"] {
   .formulario-control {
     width: 500px;
     height: 50px;
+<<<<<<< HEAD
      /*  relleno para dejar espacio a los iconos */
 }
   
+=======
+  }
+>>>>>>> 95ff3ee4517dd62e7eed0a171f921f668736144e
 
   .formulario-flex {
     display: flex;
@@ -269,6 +200,7 @@ label[for="image"] {
     align-items: center;
     flex-direction: column;
     /* width: 821px; */
+<<<<<<< HEAD
 }
 .boton-formulario-iniciar-sesion {
   position: relative;
@@ -280,22 +212,26 @@ label[for="image"] {
   margin: auto;
   margin-top: 10px;
 }
+=======
+  }
+  .boton-formulario-iniciar-sesion {
+    position: relative;
+    left: 556px;
+  }
+>>>>>>> 95ff3ee4517dd62e7eed0a171f921f668736144e
 
-.nueva-foto-perfil{
-  text-align: center;
-  margin-top: 5px;
+  .boton-formulario-continuar {
+    width: 332px;
+    margin: auto;
+  }
+
+  .nueva-foto-perfil {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .cambiar-categoria {
+    text-align: center;
+    margin: 15px;
+  }
 }
-
-.cambiar-categoria{
-  text-align: center;
-  margin: 15px;
-}
-
-}
-
-
-
-  
-
- 
-
