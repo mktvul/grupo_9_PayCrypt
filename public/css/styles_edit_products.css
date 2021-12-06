@@ -196,20 +196,7 @@ label[for="photoProducts"] {
 
 /*MOBILE*/
 @media (max-width: 767px) {
-  /* MOBILE HEADER */
-  .enlaces-izquierda {
-    display: none;
-  }
-
-  .enlaces-derecha {
-    display: none;
-  }
-
-  .barra-busqueda-header {
-    display: none;
-  }
-
-  /* TABLET FORMULARIO */
+/* TABLET FORMULARIO */
 
   .white-form-box {
     width: 300px;

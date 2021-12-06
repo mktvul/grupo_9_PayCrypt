@@ -38,11 +38,11 @@ body {
 
 /*  NOMBRE USUARIO A EDITAR   */
 
-  .nombre-usuario-a-editar{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-  }
+.nombre-usuario-a-editar {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
 
 /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
 .registro-logo {
@@ -141,59 +141,34 @@ label[for="image"] {
   width: 210px;
   margin-left: 10px;
   margin: auto;
-} 
+}
 
 /*MOBILE*/
-@media (min-width: 0px) {
-  .enlaces-izquierda {
-    display: none;
-  }
 
-  .enlaces-derecha {
-    display: none;
-  }
+.contenedor-formulario {
+  margin: auto;
+  padding: 10px;
+  background-color: #ffff;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 465px;
+}
 
-  .barra-busqueda-header {
-    display: none;
-  }
-
-  .contenedor-formulario {
-    margin: auto;
-    padding: 10px;
-    background-color: #ffff;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    width: 465px;
-  }
-  .formulario-control{
-    margin: 10px;
-    padding: 10px;
-    border: grey solid 1px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    width: 380px;
-  }
+.formulario-control {
+  margin: 10px;
+  padding: 10px;
+  border: grey solid 1px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 380px;
 }
 
 /*tablets*/
 @media (min-width: 768px) {
   /* Tablet: Main */
-
-  .enlaces-izquierda {
-    display: none;
-  }
-
-  .enlaces-derecha {
-    display: none;
-  }
-
-  .barra-busqueda-header {
-    display: none;
-  }
-
 }
 
 /*desktop*/
@@ -209,8 +184,7 @@ label[for="image"] {
   .formulario-control {
     width: 500px;
     height: 50px;
-}
-  
+  }
 
   .formulario-flex {
     display: flex;
@@ -219,32 +193,24 @@ label[for="image"] {
     align-items: center;
     flex-direction: column;
     /* width: 821px; */
+  }
+  .boton-formulario-iniciar-sesion {
+    position: relative;
+    left: 556px;
+  }
+
+  .boton-formulario-continuar {
+    width: 332px;
+    margin: auto;
+  }
+
+  .nueva-foto-perfil {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .cambiar-categoria {
+    text-align: center;
+    margin: 15px;
+  }
 }
-.boton-formulario-iniciar-sesion {
-  position: relative;
-  left: 556px;
-}
-
-.boton-formulario-continuar {
-  width: 332px;
-  margin: auto;
-}
-
-.nueva-foto-perfil{
-  text-align: center;
-  margin-top: 5px;
-}
-
-.cambiar-categoria{
-  text-align: center;
-  margin: 15px;
-}
-
-}
-
-
-
-  
-
- 
-
