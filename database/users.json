@@ -36,5 +36,15 @@
   "password": "$2a$10$0szzHCSSu7EenBfpSZsoH.gB8iFYb.D5HqN06XD.irs2tdNufJLGG",
   "category": "vendedor",
   "image": "1638481183397_img.jpg"
+ },
+ {
+  "id": 6,
+  "name": "marcos",
+  "lastName": "zulian",
+  "dni": "35108008",
+  "email": "imaquagarage@gmail.com",
+  "password": "$2a$10$jptGJ9QQblqUBcVcqNx/0O5DOyyyM9e.5jsIcTgqTNAz.5HTZxRBm",
+  "category": "comprador",
+  "image": "1638822127594_img.jpg"
  }
 ]
