@@ -1,14 +1,11 @@
 [
  {
-  "id": 1,
-  "name": "Cafetera Moulinex dolce gusto",
+  "id": "1",
+  "name": "Cafetera Moulinex dolce gusto ",
   "shortDescription": "Máquina manual de diseño minimalista y tecnología avanzada.",
-  "priceProduct": "0.000001",
-  "description": "Excelente cafetera de uso doméstico, para toda la familia.",
+  "priceProduct": "0.0000040",
   "photoProduct": "img-cafetera-moulinex.jpg",
-  "category": "Tecnologia",
-  "coin": "Bitcoin",
-  "date": 1635084291000,
+  "date": " ",
   "location": "Córdoba Capital"
  },
  {
@@ -53,7 +50,7 @@
   "shortDescription": "Paleta de pádel",
   "priceProduct": "0.000001",
   "photoProduct": "paleta-padel.jpg",
-  "date":1638021891000,
+  "date": 1638021891000,
   "location": "Santa Fé"
  },
  {

@@ -39,7 +39,9 @@ main {
 
 .navbar-circles {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .icon-product {
@@ -65,13 +67,6 @@ main {
   font-size: 10px;
 }
 
-.nft-mineria {
-  width: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /*-------PRODUCTOS------*/
 
@@ -128,7 +123,6 @@ main {
 
 .name-of-product {
   font-size: 18px;
-  display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -160,9 +154,10 @@ main {
 /*----------MEDIA QUERIES PARA INDEX.HTML-------------------------------------*/
 /*----------MOBILE - HASTA 481PX-------------*/
 @media (max-width: 481px) {
-  .nft-mineria {
+  .nft, .mineria {
     display: none;
   }
+
 }
 
 /*----------TABLET - ENTRE 482 Y 1024--------*/
@@ -173,10 +168,10 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-
-  .nft-mineria {
+  .nft, .mineria {
     display: none;
   }
+
 }
 
 /*----------DESKTOP - 1025 EN ADELANTE--------*/
