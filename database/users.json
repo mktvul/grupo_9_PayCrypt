@@ -1,14 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "Tomas",
-  "lastname": "Espil",
-  "dni": 42850900,
-  "email": "tomasynaza@gmail.com",
-  "password": "contrasenia",
-  "image": "default-user.png"
- },
- {
   "id": 2,
   "name": "Carlitos",
   "lastname": "Moulia",
@@ -23,47 +14,27 @@
   "lastName": "Sanchis",
   "dni": "36825552",
   "email": "seba.sanchis@gmail.com",
-  "password": "$2a$10$/jDlYORlh0kfreQ0p/sxQug42XIOGVxnK1unjmI/SNU57UtgIElnO",
-  "category": "comprador",
-  "image": "1637960191208_img.png"
+  "password": "$2a$10$Glkza3xvJFFH9UWXbbiFnuheLCWgllfUNHUD2DPAwlBS0/zFe1mN.",
+  "image": "1638640995804_img.png"
  },
  {
   "id": 4,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108008",
-  "email": "imaquagarage@gmail.com",
-  "password": "$2a$10$.mzzz25jT0GyxACfY9JVNe8pNlavIILdS6gG5g7ZpT4kXHEifYTJq",
-  "category": "vendedor",
-  "image": "1638202679233_img.jpg"
+  "name": "Sebastian",
+  "lastName": "Sanchis",
+  "dni": "36825552",
+  "email": "seb@test.com",
+  "password": "$2a$10$uuAVkDiSTx/3g1V0SfP1d..0o17iEvVYqPJD375Qu04csJWMjPV8K",
+  "category": "Comprador",
+  "image": "1638227238814_img.png"
  },
  {
   "id": 5,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108013",
-  "email": "hola@gmail.com",
-  "password": "$2a$10$gkfIW6UV3Tx3xXL.4IDA9u.fQEkMZ5gQ.wP22RnOAH8OQsWbNCX1C",
-  "image": "1638223583570_img.jpg"
- },
- {
-  "id": 6,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "1651695",
-  "email": "555a@gmail.com",
-  "password": "$2a$10$5LdvfTXIJ14Uh6AdgCauGuhsJU0Orv2WGvtKRSFC2OCN3VgnJa9tK",
+  "name": "Tomas",
+  "lastName": "Espil",
+  "dni": "42850900",
+  "email": "tomasynaza@gmail.com",
+  "password": "$2a$10$0szzHCSSu7EenBfpSZsoH.gB8iFYb.D5HqN06XD.irs2tdNufJLGG",
   "category": "vendedor",
-  "image": "1638223784878_img.jpg"
- },
- {
-  "id": 7,
-  "name": "marcos",
-  "lastName": "zulian",
-  "dni": "35108008",
-  "email": "hola1@gmail.com",
-  "password": "$2a$10$RLrYEAA0WKfzOaU6b6zZzOa/AGgUJqGIpxYXsbFij.qur300NXxtO",
-  "category": "comprador",
-  "image": "1638224129991_img.jpg"
+  "image": "1638481183397_img.jpg"
  }
 ]
