@@ -38,7 +38,7 @@ const controller = {
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      category: req.body.category,
+      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
     };
 
@@ -107,7 +107,7 @@ const controller = {
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      category: req.body.category,
+      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
 		}
 

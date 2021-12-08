@@ -27,7 +27,12 @@
                     
                     <div>
                         <label for="name"></label>
-                        <input class="formulario-control" type="text" name="name" id="name" placeholder="Editar nombre" value="<%= user.name %>">   <!--NOMBRE USUARIO-->
+                        <span>
+                            <input  class="formulario-control"  name="name" id="name" placeholder=" Editar Nombre" value="<%= user.name %>">
+                        </span> 
+                            <span>
+                                <i class="fas fa-user"></i>
+                            </span>  <!--NOMBRE USUARIO-->  
                     </div>
     
                     <div>
@@ -55,16 +60,10 @@
                     </div>
                     <div>
                     <div class="nueva-foto-perfil">
-                        <label class="#photo-profile" for="image">Selecciona una nueva imagen de perfil</label>
+                        <label class="#photo-profile" for="image"> Imagen de perfil</label>
                         <input class="formulario-control" type="file" name="image" id="image" value="<%= user.image %>">  <!-- NUEVO- IMAGEN PERFIL -->
                     </div>
-                    <div class="cambiar-categoria">
-                        <label for="category">¿ Quieres cambiar de categoria ?</label></br>
-                        <input type="radio" name="category" id="category" value="Comprador"> 
-                        <label for="comprador">Comprador</label>
-                        <input type="radio" name="category" id="category" value="Vendedor">
-                        <label for="vendedor">Vendedor</label>
-                    </div>
+                    
                    
                     <div class="boton-formulario-continuar" >
                         
