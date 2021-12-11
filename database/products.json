@@ -1,7 +1,7 @@
 [
  {
-  "id": "1",
-  "name": "Cafetera Moulinex dolce gusto ",
+  "id": 1,
+  "name": "Cafetera Moulinex dolce gusto",
   "shortDescription": "Máquina manual de diseño minimalista y tecnología avanzada.",
   "priceProduct": "0.0000040",
   "photoProduct": "img-cafetera-moulinex.jpg",
@@ -45,7 +45,7 @@
   "location": "Pinamar"
  },
  {
-  "id": "5",
+  "id": 5,
   "name": "Paleta de pádel Davor Patrol negra",
   "shortDescription": "Paleta de pádel",
   "priceProduct": "0.000001",
