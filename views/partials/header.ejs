@@ -1,8 +1,78 @@
+<div id="header-menu-overlay-id" onclick="closeNav()"></div>
+
 <!-- Header: menu, logo, search, nav -->
 <header class="header">
   <!-- Menu -->
-  <div class="header-menu">
+  <div class="header-menu" onclick="openNav()">
     <span class="material-icons"> menu </span>
+  </div>
+
+  <!-- Sidenav -->
+  <div class="header-menu-content" id="header-menu-content-id">
+    <nav class="header-sidenav">
+      <% if (locals.isLogged) { %>
+
+      <!-- User -->
+      <div class="header-sidenav-user-logged">
+        <div class="header-sidenav-user-logged-logo">
+          <img src="/images/users/<%= userLogged.image %>">
+        </div>
+        <div class="header-sidenav-user-logged-name">
+          Hola <%= locals.userLogged.name %>
+          <p>Bienvenido al mejor lugar para tus criptos</p>
+        </div>
+      </div>
+      <ul class="header-sidenav-options">
+        <li id="header-sidenav-options-home"><a href="/"><span class="material-icons">home</span>Inicio</a></li>
+        <li id="header-sidenav-options-user"><a href="/user/profile"><span class="material-icons">account_circle</span>Mi cuenta</a></li>
+      </ul>
+      <ul class="header-sidenav-options">
+        <li id="header-sidenav-options-category"><a href=""><span class="material-icons">list</span>Categorías</a></li>
+        <li id="header-sidenav-options-coin"><a href=""><span class="material-icons">paid</span>Cotizaciones</a></li>
+      </ul>
+      <ul class="header-sidenav-options">
+        <li><a href=""><span class="material-icons">receipt</span>Resumen</a></li>
+        <li id="header-sidenav-options-create"><a href="/product/create"><span class="material-icons">sell</span>Vender</a></li>
+      </ul>
+      <ul class="header-sidenav-last-option">
+        <li><a href="/user/logout"><span class="material-icons">logout</span>Salir</a></li>
+      </ul>
+
+      <% } else { %>
+      <!-- Log In -->
+      <div class="header-sidenav-user-guest">
+        <div class="header-sidenav-user-guest-logo">
+          <svg
+            class=""
+            width="28"
+            height="35"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.343 33.706l-1.356.64A13.25 13.25 0 0 0 14 26.75c-5.17 0-9.8 2.988-11.978 7.578l-1.356-.643A14.75 14.75 0 0 1 14 25.25a14.75 14.75 0 0 1 13.343 8.456zM14 21.75C8.063 21.75 3.25 16.937 3.25 11S8.063.25 14 .25 24.75 5.063 24.75 11 19.937 21.75 14 21.75zm0-1.5a9.25 9.25 0 1 0 0-18.5 9.25 9.25 0 0 0 0 18.5zm0-2.5v-1.5a5.25 5.25 0 1 0 0-10.5v-1.5a6.75 6.75 0 0 1 0 13.5z"
+              fill="#BBB"
+              fill-rule="nonzero"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="header-sidenav-user-guest-title">Bienvenido</h3>
+        <p class="header-sidenav-user-guest-text">
+          Ingresá a tu cuenta para ver tus compras, favoritos, etc.
+        </p>
+        <div class="header-sidenav-user-guest-buttons">
+          <a href="/user/login" class="header-sidenav-login">Ingresá</a>
+          <a href="/user/register" class="header-sidenav-register">Creá tu cuenta</a>
+        </div>
+      </div>
+      <ul class="header-sidenav-options">
+        <li id="header-sidenav-options-home"><a href="/"><span class="material-icons">home</span>Inicio</a></li>
+      </ul>
+      <ul class="header-sidenav-last-option">
+        <li id="header-sidenav-options-category"><a href=""><span class="material-icons">list</span>Categorías</a></li>
+        <li id="header-sidenav-options-coin"><a href=""><span class="material-icons">paid</span>Cotizaciones</a></li>
+      </ul>
+      <% } %>
+    </nav>
   </div>
 
   <!-- Logo -->
@@ -11,21 +81,16 @@
   /></a>
 
   <!-- Categories -->
-  <ul class="header-nav-menu">
-    <li>Productos <span class="material-icons"> expand_more </span></li>
+  <ul class="header-nav-options">
+    <li>Categorías <span class="material-icons"> expand_more </span></li>
     <li>Cotizaciones <span class="material-icons"> expand_more </span></li>
   </ul>
 
   <!-- Search -->
   <form class="header-search">
-    <input
-      type="text"
-      class="header-search-bar"
-      placeholder="Buscá productos, marcas y más..."
-      maxlength="120"
-    />
+    <input type="text" class="header-search-bar" placeholder="Buscá productos, marcas y más..." maxlength="120"/>
     <button type="submit" class="header-search-button">
-      <span class="material-icons"> search </span>
+      <span class="material-icons">search</span>
     </button>
   </form>
   <nav class="header-nav">
@@ -43,20 +108,22 @@
         <span class="material-icons"> expand_more </span>
       </button>
       <div class="header-nav-user-content">
-        <a href="/user/profile">Mis datos</a>
-        <div class="header-nav-user-content-divider">
-          <a href="/product/create">Vender</a>
-          <a href="">Mis publicaciones</a>
-        </div>
-        <a href="/user/logout">Salir</a>
+        <ul class="header-sidenav-options">
+          <li id="header-sidenav-options-user"><a href="/user/profile"><span class="material-icons">account_circle</span>Mi cuenta</a></li>
+        </ul>
+        <ul class="header-sidenav-options">
+          <li><a href=""><span class="material-icons">receipt</span>Resumen</a></li>
+          <li id="header-sidenav-options-create"><a href="/product/create"><span class="material-icons">sell</span>Vender</a></li>
+        </ul>
+        <ul class="header-sidenav-last-option">
+          <li><a href="/user/logout"><span class="material-icons">logout</span>Salir</a></li>
+        </ul>
       </div>
     </div>
 
     <!-- Cart -->
     <a href="/product/cart" class="header-nav-shop">Mis compras</a>
-    <a href="/product/cart" class="header-nav-cart">
-      <span class="material-icons"> shopping_cart </span>
-    </a>
+    <a href="/product/cart" class="header-nav-cart"><span class="material-icons">shopping_cart </span></a>
     <% } else { %>
     <!-- Log In -->
     <a href="/user/login" class="header-nav-login">Ingresá</a>
