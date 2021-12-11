@@ -1,0 +1,72 @@
+CREATE TABLE `users` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(50) NOT NULL,
+   `lastName` VARCHAR(50) NOT NULL,
+   `dni` INT NOT NULL,
+   `email` VARCHAR(50) NOT NULL,
+   `password` VARCHAR(255) NOT NULL,
+   `image` VARCHAR(255) NOT NULL,
+   `location` VARCHAR(155) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `products` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(50) NOT NULL,
+   `shortDescription` VARCHAR(155) NOT NULL,
+   `price` DECIMAL NOT NULL,
+   `description` VARCHAR(255) NOT NULL,
+   `date` DATE NOT NULL,
+   `image` VARCHAR(255) NOT NULL,
+   `categoryId` INT NOT NULL,
+   `coinId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `cart` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `priceTotal` DECIMAL NOT NULL,
+   `userId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `cartProducts` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `productId` INT NOT NULL,
+   `cartId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `category` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(50) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `coin` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(50) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `userProducts` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `userId` INT NOT NULL,
+   `productsId` INT NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_1b7c2dcd-c38b-4537-a627-ba94f738361a` FOREIGN KEY (`categoryId`) REFERENCES `category`(`id`)  ;
+
+ALTER TABLE `products` ADD CONSTRAINT `FK_1e9636b0-4d29-4d26-8de7-73cd27aa03b1` FOREIGN KEY (`coinId`) REFERENCES `coin`(`id`)  ;
+
+ALTER TABLE `cart` ADD CONSTRAINT `FK_4faaff6e-f23a-46a9-bdd1-518f692b3e6b` FOREIGN KEY (`userId`) REFERENCES `users`(`id`)  ;
+
+ALTER TABLE `cartProducts` ADD CONSTRAINT `FK_a527ba43-64ea-46e4-8b85-cb9e7e4787b7` FOREIGN KEY (`productId`) REFERENCES `products`(`id`)  ;
+
+ALTER TABLE `cartProducts` ADD CONSTRAINT `FK_7ad034d1-5e6c-4740-87b3-a5e88d44f70a` FOREIGN KEY (`cartId`) REFERENCES `cart`(`id`)  ;
+
+ALTER TABLE `userProducts` ADD CONSTRAINT `FK_88aafa5c-1f27-4af3-bfa0-942d6e4159cf` FOREIGN KEY (`userId`) REFERENCES `users`(`id`)  ;
+
+ALTER TABLE `userProducts` ADD CONSTRAINT `FK_b78a8696-6a03-4c1a-af19-e40bb9ff37cf` FOREIGN KEY (`productsId`) REFERENCES `products`(`id`)  ;

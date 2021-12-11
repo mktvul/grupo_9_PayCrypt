@@ -20,7 +20,7 @@
                 <div class="form-left">
                     <div>
                         <label for="name"></label>
-                        <input class="formulario-control" type="text" name="name" id="nombre" placeholder="Nombre Producto" value="<%= productSent.name %>">
+                        <input class="formulario-control" maxlength="50" type="text" name="name" id="nombre" placeholder="Nombre Producto" value="<%= productSent.name %>">
                         <!--NOMBRE DEL PRODUCTO-->
                     </div>
 
@@ -40,7 +40,7 @@
 
                     <div>
                         <label for="description"></label>
-                        <textarea class="large-description" name="textarea"><%= productSent.description %></textarea>
+                        <textarea class="large-description"  name="textarea"><%= productSent.description %></textarea>
                         <!-- DESCRIPCION LARGA DEL PRODUCTO-->
                     </div>
 
