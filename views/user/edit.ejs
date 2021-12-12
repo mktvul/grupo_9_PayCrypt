@@ -25,43 +25,40 @@
                 <form class="prueba-formulario" action="/user/edit" method="POST" enctype="multipart/form-data">
                     <div class="formulario-flex">
                     
-                    <div>
+                    
+                     <div>
                         <label for="name"></label>
-                        <span>
-                            <input  class="formulario-control"  name="name" id="name" placeholder=" Editar Nombre" value="<%= user.name %>">
-                        </span> 
-                            <span>
-                                <i class="fas fa-user"></i>
-                            </span>  <!--NOMBRE USUARIO-->  
+                        <input  class="formulario-control icono-placeholder-nombre"  name="name" id="name" placeholder=" Editar Nombre" value="<%= user.name %>"> <!--NOMBRE USUARIO-->  
+                  
                     </div>
     
                     <div>
                         <label for="lastName"></label>
-                        <input class="formulario-control" type="text" name="lastName" id="lastName" placeholder="Editar apellido" value="<%= user.lastName %>">  <!-- APELLIDO-->
+                        <input class="formulario-control icono-placeholder-apellido" type="text" name="lastName" id="lastName" placeholder="Editar apellido" value="<%= user.lastName %>">  <!-- APELLIDO-->
                     </div>
                     
                     <div>
                         <label for="dni"></label> 
-                        <input class="formulario-control" type="number" name="dni" id="dni" placeholder="Editar DNI" value="<%= user.dni %>">                 <!-- NUMERO DE DOCUMENTO (DNI)-->
+                        <input class="formulario-control icono-placeholder-dni" type="number" name="dni" id="dni" placeholder="Editar DNI" value="<%= user.dni %>">                 <!-- NUMERO DE DOCUMENTO (DNI)-->
                     </div>
                     
                     <div>
                         <label for="email"></label>
-                        <input class="formulario-control" type="email" name="email" id="email" placeholder="Editar e-mail" value="<%= user.email %>">   <!-- CORREO ELECTRONICO-->
+                        <input class="formulario-control icono-placeholder-email" type="email" name="email" id="email" placeholder="Editar e-mail" value="<%= user.email %>">   <!-- CORREO ELECTRONICO-->
                     </div>
     
                     <div>
                         <label for="password"></label>
-                        <input class="formulario-control" type="password" name="password" id="password" required="" placeholder="Nueva contraseña">  <!-- Cambiar Contraseña-->
+                        <input class="formulario-control icono-placeholder-password" type="password" name="password" id="password" required="" placeholder="Nueva contraseña">  <!-- Cambiar Contraseña-->
                     </div>
                     <div>
                         <label for="password1"></label>
-                        <input class="formulario-control" type="password" name="password1" id="password1" placeholder="Confirmar nueva contraseña">  <!-- CONTRASEÑA-->
+                        <input class="formulario-control icono-placeholder-confirm-password" type="password" name="password1" id="password1" placeholder="Confirmar nueva contraseña">  <!-- CONTRASEÑA-->
                     </div>
                     <div>
                     <div class="nueva-foto-perfil">
                         <label class="#photo-profile" for="image"> Imagen de perfil</label>
-                        <input class="formulario-control" type="file" name="image" id="image" value="<%= user.image %>">  <!-- NUEVO- IMAGEN PERFIL -->
+                        <input class="formulario-control icono-placeholder-usuario" type="file" name="image" id="image" value="<%= user.image %>">  <!-- NUEVO- IMAGEN PERFIL -->
                     </div>
                     
                    

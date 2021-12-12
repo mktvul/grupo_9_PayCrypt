@@ -10,9 +10,49 @@
   border: 0;
 }
 
-i {
-  padding: 2px;
+
+/* ICONOS PLACEHOLDER EDITAR USUARIO  */
+
+.icono-placeholder-nombre{
+    background-image: url('../images/users/user_icon.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 0.5rem center;    padding: 25px;
 }
+
+.icono-placeholder-apellido{
+  background-image: url('../images/users/last_name-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;  padding: 25px;
+}
+.icono-placeholder-dni{
+  background-image: url('../images/users/dni-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;  padding: 27px;
+}
+.icono-placeholder-email{
+  background-image: url('../images/users/email-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;  padding: 25px;
+}
+.icono-placeholder-password{
+  background-image: url('../images/users/password-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;  padding: 25px;
+}
+.icono-placeholder-confirm-password{
+  background-image: url('../images/users/confirm-password-icon.png');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  padding: 25px;
+}
+
+
 
 /* main */
 
@@ -165,6 +205,7 @@ label[for="image"] {
   flex-direction: column;
   border-radius: 8px;
   width: 380px;
+  text-align: center;
 }
 
 /*tablets*/
@@ -185,13 +226,10 @@ label[for="image"] {
   .formulario-control {
     width: 500px;
     height: 50px;
-<<<<<<< HEAD
      /*  relleno para dejar espacio a los iconos */
 }
   
-=======
   }
->>>>>>> 95ff3ee4517dd62e7eed0a171f921f668736144e
 
   .formulario-flex {
     display: flex;
@@ -200,7 +238,6 @@ label[for="image"] {
     align-items: center;
     flex-direction: column;
     /* width: 821px; */
-<<<<<<< HEAD
 }
 .boton-formulario-iniciar-sesion {
   position: relative;
@@ -209,20 +246,16 @@ label[for="image"] {
 
 .boton-formulario-continuar {
   width: 332px;
-  margin: auto;
   margin-top: 10px;
 }
-=======
-  }
+  
   .boton-formulario-iniciar-sesion {
     position: relative;
     left: 556px;
   }
->>>>>>> 95ff3ee4517dd62e7eed0a171f921f668736144e
 
   .boton-formulario-continuar {
     width: 332px;
-    margin: auto;
   }
 
   .nueva-foto-perfil {
@@ -234,4 +267,4 @@ label[for="image"] {
     text-align: center;
     margin: 15px;
   }
-}
+
