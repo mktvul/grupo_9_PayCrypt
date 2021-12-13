@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-  <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets:
-  'styles_product_detail'}) %>
+  <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets: 'styles_product_detail'}) %>
 
   <body class="body">
     <%- include ('../partials/header.ejs') %>
@@ -23,20 +22,16 @@
             <%=products.shortDescription%>
           </h2>
           <div class="main-section-article-price">
-            <%=products.priceProduct%> <% if (products.coin == "Bitcoin") { %>
-            <span>
-              <img src="images/btc-logo.svg" alt="" class="usdt" />
-            </span>
-
-            <% }else if(products.coin == "Ethereum") { %>
-            <span>
-              <img src="images/eth-logo.svg" alt="" class="usdt" />
-            </span>
-
+            <%=products.priceProduct%> 
+            <% if (products.coin == "Bitcoin") { %> 
+              <span><img class="main-section-article-ul-img-1" src="/images/btc-logo.svg"/></span>
+          
+            <% }else if(products.coin == "Ethereum") { %> 
+              <span><img class="main-section-article-ul-img-1" src="/images/eth-logo.svg"/></span>
+      
             <% }else { %>
-            <span>
-              <img src="images/usdt-logo.svg" alt="" class="usdt" />
-            </span>
+              <span><img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/></span>
+
             <% } %>
           </div>
         </article>
@@ -56,23 +51,37 @@
             <div>
               <ul>
                 <li class="main-section-article-ul-li">
-                  <!--CODIGO PENSADO COLOCAR ACA //MARCOS-->
-                  25.000<img
-                    class="main-section-article-ul-img-1"
-                    src="/images/usdt-logo.svg"
-                  />
+                  <% if (products.coin == 'USDT') { %>
+                    <%= products.priceProduct  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/> 
+                  <% } else if (products.coin == 'Bitcoin') { 
+                    let numberToShow = products.priceProduct * 50000 %>
+                    <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
+                  <% } else { 
+                    let numberToShow = products.priceProduct * 4000 %>
+                    <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
+                  <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  0.53175<img
-                    class="main-section-article-ul-img-2"
-                    src="/images/btc-logo.svg"
-                  />
+                  <% if (products.coin == 'USDT') { 
+                    let numberToShow = products.priceProduct / 50000 %>
+                    <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/> 
+                  <% } else if (products.coin == 'Bitcoin') { %>
+                    <%= products.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
+                  <% } else {
+                    let numberToShow = products.priceProduct * 0.08 %>
+                    <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
+                  <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  7.23225<img
-                    class="main-section-article-ul-img-2"
-                    src="/images/eth-logo.svg"
-                  />
+                  <% if (products.coin == 'USDT') { 
+                    let numberToShow = products.priceProduct * 0.00025 %>
+                    <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/> 
+                  <% } else if (products.coin == 'Bitcoin') { 
+                    let numberToShow = (products.priceProduct * 12.24).toFixed(2) %>
+                    <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
+                  <% } else { %>
+                    <%= products.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
+                  <% } %>
                 </li>
               </ul>
             </div>
