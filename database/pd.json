@@ -3,9 +3,11 @@
   "id": 1,
   "name": "Cafetera Moulinex dolce gusto",
   "shortDescription": "Máquina manual de diseño minimalista y tecnología avanzada.",
-  "priceProduct": "0.0000040",
+  "priceProduct": 0.004,
   "photoProduct": "img-cafetera-moulinex.jpg",
-  "date": " ",
+  "category": "Tecnologia",
+  "coin": "Bitcoin",
+  "date": 1624543491000,
   "location": "Córdoba Capital"
  },
  {
@@ -40,7 +42,7 @@
   "description": "Cabaña de troncos ubicada en Mar del Ostende con dos entradas independientes, cercada con alambre tejido y cubierta con cerco natural, amplia cocina y comedor. Baño nuevo y 2 (dos) dormitorios con 1 (una) cama matrimonial y el otro con 1 (una) cucheta doble, también cuenta con 1 (un) sofá cama de (2) dos plazas. Cochera amplia descubierta, amplio parque y deck con parrilla. Está ubicada a 5 cuadras del mar, a 50 metros del centro comercial y a 5 minutos (en auto) del centro de Pinamar. Cuenta con todos los servicios: luz, agua corriente, gas natural, TV por cable, WIFI, microondas, pava eléctrica y tostadora. Cocina a gas con ladrillos refractarios semi industrial. Alarma monitoreada y mantenimiento de parque",
   "photoProduct": "cabaña.jpg",
   "category": "Inmuebles",
-  "coin": "Bitcoin",
+  "coin": "Ethereum",
   "date": 1636985091000,
   "location": "Pinamar"
  },
@@ -48,8 +50,10 @@
   "id": 5,
   "name": "Paleta de pádel Davor Patrol negra",
   "shortDescription": "Paleta de pádel",
-  "priceProduct": "0.000001",
+  "priceProduct": "0.0005",
   "photoProduct": "paleta-padel.jpg",
+  "category": "Deportes",
+  "coin": "Bitcoin",
   "date": 1638021891000,
   "location": "Santa Fé"
  },
@@ -81,7 +85,7 @@
   "id": 8,
   "name": "Rig mineria etherium 6 gpu rx 580",
   "shortDescription": "Mineria Etherium",
-  "priceProduct": 0.001,
+  "priceProduct": 0.02,
   "description": "RIGS PARA MINAR ETHEREUM - 180 mh (ganancia diaria aprox 15 a 20 dolares x dia) y subiendo.",
   "photoProduct": "Rig-Mineria.jpg",
   "category": "Mineria",
@@ -93,7 +97,7 @@
   "id": 9,
   "name": "ParaElisee",
   "shortDescription": "ParaElisee NFT",
-  "priceProduct": 10,
+  "priceProduct": 1,
   "description": "NFT con animación, posee cuadro de regalo",
   "photoProduct": "paraelisse.jpg",
   "category": "NFT",
@@ -117,7 +121,7 @@
   "id": "11",
   "name": "Bicicleta cross Lamborghini rodado 16",
   "shortDescription": "Bicicleta cross.",
-  "priceProduct": "2",
+  "priceProduct": 0.5,
   "description": "Bicicleta cross. Rodado 16. Sonido de motor en manubrio. CONSULTE DISPONIBILIDAD ANTES DE OFERTAR.",
   "photoProduct": "bicimoto.jpg",
   "category": "Vehiculos",
@@ -136,60 +140,5 @@
   "coin": "USDT",
   "date": 1623420291000,
   "location": "Belgrano"
- },
- {
-  "id": 13,
-  "name": "safsad",
-  "shortDescription": "safs",
-  "priceProduct": "sda",
-  "photoProduct": "1637624319917_img.jpg",
-  "category": "Mineria",
-  "coin": "USDT",
-  "date": 1636639491000,
-  "location": "dsad"
- },
- {
-  "id": 14,
-  "name": "fdadsa",
-  "shortDescription": "fdsre",
-  "priceProduct": "dsre",
-  "photoProduct": "1637624346324_img.jpg",
-  "category": "Tecnologia",
-  "coin": "Ethereum",
-  "date": 1636639491000,
-  "location": "ads"
- },
- {
-  "id": 15,
-  "name": "Carteles ",
-  "shortDescription": "Carteles para manifestación",
-  "priceProduct": "100",
-  "photoProduct": "1637624620786_img.jpg",
-  "category": "Tecnologia",
-  "coin": "USDT",
-  "date": 1629900291000,
-  "location": "Buenos Aires"
- },
- {
-  "id": 16,
-  "name": "marcos",
-  "shortDescription": "sasa",
-  "priceProduct": "53",
-  "photoProduct": "1638202740472_img.jpg",
-  "category": "NFT",
-  "coin": "Bitcoin",
-  "date": 1638038395000,
-  "location": "sas"
- },
- {
-  "id": 17,
-  "name": "marcos",
-  "shortDescription": "asasas",
-  "priceProduct": "54592",
-  "photoProduct": "1638204410397_img.jpg",
-  "category": "Vehiculos",
-  "coin": "Bitcoin",
-  "date": 1638204410403,
-  "location": "sadas"
  }
 ]

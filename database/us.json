@@ -43,5 +43,14 @@
   "email": "imaquagarage@gmail.com",
   "password": "$2a$10$Rqr5w5mNCHNkxzlOrck9J.zUuAHJDut81RqAkGmVGrBJcTAr86vyq",
   "image": "1638822127594_img.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Maria Belen",
+  "lastName": "Legresti",
+  "dni": "38630829",
+  "email": "mariabelenlegresti@gmail.com",
+  "password": "$2a$10$wM7aHcBkpw7wuv8c1g0V7upWhbLQW.gPipp.jcMkyvHogY9HiSB1y",
+  "image": "1639343157294_img.jpg"
  }
 ]
