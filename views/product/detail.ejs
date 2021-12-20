@@ -11,24 +11,24 @@
       <section class="main-section">
         <img
           class="main-section-img"
-          src="/images/products/<%=products.photoProduct%>"
+          src="/images/products/<%=product.image%>"
         />
       </section>
       <!-- Section 2: 3 articles - name, description, pay details - button add to cart -->
       <section class="main-section-2">
         <!-- Article 1: name  -->
         <article class="main-section-article">
-          <h1 class="main-section-article-h1"><%=products.name%></h1>
+          <h1 class="main-section-article-h1"><%=product.name%></h1>
           <h2 class="main-section-article-h2">
-            <%=products.shortDescription%>
+            <%=product.shortDescription%>
           </h2>
           <div class="main-section-article-price">
-            <%=products.priceProduct%> <% if (products.coin == "Bitcoin") { %>
+            <%=product.priceProduct%> <% if (product.coin == "Bitcoin") { %>
             <span>
               <img src="images/btc-logo.svg" alt="" class="usdt" />
             </span>
 
-            <% }else if(products.coin == "Ethereum") { %>
+            <% }else if(product.coin == "Ethereum") { %>
             <span>
               <img src="images/eth-logo.svg" alt="" class="usdt" />
             </span>
@@ -45,9 +45,10 @@
           <div class="main-section-article-div">
             <h3 class="main-section-article-h3">Descripción</h3>
 
-            <p class="main-section-article-ul"><%=products.description%></p>
+            <p class="main-section-article-ul"><%=product.description%></p>
           </div>
         </article>
+      
 
         <!-- Article 3: pay details, button add to cart -->
         <article class="main-section-article-2">

@@ -3,7 +3,7 @@ const fs = require("fs");
 
 //Model
 const User = {
-  fileName: "./database/users.json",
+  fileName: "../database/models/User.js",
 
   getData: function () {
     return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));

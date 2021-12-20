@@ -25,12 +25,7 @@ const userAuthentication = require("../middlewares/userAuthentication");
 router.get("/register", userGuest, usersController.register);
 
 // Procesar el registro
-router.post(
-  "/register",
-  userStorage.single("image"),
-  userValidate,
-  usersController.processRegister
-);
+router.post("/register",userStorage.single("image"), userValidate, usersController.processRegister);
 
 // Formulario de login
 router.get("/login", userGuest, usersController.login);
