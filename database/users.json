@@ -44,5 +44,14 @@
   "password": "$2a$10$jptGJ9QQblqUBcVcqNx/0O5DOyyyM9e.5jsIcTgqTNAz.5HTZxRBm",
   "category": "comprador",
   "image": "1638822127594_img.jpg"
+ },
+ {
+  "id": 7,
+  "name": "leo",
+  "lastName": "espil",
+  "dni": "43341429",
+  "email": "leoespil@gmail.com",
+  "password": "$2a$10$fGkPkhRtIWNuGkbu32Uts.CmO8eBQyriaLCNwCAmtOgxHYiK.E7pG",
+  "image": "1639343023547_img.jpg"
  }
 ]
