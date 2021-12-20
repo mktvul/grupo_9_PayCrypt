@@ -15,6 +15,8 @@
         <img src="/images/banner.png" alt="Banner">
       </div>
 
+
+
       <!------CÍRCULOS DENTRO DE UN SECTION, CADA CIRCULO ES UN ARTICLE----------->
       <section class="navbar-circles">
         <article class="each-circle">
@@ -74,29 +76,30 @@
 
       </section>
 
-      <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE PRODUCTOS, C/U ES UN ARTICLE----------->
+      <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE productsSent[i]S, C/U ES UN ARTICLE----------->
       <h2 class="buscados">Los más buscados</h2>
 
       
       <section class="list-of-products">
-      <!------PRODUCTOS AUTOMATIZADOS CON EJS----------->
-      <% productsSent.forEach(producto => { %>
+      <!------productsSentS AUTOMATIZADOS CON EJS----------->
+
+      <% for(let i=0;i<productsSent.length;i++){ %> 
         <article class="each-product">
-          <a href="/product/detail/<%= producto.id %> ">  
+          <a href="/product/detail/<%=productsSent[i].id %> ">  
            <div class="img-product">
-              <img src="/images/products/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
+              <img src="/images/products/<%=productsSent[i].image %>" alt="">
            </div>
             
           <div class="product-description">
-            <p class="price"><%= producto.priceProduct %>  <!--PRECIO-->
+            <p class="price"><%=productsSent[i].price%>  <!--PRECIO-->
 
              <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
-              <% if (producto.coin == "Bitcoin") { %> 
+              <% if (productsSent[i].coinId == 1) { %> 
                 <span>
                   <img src="images/btc-logo.svg" alt="" class="usdt">
                 </span>
             
-              <% }else if(producto.coin == "Ethereum") { %> 
+              <% } else if(productsSent[i].coinId == 2) { %> 
                 <span>
                   <img src="images/eth-logo.svg" alt="" class="usdt">
                 </span> 
@@ -111,17 +114,26 @@
             </p>
 
             <p class="category">
-              <i class="far fa-folder-open"></i> <%= producto.category %> <!--CATEGORIA-->
+              <i class="far fa-folder-open"></i> 
+
+              <!--productsSent[i].categoryId.name 
+               for(let i=0; i<productsSent.Category.length;i++) { 
+                      if(productsSent.Category[i].id == productsSent[i].categoryId){
+                         let category = productsSent.Category[i].name
+                      }
+                   
+                  %>
+              ir a la tabla categoria y traer el nombre de categoryId CATEGORIA-->
             </p>
 
 
-            <h3 class="name-of-product"><%= producto.name %></h3>
-            <p class="description"><%= producto.shortDescription %></p>
+            <h3 class="name-of-product"><%=productsSent[i].name %></h3>
+            <p class="description"><%=productsSent[i].shortDescription %></p>
 
             
               <!--Calculo de fecha-->
               <div class="product-date">
-               <%var fecha1 = producto.date; //fecha del producto
+               <%var fecha1 =productsSent[i].date; //fecha delproductsSent[i]
                 var fecha2 = new Date().getTime();  // fecha actual 
                 var diff = Math.abs(fecha2 - fecha1); //restamos las fechas
                 var diastranscurridos= Math.round(diff/(1000*60*60*24)); //dividimos apara sacar el numero entero
@@ -137,10 +149,10 @@
         </div>
 
         <div class="place">
-          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%= producto.location %></span>
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].location %></span> 
         </div>
       </article>
-      <% }) %>
+      <% } %>
 
     </section>
 

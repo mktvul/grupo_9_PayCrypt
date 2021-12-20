@@ -14,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         }
     
     };
-    let config = {      // ver que onda el codigo aca, si lo dejamos o lo quitamos
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+    let config = {
+        timestamps: false,
+       // createdAt: 'created_at',
+       // updatedAt: 'updated_at',
         deletedAt: false
     }
     const Category = sequelize.define(alias, cols, config); 

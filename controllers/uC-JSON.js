@@ -1,15 +1,14 @@
 //Require's
-const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
+const User = require("../models/User");
 
 //Controller
-const userController = {
+const controller = {
   register: (req, res) => {
     return res.render("./user/register");
   },
-  
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -19,8 +18,8 @@ const userController = {
         oldData: req.body,
       });
     }
-  
-    let userInDB = db.User.findByField("email", req.body.email);
+
+    let userInDB = User.findByField("email", req.body.email);
 
     if (userInDB) {
       return res.render("./user/register", {
@@ -33,16 +32,18 @@ const userController = {
       });
     }
 
-    db.User.create({
+    let userToCreate = {
       name: req.body.name,
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
+      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
-      location: req.body.location
-    });
-        // let userCreated = User.create(userToCreate); //puso seba por las dudas 
+    };
+
+    let userCreated = User.create(userToCreate);
+
     return res.redirect("/user/login");
   },
 
@@ -51,11 +52,13 @@ const userController = {
   },
 
   loginProcess: (req, res) => {
-    let userToLogin = db.User.findByField("email", req.body.email);
+    let userToLogin = User.findByField("email", req.body.email);
 
     if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-      
+      let isOkThePassword = bcryptjs.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
       if (isOkThePassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
@@ -63,9 +66,9 @@ const userController = {
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
+
         return res.redirect("../");
       }
-
       return res.render("./user/login", {
         errors: {
           email: {
@@ -84,7 +87,6 @@ const userController = {
     });
   },
 
-  //vemos el detalle
   profile: (req, res) => {
     return res.render("./user/profile", {
       user: req.session.userLogged,
@@ -109,13 +111,13 @@ const userController = {
       image: req.file ? req.file.filename : req.session.userLogged.image,
 		}
 
-		let userEdited = db.User.edit(userToEdit);
+		let userEdited = User.edit(userToEdit);
 		return res.redirect('/user/profile');
   },
 
   delete: (req, res) => {
     console.log(req.session.userLogged.id);
-		let userDeleted = db.User.delete(req.session.userLogged.id);
+		let userDeleted = User.delete(req.session.userLogged.id);
 		return res.redirect('/');
   },
 
@@ -123,8 +125,7 @@ const userController = {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
-  }
-  
+  },
 };
 
-module.exports = userController;
+module.exports = controller;

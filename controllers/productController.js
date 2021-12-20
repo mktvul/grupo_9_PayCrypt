@@ -1,126 +1,100 @@
-//Require's
 const path = require("path");
-const fs = require("fs");
+const db = require("../database/models");
 
-//Data base
-const productsFilePath = path.join(__dirname, "../database/products.json"); //Identificamos la ruta de nuestra base de datos de usuarios
-const products = JSON.parse(fs.readFileSync(productsFilePath), "utf-8"); //Convertimos la base de datos de usuarios JSON en un array de objetos literales
-
-//Controller
 const productsControllers = {
-  //Listado de productos (GET)
-  listOfProducts: (req, res) => {
-    res.render("./product/products", {
-      productsSent: products, //Acá falta automatizar el EJS
-    });
-  },
-
-  //Formulario de creación de producto (GET) (sólo renderiza formulario)
-  create: (req, res) => {
+  //create
+  create: function (req, res) {
     res.render("./product/create");
   },
-
-  //Detalle de un producto particular (GET)
-  details: (req, res) => {
-    let id = req.params.id;
-    let product = products.find((product) => {
-      return product.id == id;
-    });
-
-    res.render("./product/detail", {
-      products: product,
-    });
-  },
-
-  //Acción de creación (a donde se envía el formulario) (POST)
-  store: (req, res) => {
-    //Acción de creación (a donde se envía el formulario) -- ENVIAR A INDEX --
-    // Guardamos el producto
-    let newProduct = {
-      id: products[products.length - 1].id + 1,
+  //store
+  store: function (req, res) {
+    db.Product.create({
       name: req.body.name,
       shortDescription: req.body.shortDescription,
-      priceProduct: req.body.priceProduct,
-      Description: req.body.Description,
-      photoProduct: req.file.filename,
-      category: req.body.category,
-      coin: req.body.coin,
-      date: new Date().getTime(),
-      location: req.body.location,
-    };
-
-    products.push(newProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-    res.redirect("/product");
+      price: req.body.price,
+      description: req.body.description, //ver lo de la hora
+      image: req.file.filename,
+      coinId: req.body.coin,
+      categoryId: req.body.category,
+      date: new Date().getTime()
+    })
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch((error) => res.send(error));
   },
 
-  // Formulario de edición de productos (GET)
-  edit: (req, res) => {
-    const id = req.params.id;
-    const product = products.find((product) => {
-      return product.id == id;
-    });
-
-    res.render("./product/edit", {
-      productSent: product,
-    });
+  //mostrar producto a editar (/Get)
+  edit: function (req, res) {
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        res.render("./product/edit", { product });
+      })
+      .catch((error) => res.send(error));
   },
 
-  // Acción de edición (a donde se envía el formulario) (PUT)
-  update: (req, res) => {
-    //Acción de edición de producto que llegó por ID
-    let id = req.params.id; // Guardo ID
+  // editamos el producto (/Put)
 
-    //Identifico el producto que voy a editar
-    let productToEdit = products.find((product) => {
-      return product.id == id;
-    });
-
-    //Edito
-    let editedProduct = {
-      id: id,
-      name: req.body.name,
-      shortDescription: req.body.shortDescription,
-      priceProduct: req.body.priceProduct,
-      Description: req.body.Description,
-      photoProduct: req.file ? req.file.filename : productToEdit.photoProduct,
-      category: req.body.category,
-      coin: req.body.coin,
-      date: " ",
-      location: req.body.location,
-    };
-
-    //Modifico el array
-    products.forEach((producto, index) => {
-      if (producto.id == id) {
-        products[index] = editedProduct;
+  update: function (req, res) {
+    db.Product.update(
+      {
+        name: req.body.name,
+        shortDescription: req.body.shortDescription,
+        price: req.body.price,
+        description: req.body.description,
+        image: req.body.image,
+        coin: req.body.coin,
+        category: req.body.category,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
       }
-    });
-
-    //Guardo en la base de datos JSON
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-    res.redirect("/product");
-  },
-
-  //Acción de borrado (DELETE)
-  destroy: (req, res) => {
-    let id = req.params.id;
-    /* MODIFICAMOS EL ARRAY  */
-    // el metodo filter guarda en un nuevo array todos los metodos que cumplan la condicion
-    let finalProducts = products.filter((product) => {
-      return product.id != id; // guarda todos los productos que sean diferente al id que viene por parametro. por ende se elimina el que queremos eliminar
-    });
-
-    fs.writeFileSync(
-      productsFilePath,
-      JSON.stringify(finalProducts, null, " ")
     );
-    res.redirect("/product");
+    res.redirect("/product/detail/" + req.params.id)
+      .catch((error) => res.send(error));
   },
 
-  cart: (req, res) => {
-    res.render("./product/cart");
+  //eliminar
+
+  delete: function (req, res) {
+    db.Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.redirect("/").catch((error) => res.send(error));
+  },
+
+  //listar
+
+  listAll: function (req, res) {
+    //cambiamos nombre, recordar cambiarlo
+    db.Product.findAll().then((products) => {
+      res.render("./product", { products });
+    });
+  },
+
+  //ver el detalle, usamos la funcion como un get
+
+  detail: function (req, res) {
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        res.render("./product/detail", { product });
+      })
+      .catch((error) => res.send(error));
+  },
+
+  // buscar
+
+  search: function (req, res) {
+    db.Product.findAll({
+      where: {
+        name: req.body.search, // buscamos por el nombre que ingresa en el search
+      }, //vemos de usar like = %nombre%
+    });
+    res.redirect("./product").catch((error) => res.send(error));
   },
 };
 

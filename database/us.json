@@ -41,17 +41,16 @@
   "lastName": "zulian",
   "dni": "35108008",
   "email": "imaquagarage@gmail.com",
-  "password": "$2a$10$jptGJ9QQblqUBcVcqNx/0O5DOyyyM9e.5jsIcTgqTNAz.5HTZxRBm",
-  "category": "comprador",
+  "password": "$2a$10$Rqr5w5mNCHNkxzlOrck9J.zUuAHJDut81RqAkGmVGrBJcTAr86vyq",
   "image": "1638822127594_img.jpg"
  },
  {
   "id": 7,
-  "name": "leo",
-  "lastName": "espil",
-  "dni": "43341429",
-  "email": "leoespil@gmail.com",
-  "password": "$2a$10$fGkPkhRtIWNuGkbu32Uts.CmO8eBQyriaLCNwCAmtOgxHYiK.E7pG",
-  "image": "1639343023547_img.jpg"
+  "name": "Maria Belen",
+  "lastName": "Legresti",
+  "dni": "38630829",
+  "email": "mariabelenlegresti@gmail.com",
+  "password": "$2a$10$wM7aHcBkpw7wuv8c1g0V7upWhbLQW.gPipp.jcMkyvHogY9HiSB1y",
+  "image": "1639343157294_img.jpg"
  }
 ]
