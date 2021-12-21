@@ -1,4 +1,5 @@
 const path = require("path");
+const { Association } = require("sequelize/dist");
 const db = require("../database/models");
 
 const productsControllers = {
@@ -75,6 +76,25 @@ const productsControllers = {
       res.render("./product/products", { productsSent });
     });
   },
+
+//con location
+  // listAll: function (req, res) {
+  //   db.Product.findAll({
+  //     include:[
+  //       {Association:'user_products'},
+  //       {Association:'User'}
+  //     ]
+  //   }).then((productsSent) => {
+  //     res.render("/", { productsSent });
+  //   });
+  // },
+
+
+
+
+
+
+
 
   //ver el detalle, usamos la funcion como un get
 

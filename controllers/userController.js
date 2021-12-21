@@ -118,7 +118,7 @@ const userController = {
         where: { id:req.session.userLogged.id}
       }    
     );
-    return res.redirect("/user/profile");
+    return res.redirect("./logout");
   },
 
   delete: (req, res) => {
