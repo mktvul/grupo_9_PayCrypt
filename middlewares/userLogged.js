@@ -1,17 +1,22 @@
 //Require's
 const db = require("../database/models");
-const User = require("../models/User");
+
 //Cookies
 function userLogged(req, res, next) {
   res.locals.isLogged = false;
 
   let emailInCookie = req.cookies.userEmail;
-  let userFromCookie = User.findByField("email", emailInCookie);
+  let userFromCookie = db.User.findAll();
+  for(let i=0;i<userFromCookie.length;i++){       //agregue codigo MARCOS!!
+     if(userFromCookie[i]==emailInCookie){
+       var user = emailInCookie;
+     }
+  }
 
   //Funcion puesta 
 
-  if (userFromCookie) {
-    req.session.userLogged = userFromCookie;
+  if (user) {
+    req.session.userLogged = user;
   }
 
   if (req.session.userLogged) {

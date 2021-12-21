@@ -3,15 +3,14 @@ const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
-
 //Controller
 const userController = {
   register: (req, res) => {
     return res.render("./user/register");
   },
-  
+
   processRegister: (req, res) => {
-    const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req); //express
 
     if (resultValidation.errors.length > 0) {
       return res.render("./user/register", {
@@ -19,20 +18,23 @@ const userController = {
         oldData: req.body,
       });
     }
-  
-    let userInDB = db.User.findByField("email", req.body.email);
 
-    if (userInDB) {
-      return res.render("./user/register", {
-        errors: {
-          email: {
-            msg: "Este email ya está registrado",
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    }).then((userInDB) => {
+      if (userInDB) {
+        return res.render("./user/register", {
+          errors: {
+            email: {
+              msg: "Este email ya está registrado",
+            },
           },
-        },
-        oldData: req.body,
-      });
-    }
-
+          oldData: req.body,
+        });
+      }
+    });
     db.User.create({
       name: req.body.name,
       lastName: req.body.lastName,
@@ -40,9 +42,9 @@ const userController = {
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
       image: req.file ? req.file.filename : req.session.userLogged.image,
-      location: req.body.location
+      location: req.body.location,
     });
-        // let userCreated = User.create(userToCreate); //puso seba por las dudas 
+    // let userCreated = User.create(userToCreate); //puso seba por las dudas
     return res.redirect("/user/login");
   },
 
@@ -51,36 +53,43 @@ const userController = {
   },
 
   loginProcess: (req, res) => {
-    let userToLogin = db.User.findByField("email", req.body.email);
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    }).then((userToLogin) => {
+      if (userToLogin) {
+        let isOkThePassword = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
 
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.password);
-      
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
+        if (isOkThePassword) {
+          delete userToLogin.password;
+          req.session.userLogged = userToLogin;
 
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+          if (req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+          }
+          return res.redirect("../");
         }
-        return res.redirect("../");
+
+        return res.render("./user/login", {
+          errors: {
+            email: {
+              msg: "Las credenciales son inválidas",
+            },
+          },
+        });
       }
 
       return res.render("./user/login", {
         errors: {
           email: {
-            msg: "Las credenciales son inválidas",
+            msg: "No se encuentra este email en nuestra base de datos",
           },
         },
       });
-    }
-
-    return res.render("./user/login", {
-      errors: {
-        email: {
-          msg: "No se encuentra este email en nuestra base de datos",
-        },
-      },
     });
   },
 
@@ -98,7 +107,7 @@ const userController = {
   },
 
   editProcess: (req, res) => {
-		let userToEdit = {
+    let userToEdit = {
       id: req.session.userLogged.id,
       name: req.body.name,
       lastName: req.body.lastName,
@@ -107,24 +116,23 @@ const userController = {
       password: bcryptjs.hashSync(req.body.password, 10),
       /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
-		}
+    };
 
-		let userEdited = db.User.edit(userToEdit);
-		return res.redirect('/user/profile');
+    let userEdited = db.User.edit(userToEdit);
+    return res.redirect("/user/profile");
   },
 
   delete: (req, res) => {
     console.log(req.session.userLogged.id);
-		let userDeleted = db.User.delete(req.session.userLogged.id);
-		return res.redirect('/');
+    let userDeleted = db.User.delete(req.session.userLogged.id);
+    return res.redirect("/");
   },
 
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
-  }
-  
+  },
 };
 
 module.exports = userController;
