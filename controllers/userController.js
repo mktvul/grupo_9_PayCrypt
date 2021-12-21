@@ -21,7 +21,7 @@ const userController = {
 
     db.User.findOne({
       where: {
-        email: req.body.email,
+        email: req.body.email
       },
     }).then((userInDB) => {
       if (userInDB) {
@@ -95,9 +95,7 @@ const userController = {
 
   //vemos el detalle
   profile: (req, res) => {
-    return res.render("./user/profile", {
-      user: req.session.userLogged,
-    });
+    return res.render("./user/profile", {user: req.session.userLogged});
   },
 
   edit: (req, res) => {
@@ -107,18 +105,19 @@ const userController = {
   },
 
   editProcess: (req, res) => {
-    let userToEdit = {
+    db.User.update({
       id: req.session.userLogged.id,
       name: req.body.name,
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
-    };
-
-    let userEdited = db.User.edit(userToEdit);
+    }, 
+      {  
+        where: { id:req.session.userLogged.id}
+      }    
+    );
     return res.redirect("/user/profile");
   },
 

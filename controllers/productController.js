@@ -71,8 +71,8 @@ const productsControllers = {
 
   listAll: function (req, res) {
     //cambiamos nombre, recordar cambiarlo
-    db.Product.findAll().then((products) => {
-      res.render("./product", { products });
+    db.Product.findAll().then((productsSent) => {
+      res.render("./product/products", { productsSent });
     });
   },
 
