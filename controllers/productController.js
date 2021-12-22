@@ -91,11 +91,6 @@ const productsControllers = {
 
 
 
-
-
-
-
-
   //ver el detalle, usamos la funcion como un get
 
   detail: function (req, res) {
