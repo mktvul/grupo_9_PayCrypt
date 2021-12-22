@@ -87,8 +87,8 @@
   </ul>
 
   <!-- Search -->
-  <form class="header-search">
-    <input type="text" class="header-search-bar" placeholder="Buscá productos, marcas y más..." maxlength="120"/>
+  <form class="header-search" action="/product/search" method="POST">
+    <input type="text" class="header-search-bar" name="search" placeholder="Buscá productos, marcas y más..." maxlength="120"/>
     <button type="submit" class="header-search-button">
       <span class="material-icons">search</span>
     </button>
