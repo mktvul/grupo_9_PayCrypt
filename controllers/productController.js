@@ -1,6 +1,9 @@
 const path = require("path");
-const { Association } = require("sequelize/dist");
 const db = require("../database/models");
+
+// sequelize
+const sequelize = require('sequelize');
+const Op = sequelize.Op;
 
 const productsControllers = {
   //create
@@ -78,16 +81,16 @@ const productsControllers = {
   },
 
 //con location
-  // listAll: function (req, res) {
-  //   db.Product.findAll({
-  //     include:[
-  //       {Association:'user_products'},
-  //       {Association:'User'}
-  //     ]
-  //   }).then((productsSent) => {
-  //     res.render("/", { productsSent });
-  //   });
-  // },
+   listAll: function (req, res) {
+     db.Product.findAll({
+       include:[
+         {Association:'user_products'},
+         {Association:'User'}
+       ]
+     }).then((productsSent) => {
+       res.render("/", { productsSent });
+     });
+   },
 
 
 
@@ -106,10 +109,12 @@ const productsControllers = {
   search: function (req, res) {
     db.Product.findAll({
       where: {
-        name: req.body.search, // buscamos por el nombre que ingresa en el search
-      }, //vemos de usar like = %nombre%
-    });
-    res.redirect("./product").catch((error) => res.send(error));
+        name: { [Op.like]: '%'+ req.body.search + '%'}, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
+      }, 
+    }) .then( productsSent => {
+        res.render('./product/products', {productsSent});
+    })
+    //res.redirect("./product").catch((error) => res.send(error));
   },
 };
 

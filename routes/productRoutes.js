@@ -26,4 +26,8 @@ router.post("/delete/:id/", productsControllers.delete);
 router.post("/edit/:id/", productStorage.single("image"), productsControllers.update);
 
 
+// Search 
+
+router.post('/search', productsControllers.search);
+
 module.exports = router;
