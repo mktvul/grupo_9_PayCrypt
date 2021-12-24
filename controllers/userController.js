@@ -2,6 +2,7 @@
 const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const userLogged = require('../middlewares/userLogged')
 
 //Controller
 const userController = {
@@ -113,6 +114,7 @@ const userController = {
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
       image: req.file ? req.file.filename : req.session.userLogged.image,
+      location: req.body.location
     }, 
       {  
         where: { id:req.session.userLogged.id}

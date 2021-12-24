@@ -1,13 +1,16 @@
 const path = require("path");
 const db = require("../database/models");
+const userLogged = require('../middlewares/userLogged')
 
 // sequelize
-const sequelize = require('sequelize');
+const sequelize = require("sequelize");
 const Op = sequelize.Op;
 
 const productsControllers = {
   //create
   create: function (req, res) {
+    console.log('esto es console log de req.session' + req.session)
+    console.log('esto es un console log de req.session.userLogged.location' + req.session.userLogged.location);
     res.render("./product/create");
   },
   //store
@@ -20,7 +23,8 @@ const productsControllers = {
       image: req.file.filename,
       coinId: req.body.coin,
       categoryId: req.body.category,
-      date: new Date().getTime()
+      date: new Date().getTime(),
+      location: req.session.userLogged.location // NO FUNCIONA
     })
       .then(() => {
         res.redirect("/");
@@ -56,7 +60,8 @@ const productsControllers = {
         },
       }
     );
-    res.redirect("/product/detail/" + req.params.id)
+    res
+      .redirect("/product/detail/" + req.params.id)
       .catch((error) => res.send(error));
   },
 
@@ -80,24 +85,14 @@ const productsControllers = {
     });
   },
 
-//con location
-   listAll: function (req, res) {
-     db.Product.findAll({
-       include:[
-         {Association:'user_products'},
-         {Association:'User'}
-       ]
-     }).then((productsSent) => {
-       res.render("/", { productsSent });
-     });
-   },
-
-
-
-
-
-
-
+  //con location
+  listAll: function (req, res) {
+    db.Product.findAll({
+      include: [{ Association: "user_products" }, { Association: "User" }],
+    }).then((productsSent) => {
+      res.render("/", { productsSent });
+    });
+  },
 
   //ver el detalle, usamos la funcion como un get
 
@@ -114,11 +109,11 @@ const productsControllers = {
   search: function (req, res) {
     db.Product.findAll({
       where: {
-        name: { [Op.like]: '%'+ req.body.search + '%'}, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
-      }, 
-    }) .then( productsSent => {
-        res.render('./product/products', {productsSent});
-    })
+        name: { [Op.like]: "%" + req.body.search + "%" }, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
+      },
+    }).then((productsSent) => {
+      res.render("./product/products", { productsSent });
+    });
     //res.redirect("./product").catch((error) => res.send(error));
   },
 };
