@@ -54,24 +54,6 @@ const userController = {
   },
 
   loginProcess: (req, res) => {
-<<<<<<< HEAD
-    let userToLogin = User.findByField("email", req.body.email);
-
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
-        }
-        return res.redirect("../");
-=======
     db.User.findOne({
       where: {
         email: req.body.email,
@@ -100,7 +82,6 @@ const userController = {
             },
           },
         });
->>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
       }
 
       return res.render("./user/login", {
@@ -125,11 +106,7 @@ const userController = {
   },
 
   editProcess: (req, res) => {
-<<<<<<< HEAD
-    let userToEdit = {
-=======
     db.User.update({
->>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
       id: req.session.userLogged.id,
       name: req.body.name,
       lastName: req.body.lastName,
@@ -137,12 +114,6 @@ const userController = {
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
       image: req.file ? req.file.filename : req.session.userLogged.image,
-<<<<<<< HEAD
-    };
-
-    let userEdited = User.edit(userToEdit);
-    return res.redirect("/user/profile");
-=======
       location: req.body.location
     }, 
       {  
@@ -150,16 +121,11 @@ const userController = {
       }    
     );
     return res.redirect("./logout");
->>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
   },
 
   delete: (req, res) => {
     console.log(req.session.userLogged.id);
-<<<<<<< HEAD
-    let userDeleted = User.delete(req.session.userLogged.id);
-=======
     let userDeleted = db.User.delete(req.session.userLogged.id);
->>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
     return res.redirect("/");
   },
 
