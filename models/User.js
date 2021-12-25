@@ -1,9 +1,11 @@
 //Require's
-const fs = require("fs");
+/*const fs = require("fs");
+
+const path = require("path");
 
 //Model
 const User = {
-  fileName: "./database/users.json",
+ // fileName: "../models/User.js",
 
   getData: function () {
     return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
@@ -69,3 +71,4 @@ const User = {
 };
 
 module.exports = User;
+//*/

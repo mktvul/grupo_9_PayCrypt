@@ -57,4 +57,11 @@ Con respecto al trabajo en equipo, mejoramos un montón lo que veníamos trabaja
 Nos ordenamos mejor en Trello con las tarjetas.
 
 
+Sobre sprint 5:
+
+PUNTOS A MEJORAR:
+Creemos que nos fue lo suficientemente bien como para seguir trabajando de esta forma. 
+
+PUNTOS POSITIVOS:
+Podemos rescatar que nos organizamos tan bien como para terminar el sprint en tiempo y forma y ademas hacer arreglos extras en la pagina. 
 

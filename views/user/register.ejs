@@ -83,20 +83,40 @@
             <% } %>
           </div>
 
-          <div>
-            <label for="password"></label>
-            <input
-              class="formulario-control"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Contraseña"
-            />
-            <!-- CONTRASEÑA-->
-            <% if (locals.errors && errors.password) { %>
-            <p class="text-danger"><%= errors.password.msg %></p>
-            <% } %>
-          </div>
+                    
+                    <div class="photoUser">
+                        <label for="image">
+                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                        </label> <!-- IMAGEN DEL PRODUCTO-->
+                        <input type="file" name="image" id="image" accept=".jpg">
+                        <% if (locals.errors && errors.image) { %>
+                            <p class="text-danger1"> <%= errors.image.msg %> </p>
+                        <% } %>
+                    </div>
+                    
+                    <div class="category-selection">
+                        <label for="">Seleccione su categoría:</label>
+                        <select name="category" id="category">
+                            <!--Categorias-->
+                            <option value="comprador">Comprador</option>
+                            <option value="vendedor">Vendedor</option>
+                        </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <p class="text-danger"> <%= errors.category.msg %> </p>
+                        <% } %>
+                    </div>
+
+                    <div>
+                        <label for="location"></label>
+                        <input class="formulario-control" type="text" name="location" id="location" placeholder="Ubicación del producto">  
+                        <p class="text-danger">  </p>
+                    </div>
+                    
+                    <div>
+                        <div class="check-box-condiciones">
+                            <label for="terminos">
+                            <input type="checkbox" name="terminos" required="" id="terminos"> He leído y acepto los Términos y Condiciones.</label> <!-- CAJA TERMINOS Y CONDICIONES-->
+                        </div>
 
           <div>
             <label for="password1"></label>

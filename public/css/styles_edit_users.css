@@ -15,38 +15,38 @@
 
 .icono-placeholder-nombre{
     background-image: url('../images/users/user_icon.png');
-    background-size: 25px 25px;
+    background-size: 23px 23px;
     background-repeat: no-repeat;
     background-position: 0.5rem center;    padding: 25px;
 }
 
 .icono-placeholder-apellido{
   background-image: url('../images/users/last_name-icon.png');
-  background-size: 25px 25px;
+  background-size: 23px 23px;
   background-repeat: no-repeat;
   background-position: 0.5rem center;  padding: 25px;
 }
 .icono-placeholder-dni{
   background-image: url('../images/users/dni-icon.png');
-  background-size: 25px 25px;
+  background-size: 23px 23px;
   background-repeat: no-repeat;
   background-position: 0.5rem center;  padding: 27px;
 }
 .icono-placeholder-email{
   background-image: url('../images/users/email-icon.png');
-  background-size: 25px 25px;
+  background-size: 23px 23px;
   background-repeat: no-repeat;
   background-position: 0.5rem center;  padding: 25px;
 }
 .icono-placeholder-password{
   background-image: url('../images/users/password-icon.png');
-  background-size: 25px 25px;
+  background-size: 23px 23px;
   background-repeat: no-repeat;
   background-position: 0.5rem center;  padding: 25px;
 }
 .icono-placeholder-confirm-password{
   background-image: url('../images/users/confirm-password-icon.png');
-  background-size: 26px 26px;
+  background-size: 23px 23px;
   background-repeat: no-repeat;
   background-position: 0.5rem center;
   padding: 25px;
@@ -64,12 +64,12 @@ body {
 .contenedor-formulario {
   margin: auto;
   padding: 10px;
-  background-color: #ffff;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 465px;
+  width: 320px;
+  background-color: #ffff;
 }
 
 .imagen-paycript-formulario {
@@ -185,7 +185,7 @@ label[for="image"] {
 }
 
 /*MOBILE*/
-
+/*
 .contenedor-formulario {
   margin: auto;
   padding: 10px;
@@ -196,6 +196,7 @@ label[for="image"] {
   border-radius: 10px;
   width: 465px;
 }
+*/
 
 .formulario-control {
   margin: 10px;
@@ -203,9 +204,11 @@ label[for="image"] {
   border: grey solid 1px;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
-  width: 380px;
+  border-radius: 7px;
+  width: 250px;
   text-align: center;
+  font-size: 14px;
+  
 }
 
 /*tablets*/
@@ -234,10 +237,8 @@ label[for="image"] {
   .formulario-flex {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
     align-items: center;
-    flex-direction: column;
-    /* width: 821px; */
+    flex-direction: column; 
 }
 .boton-formulario-iniciar-sesion {
   position: relative;
@@ -255,7 +256,7 @@ label[for="image"] {
   }
 
   .boton-formulario-continuar {
-    width: 332px;
+    width: 250px;
   }
 
   .nueva-foto-perfil {

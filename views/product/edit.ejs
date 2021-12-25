@@ -15,39 +15,39 @@
             </div>
 
             <!-- CAJA FLEX DEL  FORMULARIO-->
-            <form class="form" action="/product/edit/<%= productSent.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="form" action="/product/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
                 
                 <div class="form-left">
                     <div>
                         <label for="name"></label>
-                        <input class="formulario-control" maxlength="50" type="text" name="name" id="nombre" placeholder="Nombre Producto" value="<%= productSent.name %>">
+                        <input class="formulario-control" maxlength="50" type="text" name="name" id="nombre" placeholder="Nombre Producto" value="<%= product.name %>">
                         <!--NOMBRE DEL PRODUCTO-->
                     </div>
 
                     <div>
                         <label for="shortDescription"></label>
                         <input class="formulario-control" type="text" name="shortDescription"
-                            id="shortDescription" placeholder="Descripcion Corta" value="<%= productSent.shortDescription %>"> 
+                            id="shortDescription" placeholder="Descripcion Corta" value="<%= product.shortDescription %>"> 
                             <!-- DESCRIPCION CORTA DEL PRODUCTO-->
                     </div>
 
                     <div>
                         <label for="priceProduct"></label>
                         <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
-                            placeholder="Precio" value="<%= productSent.priceProduct %>">
+                            placeholder="Precio" value="<%= product.priceProduct %>">
                         <!--PRECIO PRODUCTO-->
                     </div>
 
                     <div>
                         <label for="description"></label>
-                        <textarea class="large-description"  name="textarea"><%= productSent.description %></textarea>
+                        <textarea class="large-description"  name="textarea"><%= product.description %></textarea>
                         <!-- DESCRIPCION LARGA DEL PRODUCTO-->
                     </div>
 
                     <div>
                         <label for="location"></label>
                         <input class="formulario-control" type="text" name="location" id="location"
-                            placeholder="Ubicación del producto" value="<%= productSent.location %>">
+                            placeholder="Ubicación del producto" value="<%= product.location %>">
                         <!--LOCATION DEL PRODUCTO-->
                     </div>
                     
@@ -90,19 +90,22 @@
                         <label for="photoProducts">
                             <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                         </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="photoProduct" id="photoProduct" accept=".jpg" value="<%= productSent.photoProduct %>">
+                        <input type="file" name="photoProduct" id="photoProduct" accept=".jpg" value="<%= product.photoProduct %>">
                     </div>
-                </div>
+                    </div>
 
-                <div class="both-buttons">
+                    <div class="both-buttons">
                     <div class="edit-button">
                         <button type="submit">Editar producto</button>
-                    </div>
+                 </div>
                     
-                    <form class="delette-button" action="/product/delete/<%= productSent.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                        <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
-                    </form>
+                   
                 </div>
+                
+            </form>
+
+            <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
+                <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
             </form>
         </div>
     </body>

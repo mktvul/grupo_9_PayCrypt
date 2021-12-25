@@ -20,17 +20,13 @@ const userStorage = require("../middlewares/userStorage"); //Multer
 const userValidate = require("../middlewares/userValidate"); //Express-validation
 const userGuest = require("../middlewares/userGuest");
 const userAuthentication = require("../middlewares/userAuthentication");
+const userLogged = require("../middlewares/userLogged");
 
 // Formulario de registro
 router.get("/register", userGuest, usersController.register);
 
 // Procesar el registro
-router.post(
-  "/register",
-  userStorage.single("image"),
-  userValidate,
-  usersController.processRegister
-);
+router.post("/register",userStorage.single("image"), userValidate, usersController.processRegister);
 
 // Formulario de login
 router.get("/login", userGuest, usersController.login);

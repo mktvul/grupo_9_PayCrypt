@@ -16,7 +16,7 @@
       </div>
 
       <!------ACÁ ARRANCAN LOS PRODUCTOS----------->
-      <h2 class="buscados">Todos los productos</h2>
+      <h2 class="buscados">Tu busqueda:</h2>
 
       <section class="list-of-products">
 
@@ -25,26 +25,26 @@
           <article class="each-product">
             <a href="/product/detail/<%= producto.id %>">  
              <div class="img-product">
-              <img src="/images/products/<%= producto.photoProduct %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
+              <img src="/images/products/<%= producto.image %>" alt=""> <!--poner con ejs -> producto.photoProduct --> 
              </div>
               
             <div class="product-description">
-              <p class="price"><%= producto.priceProduct %>  <!--PRECIO-->
+              <p class="price"><%= producto.price %>  <!--PRECIO-->
 
                <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
-                <% if (producto.coin == "Bitcoin") { %> 
+                <% if (producto.coinId == 1) { %> 
                   <span>
-                    <img src="images/btc-logo.svg" alt="" class="usdt">
+                    <img src="/images/btc-logo.svg" alt="" class="usdt">
                   </span>
               
-                <% }else if(producto.coin == "Ethereum") { %> 
+                <% } else if(producto.coinId == 3) { %> 
                   <span>
-                    <img src="images/eth-logo.svg" alt="" class="usdt">
+                    <img src="/images/eth-logo.svg" alt="" class="usdt">
                   </span> 
           
                 <% }else { %>
                   <span>
-                    <img src="images/usdt-logo.svg" alt="" class="usdt">
+                    <img src="/images/usdt-logo.svg" alt="" class="usdt">
                   </span>
 
                 <% } %>
@@ -52,7 +52,7 @@
               </p>
 
               <p class="category">
-                <i class="far fa-folder-open"></i><%= producto.category %> <!--CATEGORIA-->
+                <i class="far fa-folder-open"></i><%= producto.categoryId %> <!--CATEGORIA hay que arreglar la categoria-->
               </p>
 
 
@@ -73,7 +73,6 @@
               </p>
             </a>
           </div>
-
           <div class="place">
             <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
           </div>

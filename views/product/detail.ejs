@@ -10,23 +10,23 @@
       <section class="main-section">
         <img
           class="main-section-img"
-          src="/images/products/<%=products.photoProduct%>"
+          src="/images/products/<%=product.image%>"
         />
       </section>
       <!-- Section 2: 3 articles - name, description, pay details - button add to cart -->
       <section class="main-section-2">
         <!-- Article 1: name  -->
         <article class="main-section-article">
-          <h1 class="main-section-article-h1"><%=products.name%></h1>
+          <h1 class="main-section-article-h1"><%=product.name%></h1>
           <h2 class="main-section-article-h2">
-            <%=products.shortDescription%>
+            <%=product.shortDescription%>
           </h2>
           <div class="main-section-article-price">
-            <%=products.priceProduct%> 
-            <% if (products.coin == "Bitcoin") { %> 
+            <%=product.price%> 
+            <% if (product.coin == "1") { %> 
               <span><img class="main-section-article-ul-img-1" src="/images/btc-logo.svg"/></span>
           
-            <% }else if(products.coin == "Ethereum") { %> 
+            <% }else if(product.coin == "2") { %> 
               <span><img class="main-section-article-ul-img-1" src="/images/eth-logo.svg"/></span>
       
             <% }else { %>
@@ -40,9 +40,10 @@
           <div class="main-section-article-div">
             <h3 class="main-section-article-h3">Descripción</h3>
 
-            <p class="main-section-article-ul"><%=products.description%></p>
+            <p class="main-section-article-ul"><%=product.description%></p>
           </div>
         </article>
+      
 
         <!-- Article 3: pay details, button add to cart -->
         <article class="main-section-article-2">
@@ -51,36 +52,36 @@
             <div>
               <ul>
                 <li class="main-section-article-ul-li">
-                  <% if (products.coin == 'USDT') { %>
-                    <%= products.priceProduct  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/> 
-                  <% } else if (products.coin == 'Bitcoin') { 
-                    let numberToShow = products.priceProduct * 50000 %>
+                  <% if (product.coin == 'USDT') { %>
+                    <%= product.price  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/> 
+                  <% } else if (product.coin == 'Bitcoin') { 
+                    let numberToShow = product.price * 50000 %>
                     <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
                   <% } else { 
-                    let numberToShow = products.priceProduct * 4000 %>
+                    let numberToShow = product.price * 4000 %>
                     <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
                   <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  <% if (products.coin == 'USDT') { 
-                    let numberToShow = products.priceProduct / 50000 %>
+                  <% if (product.coin == 'USDT') { 
+                    let numberToShow = product.price / 50000 %>
                     <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/> 
-                  <% } else if (products.coin == 'Bitcoin') { %>
-                    <%= products.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
+                  <% } else if (product.coin == 'Bitcoin') { %>
+                    <%= product.price %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
                   <% } else {
-                    let numberToShow = products.priceProduct * 0.08 %>
+                    let numberToShow = product.price * 0.08 %>
                     <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
                   <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  <% if (products.coin == 'USDT') { 
-                    let numberToShow = products.priceProduct * 0.00025 %>
+                  <% if (product.coin == 'USDT') { 
+                    let numberToShow = product.priceProduct * 0.00025 %>
                     <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/> 
-                  <% } else if (products.coin == 'Bitcoin') { 
-                    let numberToShow = (products.priceProduct * 12.24).toFixed(2) %>
+                  <% } else if (product.coin == 'Bitcoin') { 
+                    let numberToShow = (product.priceProduct * 12.24).toFixed(2) %>
                     <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
                   <% } else { %>
-                    <%= products.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
+                    <%= product.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
                   <% } %>
                 </li>
               </ul>

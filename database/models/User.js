@@ -37,9 +37,9 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        timestamps: false,
+        //createdAt: 'created_at',
+        //updatedAt: 'updated_at',
         deletedAt: false
     }
     const User = sequelize.define(alias, cols, config); 
@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = function (models) {
         User.belongsTo(models.Product, { 
             as: "products", // El nombre del modelo pero en plural
-            foreignKey: 'userId',
+            foreignKey: 'id',
             timestamps: false
         }),
         User.hasOne(models.Cart, {     // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo

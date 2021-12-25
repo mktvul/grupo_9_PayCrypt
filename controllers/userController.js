@@ -1,16 +1,17 @@
 //Require's
+const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-
-const User = require("../models/User");
+const userLogged = require('../middlewares/userLogged')
 
 //Controller
-const controller = {
+const userController = {
   register: (req, res) => {
     return res.render("./user/register");
   },
+
   processRegister: (req, res) => {
-    const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req); //express
 
     if (resultValidation.errors.length > 0) {
       return res.render("./user/register", {
@@ -19,30 +20,32 @@ const controller = {
       });
     }
 
-    let userInDB = User.findByField("email", req.body.email);
-
-    if (userInDB) {
-      return res.render("./user/register", {
-        errors: {
-          email: {
-            msg: "Este email ya está registrado",
+    db.User.findOne({
+      where: {
+        email: req.body.email
+      },
+    }).then((userInDB) => {
+      if (userInDB) {
+        return res.render("./user/register", {
+          errors: {
+            email: {
+              msg: "Este email ya está registrado",
+            },
           },
-        },
-        oldData: req.body,
-      });
-    }
-
-    let userToCreate = {
+          oldData: req.body,
+        });
+      }
+    });
+    db.User.create({
       name: req.body.name,
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
       image: req.file ? req.file.filename : req.session.userLogged.image,
-    };
-
-    let userCreated = User.create(userToCreate);
-
+      location: req.body.location,
+    });
+    // let userCreated = User.create(userToCreate); //puso seba por las dudas
     return res.redirect("/user/login");
   },
 
@@ -51,6 +54,7 @@ const controller = {
   },
 
   loginProcess: (req, res) => {
+<<<<<<< HEAD
     let userToLogin = User.findByField("email", req.body.email);
 
     if (userToLogin) {
@@ -67,29 +71,51 @@ const controller = {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
         return res.redirect("../");
+=======
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    }).then((userToLogin) => {
+      if (userToLogin) {
+        let isOkThePassword = bcryptjs.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+
+        if (isOkThePassword) {
+          delete userToLogin.password;
+          req.session.userLogged = userToLogin;
+
+          if (req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+          }
+          return res.redirect("../");
+        }
+
+        return res.render("./user/login", {
+          errors: {
+            email: {
+              msg: "Las credenciales son inválidas",
+            },
+          },
+        });
+>>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
       }
+
       return res.render("./user/login", {
         errors: {
           email: {
-            msg: "Las credenciales son inválidas",
+            msg: "No se encuentra este email en nuestra base de datos",
           },
         },
       });
-    }
-
-    return res.render("./user/login", {
-      errors: {
-        email: {
-          msg: "No se encuentra este email en nuestra base de datos",
-        },
-      },
     });
   },
 
+  //vemos el detalle
   profile: (req, res) => {
-    return res.render("./user/profile", {
-      user: req.session.userLogged,
-    });
+    return res.render("./user/profile", {user: req.session.userLogged});
   },
 
   edit: (req, res) => {
@@ -99,24 +125,41 @@ const controller = {
   },
 
   editProcess: (req, res) => {
+<<<<<<< HEAD
     let userToEdit = {
+=======
+    db.User.update({
+>>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
       id: req.session.userLogged.id,
       name: req.body.name,
       lastName: req.body.lastName,
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
+<<<<<<< HEAD
     };
 
     let userEdited = User.edit(userToEdit);
     return res.redirect("/user/profile");
+=======
+      location: req.body.location
+    }, 
+      {  
+        where: { id:req.session.userLogged.id}
+      }    
+    );
+    return res.redirect("./logout");
+>>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
   },
 
   delete: (req, res) => {
     console.log(req.session.userLogged.id);
+<<<<<<< HEAD
     let userDeleted = User.delete(req.session.userLogged.id);
+=======
+    let userDeleted = db.User.delete(req.session.userLogged.id);
+>>>>>>> cbd8db7fc45ea4eb7a2ef5160423ce6c07c35464
     return res.redirect("/");
   },
 
@@ -127,4 +170,4 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = userController;
