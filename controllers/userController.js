@@ -38,7 +38,6 @@ const controller = {
       dni: req.body.dni,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
     };
 
@@ -59,6 +58,7 @@ const controller = {
         req.body.password,
         userToLogin.password
       );
+
       if (isOkThePassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
@@ -66,7 +66,6 @@ const controller = {
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
-
         return res.redirect("../");
       }
       return res.render("./user/login", {
@@ -100,7 +99,7 @@ const controller = {
   },
 
   editProcess: (req, res) => {
-		let userToEdit = {
+    let userToEdit = {
       id: req.session.userLogged.id,
       name: req.body.name,
       lastName: req.body.lastName,
@@ -109,16 +108,16 @@ const controller = {
       password: bcryptjs.hashSync(req.body.password, 10),
       /*category: req.body.category,*/
       image: req.file ? req.file.filename : req.session.userLogged.image,
-		}
+    };
 
-		let userEdited = User.edit(userToEdit);
-		return res.redirect('/user/profile');
+    let userEdited = User.edit(userToEdit);
+    return res.redirect("/user/profile");
   },
 
   delete: (req, res) => {
     console.log(req.session.userLogged.id);
-		let userDeleted = User.delete(req.session.userLogged.id);
-		return res.redirect('/');
+    let userDeleted = User.delete(req.session.userLogged.id);
+    return res.redirect("/");
   },
 
   logout: (req, res) => {
