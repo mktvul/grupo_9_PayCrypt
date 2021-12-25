@@ -4,16 +4,17 @@
   'styles_register'}) %>
 
   <body>
+    <%- include ('../partials/header.ejs') %>
     <main>
-      <%- include ('../partials/header.ejs') %>
-      <div class="white-form-box">
-        <!-- CLASE QUE CONTIENE A TODO EL FORMULARIO BLANCO-->
+      <!-- Form container-->
+      <div class="form-container">
+        <!-- PayCrypt logo-->
         <div class="logo-register">
           <img src="/images/paycrypt-logo.svg" alt="" />
         </div>
 
         <div>
-          <p class="p-datos-registro">Completá tus datos</p>
+          <h1>¡Hola! Ingresá tus datos</h1>
         </div>
 
         <!-- CAJA FLEX DEL  FORMULARIO-->
@@ -23,15 +24,12 @@
           method="POST"
           enctype="multipart/form-data"
         >
+        <div>
+          <h2>Información personal</h2>
+        </div>
           <div>
             <label for="name"></label>
-            <input
-              class="formulario-control"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Nombre"
-            />
+            <input type="text" name="name" id="name" placeholder="Nombre" />
             <!--NOMBRE USUARIO-->
             <% if (locals.errors && errors.name) { %>
             <p class="text-danger"><%= errors.name.msg %></p>
@@ -41,7 +39,6 @@
           <div>
             <label for="lastName"></label>
             <input
-              class="formulario-control"
               type="text"
               name="lastName"
               id="lastName"
@@ -55,73 +52,50 @@
 
           <div>
             <label for="dni"></label>
-            <input
-              class="formulario-control"
-              type="number"
-              name="dni"
-              id="dni"
-              placeholder="DNI"
-            />
+            <input type="number" name="dni" id="dni" placeholder="DNI" />
             <!-- NUMERO DE DOCUMENTO (DNI)-->
             <% if (locals.errors && errors.dni) { %>
             <p class="text-danger"><%= errors.dni.msg %></p>
             <% } %>
           </div>
-
+          <div>
+            <label for="location"></label>
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="Ubicación"
+            />
+            <p class="text-danger"></p>
+          </div>
+          <div>
+            <h2>Información de cuenta</h2>
+          </div>
           <div>
             <label for="email"></label>
-            <input
-              class="formulario-control"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="E-mail"
-            />
+            <input type="email" name="email" id="email" placeholder="E-mail" />
             <!-- CORREO ELECTRONICO-->
             <% if (locals.errors && errors.email) { %>
             <p class="text-danger"><%= errors.email.msg %></p>
             <% } %>
           </div>
 
-                    
-                    <div class="photoUser">
-                        <label for="image">
-                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                        </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="image" id="image" accept=".jpg">
-                        <% if (locals.errors && errors.image) { %>
-                            <p class="text-danger1"> <%= errors.image.msg %> </p>
-                        <% } %>
-                    </div>
-                    
-                    <div class="category-selection">
-                        <label for="">Seleccione su categoría:</label>
-                        <select name="category" id="category">
-                            <!--Categorias-->
-                            <option value="comprador">Comprador</option>
-                            <option value="vendedor">Vendedor</option>
-                        </select>
-                        <% if (locals.errors && errors.category) { %>
-                            <p class="text-danger"> <%= errors.category.msg %> </p>
-                        <% } %>
-                    </div>
-
-                    <div>
-                        <label for="location"></label>
-                        <input class="formulario-control" type="text" name="location" id="location" placeholder="Ubicación del producto">  
-                        <p class="text-danger">  </p>
-                    </div>
-                    
-                    <div>
-                        <div class="check-box-condiciones">
-                            <label for="terminos">
-                            <input type="checkbox" name="terminos" required="" id="terminos"> He leído y acepto los Términos y Condiciones.</label> <!-- CAJA TERMINOS Y CONDICIONES-->
-                        </div>
-
+          <div>
+            <label for="password"></label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Contraseña"
+            />
+            <!-- CONTRASEÑA-->
+            <% if (locals.errors && errors.password) { %>
+            <p class="text-danger"><%= errors.password.msg %></p>
+            <% } %>
+          </div>
           <div>
             <label for="password1"></label>
             <input
-              class="formulario-control"
               type="password"
               name="password1"
               id="password1"
@@ -133,38 +107,38 @@
             <% } %>
           </div>
 
-          <div class="photoUser">
+          <div class="form-button-image">
             <label for="image">
               <div class="img-up">
                 <i class="fas fa-upload"></i> Subir Imagen
               </div>
             </label>
             <!-- IMAGEN DEL PRODUCTO-->
-            <input type="file" name="image" id="image" accept=".jpg" />
+            <input type="file" name="image" accept=".jpg" />
             <% if (locals.errors && errors.image) { %>
             <p class="text-danger1"><%= errors.image.msg %></p>
             <% } %>
           </div>
 
-          <div>
-            <div class="check-box-condiciones">
-              <label for="terminos">
-                <input
-                  type="checkbox"
-                  name="terminos"
-                  required=""
-                  id="terminos"
-                />
-                He leído y acepto los Términos y Condiciones.</label
+          <div class="form-button">
+            <div class="form-button-checkbox">
+              <input
+                id="form-button-checkbox-input"
+                type="checkbox"
+                name="terminos"
+                required=""
+              />
+              <label for="terminos"
+                >He leído y acepto los Términos y Condiciones.</label
               >
               <!-- CAJA TERMINOS Y CONDICIONES-->
             </div>
 
-            <div class="continue-button">
+            <div class="form-button-done">
               <button type="submit">Continuar</button>
             </div>
 
-            <div class="login-button">
+            <div class="form-button-login">
               <a role="button" href="/user/login"
                 ><button type="button">Iniciar sesión</button></a
               >

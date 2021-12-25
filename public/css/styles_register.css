@@ -18,9 +18,7 @@ button {
   cursor: pointer;
 }
 
-/* CONTENEDOR DEL HEADER*/
-
-/* header */
+/* Header */
 
 .header-menu,
 .header-nav-menu li,
@@ -34,7 +32,7 @@ button {
   display: none;
 }
 
-/* MAIN*/
+/* Main*/
 
 /* TEXTO EJS DE ERROR */
 
@@ -55,35 +53,25 @@ body {
   background-color: #ffc439;
 }
 
-/* CONTENEDOR DEL FORMULARIO*/
-.white-form-box {
-  width: 844px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 20px;
-  background-color: #ffff;
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* Form */
+.form-container {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  background-color: #fff;
+  width: auto;
+  margin: 50px 20px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 728px;
 }
 
-/*LOGO DE SUBIR IMAGEN*/
-
-.photoUser {
-  margin: 10px 0px 10px 45px;
-}
-
-.category-selection {
-  margin: 10px 45px 10px 0px;
-  border: grey solid 1px;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 14px;
-  width: 332px;
-}
-
-/* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
+/* PayCrypt logo */
 .logo-register {
   width: 100%;
   display: flex;
@@ -94,209 +82,135 @@ body {
   width: 141px;
 }
 
-/* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
-.formulario-control {
-  margin: 10px;
-  padding: 10px;
-  border: grey solid 1px;
-  outline: none;
-  border-radius: 8px;
-  width: 332px;
-  height: 50px;
-  background: #fff;
-}
-
-/* CONTROL DEL LABEL (COMPLETA TUS DATOS) */
-.p-datos-registro {
+/* Completá tus datos */
+h1 {
   font-size: 20px;
-  margin-bottom: 20px;
   text-align: center;
+  margin-left: 10px;
 }
 
-/* CONTROL DE LA CHECK-BOX DEL FORMULARIO REGISTER*/
-.check-box-condiciones {
+h2 {
+  font-size: 15px;
+  font-weight: 300;
+  color: #27346a;
+  margin: 15px 0 0 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form inputs */
+.form div {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form div input {
+  background: #fff;
+  outline: none;
+  margin: 10px 0 5px 0;
+  padding: 10px;
+  border: solid 1px #e6e6e6;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 686px;
+  height: 48px;
+}
+
+/* Button - upload image  */
+.form-button-image {
   display: flex;
   justify-content: center;
-  color: #27346a;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #27346a;
+  border-radius: 5px;
   font-size: 14px;
-}
-
-.check-box-condiciones input {
+  color: #27346a;
+  width: 100%;
+  height: 48px;
   cursor: pointer;
 }
 
-/* boton formulario CONTINUAR*/
-.continue-button {
+.form-button-image input {
+  display: none;
+}
+
+/* Terms and conditions */
+.form-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button-checkbox {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #27346a;
+}
+
+#form-button-checkbox-input {
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* Button - done */
+.form-button-done {
+  display: flex;
+  align-items: center;
   background-color: #27346a;
-  color: #ffff;
-  border: #27346a solid 1px;
+  color: #fff;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
-  margin-top: 14px;
-  margin-bottom: 10px;
+  margin: 15px 0 10px 0;
+  max-width: 270px;
+  height: 48px;
   cursor: pointer;
 }
 
-.terminos-y-continuar {
-  display: flex;
-  align-items: center;
-}
-
-/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
-.continue-button:hover {
+.form-button-done:hover {
   text-decoration: underline;
   background-color: #505C91;
   transition: all 1s ease-out;
 }
 
-/* boton formulario INICIAR SESION*/
-
-.login-button {
-  background-color: white;
-  color: #27346a;
-  border-radius: 5px;
+/* Button - login */
+.form-button-login {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
   border: solid 1px #27346a;
+  border-radius: 5px;
+  color: #27346a;
   padding: 10px;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  max-width: 270px;
+  height: 48px;
   cursor: pointer;
 }
 
-/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
-
-.login-button:hover {
+.form-button-login:hover {
   text-decoration: underline;
 }
 
-
-/* BOTON SUBIR IMAGEN  */
-#image {
-  display: none
-}
-
-input[type="”file”"]#image {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-
-label[for="image"] {
-  font-size: 14px;
-    color: #27346a;
-    background-color: #ffffff;
-    border: 1px solid #27346a;
-    display: block;
-    cursor: pointer;
-    padding: 8px;
-    text-align: center;
-    border-radius: 5px;
-    width: 210px;
-    
-} 
-
-/*MOBILE*/
-@media (max-width: 480px) {
-  .white-form-box {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .formulario-control {
-    width: 250px;
-    height: 50px;
-  }
-
-  .form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form div {
-    align-items: center;
-  }
-
-  label[for="image"] {
-    width: 250px;
-  }
-
-  .photoUser {
-    max-width: 250px;
-    margin-right: 65px;
-  }
-
-  .check-box-condiciones {
-    font-size: 12px;
-    text-align: center;
-  }
-
-}
-
 /*tablets*/
-@media (min-width: 481px) and (max-width: 1023px) {
-  .white-form-box {
-    width: 450px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 20px;
-    background-color: #ffff;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-  }
-  
-  .form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
+@media (min-width: 768px) {
 
-  .form div {
-    align-items: center;
-  }
-
-  label[for="image"] {
-    width: 332px;
-    margin-right: 55px;
-  }
 
 }
 
 /*desktop*/
 @media (min-width: 1024px) {
 
-  .formulario-control {
-    width: 332px;
-    height: 50px;
-    max-width: 1000px;
-  }
-
-  .form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  .check-box-condiciones {
-    margin-top: 10px;
-  }
-  
-  label[for="image"] {
-    width: 332px;
-    margin-left: 0px;
-  }
-
-  .text-danger1 {
-    margin-left: 0px;
-  }
 
 }
