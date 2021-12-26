@@ -42,13 +42,6 @@ button {
   margin-left: 10px;
 }
 
-.text-danger1 {
-  color: red;
-  font-size: 12px;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
 body {
   background-color: #ffc439;
 }
@@ -64,8 +57,8 @@ main {
   flex-direction: column;
   background-color: #fff;
   width: auto;
-  margin: 50px 20px;
-  padding: 20px;
+  margin: 30px 20px;
+  padding: 10px 20px 20px 20px;
   border-radius: 5px;
   width: 100%;
   max-width: 728px;
@@ -79,14 +72,15 @@ main {
 }
 
 .logo-register img {
-  width: 141px;
+  width: 130px;
 }
 
 /* Completá tus datos */
 h1 {
   font-size: 20px;
+  font-weight: 700;
   text-align: center;
-  margin-left: 10px;
+  margin: 5px 0;
 }
 
 h2 {
@@ -141,6 +135,16 @@ h2 {
 }
 
 .form-button-image input {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-button-image-text {
+  cursor: pointer;
+}
+
+.form-button-image input {
   display: none;
 }
 
@@ -180,9 +184,13 @@ h2 {
 }
 
 .form-button-done:hover {
-  text-decoration: underline;
-  background-color: #505C91;
-  transition: all 1s ease-out;
+  background-color: #2790c3;
+  transition: all 300ms ease-out;
+}
+
+.form-button-done:active {
+  background-color: #27346a;
+  transition: all 300ms ease-out;
 }
 
 /* Button - login */
@@ -200,7 +208,17 @@ h2 {
 }
 
 .form-button-login:hover {
-  text-decoration: underline;
+  background-color: #2790c3;
+  border: none;
+  color: #fff;
+  transition: all 300ms ease-out;
+}
+
+.form-button-login:active {
+  background-color: #fff;
+  border: solid 1px #27346a;
+  color: #27346a;
+  transition: all 300ms ease-out;
 }
 
 /*tablets*/

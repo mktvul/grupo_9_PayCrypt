@@ -14,7 +14,7 @@
         </div>
 
         <div>
-          <h1>¡Hola! Ingresá tus datos</h1>
+          <h1>Para crear tu cuenta necesitamos validar tus datos</h1>
         </div>
 
         <!-- CAJA FLEX DEL  FORMULARIO-->
@@ -66,7 +66,9 @@
               id="location"
               placeholder="Ubicación"
             />
-            <p class="text-danger"></p>
+            <% if (locals.errors && errors.location) { %>
+              <p class="text-danger"><%= errors.location.msg %></p>
+            <% } %>
           </div>
           <div>
             <h2>Información de cuenta</h2>
@@ -94,29 +96,29 @@
             <% } %>
           </div>
           <div>
-            <label for="password1"></label>
+            <label for="passwordConfirm"></label>
             <input
               type="password"
-              name="password1"
-              id="password1"
+              name="passwordConfirm"
+              id="passwordConfirm"
               placeholder="Confirmar Contraseña"
             />
             <!-- CONTRASEÑA-->
-            <% if (locals.errors && errors.password1) { %>
-            <p class="text-danger"><%= errors.password1.msg %></p>
+            <% if (locals.errors && errors.passwordConfirm) { %>
+            <p class="text-danger"><%= errors.passwordConfirm.msg %></p>
             <% } %>
           </div>
 
           <div class="form-button-image">
             <label for="image">
-              <div class="img-up">
+              <div class="form-button-image-text">
                 <i class="fas fa-upload"></i> Subir Imagen
               </div>
             </label>
             <!-- IMAGEN DEL PRODUCTO-->
-            <input type="file" name="image" accept=".jpg" />
+            <input type="file" name="image" id="image" accept=".jpg" />
             <% if (locals.errors && errors.image) { %>
-            <p class="text-danger1"><%= errors.image.msg %></p>
+            <p class="text-danger"><%= errors.image.msg %></p>
             <% } %>
           </div>
 
