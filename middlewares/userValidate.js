@@ -7,6 +7,7 @@ module.exports = [
   body("name").notEmpty().withMessage("Debes escribir tu nombre"),
   body("lastName").notEmpty().withMessage("Debes escribir tu apellido"),
   body("dni").notEmpty().withMessage("Debes escribir tu DNI"),
+  body("location").notEmpty().withMessage("Debes escribir tu ubicación"),
   body("email")
     .notEmpty()
     .withMessage("Debes escribir tu email")
@@ -14,6 +15,7 @@ module.exports = [
     .isEmail()
     .withMessage("Debes escribir un formato de email válido"),
   body("password").notEmpty().withMessage("Debes escribir una contraseña"),
+  body("passwordConfirm").notEmpty().withMessage("Debes confirmar la contraseña"),
   body("image").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png"];
