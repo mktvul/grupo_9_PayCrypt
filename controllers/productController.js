@@ -119,7 +119,7 @@ const productsControllers = {
     }) .then( productsSent => {
         res.render('./product/products', {productsSent});
     })
-    //res.redirect("./product").catch((error) => res.send(error));
+    .catch((error) => res.send(error));
   },
 };
 
