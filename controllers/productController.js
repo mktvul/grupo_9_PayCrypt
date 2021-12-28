@@ -80,17 +80,17 @@ const productsControllers = {
     });
   },
 
-//con location
-   listAll: function (req, res) {
-     db.Product.findAll({
-       include:[
-         {Association:'user_products'},
-         {Association:'User'}
-       ]
-     }).then((productsSent) => {
-       res.render("/", { productsSent });
-     });
-   },
+// //con location
+//    listAll: function (req, res) {
+//      db.Product.findAll({
+//        include:[
+//          {Association:'user_products'},
+//          {Association:'User'}
+//        ]
+//      }).then((productsSent) => {
+//        res.render("/", { productsSent });
+//      });
+//    },
 
 
 

@@ -132,6 +132,18 @@ const userController = {
     req.session.destroy();
     return res.redirect("/");
   },
+
+  // INTENTO DE SACAR LOCATION
+  //Enviar los datos de usuario a la vista. No se si esta bien
+  //  productDetail: (req, res) => {
+  //    Product.findAllByPk(req.params.id, {
+  //      include: [{ association: 'users' }]
+  //    }).then((productsSent) => {
+  //       res.render('index.ejs', { productsSent });
+  //   });
+  // },
+
+
 };
 
 module.exports = userController;
