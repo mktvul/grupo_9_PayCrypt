@@ -117,6 +117,10 @@ h2 {
   height: 48px;
 }
 
+.form div input:focus {
+  border: solid 2px #2790c3;
+}
+
 /* Button - upload image  */
 .form-button-image {
   display: flex;
@@ -124,7 +128,7 @@ h2 {
   align-items: center;
   margin: 10px 0px;
   padding: 10px;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #27346a;
   border-radius: 5px;
   font-size: 14px;
@@ -134,18 +138,19 @@ h2 {
   cursor: pointer;
 }
 
-.form-button-image input {
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
 .form-button-image-text {
   cursor: pointer;
 }
 
 .form-button-image input {
   display: none;
+}
+
+#image {
+  position: absolute;
+  border: solid 2px red;
+  background: rosybrown;
+  z-index: 1;
 }
 
 /* Terms and conditions */

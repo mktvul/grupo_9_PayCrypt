@@ -20,16 +20,18 @@
         <!-- CAJA FLEX DEL  FORMULARIO-->
         <form
           class="form"
+          id="form"
           action="/user/register"
           method="POST"
           enctype="multipart/form-data"
         >
-        <div>
-          <h2>Información personal</h2>
-        </div>
+          <div>
+            <h2>Información personal</h2>
+          </div>
           <div>
             <label for="name"></label>
             <input type="text" name="name" id="name" placeholder="Nombre" />
+            <small class="text-danger name"></small>
             <!--NOMBRE USUARIO-->
             <% if (locals.errors && errors.name) { %>
             <p class="text-danger"><%= errors.name.msg %></p>
@@ -44,6 +46,7 @@
               id="lastName"
               placeholder="Apellido"
             />
+            <small class="text-danger lastName"></small>
             <!-- APELLIDO-->
             <% if (locals.errors && errors.lastName) { %>
             <p class="text-danger"><%= errors.lastName.msg %></p>
@@ -53,6 +56,7 @@
           <div>
             <label for="dni"></label>
             <input type="number" name="dni" id="dni" placeholder="DNI" />
+            <small class="text-danger dni"></small>
             <!-- NUMERO DE DOCUMENTO (DNI)-->
             <% if (locals.errors && errors.dni) { %>
             <p class="text-danger"><%= errors.dni.msg %></p>
@@ -66,8 +70,9 @@
               id="location"
               placeholder="Ubicación"
             />
+            <small class="text-danger location"></small>
             <% if (locals.errors && errors.location) { %>
-              <p class="text-danger"><%= errors.location.msg %></p>
+            <p class="text-danger"><%= errors.location.msg %></p>
             <% } %>
           </div>
           <div>
@@ -76,6 +81,7 @@
           <div>
             <label for="email"></label>
             <input type="email" name="email" id="email" placeholder="E-mail" />
+            <small class="text-danger email"></small>
             <!-- CORREO ELECTRONICO-->
             <% if (locals.errors && errors.email) { %>
             <p class="text-danger"><%= errors.email.msg %></p>
@@ -90,6 +96,7 @@
               id="password"
               placeholder="Contraseña"
             />
+            <small class="text-danger password"></small>
             <!-- CONTRASEÑA-->
             <% if (locals.errors && errors.password) { %>
             <p class="text-danger"><%= errors.password.msg %></p>
@@ -103,13 +110,14 @@
               id="passwordConfirm"
               placeholder="Confirmar Contraseña"
             />
+            <small class="text-danger passwordConfirm"></small>
             <!-- CONTRASEÑA-->
             <% if (locals.errors && errors.passwordConfirm) { %>
             <p class="text-danger"><%= errors.passwordConfirm.msg %></p>
             <% } %>
           </div>
 
-          <div class="form-button-image">
+          <div class="form-button-image" id="form-button-image">
             <label for="image">
               <div class="form-button-image-text">
                 <i class="fas fa-upload"></i> Subir Imagen
@@ -117,6 +125,7 @@
             </label>
             <!-- IMAGEN DEL PRODUCTO-->
             <input type="file" name="image" id="image" accept=".jpg" />
+            <small class="text-danger image"></small>
             <% if (locals.errors && errors.image) { %>
             <p class="text-danger"><%= errors.image.msg %></p>
             <% } %>
