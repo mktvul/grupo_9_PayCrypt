@@ -34,17 +34,17 @@
                <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
                 <% if (producto.coinId == 1) { %> 
                   <span>
-                    <img src="images/btc-logo.svg" alt="" class="usdt">
+                    <img src="/images/btc-logo.svg" alt="" class="usdt">
                   </span>
               
                 <% } else if(producto.coinId == 3) { %> 
                   <span>
-                    <img src="images/eth-logo.svg" alt="" class="usdt">
+                    <img src="/images/eth-logo.svg" alt="" class="usdt">
                   </span> 
           
                 <% }else { %>
                   <span>
-                    <img src="images/usdt-logo.svg" alt="" class="usdt">
+                    <img src="/images/usdt-logo.svg" alt="" class="usdt">
                   </span>
 
                 <% } %>
@@ -73,7 +73,6 @@
               </p>
             </a>
           </div>
-
           <div class="place">
             <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
           </div>
