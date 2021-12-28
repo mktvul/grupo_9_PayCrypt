@@ -20,7 +20,6 @@ button {
 
 /* Header */
 
-.header-menu,
 .header-nav-menu li,
 .header-search,
 .header-search-bar,
@@ -138,6 +137,20 @@ h2 {
   cursor: pointer;
 }
 
+.form-button-image:hover {
+  background-color: #2790c3;
+  border: none;
+  color: #fff;
+  transition: all 300ms ease-out;
+}
+
+.form-button-image:active {
+  background-color: #fff;
+  border: solid 1px #27346a;
+  color: #27346a;
+  transition: all 300ms ease-out;
+}
+
 .form-button-image-text {
   cursor: pointer;
 }
@@ -234,6 +247,7 @@ h2 {
 
 /*desktop*/
 @media (min-width: 1024px) {
-
-
+  .header-menu {
+    display: none;
+  }
 }
