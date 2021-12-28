@@ -109,12 +109,12 @@ const productsControllers = {
   search: function (req, res) {
     db.Product.findAll({
       where: {
-        name: { [Op.like]: "%" + req.body.search + "%" }, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
-      },
-    }).then((productsSent) => {
-      res.render("./product/products", { productsSent });
-    });
-    //res.redirect("./product").catch((error) => res.send(error));
+        name: { [Op.like]: '%'+ req.body.search + '%'}, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
+      }, 
+    }) .then( productsSent => {
+        res.render('./product/products', {productsSent});
+    })
+    .catch((error) => res.send(error));
   },
 };
 
