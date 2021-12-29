@@ -50,8 +50,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'id',
             timestamps: false
         }),
+
         User.hasOne(models.Cart, {     // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
-            as: "carts", // El nombre del modelo pero en plural
+            as: "cart",
             foreignKey: 'userId',
             timestamps: false
         })

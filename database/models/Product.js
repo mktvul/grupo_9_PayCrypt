@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         }),
         
-        Product.belongsTo(models.Category, { 
+        Product.hasMany(models.Category, { 
             as: "categories", // El nombre del modelo pero en plural
             foreignKey: 'id',
             timestamps: false
@@ -60,11 +60,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'id',
             timestamps: false
         }),
-        Product.belongsToMany(models.Cart, {
+
+        Product.hasMany(models.Cart, {
             as: 'carts',
-            through: 'cartProducts',
             foreignKey: 'productId',
-            otherKey: 'cartId',
             timestamps: false
           })
     }
