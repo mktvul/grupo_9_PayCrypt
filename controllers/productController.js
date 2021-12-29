@@ -1,6 +1,6 @@
 const path = require("path");
 const db = require("../database/models");
-const userLogged = require('../middlewares/userLogged')
+const userLogged = require("../middlewares/userLogged");
 
 // sequelize
 const sequelize = require("sequelize");
@@ -9,8 +9,11 @@ const Op = sequelize.Op;
 const productsControllers = {
   //create
   create: function (req, res) {
-    console.log('esto es console log de req.session' + req.session)
-    console.log('esto es un console log de req.session.userLogged.location' + req.session.userLogged.location);
+    console.log("esto es console log de req.session" + req.session);
+    console.log(
+      "esto es un console log de req.session.userLogged.location" +
+        req.session.userLogged.location
+    );
     res.render("./product/create");
   },
   //store
@@ -20,11 +23,11 @@ const productsControllers = {
       shortDescription: req.body.shortDescription,
       price: req.body.price,
       description: req.body.description, //ver lo de la hora
-      image: req.file.filename,
-      coinId: req.body.coin,
-      categoryId: req.body.category,
       date: new Date().getTime(),
-      location: req.session.userLogged.location // NO FUNCIONA
+      image: req.file.filename,
+      categoryId: req.body.category,
+      coinId: req.body.coin,
+      userId: req.session.userLogged.id,
     })
       .then(() => {
         res.redirect("/");
@@ -78,19 +81,19 @@ const productsControllers = {
 
   //listar
 
-  listAll: function (req, res) {
-    //cambiamos nombre, recordar cambiarlo
-    db.Product.findAll().then((productsSent) => {
-      res.render("./product/products", { productsSent });
-    });
-  },
+  // listAll: function (req, res) {
+  //   //cambiamos nombre, recordar cambiarlo
+  //   db.Product.findAll().then((productsSent) => {
+  //     res.render("./product/products", { productsSent });
+  //   });
+  // },
 
   //con location
   listAll: function (req, res) {
     db.Product.findAll({
-      include: [{ Association: "user_products" }, { Association: "User" }],
+      include: [{association: "users"}, { association: "categories" }, { association: "coins" }, { association: "carts" }],
     }).then((productsSent) => {
-      res.render("/", { productsSent });
+      res.render("index", { productsSent });
     });
   },
 
@@ -109,12 +112,13 @@ const productsControllers = {
   search: function (req, res) {
     db.Product.findAll({
       where: {
-        name: { [Op.like]: '%'+ req.body.search + '%'}, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
-      }, 
-    }) .then( productsSent => {
-        res.render('./product/products', {productsSent});
+        name: { [Op.like]: "%" + req.body.search + "%" }, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
+      },
     })
-    .catch((error) => res.send(error));
+      .then((productsSent) => {
+        res.render("./product/products", { productsSent });
+      })
+      .catch((error) => res.send(error));
   },
 };
 
