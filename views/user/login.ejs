@@ -6,59 +6,56 @@
   <body>
     <%- include ('../partials/header.ejs') %>
     <main>
-      <form class="control-formulario-login" action="/user/login" method="post">
-        <div class="formulario-flex-login">
+      <div class="form-container">
+        <div class="logo-login">
+          <img src="/images/paycrypt-logo.svg" alt="" />
+        </div>
+        <div>
+          <h1>¡Hola! Ingresa tus datos</h1>
+        </div>
+        <form class="form" id="form" action="/user/login" method="post">
           <div>
-            <img class="img-formulario-login" src="/images/paycrypt-logo.svg" />
-          </div>
-
-          <div class="p-datos-login">
-            <p class="titulo-formulario-login">¡Hola! Ingresa tus datos</p>
-          </div>
-
-          <div class="inputs-en-login">
             <label for="email"></label>
-            <input
-              class="formulario-control"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="E-mail"
-            />
+            <input type="email" name="email" id="email" placeholder="E-mail" />
+            <small class="text-danger email"></small>
           </div>
-
-          <div class="inputs-en-login">
+          <div>
             <label for="password"></label>
             <input
-              class="formulario-control"
               type="password"
               name="password"
               id="password"
               placeholder="Contraseña"
             />
+            <small class="text-danger password"></small>
           </div>
-        <div class="remenber">
-          <div class=checkremenber>
-            <input type="checkbox" name="remember_user" value="on" id="remember_user">
-            <label for="Bitcoin">Recordarme</label>
+          <div class="form-button">
+            <div class="form-button-checkbox">
+              <input
+                type="checkbox"
+                name="remember"
+                value="on"
+                id="form-button-checkbox-input"
+              />
+              <label for="remember">Recordarme</label>
+            </div>
+
+            <div class="form-button-forgotten-password">
+              <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+            </div>
           </div>
 
-          <div class="olvidaste-tu-contraseña">
-            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-          </div>
-
-        </div>
-
-          <div class="boton-formulario-continuar">
+          <div class="form-button-done">
             <button type="submit">Continuar</button>
           </div>
-          <div class="boton-formulario-crear-cuenta">
+          <div class="form-button-register">
             <a role="button" href="/user/register"
               ><button type="button">Crear Cuenta</button></a
             >
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </main>
+    <script src="/js/loginValidate.js"></script>
   </body>
 </html>
