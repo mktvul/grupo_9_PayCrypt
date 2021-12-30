@@ -16,6 +16,13 @@ i {
 
 /* --------------MAIN--------------- */
 
+.text-error {
+  font-size: 10px;
+  color: #db3236;
+  margin-left: 10px;
+}
+
+
 body {
   background-color: #2790c3;
   margin-bottom: 100px;
@@ -46,10 +53,6 @@ body {
   width: 141px;
 }
 
-.form-rigth {
-  margin: 12px;
-}
-
 /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
 .logo {
   width: 100%;
@@ -59,7 +62,7 @@ body {
 
 /* TÍTULO DEL FORM */
 .title {
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -74,12 +77,13 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
+  border: solid 1px #e6e6e6;
 }
 
 .large-description {
   margin: 10px;
   padding: 10px;
-  border: grey solid 1px;
+  border: solid 1px #e6e6e6;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -89,21 +93,22 @@ body {
 
 /* BOTON CREADO DE PRODUCTO */
 .create-button {
+  height: 48px;
   width: 332px;
   background-color: #27346a;
   color: white;
   border-radius: 5px;
-  padding: 10px;
-  text-align: center;
   margin-top: 14px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 /* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
 .create-button:hover {
-  text-decoration: underline;
-  background-color: #505c91;
-  transition: all 1s ease-out;
+  background-color: #ffc439;
+  /* background-color: #2790c3; */
+  transition: all 0.2s ease-out;
 }
 
 /* DISEÑO DEL BOTON DE SUBIR IMAGEN */
@@ -130,10 +135,11 @@ label[for="photoProduct"] {
   display: block;
   /* transition: all 0.5s; transicion apagada */
   cursor: pointer;
-  padding: 8px;
+  padding: 11px;
   text-align: center;
   border-radius: 5px;
   width: 250px;
+  height: 48px;
 }
 
 .photo-product {
@@ -154,13 +160,24 @@ label[for="photoProduct"] {
   margin-bottom: 10px;
 }
 
-.checkboxes div {
+.coins {
   margin-bottom: 10px;
+}
+
+.checkboxes div {
+  margin-bottom: 20px;
+}
+
+input:focus { 
+  outline-color: #27346a;
+}
+
+textarea:focus {
+  outline-color: #27346a;
 }
 
 /*MOBILE*/
 @media (max-width: 767px) {
-  /* TABLET FORMULARIO */
 
   .white-form-box {
     width: 300px;
@@ -172,18 +189,6 @@ label[for="photoProduct"] {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-  }
-
-  .white-form-box .form-left {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .white-form-box .form-rigth {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
   }
 
   .form {
@@ -231,7 +236,7 @@ label[for="photoProduct"] {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   /* TABLET FORMULARIO */
 
   .white-form-box {
@@ -244,18 +249,6 @@ label[for="photoProduct"] {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-  }
-
-  .white-form-box .form-left {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .white-form-box .form-rigth {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
   }
 
   .form {
@@ -302,43 +295,16 @@ label[for="photoProduct"] {
 }
 
 @media (min-width: 1024px) {
-  .form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+  .white-form-box {
+    width: 560px;
   }
 
   .formulario-control {
-    margin-top: 20px;
-  }
-
-  .fa-upload {
-    margin: 0 5px;
-  }
-
-  .category-product {
-    margin: 10px 0px;
-    display: flex;
-  }
-
-  .radio-left p {
-    margin-right: 20px;
-  }
-
-  .checkboxes {
-    display: flex;
-  }
-
-  .checkboxes div {
-    margin-right: 10px;
-  }
-
-  label[for="photoProducts"] {
-    width: 332px;
+    width: 500px;
   }
 
   .large-description {
-    width: 332px;
+    width: 500px;
+    height: 200px;
   }
 }
