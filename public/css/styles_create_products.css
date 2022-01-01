@@ -19,6 +19,11 @@ i {
 .text-error {
   font-size: 10px;
   color: #db3236;
+  margin-left: 2px;
+  margin-top: 5px;
+}
+
+.largeDescription {
   margin-left: 10px;
 }
 
@@ -36,8 +41,6 @@ body {
   margin-bottom: 50px;
   padding: 20px;
   background-color: #ffff;
-  display: flex;
-  flex-direction: column;
   border-radius: 10px;
 }
 
@@ -53,6 +56,34 @@ body {
   width: 141px;
 }
 
+/* CATEGORIES & COINS */
+
+.title-choose {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.category-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.each-checkbox div {
+  margin: 10px;
+}
+
 /* LOGO PAYCRIPT ENCIMA DEL FORMULARIO*/
 .logo {
   width: 100%;
@@ -61,17 +92,18 @@ body {
 }
 
 /* TÍTULO DEL FORM */
-.title {
+.title p {
   font-size: 18px;
   text-align: center;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 /* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
 .formulario-control {
   width: 332px;
   height: 47px;
-  margin: 10px;
+  margin-left: 0px 10px 10px 10px;
   padding: 10px;
   border: grey solid 1px;
   display: flex;
@@ -135,11 +167,13 @@ label[for="photoProduct"] {
   display: block;
   /* transition: all 0.5s; transicion apagada */
   cursor: pointer;
-  padding: 11px;
-  text-align: center;
   border-radius: 5px;
   width: 250px;
   height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .photo-product {
@@ -156,24 +190,16 @@ label[for="photoProduct"] {
   margin-bottom: 10px;
 }
 
-.radio-rigth p {
+.radio-right p {
   margin-bottom: 10px;
-}
-
-.coins {
-  margin-bottom: 10px;
-}
-
-.checkboxes div {
-  margin-bottom: 20px;
 }
 
 input:focus { 
-  outline-color: #27346a;
+  outline-color: #ffc439;
 }
 
 textarea:focus {
-  outline-color: #27346a;
+  outline-color: #ffc439;
 }
 
 /*MOBILE*/
@@ -186,8 +212,6 @@ textarea:focus {
     margin-bottom: 50px;
     padding: 20px;
     background-color: #ffff;
-    display: flex;
-    flex-direction: column;
     border-radius: 10px;
   }
 
@@ -217,14 +241,6 @@ textarea:focus {
 
   .radio-left p {
     margin-right: 20px;
-  }
-
-  .checkboxes {
-    display: flex;
-  }
-
-  .checkboxes div {
-    margin-right: 10px;
   }
 
   label[for="photoProducts"] {
@@ -246,8 +262,6 @@ textarea:focus {
     margin-bottom: 50px;
     padding: 20px;
     background-color: #ffff;
-    display: flex;
-    flex-direction: column;
     border-radius: 10px;
   }
 
@@ -275,14 +289,6 @@ textarea:focus {
 
   .radio-left p {
     margin-right: 20px;
-  }
-
-  .checkboxes {
-    display: flex;
-  }
-
-  .checkboxes div {
-    margin-right: 10px;
   }
 
   label[for="photoProduct"] {

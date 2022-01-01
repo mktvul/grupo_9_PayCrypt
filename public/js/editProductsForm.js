@@ -1,16 +1,16 @@
 window.addEventListener('load', function() {
-    let form = document.querySelector('#form');
+
+    let form = document.querySelector('#formEdit');
 
     form.addEventListener('submit', function(event) {
         let errors = {};
-        let name = document.querySelector('#name');
-        let shortDescription = document.querySelector('#shortDescription');
-        let price = document.querySelector('#price');
-        let largeDescription = document.querySelector('#largeDescription');
-        let photoProduct = document.querySelector('#photoProduct');
-        let category = document.querySelector('input[name = "category"]:checked');
-        let coin = document.querySelector('input[name = "coin"]:checked');
-
+        let name = document.querySelector('#nameEdit');
+        let shortDescription = document.querySelector('#shortDescriptionEdit');
+        let price = document.querySelector('#priceProductEdit');
+        let largeDescription = document.querySelector('#largeDescriptionEdit');
+        let photoProduct = document.querySelector('#photoProductEdit');
+        let category = document.querySelector('input[name = "categoryEdit"]:checked');
+        let coin = document.querySelector('input[name = "coinEdit"]:checked');
 
         if (name.value == '') {
             name.style.border = "solid 2px #db3236";
@@ -33,8 +33,6 @@ window.addEventListener('load', function() {
         }
 
         if (photoProduct.value == '') {
-            document.querySelector('.photoProductButton').style.border = 'solid 1px #db323'
-            document.querySelector('.img-up').style.color = '#db323'
             errors.photoProduct = 'Debes subir una foto del producto';
         }
 
@@ -53,32 +51,32 @@ window.addEventListener('load', function() {
         if (Object.keys(errors).length >= 1) {
             event.preventDefault();
             if (errors.name) {
-                document.querySelector('.name').innerText = 'Debes completar este campo';
+                document.querySelector('.nameEdit').innerText = 'Debes completar este campo';
             }
             
             if (errors.shortDescription) {
-                document.querySelector('.shortDescription').innerText = 'Debes completar este campo';
+                document.querySelector('.shortDescriptionEdit').innerText = 'Debes completar este campo';
             }
             
             if (errors.price) {
-                document.querySelector('.price').innerText = 'Debes completar este campo';
+                document.querySelector('.priceEdit').innerText = 'Debes completar este campo';
             }
             
             if (errors.largeDescription) {
-                document.querySelector('.largeDescription').innerText = 'Debes completar este campo';
+                document.querySelector('.largeDescriptionEdit').innerText = 'Debes completar este campo';
             }
             
             if (errors.photoProduct) {
-                document.querySelector('.photoProductError').innerText = 'Debes subir una foto del producto';
+                document.querySelector('.photoProductEdit').innerText = 'Debes subir una foto del producto';
             }
             
             if (errors.category) {
-                document.querySelector('.category').innerText = 'Debes seleccionar una categoria';
+                document.querySelector('.categoryEdit').innerText = 'Debes seleccionar una categoria';
             }
             
             if (errors.coin) {
-                document.querySelector('.coin').innerText = 'Debes seleccionar una moneda';
+                document.querySelector('.coinEdit').innerText = 'Debes seleccionar una moneda';
             }
         }
     })
-});
+})
