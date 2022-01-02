@@ -12,29 +12,27 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL(25,15),
             allowNull: false
         },
-        
 
+        userId: {
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
+        }
+        
     };
     let config = {
+        tableName: "cart",
         timestamps: false,
-        //createdAt: 'created_at',
-       // updatedAt: 'updated_at',
-        deletedAt: false
     }
     const Cart = sequelize.define(alias, cols, config); 
 
     Cart.associate = function (models) {
-        Cart.hasOne(models.User, {    // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
+        Cart.belongsTo(models.User, {    // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
             as: "users", // El nombre del modelo pero en plural
-            foreignKey: 'id',
-            timestamps: false
-        }),
-        Cart.belongsToMany(models.Product, {
+            foreignKey: 'userId',
+        })
+        Cart.hasMany(models.Product, {
             as: 'products',
-            through: 'cartProducts',
             foreignKey: 'cartId',
-            otherKey: 'productId',
-            timestamps: false
           })
     }
 

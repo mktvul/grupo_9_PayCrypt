@@ -37,23 +37,21 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
+        tableName: "users",
         timestamps: false,
-        //createdAt: 'created_at',
-        //updatedAt: 'updated_at',
-        deletedAt: false
     }
+
     const User = sequelize.define(alias, cols, config); 
 
     User.associate = function (models) {
-        User.belongsTo(models.Product, { 
+        User.hasMany(models.Product, { 
             as: "products", // El nombre del modelo pero en plural
-            foreignKey: 'id',
-            timestamps: false
-        }),
-        User.hasOne(models.Cart, {     // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
-            as: "carts", // El nombre del modelo pero en plural
             foreignKey: 'userId',
-            timestamps: false
+        }),
+
+        User.hasOne(models.Cart, {     // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
+            as: "cart",
+            foreignKey: 'userId',
         })
     }
 
