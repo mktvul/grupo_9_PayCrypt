@@ -80,7 +80,7 @@ const productsControllers = {
    } else {
     db.Product.findByPk(req.params.id)
     .then((product) => {
-    res.render("./product/edit", { product }, { errores: resultadoValidacion.errors } );
+    res.render("./product/edit", { product, errores: resultadoValidacion.errors });
    
     })
     
