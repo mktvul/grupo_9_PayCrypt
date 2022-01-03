@@ -14,15 +14,11 @@ i {
   padding: 2px;
 }
 
-.text-danger{
-  color:red;
-}
-
 /* --------------MAIN--------------- */
 
 /* TEXTOS DE ERROR */
 
-.text-error {
+.text-error  {
   font-size: 10px;
   color: #db3236;
   margin-left: 2px;

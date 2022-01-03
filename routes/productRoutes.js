@@ -17,7 +17,7 @@ router.get("/detail/:id/", productsControllers.detail);
 
 //Crear un producto (muestra form por GET y acción de crear por POST)
 router.get("/create", productsControllers.create);
-router.post("/", productStorage.single("image"), productsControllers.store); // createProductValidate,
+router.post("/", productStorage.single("image"),createProductValidate, productsControllers.store);
 
 // Editar un producto (muestra form por GET y acción de editar por PUT)
 router.get("/edit/:id/", productsControllers.edit);

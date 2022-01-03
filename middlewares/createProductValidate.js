@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 module.exports = [
    check('name').notEmpty().withMessage('Ingresar un nombre'),
    check('shortDescription').notEmpty().withMessage('Ingresar una breve descripción del producto'),
-   check('price').notEmpty().withMessage('Debe ingresar un precio balido'),
+   check('price').notEmpty().withMessage('Debe ingresar un precio valido'),
    check('description').notEmpty().withMessage('Ingresar una descripción del producto'),
    check('category').notEmpty().withMessage('Ingresar una categoria'),
    check('coin').notEmpty().withMessage('Especificar la moneda'),

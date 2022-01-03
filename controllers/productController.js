@@ -24,7 +24,7 @@ const productsControllers = {
   //store
   store: function (req, res) {
     let resultadoValidacion = validationResult(req);
-    if (resultadoValidacion.errors.length < 0) {
+      if (resultadoValidacion.errors.length == 0) {
       db.Product.create({
         name: req.body.name,
         shortDescription: req.body.shortDescription,
