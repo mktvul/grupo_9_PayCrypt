@@ -23,6 +23,14 @@
                     <input class="formulario-control" type="text" name="name" placeholder="Nombre del producto" id='name'>
                     <p class='text-error name'></p>
                     <!--NOMBRE DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "name"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
                 </div>
 
                 <div>
@@ -30,6 +38,14 @@
                     <input class="formulario-control" type="text" name="shortDescription" placeholder="Breve descripción del producto" id='shortDescription'>
                     <p class='text-error shortDescription'></p>
                     <!-- DESCRIPCION CORTA DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "shortDescription"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
                 </div>
 
 
@@ -38,6 +54,13 @@
                     <input class="formulario-control" type="text" name="price" id="price" placeholder="Precio">
                     <p class='text-error price'></p>
                     <!--PRECIO PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "price"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <div>
@@ -45,6 +68,13 @@
                     <textarea class="large-description" name="description" placeholder="Ingrese una descripción detallada del producto" id='largeDescription'></textarea>
                     <p class='text-error largeDescription'></p>
                     <!-- DESCRIPCION LARGA DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "description"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <!-- CATEGORIA PRODUCTOS -->
@@ -64,6 +94,13 @@
                             <p><input type="radio" name="category" value= "3" /> Minería</p>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "category"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <!-- MONEDA PARA PAGAR -->
@@ -84,6 +121,13 @@
                             <label for="USDT">USDT</label>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "coin"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <!-- FOTO PRODUCTO -->
@@ -93,8 +137,15 @@
                     </label> <!-- IMAGEN DEL PRODUCTO-->
                     <input type="file" name="image" id="photoProduct" accept=".jpg">
                 </div>
+                <% if(typeof errores != 'undefined'){ %>
+                    <% for(let i = 0; i < errores.length; i++){ %>
+                     <% if(errores[i].param == "image"){ %>
+                      <small class="text-danger"> <%= errores[i].msg%> </small>
+                     <% } %>
+                    <% } %>
+                   <% } %>
                 <br/>
-                <p class='text-error photoProductError'></p>
+               <!-- <p class='text-error photoProductError'></p>-->
 
                 <div class="create-button">
                     <button type="submit">Crear producto</button>

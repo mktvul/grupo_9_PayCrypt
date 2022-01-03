@@ -14,6 +14,10 @@ i {
   padding: 2px;
 }
 
+.text-danger{
+  color:red;
+}
+
 /* --------------MAIN--------------- */
 
 /* TEXTOS DE ERROR */

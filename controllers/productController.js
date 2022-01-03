@@ -1,6 +1,11 @@
 const path = require("path");
 const db = require("../database/models");
 const userLogged = require("../middlewares/userLogged");
+const { validationResult } = require("express-validator");
+
+module.exports = {
+  registrarNuevoUsuario: function (req, res) {},
+};
 
 // sequelize
 const sequelize = require("sequelize");
@@ -18,21 +23,26 @@ const productsControllers = {
   },
   //store
   store: function (req, res) {
-    db.Product.create({
-      name: req.body.name,
-      shortDescription: req.body.shortDescription,
-      price: req.body.price,
-      description: req.body.description, //ver lo de la hora
-      date: new Date().getTime(),
-      image: req.file.filename,
-      categoryId: req.body.category,
-      coinId: req.body.coin,
-      userId: req.session.userLogged.id,
-    })
+    let resultadoValidacion = validationResult(req);
+    if (resultadoValidacion.errors.length < 0) {
+      db.Product.create({
+        name: req.body.name,
+        shortDescription: req.body.shortDescription,
+        price: req.body.price,
+        description: req.body.description, 
+        date: new Date().getTime(),
+        image: req.file.filename,
+        categoryId: req.body.category,
+        coinId: req.body.coin,
+        userId: req.session.userLogged.id,
+      })
       .then(() => {
         res.redirect("/");
-      })
-      .catch((error) => res.send(error));
+      });
+    } else {
+      res.render("./product/create", { errores: resultadoValidacion.errors });
+    }
+    //.catch((error) => res.send(error));
   },
 
   //mostrar producto a editar (/Get)
@@ -47,8 +57,9 @@ const productsControllers = {
   // editamos el producto (/Put)
 
   update: function (req, res) {
-    db.Product.update(
-      {
+    let resultadoValidacion = validationResult(req);
+    if (resultadoValidacion.errors.length < 0) {
+         db.Product.update({
         name: req.body.name,
         shortDescription: req.body.shortDescription,
         price: req.body.price,
@@ -62,10 +73,15 @@ const productsControllers = {
           id: req.params.id,
         },
       }
-    );
-    res
-      .redirect("/product/detail/" + req.params.id)
-      .catch((error) => res.send(error));
+     )
+     .then(() => {
+       res.redirect("/product/detail/" + req.params.id)
+     });
+   } else {
+     res.render("./product/edit", { errores: resultadoValidacion.errors });
+   }
+    
+     //.catch((error) => res.send(error));
   },
 
   //eliminar
@@ -91,7 +107,12 @@ const productsControllers = {
   //con location
   listAll: function (req, res) {
     db.Product.findAll({
-      include: [{association: "users"}, { association: "categories" }, { association: "coins" }, { association: "carts" }],
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ],
     }).then((productsSent) => {
       res.render("index", { productsSent });
     });

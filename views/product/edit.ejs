@@ -22,6 +22,13 @@
                     <label for="name"></label>
                     <input class="formulario-control" maxlength="50" type="text" name="name" id="nameEdit" placeholder="Nombre del producto" value="<%= product.name %>">
                     <p class='text-error nameEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "name"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <!-- DESCRIPCION CORTA DEL PRODUCTO-->
@@ -29,6 +36,14 @@
                     <label for="shortDescription"></label>
                     <input class="formulario-control" type="text" name="shortDescription" id="shortDescriptionEdit" placeholder="Breve descripción del producto" value="<%= product.shortDescription %>"> 
                     <p class='text-error shortDescriptionEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "shortDescription"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
                 </div>
 
                 <!--PRECIO PRODUCTO-->
@@ -36,6 +51,13 @@
                     <label for="priceProduct"></label>
                     <input class="formulario-control" type="text" name="priceProduct" id="priceProductEdit" placeholder="Precio" value="<%= product.priceProduct %>">
                     <p class='text-error priceEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "priceProduct"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <!-- DESCRIPCION LARGA DEL PRODUCTO-->
@@ -43,6 +65,13 @@
                     <label for="description"></label>
                     <textarea class="large-description" name="textarea" id="largeDescriptionEdit"><%= product.description %></textarea>
                     <p class='text-error largeDescriptionEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "textarea"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
                 
                 <!-- CATEGORIA PRODUCTOS -->
@@ -61,6 +90,13 @@
                             <p><input type="radio" name="categoryEdit" value="Mineria"/> Minería</p>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "categoryEdit"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <div class="checkboxes">
@@ -80,6 +116,13 @@
                             <label for="USDT">USDT</label>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "coinEdit"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
                 <div class="photoProducts">
@@ -87,6 +130,13 @@
                         <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                     </label> <!-- IMAGEN DEL PRODUCTO-->
                     <input type="file" name="photoProduct" id="photoProductEdit" accept=".jpg" value="<%= product.photoProduct %>">
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "photoProductEdit"){ %>
+                          <small class="text-danger"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
                 <p class='text-error photoProductEdit'></p>
 
