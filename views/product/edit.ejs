@@ -49,7 +49,7 @@
                 <!--PRECIO PRODUCTO-->
                 <div>
                     <label for="priceProduct"></label>
-                    <input class="formulario-control" type="text" name="priceProduct" id="priceProductEdit" placeholder="Precio" value="<%= product.priceProduct %>">
+                    <input class="formulario-control" type="text" name="priceProduct" id="priceProductEdit" placeholder="Precio" value="<%= product.price %>">
                     <p class='text-error priceEdit'></p>
                     <% if(typeof errores != 'undefined'){ %>
                         <% for(let i = 0; i < errores.length; i++){ %>
