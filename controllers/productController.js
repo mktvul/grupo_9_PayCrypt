@@ -58,7 +58,7 @@ const productsControllers = {
 
   update: function (req, res) {
     let resultadoValidacion = validationResult(req);
-    if (resultadoValidacion.errors.length < 0) {
+    if (resultadoValidacion.errors.length == 0) {
          db.Product.update({
         name: req.body.name,
         shortDescription: req.body.shortDescription,
@@ -78,11 +78,15 @@ const productsControllers = {
        res.redirect("/product/detail/" + req.params.id)
      });
    } else {
-     res.render("./product/edit", { errores: resultadoValidacion.errors });
-   }
+    db.Product.findByPk(req.params.id)
+    .then((product) => {
+    res.render("./product/edit", { product }, { errores: resultadoValidacion.errors } );
+   
+    })
     
      //.catch((error) => res.send(error));
-  },
+  }
+},
 
   //eliminar
 
