@@ -10,9 +10,16 @@
   border: 0;
 }
 
-/* header */
+i {
+  padding: 2px;
+}
 
-.header-menu,
+button {
+  cursor: pointer;
+}
+
+/* Header */
+
 .header-nav-menu li,
 .header-search,
 .header-search-bar,
@@ -24,146 +31,191 @@
   display: none;
 }
 
-/* main */
+/* Main*/
+
+/* TEXTO EJS DE ERROR */
+
+.text-danger {
+  color: red;
+  font-size: 12px;
+  margin-left: 10px;
+}
 
 body {
   background-color: #ffc439;
-}
-
-.img-formulario-login {
-  width: 200px;
-}
-
-.titulo-formulario-login {
-  /* text-align: left; */
-  /* margin-left: 23px; */
-  position: relative;
-  right: 50px;
-  margin-bottom: 5px;
-}
-
-.formulario-flex-login {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+  height: auto;
 }
 
-.control-formulario-login {
-  width: 100%;
-  margin: auto;
-  padding: 10px;
-  background-color: #ffff;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  text-align: center;
-  height: 470px;
-}
-
-/*INPUTS EN LOGIN*/
-.inputs-en-login {
-  align-self: center;
-}
-
-/* CONTROL DE TODOS LOS ELEMENTOS DEL FORMULARIO*/
-.formulario-control {
-  margin: 10px;
-  padding: 10px;
-  border: grey solid 1px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  width: 332px;
-  height: 50px;
-}
-
-/* CONTROL DEL LABEL (Ingresa tus datos) */
-.p-datos-login {
-  font-size: 20px;
-  text-align: center;
-}
-
-/* boton formulario CONTINUAR*/
-.boton-formulario-continuar {
+main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #27346a;
-  color: #ffff;
+  flex-grow: 1;
+  height: auto;
+}
+
+/* Form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: auto;
+  margin: 0 20px 50px 20px;
+  padding: 10px 20px 20px 20px;
   border-radius: 5px;
-  padding: 7px;
-  width: 270px;
-  height: 40px;
-  margin: auto;
-  margin-top: 14px;
-  margin-bottom: 14px;
-}
-/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
-.boton-formulario-continuar:hover {
-  text-decoration: underline;
+  width: 100%;
+  max-width: 386px;
 }
 
-/* boton formulario CREAR CUENTA*/
+/* PayCrypt logo */
+.logo-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.boton-formulario-crear-cuenta {
-  background-color: #ffff;
-  color: #27346a;
+.logo-login img {
+  width: 130px;
+}
+
+/* Completá tus datos */
+h1 {
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
-  margin: 10px;
+  margin: 5px 0;
 }
 
-/* SUBRAYADO DEL BOTON AL TENER EL MOUSE ENCIMA*/
-
-.boton-formulario-crear-cuenta:hover {
-  text-decoration: underline;
-}
-
-/* HIPERVINCULO OLVIDASTE TU CLAVE*/
-.olvidaste-tu-contraseña {
-  /*margin: right; */
-  /* align-self: end; */
-  /* padding: 5px; */
-  padding: 5px;
-  font-size: 14px;
-  margin-bottom: 11px;
-  margin-top: 11px;
+h2 {
+  font-size: 15px;
+  font-weight: 300;
   color: #27346a;
-  left: 80px;
-  width: 200px;
+  margin: 15px 0 0 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form inputs */
+.form div {
+  width: 100%;
+}
+
+.form div input {
+  background: #fff;
+  outline: none;
+  margin: 10px 0 5px 0;
+  padding: 10px;
+  border: solid 1px #e6e6e6;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 346px;
+  height: 48px;
+}
+
+.form div input:focus {
+  border: solid 2px #2790c3;
+}
+
+/* Terms and conditions */
+.form-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button-checkbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 12px;
+  color: #27346a;
+}
+
+#form-button-checkbox-input {
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.form-button-forgotten-password {
   display: flex;
   justify-content: end;
+  font-size: 12px;
 }
 
-.soy-un-footer {
-  background-color: grey;
+/* Button - done */
+.form-button-done {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #27346a;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin: 15px 0 10px 0;
+  max-width: 270px;
+  height: 48px;
+  cursor: pointer;
 }
 
-/*
-/*MOBILE*/
-@media (min-width: 0px) {
+.form-button-done:hover {
+  background-color: #2790c3;
+  transition: all 300ms ease-out;
+}
 
+.form-button-done:active {
+  background-color: #27346a;
+  transition: all 300ms ease-out;
+}
+
+/* Button - login */
+.form-button-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: solid 1px #27346a;
+  border-radius: 5px;
+  color: #27346a;
+  padding: 10px;
+  max-width: 270px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.form-button-register:hover {
+  background-color: #2790c3;
+  border: none;
+  color: #fff;
+  transition: all 300ms ease-out;
+}
+
+.form-button-register:active {
+  background-color: #fff;
+  border: solid 1px #27346a;
+  color: #27346a;
+  transition: all 300ms ease-out;
 }
 
 /*tablets*/
 @media (min-width: 768px) {
 
+
 }
 
 /*desktop*/
 @media (min-width: 1024px) {
-  .menu-navegacion {
-    display: flex;
-  }
-
-  .control-formulario-login {
-    width: 35%; /* ADAPTACION DEL FORMULARIO A DESKTOP*/
-  }
-
-  .remenber {
-    display: flex;
-  }
-  .checkremenber {
-    margin-top: 15px;
+  .header-menu {
+    display: none;
   }
 }

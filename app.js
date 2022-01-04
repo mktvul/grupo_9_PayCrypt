@@ -44,6 +44,6 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 //const { Cookie } = require("express-session");
 
-app.use("/", mainRoutes);
+app.use("/", productRoutes);
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);

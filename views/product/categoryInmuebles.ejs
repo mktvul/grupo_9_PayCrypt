@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-----------------HEAD - ACÁ LINKEO ENLACES EXTERNOS------------------------->
+  
+  <%- include ('../partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
+
+  <body>
+
+    <%- include ('../partials/header.ejs') %> 
+
+    <!-----------------ACÁ VA A PARTIR DEL BANNER E-COMMERCE------------------------->
+    <main>
+      <!------BANNER------------->
+      <div class="banner">
+        <img src="/images/banner.png" alt="Banner">
+      </div>
+
+
+
+      <!------CÍRCULOS DENTRO DE UN SECTION, CADA CIRCULO ES UN ARTICLE----------->
+      <section class="navbar-circles">
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-car"></i>
+          </div>
+          <a href="/product/categoryVehiculos">
+          <h3>Vehículos</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-home"></i>
+          </div>
+          <a href="/product/categoryInmuebles ">
+          <h3>Inmuebles</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <a href="/product/categoryTecnologia ">
+          <h3>Tecnología</h3>
+        </article>
+
+        <article class="each-circle">
+          <div class="icon-product">
+            <i class="fas fa-futbol"></i>
+          </div>
+          <a href="/product/categoryDeportes ">
+          <h3>Deportes</h3>
+        </article>
+
+        <div class="ver-mas">
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="fas fa-plus"></i>
+            </div>
+            <h3>Ver más</h3>
+          </article>
+        </div>
+
+        <div class="nft">
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="far fa-gem"></i>
+            </div>
+            <a href="/product/categoryNFT ">
+            <h3>NFT</h3>
+          </article>
+        </div>
+
+        <div class="mineria"> 
+          <article class="each-circle">
+            <div class="icon-product">
+              <i class="fab fa-hubspot"></i>
+            </div>
+            <a href="/product/categoryMineria ">
+            <h3>Minería</h3>
+          </article>
+        </div>
+
+      </section>
+
+
+      <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE productsSent[i]S, C/U ES UN ARTICLE----------->
+      <h2 class="buscados">Productos sobre Inmuebles</h2>
+
+      
+      <section class="list-of-products">
+      <!------productsSentS AUTOMATIZADOS CON EJS----------->
+
+      <% for(let i=0;i<productsSent.length;i++){ %> 
+        <article class="each-product">
+          <a href="/product/detail/<%=productsSent[i].id %> ">  
+           <div class="img-product">
+              <img src="/images/products/<%=productsSent[i].image %>" alt="">
+           </div>
+            
+          <div class="product-description">
+            <p class="price"><%=productsSent[i].price%>  <!--PRECIO-->
+
+             <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
+              <% if (productsSent[i].coinId == 1) { %> 
+                <span>
+                  <img src="images/btc-logo.svg" alt="" class="usdt">
+                </span>
+            
+              <% } else if(productsSent[i].coinId == 2) { %> 
+                <span>
+                  <img src="images/eth-logo.svg" alt="" class="usdt">
+                </span> 
+        
+              <% }else { %>
+                <span>
+                  <img src="images/usdt-logo.svg" alt="" class="usdt">
+                </span>
+
+              <% } %>
+
+            </p>
+
+            <p class="category">
+              <i class="far fa-folder-open"></i> 
+              Inmuebles
+            </p>
+
+
+            <h3 class="name-of-product"><%=productsSent[i].name %></h3>
+            <p class="description"><%=productsSent[i].shortDescription %></p>
+
+            
+              <!--Calculo de fecha-->
+              <div class="product-date">
+               <%var fecha1 =productsSent[i].date; //fecha delproductsSent[i]
+                var fecha2 = new Date().getTime();  // fecha actual 
+                var diff = Math.abs(fecha2 - fecha1); //restamos las fechas
+                var diastranscurridos= Math.round(diff/(1000*60*60*24)); //dividimos apara sacar el numero entero
+                if(diastranscurridos < 1){ %> 
+                  <i class="fas fa-clock"></i> <span class="date"> Hoy </span> 
+                <% } else if(diastranscurridos == 1) {%> 
+                  <i class="fas fa-clock"></i> <span class="date"> <%= diastranscurridos %> día </span>
+                <% } else { %> 
+                <i class="fas fa-clock"></i> <span class="date"> <%= diastranscurridos %>  días atrás </span> 
+                <% }%>
+              </div>
+          </a>
+        </div>
+
+        <div class="place">
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].location %></span> 
+        </div>
+      </article>
+      <% } %>
+
+    </section>
+
+    </main>
+    <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
+    <%- include ('../partials/footer.ejs') %> 
+  </body>
+</html>

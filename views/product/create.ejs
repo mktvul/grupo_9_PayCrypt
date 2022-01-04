@@ -17,60 +17,97 @@
 
             <!-- CAJA FLEX DEL  FORMULARIO-->
             <form class="form" action="/product" method="POST" enctype="multipart/form-data" id='form'>
-
-                <div class="form-left">
-                    <div>
-                        <label for="name"></label>
-                        <input class="formulario-control" type="text" name="name" id="nombre" placeholder="Nombre del producto" id='name'>
-                        <!--NOMBRE DEL PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="shortDescription"></label>
-                        <input class="formulario-control" type="text" name="shortDescription" id="shortDescription" placeholder="Descripción corta del producto" id='shortDescription'>
-                        <!-- DESCRIPCION CORTA DEL PRODUCTO-->
-                    </div>
-
-
-                    <div>
-                        <label for="price"></label>
-                        <input class="formulario-control" type="text" name="price" id="price" placeholder="Precio" id='price'>
-                        <!--PRECIO PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="description"></label>
-                        <textarea class="large-description" name="description" placeholder="Ingrese una descripción detallada del producto" id='largeDescription'></textarea>
-                        <!-- DESCRIPCION LARGA DEL PRODUCTO-->
-                    </div>
-
-                    <!-- <div>
-                        <label for="location"></label>
-                        <input class="formulario-control" type="text" name="location" id="location" placeholder="Ubicación del producto">
-                    </div> -->
-
+ 
+                <div>
+                    <label for="name"></label>
+                    <input class="formulario-control" type="text" name="name" placeholder="Nombre del producto" id='name'>
+                    <p class='text-error name'></p>
+                    <!--NOMBRE DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "name"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
                 </div>
 
-                <div class="form-rigth">
+                <div>
+                    <label for="shortDescription"></label>
+                    <input class="formulario-control" type="text" name="shortDescription" placeholder="Breve descripción del producto" id='shortDescription'>
+                    <p class='text-error shortDescription'></p>
+                    <!-- DESCRIPCION CORTA DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "shortDescription"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
+                </div>
 
-                    <label for="category">Seleccione una categoría:</label>
-                    <div class="category-product">
-                        <!-- CATEGORIA PRODUCTOS -->
 
+                <div>
+                    <label for="price"></label>
+                    <input class="formulario-control" type="text" name="price" id="price" placeholder="Precio">
+                    <p class='text-error price'></p>
+                    <!--PRECIO PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "price"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
+
+                <div>
+                    <label for="description"></label>
+                    <textarea class="large-description" name="description" placeholder="Ingrese una descripción detallada del producto" id='largeDescription'></textarea>
+                    <p class='text-error largeDescription'></p>
+                    <!-- DESCRIPCION LARGA DEL PRODUCTO-->
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "description"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
+
+                <!-- CATEGORIA PRODUCTOS -->
+                <div class="category-product">
+                    <label class="title-choose" id='category-choose'>¿A qué categoría pertenece?</label>
+                    <p class='text-error category'></p>
+
+                    <div class='categories'>
                         <div class="radio-left">
                             <p><input type="radio" name="category" value= "6" /> Vehículos</p>
                             <p><input type="radio" name="category" value= "2" /> Inmuebles</p>
                             <p><input type="radio" name="category" value= "5" /> Tecnología</p>
                         </div>
-                        <div class="radio-rigth">
+                        <div class="radio-right">
                             <p><input type="radio" name="category" value= "1" /> Deportes</p>
                             <p><input type="radio" name="category" value= "4" /> NFT</p>
                             <p><input type="radio" name="category" value= "3" /> Minería</p>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "category"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
 
-                    <p>Elija su moneda de pago:</p></br>
-                    <div class="checkboxes">
+                <!-- MONEDA PARA PAGAR -->
+                <div class="checkboxes" id='checkboxes'>
+                    <p class='title-choose' id='coin-choose'>¿Qué moneda de pago acepta?</p>
+                    <p class='text-error coin'></p>
+                    <div class='each-checkbox'>
                         <div>
                             <input type="checkbox" name="coin" value= "1" id="Bitcoin">
                             <label for="Bitcoin">Bitcoin</label>
@@ -84,15 +121,31 @@
                             <label for="USDT">USDT</label>
                         </div>
                     </div>
-
-                    <div class="photoProduct">
-                        <label for="photoProduct">
-                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                        </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="image" id="photoProduct" required="" accept=".jpg">
-                    </div>
-
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "coin"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
+
+                <!-- FOTO PRODUCTO -->
+                <div class="photoProduct">
+                    <label for="photoProduct" class='photoProductButton'>
+                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                    </label> <!-- IMAGEN DEL PRODUCTO-->
+                    <input type="file" name="image" id="photoProduct" accept=".jpg">
+                </div>
+                <% if(typeof errores != 'undefined'){ %>
+                    <% for(let i = 0; i < errores.length; i++){ %>
+                     <% if(errores[i].param == "image"){ %>
+                      <small class="text-error"> <%= errores[i].msg%> </small>
+                     <% } %>
+                    <% } %>
+                   <% } %>
+                <br/>
+               <!-- <p class='text-error photoProductError'></p>-->
 
                 <div class="create-button">
                     <button type="submit">Crear producto</button>

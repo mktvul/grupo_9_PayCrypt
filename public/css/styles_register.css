@@ -159,13 +159,6 @@ h2 {
   display: none;
 }
 
-#image {
-  position: absolute;
-  border: solid 2px red;
-  background: rosybrown;
-  z-index: 1;
-}
-
 /* Terms and conditions */
 .form-button {
   display: flex;

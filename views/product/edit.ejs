@@ -15,98 +15,140 @@
             </div>
 
             <!-- CAJA FLEX DEL  FORMULARIO-->
-            <form class="form" action="/product/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+            <form class="form" action="/product/edit/<%= product.id %>" method="POST" enctype="multipart/form-data" id='formEdit'>
                 
-                <div class="form-left">
-                    <div>
-                        <label for="name"></label>
-                        <input class="formulario-control" maxlength="50" type="text" name="name" id="nombre" placeholder="Nombre Producto" value="<%= product.name %>">
-                        <!--NOMBRE DEL PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="shortDescription"></label>
-                        <input class="formulario-control" type="text" name="shortDescription"
-                            id="shortDescription" placeholder="Descripcion Corta" value="<%= product.shortDescription %>"> 
-                            <!-- DESCRIPCION CORTA DEL PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="priceProduct"></label>
-                        <input class="formulario-control" type="text" name="priceProduct" id="priceProduct"
-                            placeholder="Precio" value="<%= product.priceProduct %>">
-                        <!--PRECIO PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="description"></label>
-                        <textarea class="large-description"  name="textarea"><%= product.description %></textarea>
-                        <!-- DESCRIPCION LARGA DEL PRODUCTO-->
-                    </div>
-
-                    <div>
-                        <label for="location"></label>
-                        <input class="formulario-control" type="text" name="location" id="location"
-                            placeholder="Ubicación del producto" value="<%= product.location %>">
-                        <!--LOCATION DEL PRODUCTO-->
-                    </div>
-                    
+                <!--NOMBRE DEL PRODUCTO-->
+                <div>
+                    <label for="name"></label>
+                    <input class="formulario-control" maxlength="50" type="text" name="name" id="nameEdit" placeholder="Nombre del producto" value="<%= product.name %>">
+                    <p class='text-error nameEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "name"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
                 </div>
 
-                <div class="form-rigth">
-                    <label for="category">Seleccione una categoría:</label>
-                    <div class="category-product">
-                        <!-- CATEGORIA PRODUCTOS -->
+                <!-- DESCRIPCION CORTA DEL PRODUCTO-->
+                <div>
+                    <label for="shortDescription"></label>
+                    <input class="formulario-control" type="text" name="shortDescription" id="shortDescriptionEdit" placeholder="Breve descripción del producto" value="<%= product.shortDescription %>"> 
+                    <p class='text-error shortDescriptionEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "shortDescription"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                      
+                </div>
 
+                <!--PRECIO PRODUCTO-->
+                <div>
+                    <label for="priceProduct"></label>
+                    <input class="formulario-control" type="text" name="priceProduct" id="priceProductEdit" placeholder="Precio" value="<%= product.price %>">
+                    <p class='text-error priceEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "priceProduct"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
+
+                <!-- DESCRIPCION LARGA DEL PRODUCTO-->
+                <div>
+                    <label for="description"></label>
+                    <textarea class="large-description" name="textarea" id="largeDescriptionEdit"><%= product.description %></textarea>
+                    <p class='text-error largeDescriptionEdit'></p>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "textarea"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
+                
+                <!-- CATEGORIA PRODUCTOS -->
+                <div class="category-product">
+                    <label for="category" class='title-choose' id='category-choose'>¿A qué categoría pertenece?</label>
+                    <p class='text-error categoryEdit'></p>
+                    <div class='category-radios'>
                         <div class="radio-left">
-                            <p><input type="radio" name="category" value="Vehiculos" /> Vehículos</p>
-                            <p><input type="radio" name="category" value="Inmuebles" /> Inmuebles</p>
-                            <p><input type="radio" name="category" value="Tecnologia" /> Tecnología</p>
+                            <p><input type="radio" name="categoryEdit" value="Vehiculos"/> Vehículos</p>
+                            <p><input type="radio" name="categoryEdit" value="Inmuebles"/> Inmuebles</p>
+                            <p><input type="radio" name="categoryEdit" value="Tecnologia"/> Tecnología</p>
                         </div>
-                        <div class="radio-rigth">
-                            <p><input type="radio" name="category" value="Deportes" /> Deportes</p>
-                            <p><input type="radio" name="category" value="NFT" /> NFT</p>
-                            <p><input type="radio" name="category" value="Mineria" /> Minería</p>
+                        <div class="radio-right">
+                            <p><input type="radio" name="categoryEdit" value="Deportes"/> Deportes</p>
+                            <p><input type="radio" name="categoryEdit" value="NFT"/> NFT</p>
+                            <p><input type="radio" name="categoryEdit" value="Mineria"/> Minería</p>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "categoryEdit"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
 
-                    <p>Elija su moneda de pago:</p></br>
-                    <div class="checkboxes">
+                <div class="checkboxes">
+                    <p class='title-choose' id='coin-choose'>¿Qué moneda de pago acepta?</p>
+                    <p class='text-error coinEdit'></p>
+                    <div>
                         <div>
-                            <input type="checkbox" name="coin" value="Bitcoin" id="Bitcoin">
+                            <input type="checkbox" name="coinEdit" value="Bitcoin" id="Bitcoin">
                             <label for="Bitcoin">Bitcoin</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="coin" value="Ethereum" id="Ethereum">
+                            <input type="checkbox" name="coinEdit" value="Ethereum" id="Ethereum">
                             <label for="Ethereum">Ethereum</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="coin" value="USDT" id="USDT">
+                            <input type="checkbox" name="coinEdit" value="USDT" id="USDT">
                             <label for="USDT">USDT</label>
                         </div>
                     </div>
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "coinEdit"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
 
-                    <div class="photoProducts">
-                        <label for="photoProducts">
-                            <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                        </label> <!-- IMAGEN DEL PRODUCTO-->
-                        <input type="file" name="photoProduct" id="photoProduct" accept=".jpg" value="<%= product.photoProduct %>">
-                    </div>
-                    </div>
+                <div class="photoProducts">
+                    <label for="photoProducts">
+                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                    </label> <!-- IMAGEN DEL PRODUCTO-->
+                    <input type="file" name="photoProduct" id="photoProductEdit" accept=".jpg" value="<%= product.photoProduct %>">
+                    <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++){ %>
+                         <% if(errores[i].param == "photoProductEdit"){ %>
+                          <small class="text-error"> <%= errores[i].msg%> </small>
+                         <% } %>
+                        <% } %>
+                       <% } %>
+                </div>
+                <p class='text-error photoProductEdit'></p>
 
-                    <div class="both-buttons">
+                <div class='both-buttons'>
                     <div class="edit-button">
                         <button type="submit">Editar producto</button>
-                 </div>
-                    
-                   
+                    </div>
+                    <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
+                        <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
+                    </form>
                 </div>
-                
-            </form>
-
-            <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
-                <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
-            </form>
+            </form>           
         </div>
     </body>
 </html>

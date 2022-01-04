@@ -15,10 +15,8 @@ module.exports = (sequelize, dataTypes) => {
     
     };
     let config = {
+        tableName: "coin",
         timestamps: false,
-        //createdAt: 'created_at',
-       // updatedAt: 'updated_at',
-        deletedAt: false
     }
 
     const Coin = sequelize.define(alias, cols, config); 
@@ -27,7 +25,6 @@ module.exports = (sequelize, dataTypes) => {
         Coin.hasMany(models.Product, {  
             as: "products", // El nombre del modelo pero en plural
             foreignKey: 'coinId',
-            timestamps: false
         })
     }
 

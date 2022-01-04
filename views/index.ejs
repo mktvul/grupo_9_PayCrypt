@@ -23,6 +23,7 @@
           <div class="icon-product">
             <i class="fas fa-car"></i>
           </div>
+          <a href="/product/categoryVehiculos">
           <h3>Vehículos</h3>
         </article>
 
@@ -30,6 +31,7 @@
           <div class="icon-product">
             <i class="fas fa-home"></i>
           </div>
+          <a href="/product/categoryInmuebles ">
           <h3>Inmuebles</h3>
         </article>
 
@@ -37,6 +39,7 @@
           <div class="icon-product">
             <i class="fas fa-laptop"></i>
           </div>
+          <a href="/product/categoryTecnologia ">
           <h3>Tecnología</h3>
         </article>
 
@@ -44,6 +47,7 @@
           <div class="icon-product">
             <i class="fas fa-futbol"></i>
           </div>
+          <a href="/product/categoryDeportes ">
           <h3>Deportes</h3>
         </article>
 
@@ -61,15 +65,18 @@
             <div class="icon-product">
               <i class="far fa-gem"></i>
             </div>
+            <a href="/product/categoryNFT ">
             <h3>NFT</h3>
           </article>
         </div>
 
-        <div class="mineria"> 
+        <div class="mineria">
+          
           <article class="each-circle">
             <div class="icon-product">
               <i class="fab fa-hubspot"></i>
             </div>
+            <a href="/product/categoryMineria "></a> 
             <h3>Minería</h3>
           </article>
         </div>
@@ -115,15 +122,7 @@
 
             <p class="category">
               <i class="far fa-folder-open"></i> 
-
-              <!--productsSent[i].categoryId.name 
-               for(let i=0; i<productsSent.Category.length;i++) { 
-                      if(productsSent.Category[i].id == productsSent[i].categoryId){
-                         let category = productsSent.Category[i].name
-                      }
-                   
-                  %>
-              ir a la tabla categoria y traer el nombre de categoryId CATEGORIA-->
+              <%=productsSent[i].categories.name %>
             </p>
 
 
@@ -149,7 +148,7 @@
         </div>
 
         <div class="place">
-          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].location %></span> 
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].users.location %></span> 
         </div>
       </article>
       <% } %>

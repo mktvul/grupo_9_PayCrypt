@@ -7,6 +7,8 @@ const productsControllers = require("../controllers/productController");
 
 //Middlewares
 const productStorage = require("../middlewares/productStorage"); //Multer
+const createProductValidate = require("../middlewares/createProductValidate"); //Express-validation
+const editProductvalidate = require("../middlewares/editProductvalidate"); //Express-validation
 
 //Products GET
 router.get("/", productsControllers.listAll);
@@ -15,7 +17,7 @@ router.get("/detail/:id/", productsControllers.detail);
 
 //Crear un producto (muestra form por GET y acción de crear por POST)
 router.get("/create", productsControllers.create);
-router.post("/", productStorage.single("image"), productsControllers.store);
+router.post("/", productStorage.single("image"),createProductValidate, productsControllers.store);
 
 // Editar un producto (muestra form por GET y acción de editar por PUT)
 router.get("/edit/:id/", productsControllers.edit);
@@ -23,7 +25,7 @@ router.get("/edit/:id/", productsControllers.edit);
 // Eliminar un producto
 router.post("/delete/:id/", productsControllers.delete);
 
-router.post("/edit/:id/", productStorage.single("image"), productsControllers.update);
+router.post("/edit/:id/", productStorage.single("image"),editProductvalidate, productsControllers.update);
 
 
 // Search 

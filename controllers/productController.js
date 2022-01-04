@@ -1,6 +1,11 @@
 const path = require("path");
 const db = require("../database/models");
-const userLogged = require('../middlewares/userLogged')
+const userLogged = require("../middlewares/userLogged");
+const { validationResult } = require("express-validator");
+
+module.exports = {
+  registrarNuevoUsuario: function (req, res) {},
+};
 
 // sequelize
 const sequelize = require("sequelize");
@@ -9,27 +14,35 @@ const Op = sequelize.Op;
 const productsControllers = {
   //create
   create: function (req, res) {
-    console.log('esto es console log de req.session' + req.session)
-    console.log('esto es un console log de req.session.userLogged.location' + req.session.userLogged.location);
+    console.log("esto es console log de req.session" + req.session);
+    console.log(
+      "esto es un console log de req.session.userLogged.location" +
+        req.session.userLogged.location
+    );
     res.render("./product/create");
   },
   //store
   store: function (req, res) {
-    db.Product.create({
-      name: req.body.name,
-      shortDescription: req.body.shortDescription,
-      price: req.body.price,
-      description: req.body.description, //ver lo de la hora
-      image: req.file.filename,
-      coinId: req.body.coin,
-      categoryId: req.body.category,
-      date: new Date().getTime(),
-      location: req.session.userLogged.location // NO FUNCIONA
-    })
+    let resultadoValidacion = validationResult(req);
+      if (resultadoValidacion.errors.length == 0) {
+      db.Product.create({
+        name: req.body.name,
+        shortDescription: req.body.shortDescription,
+        price: req.body.price,
+        description: req.body.description, 
+        date: new Date().getTime(),
+        image: req.file.filename,
+        categoryId: req.body.category,
+        coinId: req.body.coin,
+        userId: req.session.userLogged.id,
+      })
       .then(() => {
         res.redirect("/");
-      })
-      .catch((error) => res.send(error));
+      });
+    } else {
+      res.render("./product/create", { errores: resultadoValidacion.errors });
+    }
+    //.catch((error) => res.send(error));
   },
 
   //mostrar producto a editar (/Get)
@@ -44,8 +57,9 @@ const productsControllers = {
   // editamos el producto (/Put)
 
   update: function (req, res) {
-    db.Product.update(
-      {
+    let resultadoValidacion = validationResult(req);
+    if (resultadoValidacion.errors.length == 0) {
+         db.Product.update({
         name: req.body.name,
         shortDescription: req.body.shortDescription,
         price: req.body.price,
@@ -59,11 +73,20 @@ const productsControllers = {
           id: req.params.id,
         },
       }
-    );
-    res
-      .redirect("/product/detail/" + req.params.id)
-      .catch((error) => res.send(error));
-  },
+     )
+     .then(() => {
+       res.redirect("/product/detail/" + req.params.id)
+     });
+   } else {
+    db.Product.findByPk(req.params.id)
+    .then((product) => {
+    res.render("./product/edit", { product, errores: resultadoValidacion.errors });
+   
+    })
+    
+     //.catch((error) => res.send(error));
+  }
+},
 
   //eliminar
 
@@ -78,19 +101,24 @@ const productsControllers = {
 
   //listar
 
-  listAll: function (req, res) {
-    //cambiamos nombre, recordar cambiarlo
-    db.Product.findAll().then((productsSent) => {
-      res.render("./product/products", { productsSent });
-    });
-  },
+  // listAll: function (req, res) {
+  //   //cambiamos nombre, recordar cambiarlo
+  //   db.Product.findAll().then((productsSent) => {
+  //     res.render("./product/products", { productsSent });
+  //   });
+  // },
 
   //con location
   listAll: function (req, res) {
     db.Product.findAll({
-      include: [{ Association: "user_products" }, { Association: "User" }],
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ],
     }).then((productsSent) => {
-      res.render("/", { productsSent });
+      res.render("index", { productsSent });
     });
   },
 
@@ -109,12 +137,13 @@ const productsControllers = {
   search: function (req, res) {
     db.Product.findAll({
       where: {
-        name: { [Op.like]: '%'+ req.body.search + '%'}, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
-      }, 
-    }) .then( productsSent => {
-        res.render('./product/products', {productsSent});
+        name: { [Op.like]: "%" + req.body.search + "%" }, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
+      },
     })
-    .catch((error) => res.send(error));
+      .then((productsSent) => {
+        res.render("./product/products", { productsSent });
+      })
+      .catch((error) => res.send(error));
   },
 };
 
