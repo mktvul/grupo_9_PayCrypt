@@ -98,7 +98,8 @@
            </div>
             
           <div class="product-description">
-            <p class="price"><%=productsSent[i].price%>  <!--PRECIO-->
+            <% let precio = productsSent[i].price; %>  
+            <p class="price"><%= Number(precio).toString() %>  <!--PRECIO-->
 
              <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
               <% if (productsSent[i].coinId == 1) { %> 
