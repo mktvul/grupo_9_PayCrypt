@@ -65,3 +65,13 @@ Creemos que nos fue lo suficientemente bien como para seguir trabajando de esta 
 PUNTOS POSITIVOS:
 Podemos rescatar que nos organizamos tan bien como para terminar el sprint en tiempo y forma y ademas hacer arreglos extras en la pagina. 
 
+Retrospectiva sobre sprint 6: 
+~Modelo estrella de mar~
+
+Que debemos:
+1. Comenzar a hacer: Plantear una logica de equipo antes de empezar a programar. 
+2. Hacer mas: Utilizar mas las herramientas que nos da Git. Aprovechar los beneficios que tiene su uso.
+3. Continuar haciendo: Continuar las reuniones periodicas que tenemos donde nos ponemos al dia, el trabajo en equipo. 
+4. Hacer menos: Ponerse a desarrollar sin evaluar en primera instancia lo macro. 
+5. Dejar de hacer: Trabajar todos juntos sobre una misma computadora. Encontramos muchos errores en el codigo cuando lo trabajamos de esta forma. 
+
