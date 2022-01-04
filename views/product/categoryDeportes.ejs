@@ -2,11 +2,11 @@
 <html lang="en">
   <!-----------------HEAD - ACÁ LINKEO ENLACES EXTERNOS------------------------->
   
-  <%- include ('./partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
+  <%- include ('../partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
 
   <body>
 
-    <%- include ('./partials/header.ejs') %> 
+    <%- include ('../partials/header.ejs') %> 
 
     <!-----------------ACÁ VA A PARTIR DEL BANNER E-COMMERCE------------------------->
     <main>
@@ -70,21 +70,21 @@
           </article>
         </div>
 
-        <div class="mineria">
-          
+        <div class="mineria"> 
           <article class="each-circle">
             <div class="icon-product">
               <i class="fab fa-hubspot"></i>
             </div>
-            <a href="/product/categoryMineria "></a> 
+            <a href="/product/categoryMineria ">
             <h3>Minería</h3>
           </article>
         </div>
 
       </section>
 
+
       <!------EN EL SIGUIENTE SECTION ARRANCAN LAS PUBLICACIONES DE productsSent[i]S, C/U ES UN ARTICLE----------->
-      <h2 class="buscados">Los más buscados</h2>
+      <h2 class="buscados">Productos sobre Deportes</h2>
 
       
       <section class="list-of-products">
@@ -122,7 +122,7 @@
 
             <p class="category">
               <i class="far fa-folder-open"></i> 
-              <%=productsSent[i].categories.name %>
+              Deportes
             </p>
 
 
@@ -148,7 +148,7 @@
         </div>
 
         <div class="place">
-          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].users.location %></span> 
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].location %></span> 
         </div>
       </article>
       <% } %>
@@ -157,6 +157,6 @@
 
     </main>
     <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
-    <%- include ('./partials/footer.ejs') %> 
+    <%- include ('../partials/footer.ejs') %> 
   </body>
 </html>
