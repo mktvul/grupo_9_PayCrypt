@@ -29,7 +29,15 @@ router.post("/edit/:id/", productStorage.single("image"),editProductvalidate, pr
 
 
 // Search 
-
 router.post('/search', productsControllers.search);
+
+//categorys
+router.get("/categoryDeportes", productsControllers.deportes);
+router.get("/categoryInmuebles", productsControllers.inmuebles);
+router.get("/categoryMineria", productsControllers.mineria);
+router.get("/categoryNFT", productsControllers.nft);
+router.get("/categoryTecnologia", productsControllers.tecnologia);
+router.get("/categoryVehiculos", productsControllers.vehiculos);
+
 
 module.exports = router;

@@ -24,19 +24,18 @@ const productsControllers = {
   //store
   store: function (req, res) {
     let resultadoValidacion = validationResult(req);
-      if (resultadoValidacion.errors.length == 0) {
+    if (resultadoValidacion.errors.length == 0) {
       db.Product.create({
         name: req.body.name,
         shortDescription: req.body.shortDescription,
         price: req.body.price,
-        description: req.body.description, 
+        description: req.body.description,
         date: new Date().getTime(),
         image: req.file.filename,
         categoryId: req.body.category,
         coinId: req.body.coin,
         userId: req.session.userLogged.id,
-      })
-      .then(() => {
+      }).then(() => {
         res.redirect("/");
       });
     } else {
@@ -59,34 +58,35 @@ const productsControllers = {
   update: function (req, res) {
     let resultadoValidacion = validationResult(req);
     if (resultadoValidacion.errors.length == 0) {
-         db.Product.update({
-        name: req.body.name,
-        shortDescription: req.body.shortDescription,
-        price: req.body.price,
-        description: req.body.description,
-        image: req.body.image,
-        coin: req.body.coin,
-        category: req.body.category,
-      },
-      {
-        where: {
-          id: req.params.id,
+      db.Product.update(
+        {
+          name: req.body.name,
+          shortDescription: req.body.shortDescription,
+          price: req.body.price,
+          description: req.body.description,
+          image: req.body.image,
+          coin: req.body.coin,
+          category: req.body.category,
         },
-      }
-     )
-     .then(() => {
-       res.redirect("/product/detail/" + req.params.id)
-     });
-   } else {
-    db.Product.findByPk(req.params.id)
-    .then((product) => {
-    res.render("./product/edit", { product, errores: resultadoValidacion.errors });
-   
-    })
-    
-     //.catch((error) => res.send(error));
-  }
-},
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      ).then(() => {
+        res.redirect("/product/detail/" + req.params.id);
+      });
+    } else {
+      db.Product.findByPk(req.params.id).then((product) => {
+        res.render("./product/edit", {
+          product,
+          errores: resultadoValidacion.errors,
+        });
+      });
+
+      //.catch((error) => res.send(error));
+    }
+  },
 
   //eliminar
 
@@ -142,6 +142,88 @@ const productsControllers = {
     })
       .then((productsSent) => {
         res.render("./product/products", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+
+  deportes: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 1) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryDeportes", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+  inmuebles: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 2) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryInmuebles", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+
+  mineria: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 3) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryMineria", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+
+  nft: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 4) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryNFT", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+
+  tecnologia: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 5) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryTecnologia", { productsSent });
+      })
+      .catch((error) => res.send(error));
+  },
+  vehiculos: function (req, res) {
+    var productsSent = [];
+    db.Product.findAll()
+      .then((product) => {
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].categoryId == 6) {
+            productsSent.push(product[i]);
+          }
+        }
+        res.render("./product/categoryVehiculos", { productsSent });
       })
       .catch((error) => res.send(error));
   },
