@@ -1,115 +1,126 @@
 window.addEventListener("load", function () {
-  document.getElementById("form").onsubmit = (e) => {
+  // Variables by Id
+  let formById = document.getElementById("form");
+  let nameById = document.getElementById("name");
+  let lastNameById = document.getElementById("lastName");
+  let dniById = document.getElementById("dni");
+  let locationById = document.getElementById("location");
+  let emailById = document.getElementById("email");
+  let passwordById = document.getElementById("password");
+  let passwordConfirmById = document.getElementById("passwordConfirm");
+  let imageById = document.getElementById("image");
+  let btnImageById = document.getElementById("form-button-image");
+  let btnCheckbox = document.getElementById("form-button-checkbox-input");
+  let btnSate = document.getElementById("form-button-state");
+  let btnEnable = document.getElementById("form-button-enable");
+
+  // Variables by Class
+  let nameByClass = document.querySelector(".name");
+  let lastNameByClass = document.querySelector(".lastName");
+  let dniByClass = document.querySelector(".dni");
+  let locationByClass = document.querySelector(".location");
+  let emailByClass = document.querySelector(".email");
+  let passwordByClass = document.querySelector(".password");
+  let passwordConfirmByClass = document.querySelector(".passwordConfirm");
+  let imageByClass = document.querySelector(".image");
+
+  formById.onsubmit = (e) => {
     let errors = {};
 
-    if (document.getElementById("name").value == "") {
-      document.getElementById("name").style.border = "solid 2px #db3236";
-      errors.name = "Completá este dato";
+    if (nameById.value <= 2) {
+      nameById.style.border = "solid 2px #db3236";
+      errors.name = "Completá este dato con al menos 2 caracteres";
     }
 
-    if (document.getElementById("lastName").value == "") {
-      document.getElementById("lastName").style.border = "solid 2px #db3236";
+    if (lastNameById.value == "") {
+      lastNameById.style.border = "solid 2px #db3236";
       errors.lastName = "Completá este dato";
     }
 
-    if (document.getElementById("dni").value == "") {
-      document.getElementById("dni").style.border = "solid 2px #db3236";
+    if (dniById.value == "") {
+      dniById.style.border = "solid 2px #db3236";
       errors.dni = "Completá este dato";
     }
 
-    if (document.getElementById("location").value == "") {
-      document.getElementById("location").style.border = "solid 2px #db3236";
+    if (locationById.value == "") {
+      locationById.style.border = "solid 2px #db3236";
       errors.location = "Completá este dato";
     }
 
-    if (document.getElementById("email").value == "") {
-      document.getElementById("email").style.border = "solid 2px #db3236";
+    if (emailById.value == "") {
+      emailById.style.border = "solid 2px #db3236";
       errors.email = "Completá este dato";
     }
 
-    if (document.getElementById("password").value == "") {
-      document.getElementById("password").style.border = "solid 2px #db3236";
-      errors.password = "Completá este dato";
+    if (passwordById.value <= 8) {
+      passwordById.style.border = "solid 2px #db3236";
+      errors.password = "Completá este dato con al menos 8 caracteres";
     }
 
     if (
-      document.getElementById("passwordConfirm").value == "" ||
-      document.getElementById("passwordConfirm").value !=
-        document.getElementById("password").value
+      passwordConfirmById.value == "" ||
+      passwordConfirmById.value != password.value
     ) {
-      document.getElementById("passwordConfirm").style.border =
-        "solid 2px #db3236";
+      passwordConfirmById.style.border = "solid 2px #db3236";
       errors.passwordConfirm =
         "Completá este dato con el mismo del campo anterior";
     }
 
-    if (document.getElementById("image").value == "") {
-      document.getElementById("form-button-image").style.border =
-        "solid 2px #db3236";
-      document.getElementById("form-button-image").style.color = "#db3236";
+    if (imageById.value == "") {
+      btnImageById.style.border = "solid 2px #db3236";
+      btnImageById.style.color = "#db3236";
       errors.image = "Subí una imagen";
     }
 
     if (Object.keys(errors).length >= 1) {
       e.preventDefault();
-      document.querySelector(".name").innerText = errors.name
-        ? errors.name
+      nameByClass.innerText = errors.name ? errors.name : "";
+      lastNameByClass.innerText = errors.lastName ? errors.lastName : "";
+      dniByClass.innerText = errors.dni ? errors.dni : "";
+      locationByClass.innerText = errors.location ? errors.location : "";
+      emailByClass.innerText = errors.email ? errors.email : "";
+      passwordByClass.innerText = errors.password ? errors.password : "";
+      passwordConfirmByClass.innerText = errors.passwordConfirm
+        ? errors.passwordConfirm
         : "";
-      document.querySelector(".lastName").innerText = errors.lastName
-        ? errors.lastName
-        : "";
-      document.querySelector(".dni").innerText = errors.dni ? errors.dni : "";
-      document.querySelector(".location").innerText = errors.location
-        ? errors.location
-        : "";
-      document.querySelector(".email").innerText = errors.email
-        ? errors.email
-        : "";
-      document.querySelector(".password").innerText = errors.password
-        ? errors.password
-        : "";
-      document.querySelector(".passwordConfirm").innerText =
-        errors.passwordConfirm ? errors.passwordConfirm : "";
-      document.querySelector(".image").innerText = errors.image
-        ? errors.image
-        : "";
+      imageByClass.innerText = errors.image ? errors.image : "";
     }
   };
 
-  document.getElementById("name").onclick = function () {
+  nameById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("lastName").onclick = function () {
+  lastNameById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("dni").onclick = function () {
+  dniById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("location").onclick = function () {
+  locationById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("email").onclick = function () {
+  emailById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("password").onclick = function () {
+  passwordById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("passwordConfirm").onclick = function () {
+  passwordConfirmById.onclick = function () {
     this.style.border = "";
   };
 
-  document.getElementById("form-button-image").onclick = function () {
+  btnImageById.onclick = function () {
     this.style.border = "";
     this.style.color = "";
   };
 
-  document.getElementById("password").oninput = function () {
+  passwordById.oninput = function () {
     if (this.value.length > 11) {
       this.style.border = "solid 2px #3cba54";
     } else if (this.value.length > 8) {
@@ -118,6 +129,17 @@ window.addEventListener("load", function () {
       this.style.border = "solid 2px #db3236";
     } else {
       this.style.border = "";
+    }
+  };
+
+  btnSate.disabled = true;
+
+  btnCheckbox.onchange = function () {
+    if (!btnCheckbox.checked) {
+      btnSate.disabled = true;
+    } else {
+      btnSate.disabled = false;
+      btnEnable.classList.toggle("form-button-done");
     }
   };
 });
