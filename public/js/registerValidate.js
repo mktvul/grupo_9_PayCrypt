@@ -1,126 +1,151 @@
 window.addEventListener("load", function () {
-  // Variables by Id
-  let formById = document.getElementById("form");
-  let nameById = document.getElementById("name");
-  let lastNameById = document.getElementById("lastName");
-  let dniById = document.getElementById("dni");
-  let locationById = document.getElementById("location");
-  let emailById = document.getElementById("email");
-  let passwordById = document.getElementById("password");
-  let passwordConfirmById = document.getElementById("passwordConfirm");
-  let imageById = document.getElementById("image");
-  let btnImageById = document.getElementById("form-button-image");
+  // Regex for email validation
+  const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+
+  // Inputs
+  let form = document.getElementById("form");
+  let name = document.getElementById("name");
+  let lastName = document.getElementById("lastName");
+  let dni = document.getElementById("dni");
+  let location = document.getElementById("location");
+  let email = document.getElementById("email");
+  let password = document.getElementById("password");
+  let passwordConfirm = document.getElementById("passwordConfirm");
+  let image = document.getElementById("image");
+
+  // Buttons
+  let btnImage = document.getElementById("form-button-image");
   let btnCheckbox = document.getElementById("form-button-checkbox-input");
-  let btnSate = document.getElementById("form-button-state");
+  let btnState = document.getElementById("form-button-state");
   let btnEnable = document.getElementById("form-button-enable");
 
-  // Variables by Class
-  let nameByClass = document.querySelector(".name");
-  let lastNameByClass = document.querySelector(".lastName");
-  let dniByClass = document.querySelector(".dni");
-  let locationByClass = document.querySelector(".location");
-  let emailByClass = document.querySelector(".email");
-  let passwordByClass = document.querySelector(".password");
-  let passwordConfirmByClass = document.querySelector(".passwordConfirm");
-  let imageByClass = document.querySelector(".image");
+  // Errors
+  let nameError = document.querySelector(".name");
+  let lastNameError = document.querySelector(".lastName");
+  let dniError = document.querySelector(".dni");
+  let locationError = document.querySelector(".location");
+  let emailError = document.querySelector(".email");
+  let passwordError = document.querySelector(".password");
+  let passwordConfirmError = document.querySelector(".passwordConfirm");
+  let imageError = document.querySelector(".image");
 
-  formById.onsubmit = (e) => {
+  form.onsubmit = (e) => {
     let errors = {};
 
-    if (nameById.value <= 2) {
-      nameById.style.border = "solid 2px #db3236";
+    if (name.value <= 2) {
+      name.style.border = "solid 2px #db3236";
       errors.name = "Completá este dato con al menos 2 caracteres";
+    } else {
+      name.style.border = "solid 2px #0F9D58";
     }
 
-    if (lastNameById.value == "") {
-      lastNameById.style.border = "solid 2px #db3236";
+    if (lastName.value == "") {
+      lastName.style.border = "solid 2px #db3236";
       errors.lastName = "Completá este dato";
+    } else {
+      lastName.style.border = "solid 2px #0F9D58";
     }
 
-    if (dniById.value == "") {
-      dniById.style.border = "solid 2px #db3236";
+    if (dni.value == "") {
+      dni.style.border = "solid 2px #db3236";
       errors.dni = "Completá este dato";
+    } else {
+      dni.style.border = "solid 2px #0F9D58";
     }
 
-    if (locationById.value == "") {
-      locationById.style.border = "solid 2px #db3236";
+    if (location.value == "") {
+      location.style.border = "solid 2px #db3236";
       errors.location = "Completá este dato";
+    } else {
+      location.style.border = "solid 2px #0F9D58";
     }
 
-    if (emailById.value == "") {
-      emailById.style.border = "solid 2px #db3236";
+    if (!regex.test(email.value)) {
+      email.style.border = "solid 2px #db3236";
       errors.email = "Completá este dato";
+    } else {
+      email.style.border = "solid 2px #0F9D58";
     }
 
-    if (passwordById.value <= 8) {
-      passwordById.style.border = "solid 2px #db3236";
+    if (password.value <= 8) {
+      password.style.border = "solid 2px #db3236";
       errors.password = "Completá este dato con al menos 8 caracteres";
+    } else {
+      password.style.border = "solid 2px #0F9D58";
     }
 
     if (
-      passwordConfirmById.value == "" ||
-      passwordConfirmById.value != password.value
+      passwordConfirm.value == "" ||
+      passwordConfirm.value != password.value
     ) {
-      passwordConfirmById.style.border = "solid 2px #db3236";
+      passwordConfirm.style.border = "solid 2px #db3236";
       errors.passwordConfirm =
         "Completá este dato con el mismo del campo anterior";
     }
 
-    if (imageById.value == "") {
-      btnImageById.style.border = "solid 2px #db3236";
-      btnImageById.style.color = "#db3236";
-      errors.image = "Subí una imagen";
+    let validExtension = [".jpg", ".jpeg", ".png", ".gif"];
+    let fileName = image.value.lastIndexOf(".");
+    let fileExtension = image.value.substring(fileName);
+    let isValid = validExtension.includes(fileExtension);
+
+    if (image.value == "" || !isValid) {
+      btnImage.style.border = "solid 2px #db3236";
+      btnImage.style.color = "#db3236";
+      errors.image = "Completá este dato con una imagen válida";
+    } else {
+      image.style.border = "solid 2px #0F9D58";
+      btnImage.style.color = "#0F9D58";
     }
 
     if (Object.keys(errors).length >= 1) {
       e.preventDefault();
-      nameByClass.innerText = errors.name ? errors.name : "";
-      lastNameByClass.innerText = errors.lastName ? errors.lastName : "";
-      dniByClass.innerText = errors.dni ? errors.dni : "";
-      locationByClass.innerText = errors.location ? errors.location : "";
-      emailByClass.innerText = errors.email ? errors.email : "";
-      passwordByClass.innerText = errors.password ? errors.password : "";
-      passwordConfirmByClass.innerText = errors.passwordConfirm
+      nameError.innerText = errors.name ? errors.name : "";
+      lastNameError.innerText = errors.lastName ? errors.lastName : "";
+      dniError.innerText = errors.dni ? errors.dni : "";
+      locationError.innerText = errors.location ? errors.location : "";
+      emailError.innerText = errors.email ? errors.email : "";
+      passwordError.innerText = errors.password ? errors.password : "";
+      passwordConfirmError.innerText = errors.passwordConfirm
         ? errors.passwordConfirm
         : "";
-      imageByClass.innerText = errors.image ? errors.image : "";
+      imageError.innerText = errors.image ? errors.image : "";
     }
   };
 
-  nameById.onclick = function () {
+  name.onclick = function () {
     this.style.border = "";
   };
 
-  lastNameById.onclick = function () {
+  lastName.onclick = function () {
     this.style.border = "";
   };
 
-  dniById.onclick = function () {
+  dni.onclick = function () {
     this.style.border = "";
   };
 
-  locationById.onclick = function () {
+  location.onclick = function () {
     this.style.border = "";
   };
 
-  emailById.onclick = function () {
+  email.onclick = function () {
     this.style.border = "";
   };
 
-  passwordById.onclick = function () {
+  password.onclick = function () {
     this.style.border = "";
   };
 
-  passwordConfirmById.onclick = function () {
+  passwordConfirm.onclick = function () {
     this.style.border = "";
   };
 
-  btnImageById.onclick = function () {
+  btnImage.onclick = function () {
     this.style.border = "";
     this.style.color = "";
   };
 
-  passwordById.oninput = function () {
+  password.oninput = function () {
     if (this.value.length > 11) {
       this.style.border = "solid 2px #3cba54";
     } else if (this.value.length > 8) {
@@ -132,13 +157,14 @@ window.addEventListener("load", function () {
     }
   };
 
-  btnSate.disabled = true;
+  btnState.disabled = true;
 
   btnCheckbox.onchange = function () {
     if (!btnCheckbox.checked) {
-      btnSate.disabled = true;
+      btnState.disabled = true;
+      btnEnable.classList.toggle("form-button-done");
     } else {
-      btnSate.disabled = false;
+      btnState.disabled = false;
       btnEnable.classList.toggle("form-button-done");
     }
   };

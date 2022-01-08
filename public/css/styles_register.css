@@ -121,7 +121,7 @@ h2 {
 }
 
 /* Button - upload image  */
-.form-button-image {
+.form-button-image label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,14 +137,14 @@ h2 {
   cursor: pointer;
 }
 
-.form-button-image:hover {
+.form-button-image label:hover {
   background-color: #2790c3;
   border: none;
   color: #fff;
   transition: all 300ms ease-out;
 }
 
-.form-button-image:active {
+.form-button-image label:active {
   background-color: #fff;
   border: solid 1px #27346a;
   color: #27346a;
@@ -152,7 +152,9 @@ h2 {
 }
 
 .form-button-image-text {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-button-image input {
@@ -183,8 +185,8 @@ h2 {
 .form-button-disable {
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,.1);
-  color: rgba(0,0,0,.25);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -248,8 +250,6 @@ h2 {
 
 /*tablets*/
 @media (min-width: 768px) {
-
-
 }
 
 /*desktop*/
