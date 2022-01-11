@@ -165,7 +165,6 @@ label[for="photoProduct"] {
   background-color: #ffffff;
   border: 1px solid #27346a;
   display: block;
-  /* transition: all 0.5s; transicion apagada */
   cursor: pointer;
   border-radius: 5px;
   width: 250px;

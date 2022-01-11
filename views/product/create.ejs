@@ -30,7 +30,6 @@
                          <% } %>
                         <% } %>
                        <% } %>
-                      
                 </div>
 
                 <div>
@@ -47,7 +46,6 @@
                        <% } %>
                       
                 </div>
-
 
                 <div>
                     <label for="price"></label>
@@ -80,7 +78,7 @@
                 <!-- CATEGORIA PRODUCTOS -->
                 <div class="category-product">
                     <label class="title-choose" id='category-choose'>¿A qué categoría pertenece?</label>
-                    <p class='text-error category'></p>
+                    <p class='text-error categoryClass'></p>
 
                     <div class='categories'>
                         <div class="radio-left">
@@ -106,7 +104,7 @@
                 <!-- MONEDA PARA PAGAR -->
                 <div class="checkboxes" id='checkboxes'>
                     <p class='title-choose' id='coin-choose'>¿Qué moneda de pago acepta?</p>
-                    <p class='text-error coin'></p>
+                    <p class='text-error coin' id='coin'></p>
                     <div class='each-checkbox'>
                         <div>
                             <input type="checkbox" name="coin" value= "1" id="Bitcoin">
@@ -145,12 +143,13 @@
                     <% } %>
                    <% } %>
                 <br/>
-               <!-- <p class='text-error photoProductError'></p>-->
+               <p class='text-error photoProductError'></p>
 
                 <div class="create-button">
                     <button type="submit">Crear producto</button>
                 </div>
             </form>
         </div>
+        <script src='/js/editProductsForm.js'></script>
     </body>
 </html>
