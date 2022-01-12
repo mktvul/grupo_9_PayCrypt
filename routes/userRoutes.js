@@ -2,15 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { body } = require('express-validator')
-const validations = [
-  body('name').notEmpty().withMessage('Debes completar tu nombre'),
-  body('lastname').notEmpty().withMessage('Debes completar tu apellido'),
-  body('dni').notEmpty().withMessage('Debes completar tu número de DNI'),
-  body('email').notEmpty().withMessage('Debes completar tu email'),
-  body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
-  body('password1').notEmpty().withMessage('Debes ingresar tu contraseña'),
-  body('category').notEmpty().withMessage('Debes seleccionar una categoría')
-];
+
 
 // Controller
 const usersController = require("../controllers/userController");
@@ -18,6 +10,7 @@ const usersController = require("../controllers/userController");
 // Middlewares
 const userStorage = require("../middlewares/userStorage"); //Multer
 const userValidate = require("../middlewares/userValidate"); //Express-validation
+const userLoginValidations = require('../middlewares/userLoginValidations'); // Express-validation
 const userGuest = require("../middlewares/userGuest");
 const userAuthentication = require("../middlewares/userAuthentication");
 const userLogged = require("../middlewares/userLogged");
@@ -32,7 +25,7 @@ router.post("/register",userStorage.single("image"), userValidate, usersControll
 router.get("/login", userGuest, usersController.login);
 
 // Procesar el login
-router.post("/login", validations, usersController.loginProcess);
+router.post("/login", userLoginValidations, usersController.loginProcess);
 
 // Perfil de Usuario
 router.get("/profile", userAuthentication, usersController.profile);

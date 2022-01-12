@@ -26,7 +26,7 @@ const userController = {
       },
     }).then((userInDB) => {
       if (userInDB) {
-        return res.render("./user/register", {
+        return res.render("./user/register",{
           errors: {
             email: {
               msg: "Este email ya está registrado",

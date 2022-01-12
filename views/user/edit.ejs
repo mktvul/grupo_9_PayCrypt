@@ -16,20 +16,20 @@
             </div>
         
             <div>
-                <p class="p-editar-perfil "> Aqui puedes editar tu perfil</p><h5 class="nombre-usuario-a-editar"><%= user.name %></h5>
+                <p class="p-editar-perfil "> Aqui puedes editar tu perfil</p><h5 class="nombre-usuario-a-editar"><%= user.name + ' ' + user.lastName %></h5>
             </div>
             </br> 
                 <!-- AQUI PONER IMAGEN DE PERFIL  USUARIO ACTUAL  -->
     
                   <!-- CAJA FLEX DEL  FORMULARIO-->
-                <form class="prueba-formulario" action="/user/edit" method="POST" enctype="multipart/form-data">
+                <form id="form-user-edit" class="prueba-formulario" action="/user/edit" method="POST" enctype="multipart/form-data">
                     <div class="formulario-flex">
                     
                     
                      <div>
                         <label for="name"></label>
                         <input  class="formulario-control icono-placeholder-nombre"  name="name" id="name" placeholder=" Editar Nombre" value="<%= user.name %>"> <!--NOMBRE USUARIO-->  
-                  
+                        <small class="text-danger name"></small>
                     </div>
     
                     <div>
@@ -72,5 +72,6 @@
             </div>
         
         </main>
+        <script src="/js/UserEditForm.js"></script>
     </body>
     </html>

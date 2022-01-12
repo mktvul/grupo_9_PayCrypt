@@ -4,8 +4,8 @@ const { body } = require("express-validator");
 
 //Validator
 module.exports = [
-  body("name").notEmpty().withMessage("Debes escribir tu nombre"),
-  body("lastName").notEmpty().withMessage("Debes escribir tu apellido"),
+  body("name").notEmpty().isLength({ min: 2 }).withMessage("Debes escribir tu nombre"),
+  body("lastName").notEmpty().isLength({ min: 2 }).withMessage("Debes escribir tu apellido"),
   body("dni").notEmpty().withMessage("Debes escribir tu DNI"),
   body("location").notEmpty().withMessage("Debes escribir tu ubicación"),
   body("email")
@@ -14,8 +14,8 @@ module.exports = [
     .bail()
     .isEmail()
     .withMessage("Debes escribir un formato de email válido"),
-  body("password").notEmpty().withMessage("Debes escribir una contraseña"),
-  body("passwordConfirm").notEmpty().withMessage("Debes confirmar la contraseña"),
+  body("password").notEmpty().isLength({ min: 8 }).withMessage("Debes escribir una contraseña"),
+  body("passwordConfirm").isLength({ min: 8 }).notEmpty().withMessage("Debes confirmar la contraseña"),
   body("image").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
