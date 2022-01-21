@@ -42,8 +42,11 @@ app.set("view engine", "ejs");
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 //const { Cookie } = require("express-session");
 
 app.use("/", productRoutes);
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
+
+app.use("/api", apiRoutes);
