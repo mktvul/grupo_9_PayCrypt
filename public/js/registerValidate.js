@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
   let image = document.getElementById("image");
 
   // Buttons
-  let btnImage = document.getElementById("form-button-image");
+  let btnImage = document.getElementById("form-button-image-label");
   let btnCheckbox = document.getElementById("form-button-checkbox-input");
   let btnState = document.getElementById("form-button-state");
   let btnEnable = document.getElementById("form-button-enable");
