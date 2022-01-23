@@ -3,9 +3,24 @@ const express = require("express");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override"); //Nos permite usar los métodos PUT y DELETE
+const cors = require("cors");
 
 //Express
 const app = express();
+
+var corsOptions = {
+  origin: "*"
+};
+
+app.use(cors(corsOptions));
+let allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header("Access-Control-Allow-Methods", "OPTIONS, POST, GET, PUT, DELETE");
+    res.header('Access-Control-Allow-Headers', "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+    next();
+  }
+app.use(allowCrossDomain);
 
 //Middlewares
 const userLogged = require("./middlewares/userLogged");
