@@ -83,7 +83,7 @@ var data =[];
 db.Product.findAll()
   .then((product) => {
     for (let i = 0; i < product.length; i++) {
-        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3000/products/detail/"+ product[i].id })
+        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/products/detail/"+ product[i].id })
       }
     
 })

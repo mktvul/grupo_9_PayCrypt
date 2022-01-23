@@ -8,7 +8,7 @@ let data = [];
 db.User.findAll()
     .then( users => {
         for (let i = 0; i < users.length; i++) {
-            data.push({id:users[i].id, name:users[i].name, email:users[i].email, detail:'http://localhost:3000//user/profile/'+ users[i].id});
+            data.push({id:users[i].id, name:users[i].name, email:users[i].email, detail:'http://localhost:3001//user/profile/'+ users[i].id});
             
         }
     })
@@ -35,7 +35,7 @@ module.exports = {
                    lastName: user.lastName,
                    dni: user.dni,
                    email: user.email,
-                   image: 'http://localhost:3000/images/users/'+ user.image,
+                   image: 'http://localhost:3001/images/users/'+ user.image,
                    location: user.location,
                },
                status: 200 
