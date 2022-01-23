@@ -130,14 +130,14 @@
                         <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
                     </label> <!-- IMAGEN DEL PRODUCTO-->
                     <input type="file" name="photoProduct" id="photoProductEdit" accept=".jpg" value="<%= product.photoProduct %>">
-                    <% if(typeof errores != 'undefined'){ %>
-                        <% for(let i = 0; i < errores.length; i++){ %>
-                         <% if(errores[i].param == "photoProductEdit"){ %>
-                          <small class="text-error"> <%= errores[i].msg%> </small>
-                         <% } %>
-                        <% } %>
-                       <% } %>
                 </div>
+                <% if(typeof errores != 'undefined'){ %>
+                    <% for(let i = 0; i < errores.length; i++){ %>
+                        <% if(errores[i].param == "photoProductEdit"){ %>
+                        <small class="text-error"> <%= errores[i].msg%> </small>
+                        <% } %>
+                    <% } %>
+                    <% } %>
                 <p class='text-error photoProductEdit'></p>
 
                 <div class='both-buttons'>
@@ -150,5 +150,6 @@
                 </div>
             </form>           
         </div>
+        <script src='/js/createProductsForm.js'></script>
     </body>
 </html>
