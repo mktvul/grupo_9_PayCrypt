@@ -33,7 +33,7 @@ app.use(express.static("./public")); //Carpeta "public" como un recurso de archi
 app.use(methodOverride("_method")); //Nos permite usar los métodos PUT y DELETE
 
 //Server
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+app.listen(3001, () => console.log("Server running on http://localhost:3001"));
 
 // Template Engine
 app.set("view engine", "ejs");

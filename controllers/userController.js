@@ -35,7 +35,8 @@ const userController = {
           oldData: req.body,
         });
       }
-    });
+    }).catch(error => console.log(error));
+
     db.User.create({
       name: req.body.name,
       lastName: req.body.lastName,
