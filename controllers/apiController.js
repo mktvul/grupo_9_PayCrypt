@@ -83,11 +83,17 @@ var data =[];
 db.Product.findAll()
   .then((product) => {
     for (let i = 0; i < product.length; i++) {
-        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/products/detail/"+ product[i].id })
+        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/product/detail/"+ product[i].id })
       }
     
 })
-   
+
+let cantCategory;
+db.Category.findAll()
+.then((Category) => {
+  cantCategory = Category.length;
+})
+
 
 
 
@@ -102,7 +108,8 @@ module.exports =  {
                     totalDeMineria: mineria,
                     totalDeNft: nft,
                     totalDeTecnologia: tecnologia,
-                    totalDeVehiculos: vehiculos,      
+                    totalDeVehiculos: vehiculos,
+                    totalCategories: cantCategory,
                     data: data,
                     status:200
                 })
@@ -124,6 +131,7 @@ module.exports =  {
                 return res.json({
                     data: Product,
                     categoria: Product.categories.name,
+                    imagen: "http://localhost:3000/images/products/"+ Product.image,
                     status:200
                 })
             }
