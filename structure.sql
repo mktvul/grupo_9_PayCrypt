@@ -65,10 +65,6 @@ insert into category (name) values ('NFT');
 insert into category (name) values ('Tecnologia');
 insert into category (name) values ('Vehiculos');
 
-select * from category
-
-select * from coin
-
 /*INSERCION DE MONEDAS*/
 insert into coin (name) values ('Bitcoin');
 insert into coin (name) values ('Ethereum');
