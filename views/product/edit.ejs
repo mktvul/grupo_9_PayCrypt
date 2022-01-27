@@ -125,6 +125,25 @@
                        <% } %>
                 </div>
 
+                <div class="form-button-image" id="form-button-image">
+                    <label for="image">
+                      <div class="form-button-image-text">
+                        <i class="fas fa-upload"></i> Subir Imagen
+                      </div>
+                    </label>
+                    <!-- IMAGEN DEL USUARIO-->
+                    <input
+                      type="file"
+                      name="image"
+                      id="image"
+                      accept=".jpg, .jpeg, .png, .gif"
+                    />
+                    <small class="text-danger image"></small>
+                    <% if (locals.errors && errors.image) { %>
+                    <p class="text-danger"><%= errors.image.msg %></p>
+                    <% } %>
+                </div>
+
                 <div class="photoProducts">
                     <label for="photoProducts">
                         <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
