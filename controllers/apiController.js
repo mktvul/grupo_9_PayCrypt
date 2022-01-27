@@ -87,7 +87,13 @@ db.Product.findAll()
       }
     
 })
-   
+
+let cantCategory;
+db.Category.findAll()
+.then((Category) => {
+  cantCategory = Category.length;
+})
+
 
 
 
@@ -102,7 +108,8 @@ module.exports =  {
                     totalDeMineria: mineria,
                     totalDeNft: nft,
                     totalDeTecnologia: tecnologia,
-                    totalDeVehiculos: vehiculos,      
+                    totalDeVehiculos: vehiculos,
+                    totalCategories: cantCategory,
                     data: data,
                     status:200
                 })
