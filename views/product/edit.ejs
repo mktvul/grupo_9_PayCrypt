@@ -144,11 +144,13 @@
                     <div class="edit-button">
                         <button type="submit">Editar producto</button>
                     </div>
-                    <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
-                        <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
-                    </form>
+                    
                 </div>
-            </form>           
+            </form>  
+            
+            <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
+                <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
+            </form>         
         </div>
         <script src='/js/createProductsForm.js'></script>
     </body>

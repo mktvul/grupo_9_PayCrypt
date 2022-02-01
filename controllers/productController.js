@@ -95,9 +95,11 @@ const productsControllers = {
       where: {
         id: req.params.id,
       },
-    });
-    res.redirect("/").catch((error) => res.send(error));
-  },
+    })
+    .then(() => {
+      res.redirect("/");
+    }).catch((error) => res.send(error));
+},
 
   //listar
 
