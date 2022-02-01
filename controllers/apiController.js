@@ -84,16 +84,29 @@ var data =[];
 db.Product.findAll()
   .then((product) => {
     for (let i = 0; i < product.length; i++) {
+<<<<<<< HEAD
         data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3000/product/detail/"+ product[i].id })
  }
   
 })
    
 var cantCategory;
+=======
+        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/product/detail/"+ product[i].id })
+      }
+    
+})
+
+let cantCategory;
+>>>>>>> e0e2a3569946e504b40e96f91df0f45187d33029
 db.Category.findAll()
 .then((Category) => {
   cantCategory = Category.length;
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> e0e2a3569946e504b40e96f91df0f45187d33029
 
 
         
@@ -110,7 +123,11 @@ module.exports =  {
                     totalDeNft: nft,
                     totalDeTecnologia: tecnologia,
                     totalDeVehiculos: vehiculos,
+<<<<<<< HEAD
                     categorias: cantCategory,      
+=======
+                    totalCategories: cantCategory,
+>>>>>>> e0e2a3569946e504b40e96f91df0f45187d33029
                     data: data,
                     status:200
                 })

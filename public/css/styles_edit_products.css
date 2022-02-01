@@ -127,7 +127,8 @@ textarea:focus {
   transition: all 0.2s ease-out;
 }
 
-/* DISEÑO DEL BOTON DE SUBIR IMAGEN */
+
+/* EMPIEZA DISEÑO DEL BOTON DE SUBIR IMAGEN */
 #photoProductEdit {
   display: none;
 }
@@ -158,6 +159,7 @@ label[for="photoProducts"] {
   align-items: center;
   justify-content: center;
 }
+/*TERMINA DISENIO DEL BOTON SUBIR IMAGEN*/
 
 .boton-formulario-eliminar {
   background-color: #d03b40;
