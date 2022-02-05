@@ -27,11 +27,11 @@
         <li id="header-sidenav-options-user"><a href="/user/profile"><span class="material-icons">account_circle</span>Mi cuenta</a></li>
       </ul>
       <ul class="header-sidenav-options">
-        <li id="header-sidenav-options-category"><a href=""><span class="material-icons">list</span>Categorías</a></li>
+        <li id="header-sidenav-options-category"><a href="/nosotros"><span class="material-icons">list</span>Nosotros</a></li>
         <li id="header-sidenav-options-coin"><a href=""><span class="material-icons">paid</span>Cotizaciones</a></li>
       </ul>
       <ul class="header-sidenav-options">
-        <li><a href=""><span class="material-icons">receipt</span>Resumen</a></li>
+        <li><a href="/resumen"><span class="material-icons">receipt</span>Resumen</a></li>
         <li id="header-sidenav-options-create"><a href="/product/create"><span class="material-icons">sell</span>Vender</a></li>
       </ul>
       <ul class="header-sidenav-last-option">
@@ -68,8 +68,25 @@
         <li id="header-sidenav-options-home"><a href="/"><span class="material-icons">home</span>Inicio</a></li>
       </ul>
       <ul class="header-sidenav-last-option">
-        <li id="header-sidenav-options-category"><a href=""><span class="material-icons">list</span>Categorías</a></li>
-        <li id="header-sidenav-options-coin"><a href=""><span class="material-icons">paid</span>Cotizaciones</a></li>
+        <li id="header-sidenav-options-category"><a href="/nosotros"><span class="material-icons">list</span>Nosotros</a></li>
+        <li id="header-sidenav-options-coin">
+          <div class="header-nav-user">
+            <button class="header-nav-user-button">
+              <span 
+                > Cotizaciones </span>
+              <span class="header-nav-user-name"></span>
+              <span class="material-icons"> expand_more </span>
+            </button>
+            <div class="header-nav-user-content">
+               <ul class="header-sidenav-options">
+                <li><a href="https://www.coingecko.com/es/monedas/bitcoin" target="_blank"><span><img src="images/btc-logo.svg" alt="" class="usdt"></span> Bitcoin (BTC)</a></li>
+                <li><a href="https://www.coingecko.com/es/monedas/ethereum" target="_blank"><span><img src="images/eth-logo.svg" alt="" class="usdt"></span>Ethereum (ETH)</a></li>
+                <li><a href="https://www.coingecko.com/es/monedas/tether" target="_blank"><span><img src="images/usdt-logo.svg" alt="" class="usdt"></span>Tether (USDT)</a></li>
+              </ul>
+              
+            </div>
+          
+          </li>
       </ul>
       <% } %>
     </nav>
@@ -82,9 +99,33 @@
 
   <!-- Categories -->
   <ul class="header-nav-options">
-    <li>Categorías <span class="material-icons"> expand_more </span></li>
-    <li>Cotizaciones <span class="material-icons"> expand_more </span></li>
+    
+    <li><a  href="/nosotros" class="header-nav-login">Nosotros</a></li>
+    <li>
+          
+     <div class="header-nav-user">
+      <button class="header-nav-user-button">
+        <span 
+          > Cotizaciones </span>
+        <span class="header-nav-user-name"></span>
+        <span class="material-icons"> expand_more </span>
+      </button>
+      <div class="header-nav-user-content">
+         <ul class="header-sidenav-options">
+          <li><a href="https://www.coingecko.com/es/monedas/bitcoin" target="_blank"><span><img src="images/btc-logo.svg" alt="" class="usdt"></span> Bitcoin (BTC)</a></li>
+          <li><a href="https://www.coingecko.com/es/monedas/ethereum" target="_blank"><span><img src="images/eth-logo.svg" alt="" class="usdt"></span>Ethereum (ETH)</a></li>
+          <li><a href="https://www.coingecko.com/es/monedas/tether" target="_blank"><span><img src="images/usdt-logo.svg" alt="" class="usdt"></span>Tether (USDT)</a></li>
+        </ul>
+        
+      </div>
+    
+
+</li>
+
+
   </ul>
+
+
 
   <!-- Search -->
   <form class="header-search" action="/product/search" method="POST">
@@ -112,7 +153,7 @@
           <li id="header-sidenav-options-user"><a href="/user/profile"><span class="material-icons">account_circle</span>Mi cuenta</a></li>
         </ul>
         <ul class="header-sidenav-options">
-          <li><a href=""><span class="material-icons">receipt</span>Resumen</a></li>
+          <li><a href="/resumen"><span class="material-icons">receipt</span>Resumen</a></li>
           <li id="header-sidenav-options-create"><a href="/product/create"><span class="material-icons">sell</span>Vender</a></li>
         </ul>
         <ul class="header-sidenav-last-option">

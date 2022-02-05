@@ -27,6 +27,8 @@ router.post("/delete/:id/", productsControllers.delete);
 
 router.post("/edit/:id/", productStorage.single("image"),editProductvalidate, productsControllers.update);
 
+//cart
+router.get("/cart", productsControllers.cart);
 
 // Search 
 router.post('/search', productsControllers.search);

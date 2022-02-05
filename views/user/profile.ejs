@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 <html lang="en">
   <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets:
   'styles_profile'}) %>
@@ -30,9 +32,35 @@
               <div class="main-section-article-2-ul-li-icon">
                 <span class="material-icons"> person_remove </span>
               </div>
-              <a role="button" href="/user/delete"
-                ><button type="button">Cancelar cuenta</button></a
-              >
+              
+              <button class="main-section-article-button-2" onclick="alertar();">
+                Cancelar cuenta
+              </button>
+              <script type="text/javascript">
+               function alertar() {
+                swal({
+                      title: "¿Estas Seguro?",
+                      text: "Al eliminar tu cuenta, se borraran todos tus datos",
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        swal("Tu cuenta a sido eliminada con exito", {
+                          icon: "success",
+                        });
+                        
+                      } else {
+                       
+                      }
+                    });
+                 }
+              </script>
+                </button>
+    
+              
+              
             </li>
           </ul>
         </article>

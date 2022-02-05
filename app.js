@@ -54,13 +54,16 @@ app.listen(3001, () => console.log("Server running on http://localhost:3001"));
 app.set("view engine", "ejs");
 
 //Route system
-const mainRoutes = require("./routes/mainRoutes");
+const nosotrosroutes = require("./routes/nosotrosroutes");
+const resumenroutes = require("./routes/resumenroutes");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 //const { Cookie } = require("express-session");
 
 app.use("/", productRoutes);
+app.use("/nosotros",nosotrosroutes)
+app.use("/resumen",resumenroutes)
 app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 

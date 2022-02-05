@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="/css/resumen.css">
+
+<html lang="en">
+  <!-----------------HEAD - ACÁ LINKEO ENLACES EXTERNOS------------------------->
+  
+  <%- include ('../partials/head.ejs', {titulo: 'PayCrypt', cssSheets: 'styles_index'}) %>
+
+  <body>
+
+    <%- include ('../partials/header.ejs') %> 
+
+    <!-----------------ACÁ VA A PARTIR DEL BANNER E-COMMERCE------------------------->
+    <main>
+      
+        <h2 class="buscados">Tu resumen</h2>
+
+        <div class="info">
+            
+            <div class="data">
+                <p>Productos publicados</p>
+                <p class="numeros">12</p>
+                
+            </div>
+
+            <div class="data">
+                <p>Productos vendidos</p>
+                <p class="numeros">3</p>
+            </div>
+            
+            <div class="data">
+                <p>Ingresos generados</p>
+                <p class="numeros">$ 28.000</p>
+            </div>
+        
+            <div class="data">
+                <p>Actividad</p>
+                <p class="numeros">+ 5%</p>
+            </div>
+
+        </div>
+
+        <div class="grafico">
+            
+            <img src="/images/grafico.png" alt="">
+           
+        </div>
+ 
+    
+
+    </main>
+    <!------ACÁ TERMINA EL MAIN------------------------------------------------------>
+    <%- include ('../partials/footer.ejs') %> 
+  </body>
+</html>

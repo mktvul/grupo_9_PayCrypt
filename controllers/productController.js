@@ -35,7 +35,7 @@ const productsControllers = {
         categoryId: req.body.category,
         coinId: req.body.coin,
         userId: req.session.userLogged.id,
-      }).then(() => {
+        }).then(() => {
         res.redirect("/");
       });
     } else {
@@ -229,6 +229,13 @@ const productsControllers = {
       })
       .catch((error) => res.send(error));
   },
+
+  cart: function(req,res){
+    res.render("./product/cart")
+  }
+
+
+
 };
 
 module.exports = productsControllers;

@@ -1,0 +1,20 @@
+.banner{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+    align-items: center
+}
+
+.video{
+    justify-content: center;
+}
+
+.texto{
+    margin: 20px;
+}
+
+h2{
+text-align: center;
+}
+
+

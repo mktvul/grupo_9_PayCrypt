@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+
 <html lang="es-AR">
   <%- include ('../partials/head.ejs', {titulo: 'Detalles', cssSheets: 'styles_product_detail'}) %>
 
@@ -87,9 +90,32 @@
               </ul>
             </div>
             <div class="main-section-article-button">
-              <button class="main-section-article-button-2" type="submit">
+              
+              <button class="main-section-article-button-2" onclick="alertar();">
                 Agregar al carrito
               </button>
+              <script type="text/javascript">
+               function alertar() {
+                swal({          
+                    title: 'Tu producto se ha cargado correctamente',
+                    icon: 'success'
+                })
+                 }
+              </script>
+  
+              </button>
+
+              <% if (locals.userLogged) { %>
+                <div  class="main-section-article-button-2" style="background-color: #666;">
+                    
+                    <div class="edit-button">
+                          <a href="/product/edit/<%=product.id%>" target="_blank">Editar producto</button>
+                        </div>
+                        
+                  </div>  
+                <% } %>
+             
+
             </div>
           </div>
         </article>
