@@ -47,6 +47,7 @@ const userController = {
       location: req.body.location,
     });
     // let userCreated = User.create(userToCreate); //puso seba por las dudas
+    
     return res.redirect("/user/login");
   },
 
