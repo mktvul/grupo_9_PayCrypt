@@ -25,17 +25,17 @@
             <%=product.shortDescription%>
           </h2>
           <div class="main-section-article-price">
-            <%=product.price%> 
-            <% if (product.coin == "1") { %> 
-              <span><img class="main-section-article-ul-img-1" src="/images/btc-logo.svg"/></span>
-          
-            <% }else if(product.coin == "2") { %> 
-              <span><img class="main-section-article-ul-img-1" src="/images/eth-logo.svg"/></span>
-      
-            <% }else { %>
-              <span><img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/></span>
-
-            <% } %>
+            <% let precio = product.price; %>  
+            <p class="price"><%= Number(precio).toString() %> </p>
+            <span>
+              <% if (product.coinId == 1) { %>
+                <img class="main-section-article-ul-img-1" src="/images/btc-logo.svg"/>
+              <% } else if (product.coinId == 2) { %>
+                  <img class="main-section-article-ul-img-1" src="/images/eth-logo.svg"/>
+                <% } else { %>
+                  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
+                  <% } %>
+            </span>
           </div>
         </article>
         <!-- Article 2: description -->
@@ -55,36 +55,36 @@
             <div>
               <ul>
                 <li class="main-section-article-ul-li">
-                  <% if (product.coin == 'USDT') { %>
-                    <%= product.price  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/> 
-                  <% } else if (product.coin == 'Bitcoin') { 
+                  <% if (product.coinId == 3) { %>
+                    <%= Number(product.price).toString()  %><img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/> 
+                  <% } else if (product.coinId == 1) { 
                     let numberToShow = product.price * 50000 %>
-                    <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
+                    <%= Number(numberToShow).toFixed(2)  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
                   <% } else { 
-                    let numberToShow = product.price * 4000 %>
+                    let numberToShow = Number(product.price * 4000).toString() %>
                     <%= numberToShow  %>  <img class="main-section-article-ul-img-1" src="/images/usdt-logo.svg"/>
                   <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  <% if (product.coin == 'USDT') { 
-                    let numberToShow = product.price / 50000 %>
+                  <% if (product.coinId == 3) { 
+                    let numberToShow = Number(product.price / 50000).toString() %>
                     <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/> 
-                  <% } else if (product.coin == 'Bitcoin') { %>
-                    <%= product.price %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
+                  <% } else if (product.coinId == 1) { %>
+                    <%= Number(product.price).toString() %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
                   <% } else {
-                    let numberToShow = product.price * 0.08 %>
+                    let numberToShow = Number(product.price * 0.08).toString() %>
                     <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/btc-logo.svg"/>
                   <% } %>
                 </li>
                 <li class="main-section-article-ul-li-2">
-                  <% if (product.coin == 'USDT') { 
-                    let numberToShow = product.priceProduct * 0.00025 %>
+                  <% if (product.coinId == 3) { 
+                    let numberToShow = product.price * 0.00025 %>
                     <%= numberToShow  %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/> 
-                  <% } else if (product.coin == 'Bitcoin') { 
-                    let numberToShow = (product.priceProduct * 12.24).toFixed(2) %>
+                  <% } else if (product.coinId == 1) { 
+                    let numberToShow = product.price * 12.24 %>
                     <%= numberToShow %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
                   <% } else { %>
-                    <%= product.priceProduct %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
+                    <%= Number(product.price).toString() %> <img class="main-section-article-ul-img-2" src="/images/eth-logo.svg"/>
                   <% } %>
                 </li>
               </ul>

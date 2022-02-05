@@ -107,22 +107,22 @@
            </div>
             
           <div class="product-description">
-            <p class="price"><%=productsSent[i].price%>  <!--PRECIO-->
+            <p class="price"><%=Number(productsSent[i].price).toString()%>  <!--PRECIO-->
 
              <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
               <% if (productsSent[i].coinId == 1) { %> 
                 <span>
-                  <img src="images/btc-logo.svg" alt="" class="usdt">
+                  <img src="/images/btc-logo.svg" alt="" class="usdt">
                 </span>
             
               <% } else if(productsSent[i].coinId == 2) { %> 
                 <span>
-                  <img src="images/eth-logo.svg" alt="" class="usdt">
+                  <img src="/images/eth-logo.svg" alt="" class="usdt">
                 </span> 
         
               <% }else { %>
                 <span>
-                  <img src="images/usdt-logo.svg" alt="" class="usdt">
+                  <img src="/images/usdt-logo.svg" alt="" class="usdt">
                 </span>
 
               <% } %>
@@ -157,7 +157,7 @@
         </div>
 
         <div class="place">
-          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].location %></span> 
+          <i class="fas fa-map-marker-alt"></i> <span class="product-location"><%=productsSent[i].users.location %> %></span> 
         </div>
       </article>
       <% } %>

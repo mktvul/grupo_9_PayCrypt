@@ -108,22 +108,22 @@
            </div>
             
           <div class="product-description">
-            <p class="price"><%=productsSent[i].price%>  <!--PRECIO-->
+            <p class="price"><%=Number(productsSent[i].price).toString()%>  <!--PRECIO-->
 
-             <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
+             <!--MUESTRA EL LOGO DE LA MONEDA DEL PRODUCTO-->       
               <% if (productsSent[i].coinId == 1) { %> 
                 <span>
-                  <img src="images/btc-logo.svg" alt="" class="usdt">
+                  <img src="/images/btc-logo.svg" alt="" class="usdt">
                 </span>
             
               <% } else if(productsSent[i].coinId == 2) { %> 
                 <span>
-                  <img src="images/eth-logo.svg" alt="" class="usdt">
+                  <img src="/images/eth-logo.svg" alt="" class="usdt">
                 </span> 
         
               <% }else { %>
                 <span>
-                  <img src="images/usdt-logo.svg" alt="" class="usdt">
+                  <img src="/images/usdt-logo.svg" alt="" class="usdt">
                 </span>
 
               <% } %>
