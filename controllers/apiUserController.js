@@ -8,7 +8,7 @@ let data = [];
 db.User.findAll()
     .then( users => {
         for (let i = 0; i < users.length; i++) {
-            data.push({id:users[i].id, name:users[i].name, email:users[i].email, detail:'http://localhost:3001//user/profile/'+ users[i].id});
+            data.push({id:users[i].id, name:users[i].name, email:users[i].email, detail:'http://localhost:3001/user/profile/'+ users[i].id, image: 'http://localhost:3001/images/users/'+ users[i].image });
             
         }
     })
@@ -21,7 +21,8 @@ module.exports = {
         .then(users => {
             return res.status(200).json({
                 Count: users.length, // cantidad total de usuarios en base
-                data: data,        //  array con la coleccion de usuarios
+                data: data,
+                        //  array con la coleccion de usuarios
                 status: 200
             });
         })
