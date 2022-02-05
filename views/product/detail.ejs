@@ -90,8 +90,10 @@
               </ul>
             </div>
             <div class="main-section-article-button">
-              
-              <button class="main-section-article-button-2" onclick="alertar();">
+                            
+              <% if (locals.userLogged) { %>
+
+                <button class="main-section-article-button-2" onclick="alertar();">
                 Agregar al carrito
               </button>
               <script type="text/javascript">
@@ -105,7 +107,6 @@
   
               </button>
 
-              <% if (locals.userLogged) { %>
                 <div  class="main-section-article-button-2" style="background-color: #666;">
                     
                     <div class="edit-button">

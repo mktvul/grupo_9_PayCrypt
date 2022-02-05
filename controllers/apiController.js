@@ -1,4 +1,3 @@
-const { getMaxListeners } = require("process");
 const db = require("../database/models");
 
 
@@ -84,7 +83,7 @@ var data =[];
 db.Product.findAll()
   .then((product) => {
     for (let i = 0; i < product.length; i++) {
-        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/product/detail/"+ product[i].id })
+        data.push({id:product[i].id, name:product[i].name, description:product[i].description, detail:"http://localhost:3001/product/detail/"+ product[i].id, image:'http://localhost:3001/images/products/' + product[i].image  })
       }
     
 })
@@ -112,6 +111,7 @@ module.exports =  {
                     totalDeVehiculos: vehiculos,
                     totalCategories: cantCategory,
                     data: data,
+
                     status:200
                 })
             }
