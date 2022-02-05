@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
  
 
 
-    form.addEventListener('change', function(event) {
+    form.addEventListener('submit', function(event) {
         event.preventDefault();
         let errors = {};
      
