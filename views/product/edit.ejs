@@ -125,31 +125,21 @@
                        <% } %>
                 </div>
 
-                <div class="form-button-image" id="form-button-image">
-                    <label for="image">
-                      <div class="form-button-image-text">
-                        <i class="fas fa-upload"></i> Subir Imagen
-                      </div>
-                    </label>
-                    <!-- IMAGEN DEL USUARIO-->
-                    <input
-                      type="file"
-                      name="image"
-                      id="image"
-                      accept=".jpg, .jpeg, .png, .gif"
-                    />
+                <div class="photoProduct">
+                    <label for="photoProduct" class='photoProductButton'>
+                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
+                    </label> <!-- IMAGEN DEL PRODUCTO-->
+                    <input type="file" name="image" id="photoProduct" accept=".jpg">
+                </div>
                     <small class="text-danger image"></small>
                     <% if (locals.errors && errors.image) { %>
                     <p class="text-danger"><%= errors.image.msg %></p>
                     <% } %>
-                </div>
+                
 
-                <div class="photoProducts">
-                    <label for="photoProducts">
-                        <div class="img-up"><i class="fas fa-upload"></i> Subir Imagen</div>
-                    </label> <!-- IMAGEN DEL PRODUCTO-->
-                    <input type="file" name="photoProduct" id="photoProductEdit" accept=".jpg" value="<%= product.photoProduct %>">
-                </div>
+               
+                
+                
                 <% if(typeof errores != 'undefined'){ %>
                     <% for(let i = 0; i < errores.length; i++){ %>
                         <% if(errores[i].param == "photoProductEdit"){ %>
@@ -165,11 +155,14 @@
                     </div>
                     
                 </div>
+
+            
             </form>  
             
             <form class="delette-button" action="/product/delete/<%=product.id%>" method= POST  style="display: inline-flex">
                 <button type="submit" class="boton-formulario-eliminar">Eliminar</button>
-            </form>         
+            </form> 
+        </div>        
         </div>
         <script src='/js/createProductsForm.js'></script>
     </body>

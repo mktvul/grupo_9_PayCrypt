@@ -129,12 +129,13 @@ textarea:focus {
 
 
 /* EMPIEZA DISEÑO DEL BOTON DE SUBIR IMAGEN */
-#photoProductEdit {
-  display: none;
+/* DISEÑO DEL BOTON DE SUBIR IMAGEN */
+#photoProduct {
+  display: none; /*Apago el diseño original*/
 }
 
-/*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files*/
-input[type="”file”"]#photoProducts {
+input[type="”file”"]#photoProduct {
+  /*CREO UN FRENTE SOBRE EL BOTON utlizo propiedad de los files*/
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -143,8 +144,8 @@ input[type="”file”"]#photoProducts {
   z-index: -1;
 }
 
-/*Decoro el nuevo frente*/
-label[for="photoProducts"] {
+label[for="photoProduct"] {
+  /*Decoro el nuevo frente*/
   font-size: 14px;
   color: #27346a;
   background-color: #ffffff;
@@ -152,8 +153,8 @@ label[for="photoProducts"] {
   display: block;
   cursor: pointer;
   border-radius: 5px;
-  width: 218px;
-  height: 38.4px;
+  width: 250px;
+  height: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
