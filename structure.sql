@@ -71,7 +71,6 @@ insert into coin (name) values ('Ethereum');
 insert into coin (name) values ('USDT');
 
 /*INSERCION DE PRODUCTOS*/
-select * from products
 
 insert into products (name, shortDescription, price, description, date, image, categoryId, coinId, userId)
 values ('Cafetera Moulinex dolce gusto','Máquina manual de diseño minimalista y tecnología avanzada.',0.0000040,'Cafetera manual de diseño y tecnologia avanzada. Super economica.', 1624543491000, 'img-cafetera-moulinex.jpg', 5, 1, 1);
