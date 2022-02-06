@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
-    align-items: center
+    align-items: center;
+    min-height:65vh;
 }
 
 .video{
@@ -11,6 +12,8 @@
 
 .texto{
     margin: 20px;
+    width: 600px;
+    text-align: center;
 }
 
 h2{

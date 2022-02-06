@@ -156,7 +156,13 @@ const productsControllers = {
 
   deportes: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 1) {
@@ -169,7 +175,13 @@ const productsControllers = {
   },
   inmuebles: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 2) {
@@ -183,7 +195,13 @@ const productsControllers = {
 
   mineria: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 3) {
@@ -197,7 +215,13 @@ const productsControllers = {
 
   nft: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 4) {
@@ -211,7 +235,13 @@ const productsControllers = {
 
   tecnologia: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 5) {
@@ -224,7 +254,13 @@ const productsControllers = {
   },
   vehiculos: function (req, res) {
     var productsSent = [];
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ]})
       .then((product) => {
         for (let i = 0; i < product.length; i++) {
           if (product[i].categoryId == 6) {
