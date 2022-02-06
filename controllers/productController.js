@@ -138,6 +138,12 @@ const productsControllers = {
 
   search: function (req, res) {
     db.Product.findAll({
+      include: [
+        { association: "users" },
+        { association: "categories" },
+        { association: "coins" },
+        { association: "carts" },
+      ],
       where: {
         name: { [Op.like]: "%" + req.body.search + "%" }, // buscamos por el nombre que ingresa en el search //vemos de usar like = %nombre%
       },

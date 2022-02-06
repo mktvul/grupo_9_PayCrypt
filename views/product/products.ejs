@@ -52,7 +52,7 @@
               </p>
 
               <p class="category">
-                <i class="far fa-folder-open"></i><%= producto.categoryId %> <!--CATEGORIA hay que arreglar la categoria-->
+                <i class="far fa-folder-open"></i><%= producto.categories.name %> <!--CATEGORIA hay que arreglar la categoria-->
               </p>
 
 
@@ -74,7 +74,7 @@
             </a>
           </div>
           <div class="place">
-            <i class="fas fa-map-marker-alt"></i><p><%= producto.location %></p>
+            <i class="fas fa-map-marker-alt"></i><p><%= producto.users.location %></p>
           </div>
         </article>
         <% }) %> 
