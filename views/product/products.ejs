@@ -29,7 +29,7 @@
              </div>
               
             <div class="product-description">
-              <p class="price"><%= producto.price %>  <!--PRECIO-->
+              <p class="price"><%= Number(producto.price).toString() %>  <!--PRECIO-->
 
                <!--MUESTRA EL LOGO DE LA MONEDA QUE ELIGIO-->       
                 <% if (producto.coinId == 1) { %> 
