@@ -1,4 +1,4 @@
-# Dashboard de PayCrypt
+# PayCrypt - El mejor ecommerce para abonar con criptos.
 
 PayCrypt.com es un sitio web donde se comercializan distintos productos únicamente en criptomonedas. Apunta a un público de entre 20 y 40 años de edad interesado en las nuevas tecnologías.
 
