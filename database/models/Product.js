@@ -59,6 +59,7 @@ module.exports = (sequelize, dataTypes) => {
     Product.belongsTo(models.User, {
       as: "users", // El nombre del modelo pero en plural
       foreignKey: "userId",
+      
     }),
       Product.belongsTo(models.Category, {
         as: "categories", // El nombre del modelo pero en plural

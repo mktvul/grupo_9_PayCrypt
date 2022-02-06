@@ -125,11 +125,16 @@ const userController = {
     return res.redirect("./logout");
   },
 
-  delete: (req, res) => {
-    console.log(req.session.userLogged.id);
-    let userDeleted = db.User.delete(req.session.userLogged.id);
-    return res.redirect("/");
-  },
+  delete: function (req, res) {
+    db.User.destroy({
+      where: {
+        id: req.session.userLogged.id,
+      },
+    })
+    .then(() => {
+      res.redirect("/user/logout");
+    }).catch((error) => res.send(error));
+},
 
   logout: (req, res) => {
     res.clearCookie("userEmail");

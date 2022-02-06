@@ -47,14 +47,15 @@
                     })
                     .then((willDelete) => {
                       if (willDelete) {
-                        swal("Tu cuenta a sido eliminada con exito", {
+                         swal("Tu cuenta a sido eliminada con exito", {
                           icon: "success",
-                        });
+                        }).then(function() {
+                          window.location = "http://localhost:3001/user/delete";
+                        });;
                         
-                      } else {
-                       
-                      }
-                    });
+
+                      } 
+                    })
                  }
               </script>
                 </button>

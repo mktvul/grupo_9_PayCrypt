@@ -47,11 +47,13 @@ module.exports = (sequelize, dataTypes) => {
         User.hasMany(models.Product, { 
             as: "products", // El nombre del modelo pero en plural
             foreignKey: 'userId',
-        }),
+            
+         }),
 
         User.hasOne(models.Cart, {     // hasOne = la clave externa se definirá en el modelo de destino, si no porner .belongsTo
             as: "cart",
             foreignKey: 'userId',
+            
         })
     }
 
